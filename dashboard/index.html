@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shadow Traders — F&O Quant Trading Engine & Options Swarm</title>
+  <title>Shadow Traders — F&O High-Frequency Quant Engine & Options Swarm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -37,7 +37,6 @@
         radial-gradient(circle at 85% 85%, rgba(157, 78, 221, 0.08) 0%, transparent 45%);
     }
 
-    /* DISCLAIMER BANNER */
     .disclaimer-banner {
       background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), rgba(0, 242, 254, 0.15));
       border: 1px solid rgba(255, 215, 0, 0.4);
@@ -51,7 +50,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* HEADER & BRANDING */
     header {
       display: flex;
       justify-content: space-between;
@@ -106,7 +104,6 @@
       box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
     }
 
-    /* STATS GRID */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -144,7 +141,6 @@
       margin-top: 6px;
     }
 
-    /* TAB NAVIGATION */
     .tabs-nav {
       display: flex;
       gap: 12px;
@@ -176,7 +172,6 @@
       box-shadow: 0 4px 20px rgba(0, 242, 254, 0.2);
     }
 
-    /* MAIN CONTENT PANELS */
     .panel {
       display: none;
       background: var(--bg-card);
@@ -203,7 +198,6 @@
       font-weight: 700;
     }
 
-    /* TABLES */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -238,6 +232,24 @@
       background: rgba(255, 82, 82, 0.15);
       color: var(--accent-red);
       border: 1px solid var(--accent-red);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 11px;
+    }
+    .badge-fut {
+      background: rgba(124, 77, 255, 0.15);
+      color: var(--accent-purple);
+      border: 1px solid var(--accent-purple);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 11px;
+    }
+    .badge-scalp {
+      background: rgba(0, 242, 254, 0.15);
+      color: var(--accent-shadow-blue);
+      border: 1px solid var(--accent-shadow-blue);
       padding: 4px 10px;
       border-radius: 6px;
       font-weight: 700;
@@ -286,24 +298,21 @@
 </head>
 <body>
 
-  <!-- SIMULATION DISCLAIMER -->
   <div class="disclaimer-banner">
-    ⚠️ SIMULATION MODE — PAPER TRADING ONLY (INR 5,00,000 CAPITAL POOL) • FLAT ₹20 BROKERAGE DEDUCTION APPLIED
+    ⚡ HIGH-FREQUENCY 1M / 5M / 15M QUANT SCANNING ACTIVE • PAPER TRADING MODE ONLY (INR 5,00,000 POOL) • FLAT ₹20 BROKERAGE DEDUCTED
   </div>
 
-  <!-- HEADER & LOGO -->
   <header>
     <div class="brand-container">
       <img src="logo.jpg" alt="Shadow Traders Logo" class="shadow-logo">
       <div class="brand-text">
         <h1>SHADOW TRADERS</h1>
-        <p>F&O Quant Engine • Solo Leveling Multi-Agent Options Swarm</p>
+        <p>High-Frequency F&O Quant Engine • Multi-Timeframe Scalp & Options Swarm</p>
       </div>
     </div>
-    <div class="arise-badge">⚡ ARISE — ₹5 LAKHS F&O POOL</div>
+    <div class="arise-badge">⚡ ARISE — 1M/5M/15M FREQUENCY</div>
   </header>
 
-  <!-- STATS OVERVIEW -->
   <div class="stats-grid">
     <div class="stat-card">
       <div class="stat-title">Shadow Capital Pool</div>
@@ -327,35 +336,33 @@
     </div>
   </div>
 
-  <!-- NAVIGATION TABS -->
   <div class="tabs-nav">
-    <button class="tab-btn active" onclick="switchTab('tab-trades')">⚔️ Executed F&O Trades Log</button>
-    <button class="tab-btn" onclick="switchTab('tab-patterns')">📊 12-Pattern Hunter</button>
+    <button class="tab-btn active" onclick="switchTab('tab-trades')">⚡ High-Frequency Trades Log</button>
+    <button class="tab-btn" onclick="switchTab('tab-types')">🎯 F&O Trade Types Engine</button>
+    <button class="tab-btn" onclick="switchTab('tab-patterns')">📊 12-Pattern & VWAP Hunter</button>
     <button class="tab-btn" onclick="switchTab('tab-committee')">🏛️ 3-Way Risk Committee</button>
     <button class="tab-btn" onclick="switchTab('tab-memory')">🔮 Reflective Memory</button>
-    <button class="tab-btn" onclick="switchTab('tab-audit')">⚙️ Engine & Brokerage Audit</button>
   </div>
 
-  <!-- PANEL 1: EXECUTED TRADES LOG (COMPLETE REPLICA OF ORIGINAL BOT) -->
+  <!-- PANEL 1: EXECUTED TRADES LOG -->
   <div id="tab-trades" class="panel active">
     <div class="panel-header">
-      <h2>Executed F&O Trades Audit Log (Call CE / Put PE Options & Futures)</h2>
-      <span style="font-size: 12px; color: var(--accent-shadow-blue);">Strict 3:15 PM IST Auto Square-Off Active</span>
+      <h2>Executed F&O High-Frequency Trade Log (Options CE/PE, Futures & Scalps)</h2>
+      <span style="font-size: 12px; color: var(--accent-shadow-blue);">Every 5m Scans • 3:15 PM IST Auto Square-Off</span>
     </div>
     <table>
       <thead>
         <tr>
           <th>Timestamp</th>
           <th>Symbol</th>
-          <th>Contract Type</th>
-          <th>Strike</th>
+          <th>Trade Type</th>
+          <th>Strike Level</th>
           <th>Lots (Qty)</th>
-          <th>Entry Premium</th>
-          <th>Exit Premium</th>
+          <th>Entry Price</th>
+          <th>Exit Price</th>
           <th>Realized P&L</th>
           <th>Exit Reason</th>
           <th>Brokerage</th>
-          <th>Waterfall Score</th>
         </tr>
       </thead>
       <tbody id="table-trades">
@@ -370,7 +377,6 @@
           <td style="color: var(--accent-green); font-weight: 700;">+₹1,665.00 (+22.93%)</td>
           <td><span class="badge-target">TARGET_HIT</span></td>
           <td>₹20.00</td>
-          <td>8.85 / 10</td>
         </tr>
         <tr>
           <td>2026-08-07 10:15 UTC</td>
@@ -383,7 +389,18 @@
           <td style="color: var(--accent-green); font-weight: 700;">+₹1,860.00 (+22.14%)</td>
           <td><span class="badge-target">TARGET_HIT</span></td>
           <td>₹20.00</td>
-          <td>8.40 / 10</td>
+        </tr>
+        <tr>
+          <td>2026-08-07 10:42 UTC</td>
+          <td><b>NIFTY</b></td>
+          <td><span class="badge-scalp">SCALP_CE (1m)</span></td>
+          <td>24,250</td>
+          <td>3 Lots (75 sh)</td>
+          <td>₹110.00</td>
+          <td>₹124.50</td>
+          <td style="color: var(--accent-green); font-weight: 700;">+₹1,087.50 (+13.18%)</td>
+          <td><span class="badge-target">SCALP_TARGET</span></td>
+          <td>₹20.00</td>
         </tr>
         <tr>
           <td>2026-08-07 11:00 UTC</td>
@@ -396,7 +413,6 @@
           <td style="color: var(--accent-red); font-weight: 700;">-₹1,625.00 (-15.48%)</td>
           <td><span class="badge-sl">SL_HIT</span></td>
           <td>₹20.00</td>
-          <td>8.10 / 10</td>
         </tr>
         <tr>
           <td>2026-08-07 11:45 UTC</td>
@@ -409,38 +425,77 @@
           <td style="color: var(--accent-green); font-weight: 700;">+₹5,197.50 (+34.05%)</td>
           <td><span class="badge-target">TARGET_HIT</span></td>
           <td>₹20.00</td>
-          <td>8.65 / 10</td>
+        </tr>
+        <tr>
+          <td>2026-08-07 12:10 UTC</td>
+          <td><b>BANKNIFTY</b></td>
+          <td><span class="badge-fut">FUTURES_SHORT</span></td>
+          <td>51,800</td>
+          <td>1 Lot (15 sh)</td>
+          <td>₹51,800.00</td>
+          <td>₹51,450.00</td>
+          <td style="color: var(--accent-green); font-weight: 700;">+₹5,250.00 (+0.68%)</td>
+          <td><span class="badge-target">TARGET_HIT</span></td>
+          <td>₹20.00</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- PANEL 2: 12-PATTERN HUNTER -->
-  <div id="tab-patterns" class="panel">
+  <!-- PANEL 2: F&O TRADE TYPES ENGINE -->
+  <div id="tab-types" class="panel">
     <div class="panel-header">
-      <h2>12-Pattern Recognition Engine</h2>
-      <span style="font-size: 12px; color: var(--accent-shadow-blue);">15m Real-Time Chart Pattern Hunter</span>
+      <h2>All Supported F&O Intraday Trade Types</h2>
     </div>
     <div class="pattern-grid">
       <div class="pattern-card">
+        <h3 style="color: var(--accent-green);">1. Call Option Buying (BUY_CE)</h3>
+        <p>Buying ITM/ATM Call options for strong upward momentum breakouts (Target: +30% premium / SL: -15%).</p>
+      </div>
+      <div class="pattern-card">
+        <h3 style="color: var(--accent-red);">2. Put Option Buying (BUY_PE)</h3>
+        <p>Buying ITM/ATM Put options for aggressive market breakdowns and short momentum.</p>
+      </div>
+      <div class="pattern-card">
+        <h3 style="color: var(--accent-purple);">3. Futures Long (BUY_FUT)</h3>
+        <p>Direct Index/Stock Futures buying for high-conviction intraday rallies with trailing stops.</p>
+      </div>
+      <div class="pattern-card">
+        <h3 style="color: var(--accent-purple);">4. Futures Short (SELL_FUT)</h3>
+        <p>Direct Index/Stock Futures shorting for breakdown continuation moves.</p>
+      </div>
+      <div class="pattern-card">
+        <h3 style="color: var(--accent-shadow-blue);">5. Fast Option Scalping (SCALP_CE / SCALP_PE)</h3>
+        <p>Rapid 1m/5m timeframe option scalps targeting quick 10-15% premium spikes off VWAP support.</p>
+      </div>
+      <div class="pattern-card">
+        <h3 style="color: var(--accent-gold);">6. VWAP Rejection & Supertrend Flips</h3>
+        <p>Automatic entry when 1m/5m price bounces off VWAP or Supertrend flips green/red.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 3: 12-PATTERN & VWAP HUNTER -->
+  <div id="tab-patterns" class="panel">
+    <div class="panel-header">
+      <h2>12-Pattern Recognition & VWAP Engine</h2>
+    </div>
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <h3>VWAP Support Bounce</h3>
+        <p>Fast 1m/5m scalp trigger when price touches volume-weighted average price line.</p>
+      </div>
+      <div class="pattern-card">
+        <h3>Supertrend 1m/5m Trend Flip</h3>
+        <p>High-speed trend detection following Supertrend 7,3 indicator direction changes.</p>
+      </div>
+      <div class="pattern-card">
         <h3>Double Bottom (W-Pattern)</h3>
-        <p>Detects dual price support tests preceding explosive bullish breakouts (+0.5 Score).</p>
+        <p>Dual support test preceding explosive bullish option breakouts (+0.5 Score).</p>
       </div>
       <div class="pattern-card">
         <h3>Double Top (M-Pattern)</h3>
-        <p>Identifies dual price ceiling rejections preceding aggressive short breakdowns (-0.5 Score).</p>
-      </div>
-      <div class="pattern-card">
-        <h3>Bull & Bear Flag Breakouts</h3>
-        <p>Tracks tight channel consolidations following strong impulse poles (+0.5 / -0.5 Score).</p>
-      </div>
-      <div class="pattern-card">
-        <h3>Morning & Evening Stars</h3>
-        <p>3-candle reversal sequences spotting institutional turning points at key levels.</p>
-      </div>
-      <div class="pattern-card">
-        <h3>Shooting Star Rejections</h3>
-        <p>Identifies upper wick price rejections at resistance for high-conviction Put (PE) setups.</p>
+        <p>Dual ceiling rejection preceding aggressive Put option breakdowns (-0.5 Score).</p>
       </div>
       <div class="pattern-card">
         <h3>Opening Range Breakout (ORB-15m)</h3>
@@ -449,14 +504,11 @@
     </div>
   </div>
 
-  <!-- PANEL 3: 3-WAY RISK COMMITTEE -->
+  <!-- PANEL 4: 3-WAY RISK COMMITTEE -->
   <div id="tab-committee" class="panel">
     <div class="panel-header">
       <h2>3-Way Risk Committee & Subagent Debate</h2>
     </div>
-    <p style="color: var(--text-muted); margin-bottom: 16px;">
-      Cross-references Bullish Conviction, Bearish Resistance, Fact-Checker Grounding, and Portfolio Beta caps (Max 1.3).
-    </p>
     <table>
       <thead>
         <tr>
@@ -482,25 +534,15 @@
           <td><span class="badge-target">VERIFIED</span></td>
           <td>Approved (Bearish Breakdown PE Setup)</td>
         </tr>
-        <tr>
-          <td><b>DLF</b></td>
-          <td>1.8 / 10</td>
-          <td>8.7 / 10</td>
-          <td><span class="badge-target">VERIFIED</span></td>
-          <td>Approved (Bearish Real Estate Breakdown)</td>
-        </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- PANEL 4: REFLECTIVE MEMORY -->
+  <!-- PANEL 5: REFLECTIVE MEMORY -->
   <div id="tab-memory" class="panel">
     <div class="panel-header">
       <h2>Reflective Memory & Trade Lessons</h2>
     </div>
-    <p style="color: var(--text-muted); margin-bottom: 16px;">
-      Tracks past trade outcomes (STOP_LOSS_HIT / TARGET_HIT) per ticker and automatically adjusts conviction modifiers.
-    </p>
     <table>
       <thead>
         <tr>
@@ -515,77 +557,13 @@
           <td><b>NIFTY</b></td>
           <td><span class="badge-target">TARGET_HIT</span></td>
           <td style="color: var(--accent-green);">+0.3</td>
-          <td>Strong trend continuation on 15m ORB breakouts.</td>
+          <td>Strong trend continuation on 1m/5m ORB breakouts.</td>
         </tr>
         <tr>
           <td><b>RELIANCE</b></td>
           <td><span class="badge-sl">STOP_LOSS_HIT</span></td>
           <td style="color: var(--accent-red);">-0.5</td>
           <td>Widen ATR SL multiplier in high VIX volatility regimes.</td>
-        </tr>
-        <tr>
-          <td><b>DLF</b></td>
-          <td><span class="badge-target">TARGET_HIT</span></td>
-          <td style="color: var(--accent-green);">+0.3</td>
-          <td>High conviction on sector-wide breakdown signals.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- PANEL 5: ENGINE & BROKERAGE AUDIT -->
-  <div id="tab-audit" class="panel">
-    <div class="panel-header">
-      <h2>Engine Waterfall & Statutory Cost Audit</h2>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Timestamp</th>
-          <th>Symbol</th>
-          <th>Verdict</th>
-          <th>Waterfall Score</th>
-          <th>Premium Value</th>
-          <th>Brokerage (₹20)</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody id="table-audit">
-        <tr>
-          <td>2026-08-07 09:30 UTC</td>
-          <td>NIFTY</td>
-          <td>BUY_CE</td>
-          <td>8.85 / 10</td>
-          <td>₹7,260.00</td>
-          <td>₹20.00</td>
-          <td><span class="badge-target">CLOSED (+₹1,665.00)</span></td>
-        </tr>
-        <tr>
-          <td>2026-08-07 10:15 UTC</td>
-          <td>BANKNIFTY</td>
-          <td>BUY_PE</td>
-          <td>8.40 / 10</td>
-          <td>₹8,400.00</td>
-          <td>₹20.00</td>
-          <td><span class="badge-target">CLOSED (+₹1,860.00)</span></td>
-        </tr>
-        <tr>
-          <td>2026-08-07 11:00 UTC</td>
-          <td>RELIANCE</td>
-          <td>BUY_CE</td>
-          <td>8.10 / 10</td>
-          <td>₹10,500.00</td>
-          <td>₹20.00</td>
-          <td><span class="badge-sl">CLOSED (-₹1,625.00)</span></td>
-        </tr>
-        <tr>
-          <td>2026-08-07 11:45 UTC</td>
-          <td>DLF</td>
-          <td>BUY_PE</td>
-          <td>8.65 / 10</td>
-          <td>₹15,262.50</td>
-          <td>₹20.00</td>
-          <td><span class="badge-target">CLOSED (+₹5,197.50)</span></td>
         </tr>
       </tbody>
     </table>

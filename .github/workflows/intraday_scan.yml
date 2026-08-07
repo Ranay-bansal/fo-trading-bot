@@ -1,13 +1,11 @@
-name: F&O Intraday Scan
+name: F&O High-Frequency Intraday Scan
 
 on:
   schedule:
     # 03:45 UTC (09:15 IST) opening scan
     - cron: '45 3 * * 1-5'
-    # 04:00 to 07:45 UTC (09:30 to 13:15 IST) every 15 minutes
-    - cron: '*/15 4-7 * * 1-5'
-    # 08:00 UTC (13:30 IST) cutoff scan
-    - cron: '0 8 * * 1-5'
+    # Every 5 minutes from 04:00 to 08:00 UTC (09:30 to 13:30 IST)
+    - cron: '*/5 4-8 * * 1-5'
   workflow_dispatch: {}
 
 permissions:
@@ -39,7 +37,7 @@ jobs:
           git config --global user.email "bot@alphadesk.io"
           git config --global user.name "AlphaDesk F&O Bot"
 
-      - name: Run F&O Scanning Pipeline
+      - name: Run F&O High-Frequency Scan Pipeline
         run: python main.py
         env:
           MEGABULL_API_KEY: ${{ secrets.MEGABULL_API_KEY }}

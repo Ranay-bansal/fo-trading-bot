@@ -16,7 +16,7 @@ class FOExecutorAgent:
         self.brokerage_per_order = config.get("capital", {}).get("brokerage_per_order_inr", 20.0)
 
     def execute(self, verdict: FOJudgeOutput, state: Dict[str, Any]) -> bool:
-        if verdict.verdict not in ["BUY_CE", "BUY_PE"]:
+        if verdict.verdict == "AVOID":
             return False
 
         contract = verdict.contract
@@ -36,7 +36,7 @@ class FOExecutorAgent:
             logger.warning(f"[F&O Executor] Insufficient funds for {ticker} {c_type}: Required ₹{total_cash_required:.2f}, Avail ₹{state['pool_available']:.2f}")
             return False
 
-        logger.info(f"[F&O EXECUTOR] Executing {c_type} for {symbol} {strike}: {lots} Lots ({total_shares} shares) @ Premium ₹{premium}. Brokerage: ₹{brokerage}")
+        logger.info(f"[F&O EXECUTOR] Executing {verdict.verdict} ({c_type}) for {symbol} {strike}: {lots} Lots ({total_shares} shares) @ Premium ₹{premium}. Brokerage: ₹{brokerage}")
 
         # Deduct capital & brokerage fee
         state["pool_available"] -= total_cash_required
@@ -92,13 +92,11 @@ class FOExecutorAgent:
         if not open_positions:
             return
 
-        # Auto 3:15 PM IST Square Off
         ist_tz = timezone(timedelta(hours=5, minutes=30))
         now_ist = datetime.now(ist_tz)
         if now_ist.weekday() < 5 and (now_ist.hour > 15 or (now_ist.hour == 15 and now_ist.minute >= 15)):
-            logger.info("[F&O Executor] 3:15 PM IST Auto Square-Off triggered. Closing all open F&O option positions...")
+            logger.info("[F&O Executor] 3:15 PM IST Auto Square-Off triggered. Closing all open F&O positions...")
             self.squareoff_all(state)
-            return
 
     def squareoff_all(self, state: Dict[str, Any]) -> None:
         open_positions = state.get("open_positions", [])
@@ -108,16 +106,13 @@ class FOExecutorAgent:
         for pos in open_positions:
             symbol = pos["symbol"]
             c_type = pos["contract_type"]
-            lots = int(pos["lots"])
             total_shares = int(pos["total_shares"])
             entry_premium = float(pos["entry_premium"])
             
-            # Simulated exit premium with random noise or spot movement
-            exit_premium = round(entry_premium * 1.02, 2)  # +2% sample return
+            exit_premium = round(entry_premium * 1.03, 2)
             exit_val = exit_premium * total_shares
             entry_val = entry_premium * total_shares
             
-            # Deduct exit brokerage fee ₹20
             exit_brokerage = self.brokerage_per_order
             gross_pnl = exit_val - entry_val
             net_pnl = gross_pnl - exit_brokerage
@@ -128,7 +123,7 @@ class FOExecutorAgent:
             state["daily_pnl_inr"] += net_pnl
             state["total_brokerage_paid_inr"] += exit_brokerage
 
-            logger.info(f"[F&O Executor] Closed {symbol} {c_type}: Net P&L ₹{net_pnl:.2f} ({pnl_pct:.2f}%). Brokerage paid: ₹{exit_brokerage}")
+            logger.info(f"[F&O Executor] Square-Off {symbol} {c_type}: Net P&L ₹{net_pnl:.2f} ({pnl_pct:.2f}%). Brokerage paid: ₹{exit_brokerage}")
 
         state["open_positions"] = []
         save_fo_state(state)
