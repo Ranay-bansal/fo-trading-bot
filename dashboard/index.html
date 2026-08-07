@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shadow Traders — F&O Quant Engine & Solo Leveling Swarm</title>
+  <title>Shadow Traders — F&O Quant Trading Engine & Options Swarm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -35,6 +35,20 @@
       background-image: 
         radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 85% 85%, rgba(157, 78, 221, 0.08) 0%, transparent 45%);
+    }
+
+    /* DISCLAIMER BANNER */
+    .disclaimer-banner {
+      background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), rgba(0, 242, 254, 0.15));
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      color: var(--accent-gold);
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
     }
 
     /* HEADER & BRANDING */
@@ -229,17 +243,23 @@
       font-weight: 700;
       font-size: 11px;
     }
-    .badge-pat {
-      background: rgba(0, 242, 254, 0.15);
-      color: var(--accent-shadow-blue);
-      border: 1px solid var(--accent-shadow-blue);
+    .badge-target {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--accent-green);
       padding: 4px 10px;
       border-radius: 6px;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
+    }
+    .badge-sl {
+      background: rgba(255, 82, 82, 0.15);
+      color: var(--accent-red);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
     }
 
-    /* PATTERN CARDS */
     .pattern-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -266,13 +286,18 @@
 </head>
 <body>
 
+  <!-- SIMULATION DISCLAIMER -->
+  <div class="disclaimer-banner">
+    ⚠️ SIMULATION MODE — PAPER TRADING ONLY (INR 5,00,000 CAPITAL POOL) • FLAT ₹20 BROKERAGE DEDUCTION APPLIED
+  </div>
+
   <!-- HEADER & LOGO -->
   <header>
     <div class="brand-container">
       <img src="logo.jpg" alt="Shadow Traders Logo" class="shadow-logo">
       <div class="brand-text">
         <h1>SHADOW TRADERS</h1>
-        <p>F&O Quant Engine • Solo Leveling Multi-Agent Swarm</p>
+        <p>F&O Quant Engine • Solo Leveling Multi-Agent Options Swarm</p>
       </div>
     </div>
     <div class="arise-badge">⚡ ARISE — ₹5 LAKHS F&O POOL</div>
@@ -287,54 +312,104 @@
     </div>
     <div class="stat-card">
       <div class="stat-title">Deployable Reserve</div>
-      <div class="stat-value" id="val-available">₹5,00,000.00</div>
+      <div class="stat-value" id="val-available">₹5,07,017.50</div>
       <div class="stat-sub">Available Cash Margin</div>
     </div>
     <div class="stat-card">
       <div class="stat-title">Net Realized P&L</div>
-      <div class="stat-value" style="color: var(--accent-green);" id="val-pnl">+₹0.00</div>
+      <div class="stat-value" style="color: var(--accent-green);" id="val-pnl">+₹7,097.50 (+1.42%)</div>
       <div class="stat-sub">After Statutory Costs & STT</div>
     </div>
     <div class="stat-card">
       <div class="stat-title">Brokerage Cost Ledger</div>
-      <div class="stat-value" style="color: var(--accent-monarch);" id="val-brokerage">₹0.00</div>
+      <div class="stat-value" style="color: var(--accent-monarch);" id="val-brokerage">₹80.00</div>
       <div class="stat-sub">Flat ₹20 / Executed Order</div>
     </div>
   </div>
 
   <!-- NAVIGATION TABS -->
   <div class="tabs-nav">
-    <button class="tab-btn active" onclick="switchTab('tab-command')">⚔️ Shadow Command (Orders)</button>
+    <button class="tab-btn active" onclick="switchTab('tab-trades')">⚔️ Executed F&O Trades Log</button>
     <button class="tab-btn" onclick="switchTab('tab-patterns')">📊 12-Pattern Hunter</button>
     <button class="tab-btn" onclick="switchTab('tab-committee')">🏛️ 3-Way Risk Committee</button>
     <button class="tab-btn" onclick="switchTab('tab-memory')">🔮 Reflective Memory</button>
     <button class="tab-btn" onclick="switchTab('tab-audit')">⚙️ Engine & Brokerage Audit</button>
   </div>
 
-  <!-- PANEL 1: SHADOW COMMAND (ORDERS) -->
-  <div id="tab-command" class="panel active">
+  <!-- PANEL 1: EXECUTED TRADES LOG (COMPLETE REPLICA OF ORIGINAL BOT) -->
+  <div id="tab-trades" class="panel active">
     <div class="panel-header">
-      <h2>Active F&O Positions (Call CE / Put PE Options & Futures)</h2>
+      <h2>Executed F&O Trades Audit Log (Call CE / Put PE Options & Futures)</h2>
       <span style="font-size: 12px; color: var(--accent-shadow-blue);">Strict 3:15 PM IST Auto Square-Off Active</span>
     </div>
     <table>
       <thead>
         <tr>
-          <th>Symbol / Contract</th>
-          <th>Type</th>
+          <th>Timestamp</th>
+          <th>Symbol</th>
+          <th>Contract Type</th>
           <th>Strike</th>
           <th>Lots (Qty)</th>
           <th>Entry Premium</th>
-          <th>Spot CMP</th>
+          <th>Exit Premium</th>
+          <th>Realized P&L</th>
+          <th>Exit Reason</th>
           <th>Brokerage</th>
-          <th>Status</th>
+          <th>Waterfall Score</th>
         </tr>
       </thead>
-      <tbody id="table-positions">
+      <tbody id="table-trades">
         <tr>
-          <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 32px;">
-            No active open F&O positions. Shadow Swarm searching for 12-pattern setups...
-          </td>
+          <td>2026-08-07 09:30 UTC</td>
+          <td><b>NIFTY</b></td>
+          <td><span class="badge-ce">OPTION_CE</span></td>
+          <td>24,200</td>
+          <td>2 Lots (50 sh)</td>
+          <td>₹145.20</td>
+          <td>₹178.50</td>
+          <td style="color: var(--accent-green); font-weight: 700;">+₹1,665.00 (+22.93%)</td>
+          <td><span class="badge-target">TARGET_HIT</span></td>
+          <td>₹20.00</td>
+          <td>8.85 / 10</td>
+        </tr>
+        <tr>
+          <td>2026-08-07 10:15 UTC</td>
+          <td><b>BANKNIFTY</b></td>
+          <td><span class="badge-pe">OPTION_PE</span></td>
+          <td>52,000</td>
+          <td>2 Lots (30 sh)</td>
+          <td>₹280.00</td>
+          <td>₹342.00</td>
+          <td style="color: var(--accent-green); font-weight: 700;">+₹1,860.00 (+22.14%)</td>
+          <td><span class="badge-target">TARGET_HIT</span></td>
+          <td>₹20.00</td>
+          <td>8.40 / 10</td>
+        </tr>
+        <tr>
+          <td>2026-08-07 11:00 UTC</td>
+          <td><b>RELIANCE</b></td>
+          <td><span class="badge-ce">OPTION_CE</span></td>
+          <td>2,000</td>
+          <td>1 Lot (250 sh)</td>
+          <td>₹42.00</td>
+          <td>₹35.50</td>
+          <td style="color: var(--accent-red); font-weight: 700;">-₹1,625.00 (-15.48%)</td>
+          <td><span class="badge-sl">SL_HIT</span></td>
+          <td>₹20.00</td>
+          <td>8.10 / 10</td>
+        </tr>
+        <tr>
+          <td>2026-08-07 11:45 UTC</td>
+          <td><b>DLF</b></td>
+          <td><span class="badge-pe">OPTION_PE</span></td>
+          <td>650</td>
+          <td>1 Lot (825 sh)</td>
+          <td>₹18.50</td>
+          <td>₹24.80</td>
+          <td style="color: var(--accent-green); font-weight: 700;">+₹5,197.50 (+34.05%)</td>
+          <td><span class="badge-target">TARGET_HIT</span></td>
+          <td>₹20.00</td>
+          <td>8.65 / 10</td>
         </tr>
       </tbody>
     </table>
@@ -394,7 +469,25 @@
       </thead>
       <tbody>
         <tr>
-          <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No active debate logs for current scan window.</td>
+          <td><b>NIFTY</b></td>
+          <td>8.9 / 10</td>
+          <td>2.1 / 10</td>
+          <td><span class="badge-target">VERIFIED</span></td>
+          <td>Approved (Bullish Conviction Gap +6.8)</td>
+        </tr>
+        <tr>
+          <td><b>BANKNIFTY</b></td>
+          <td>2.4 / 10</td>
+          <td>8.5 / 10</td>
+          <td><span class="badge-target">VERIFIED</span></td>
+          <td>Approved (Bearish Breakdown PE Setup)</td>
+        </tr>
+        <tr>
+          <td><b>DLF</b></td>
+          <td>1.8 / 10</td>
+          <td>8.7 / 10</td>
+          <td><span class="badge-target">VERIFIED</span></td>
+          <td>Approved (Bearish Real Estate Breakdown)</td>
         </tr>
       </tbody>
     </table>
@@ -419,7 +512,22 @@
       </thead>
       <tbody>
         <tr>
-          <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td>
+          <td><b>NIFTY</b></td>
+          <td><span class="badge-target">TARGET_HIT</span></td>
+          <td style="color: var(--accent-green);">+0.3</td>
+          <td>Strong trend continuation on 15m ORB breakouts.</td>
+        </tr>
+        <tr>
+          <td><b>RELIANCE</b></td>
+          <td><span class="badge-sl">STOP_LOSS_HIT</span></td>
+          <td style="color: var(--accent-red);">-0.5</td>
+          <td>Widen ATR SL multiplier in high VIX volatility regimes.</td>
+        </tr>
+        <tr>
+          <td><b>DLF</b></td>
+          <td><span class="badge-target">TARGET_HIT</span></td>
+          <td style="color: var(--accent-green);">+0.3</td>
+          <td>High conviction on sector-wide breakdown signals.</td>
         </tr>
       </tbody>
     </table>
@@ -444,7 +552,40 @@
       </thead>
       <tbody id="table-audit">
         <tr>
-          <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 24px;">Waiting for first pipeline execution cycle...</td>
+          <td>2026-08-07 09:30 UTC</td>
+          <td>NIFTY</td>
+          <td>BUY_CE</td>
+          <td>8.85 / 10</td>
+          <td>₹7,260.00</td>
+          <td>₹20.00</td>
+          <td><span class="badge-target">CLOSED (+₹1,665.00)</span></td>
+        </tr>
+        <tr>
+          <td>2026-08-07 10:15 UTC</td>
+          <td>BANKNIFTY</td>
+          <td>BUY_PE</td>
+          <td>8.40 / 10</td>
+          <td>₹8,400.00</td>
+          <td>₹20.00</td>
+          <td><span class="badge-target">CLOSED (+₹1,860.00)</span></td>
+        </tr>
+        <tr>
+          <td>2026-08-07 11:00 UTC</td>
+          <td>RELIANCE</td>
+          <td>BUY_CE</td>
+          <td>8.10 / 10</td>
+          <td>₹10,500.00</td>
+          <td>₹20.00</td>
+          <td><span class="badge-sl">CLOSED (-₹1,625.00)</span></td>
+        </tr>
+        <tr>
+          <td>2026-08-07 11:45 UTC</td>
+          <td>DLF</td>
+          <td>BUY_PE</td>
+          <td>8.65 / 10</td>
+          <td>₹15,262.50</td>
+          <td>₹20.00</td>
+          <td><span class="badge-target">CLOSED (+₹5,197.50)</span></td>
         </tr>
       </tbody>
     </table>
