@@ -1,15 +1,47 @@
 {
   "version": 2,
-  "builds": [
+  "cleanUrls": true,
+  "headers": [
     {
-      "src": "dashboard/index.html",
-      "use": "@vercel/static"
+      "source": "/manifest.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/manifest+json" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Content-Type", "value": "text/javascript" },
+        { "key": "Service-Worker-Allowed", "value": "/" },
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
     }
   ],
   "routes": [
     {
+      "src": "/manifest.json",
+      "dest": "/dashboard/manifest.json"
+    },
+    {
+      "src": "/sw.js",
+      "dest": "/dashboard/sw.js"
+    },
+    {
+      "src": "/icon-192.png",
+      "dest": "/dashboard/icon-192.png"
+    },
+    {
+      "src": "/icon-512.png",
+      "dest": "/dashboard/icon-512.png"
+    },
+    {
+      "src": "/logo.jpg",
+      "dest": "/dashboard/logo.jpg"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/dashboard/$1"
+      "dest": "/dashboard/index.html"
     }
   ]
 }
