@@ -1,0 +1,47 @@
+name: F&O EOD Square-off
+
+on:
+  schedule:
+    # 09:40 UTC (15:10 IST), 09:45 UTC (15:15 IST)
+    - cron: '40 9 * * 1-5'
+    - cron: '45 9 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "bot@alphadesk.io"
+          git config --global user.name "AlphaDesk F&O Bot"
+
+      - name: Run F&O EOD Square-off
+        run: python main.py
+        env:
+          MEGABULL_API_KEY: ${{ secrets.MEGABULL_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MEGABULL_MOCK: "${{ secrets.MEGABULL_MOCK || 'true' }}"

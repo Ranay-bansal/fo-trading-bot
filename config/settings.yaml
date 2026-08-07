@@ -1,0 +1,115 @@
+# ═══════════════════════════════════════════════════════════════════════
+# F&O QUANTITATIVE TRADING BOT CONFIGURATION
+# Initial Capital: INR 5,00,000 (5 Lakhs)
+# ═══════════════════════════════════════════════════════════════════════
+
+project_name: "AlphaDesk F&O Quant Engine"
+version: "2.0.0-FO"
+
+# ─────────────────────────────────────────────
+# CAPITAL POOL & BROKERAGE FEES
+# ─────────────────────────────────────────────
+capital:
+  initial_pool_inr: 500000.0          # INR 5 Lakhs
+  brokerage_per_order_inr: 20.0       # Flat ₹20 per order broker fee
+  stt_options_sell_pct: 0.0625        # STT on options premium sell
+  stt_futures_sell_pct: 0.0125        # STT on futures sell
+  exchange_txn_fee_pct: 0.053         # Exchange transaction fee
+
+# ─────────────────────────────────────────────
+# F&O UNIVERSE & CONTRACT LOT SIZES
+# ─────────────────────────────────────────────
+fo_universe:
+  indices:
+    - ticker: "^NSEI"
+      name: "NIFTY50"
+      symbol: "NIFTY"
+      lot_size: 25
+      strike_step: 50
+    - ticker: "^NSEBANK"
+      name: "BANKNIFTY"
+      symbol: "BANKNIFTY"
+      lot_size: 15
+      strike_step: 100
+  stocks:
+    - symbol: "RELIANCE"
+      ticker: "RELIANCE.NS"
+      lot_size: 250
+      strike_step: 20
+      sector: "ENERGY"
+    - symbol: "HDFCBANK"
+      ticker: "HDFCBANK.NS"
+      lot_size: 550
+      strike_step: 10
+      sector: "BANK"
+    - symbol: "ICICIBANK"
+      ticker: "ICICIBANK.NS"
+      lot_size: 700
+      strike_step: 10
+      sector: "BANK"
+    - symbol: "INFY"
+      ticker: "INFY.NS"
+      lot_size: 400
+      strike_step: 20
+      sector: "IT"
+    - symbol: "TCS"
+      ticker: "TCS.NS"
+      lot_size: 175
+      strike_step: 50
+      sector: "IT"
+    - symbol: "DLF"
+      ticker: "DLF.NS"
+      lot_size: 825
+      strike_step: 10
+      sector: "REALTY"
+    - symbol: "BHARTIARTL"
+      ticker: "BHARTIARTL.NS"
+      lot_size: 475
+      strike_step: 20
+      sector: "TELECOM"
+    - symbol: "HINDALCO"
+      ticker: "HINDALCO.NS"
+      lot_size: 1400
+      strike_step: 10
+      sector: "METAL"
+    - symbol: "TATASTEEL"
+      ticker: "TATASTEEL.NS"
+      lot_size: 5500
+      strike_step: 2.5
+      sector: "METAL"
+    - symbol: "MARUTI"
+      ticker: "MARUTI.NS"
+      lot_size: 100
+      strike_step: 100
+      sector: "AUTO"
+
+# ─────────────────────────────────────────────
+# RISK MANAGEMENT & POSITION LIMITS
+# ─────────────────────────────────────────────
+risk:
+  risk_pct_per_trade: 2.0             # 2.0% of pool per trade (₹10,000 max risk)
+  max_open_positions: 4               # Max 4 concurrent F&O positions
+  max_sector_exposure_pct: 35.0
+  min_stop_loss_pct: 1.5              # Minimum 1.5% SL floor on spot
+  atr_sl_multiplier: 2.5              # 2.5x ATR SL
+  atr_target_multiplier: 3.75         # 3.75x ATR Target
+  min_risk_reward_ratio: 1.2          # Min 1.2 R:R ratio
+  breakeven_activation_pct: 0.75      # Trailing breakeven at +0.75% profit
+
+# ─────────────────────────────────────────────
+# WATERFALL SCORING THRESHOLDS
+# ─────────────────────────────────────────────
+judge:
+  waterfall_base_score: 5.0
+  execute_threshold: 8.0              # ≥ 8.0 → Full F&O Order Execution
+  cautious_threshold: 7.0             # 7.0–7.99 → Cautious Order (70% size)
+  watchlist_threshold: 5.5            # 5.5–6.99 → Watchlist
+  avoid_threshold: 5.5                # < 5.5 → Avoid
+
+# ─────────────────────────────────────────────
+# TIMING & SCHEDULING
+# ─────────────────────────────────────────────
+schedule:
+  scan_start_ist: "09:15"
+  scan_end_ist: "13:30"               # No new entries after 1:30 PM IST
+  eod_squareoff_ist: "15:15"          # Strict 3:15 PM IST Auto Square-Off
