@@ -3,207 +3,319 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AlphaDesk F&O Quant Dashboard — Options & Futures Engine</title>
+  <title>Shadow Traders — F&O Quant Engine & Solo Leveling Swarm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-primary: #0a0d14;
-      --bg-card: rgba(18, 24, 38, 0.75);
-      --border-card: rgba(255, 255, 255, 0.08);
-      --accent-cyan: #00f2fe;
-      --accent-blue: #4facfe;
+      --bg-dark: #05070c;
+      --bg-card: rgba(12, 17, 29, 0.85);
+      --bg-card-hover: rgba(18, 26, 44, 0.95);
+      --border-card: rgba(0, 242, 254, 0.15);
+      --accent-shadow-blue: #00f2fe;
+      --accent-purple: #7c4dff;
+      --accent-monarch: #9d4edd;
       --accent-green: #00e676;
       --accent-red: #ff5252;
-      --accent-purple: #7c4dff;
+      --accent-gold: #ffd700;
       --text-main: #f0f4f8;
       --text-muted: #8a99ad;
+      --font-heading: 'Outfit', sans-serif;
+      --font-epic: 'Cinzel', serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg-primary);
+      background: var(--bg-dark);
       color: var(--text-main);
       min-height: 100vh;
       padding: 24px;
       background-image: 
-        radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(124, 77, 255, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(157, 78, 221, 0.08) 0%, transparent 45%);
     }
 
+    /* HEADER & BRANDING */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 28px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-card);
+      padding: 16px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 20px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 40px rgba(0, 242, 254, 0.08);
     }
-    .brand {
+    .brand-container {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
     }
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 20px;
-      color: #000;
+    .shadow-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid var(--accent-shadow-blue);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
     }
-    .brand-title h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      background: linear-gradient(90deg, #fff, var(--text-muted));
+    .brand-text h1 {
+      font-family: var(--font-epic);
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-shadow-blue) 70%, var(--accent-monarch) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
     }
-    .brand-title p {
+    .brand-text p {
       font-size: 13px;
       color: var(--text-muted);
+      letter-spacing: 0.5px;
     }
-    .badge {
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid var(--accent-cyan);
-      color: var(--accent-cyan);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
+    .arise-badge {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(157, 78, 221, 0.2));
+      border: 1px solid var(--accent-shadow-blue);
+      color: var(--accent-shadow-blue);
+      padding: 8px 18px;
+      border-radius: 24px;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
     }
 
-    .grid-stats {
+    /* STATS GRID */
+    .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
       margin-bottom: 28px;
     }
-    .card-stat {
+    .stat-card {
       background: var(--bg-card);
       border: 1px solid var(--border-card);
-      border-radius: 16px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 22px;
       backdrop-filter: blur(12px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
     }
-    .stat-label {
+    .stat-card:hover {
+      border-color: var(--accent-shadow-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+    }
+    .stat-title {
       font-size: 13px;
       color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       margin-bottom: 8px;
     }
-    .stat-val {
-      font-family: 'Outfit', sans-serif;
+    .stat-value {
+      font-family: var(--font-heading);
       font-size: 28px;
-      font-weight: 700;
+      font-weight: 800;
     }
     .stat-sub {
       font-size: 12px;
-      color: var(--accent-cyan);
+      color: var(--accent-shadow-blue);
       margin-top: 6px;
     }
 
-    .main-section {
+    /* TAB NAVIGATION */
+    .tabs-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-card);
+      color: var(--text-muted);
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: var(--text-main);
+      border-color: rgba(0, 242, 254, 0.3);
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(124, 77, 255, 0.2));
+      border-color: var(--accent-shadow-blue);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 242, 254, 0.2);
+    }
+
+    /* MAIN CONTENT PANELS */
+    .panel {
+      display: none;
       background: var(--bg-card);
       border: 1px solid var(--border-card);
-      border-radius: 16px;
+      border-radius: 20px;
       padding: 24px;
-      margin-bottom: 28px;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
     }
-    .section-head {
+    .panel.active {
+      display: block;
+    }
+    .panel-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .section-head h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 18px;
+    .panel-header h2 {
+      font-family: var(--font-heading);
+      font-size: 20px;
       font-weight: 700;
     }
 
+    /* TABLES */
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 14px;
     }
     th, td {
-      padding: 14px 16px;
+      padding: 14px 18px;
       text-align: left;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     th {
       color: var(--text-muted);
-      font-weight: 500;
       font-size: 12px;
+      font-weight: 600;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
     .badge-ce {
       background: rgba(0, 230, 118, 0.15);
       color: var(--accent-green);
-      padding: 4px 8px;
+      border: 1px solid var(--accent-green);
+      padding: 4px 10px;
       border-radius: 6px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 11px;
     }
     .badge-pe {
       background: rgba(255, 82, 82, 0.15);
       color: var(--accent-red);
-      padding: 4px 8px;
+      border: 1px solid var(--accent-red);
+      padding: 4px 10px;
       border-radius: 6px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 11px;
+    }
+    .badge-pat {
+      background: rgba(0, 242, 254, 0.15);
+      color: var(--accent-shadow-blue);
+      border: 1px solid var(--accent-shadow-blue);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* PATTERN CARDS */
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .pattern-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .pattern-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent-shadow-blue);
+      margin-bottom: 6px;
+    }
+    .pattern-card p {
+      font-size: 13px;
+      color: var(--text-muted);
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER & LOGO -->
   <header>
-    <div class="brand">
-      <div class="brand-logo">F&O</div>
-      <div class="brand-title">
-        <h1>AlphaDesk F&O Quant Engine</h1>
-        <p>Black-Scholes Options Pricing, Greeks & 12 Chart Patterns</p>
+    <div class="brand-container">
+      <img src="logo.jpg" alt="Shadow Traders Logo" class="shadow-logo">
+      <div class="brand-text">
+        <h1>SHADOW TRADERS</h1>
+        <p>F&O Quant Engine • Solo Leveling Multi-Agent Swarm</p>
       </div>
     </div>
-    <div class="badge">INR 5,00,000 Paper Capital • Flat ₹20 Brokerage</div>
+    <div class="arise-badge">⚡ ARISE — ₹5 LAKHS F&O POOL</div>
   </header>
 
-  <div class="grid-stats">
-    <div class="card-stat">
-      <div class="stat-label">Total Capital Pool</div>
-      <div class="stat-val" id="val-total">₹5,00,000.00</div>
-      <div class="stat-sub">Initial Allocated Pool</div>
+  <!-- STATS OVERVIEW -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-title">Shadow Capital Pool</div>
+      <div class="stat-value" id="val-total">₹5,00,000.00</div>
+      <div class="stat-sub">Allocated Monarch Fund</div>
     </div>
-    <div class="card-stat">
-      <div class="stat-label">Available Cash</div>
-      <div class="stat-val" id="val-available">₹5,00,000.00</div>
-      <div class="stat-sub">Unused Margin</div>
+    <div class="stat-card">
+      <div class="stat-title">Deployable Reserve</div>
+      <div class="stat-value" id="val-available">₹5,00,000.00</div>
+      <div class="stat-sub">Available Cash Margin</div>
     </div>
-    <div class="card-stat">
-      <div class="stat-label">Realized Net P&L</div>
-      <div class="stat-val" style="color: var(--accent-green);" id="val-pnl">+₹0.00</div>
-      <div class="stat-sub">After Statutory Deductions</div>
+    <div class="stat-card">
+      <div class="stat-title">Net Realized P&L</div>
+      <div class="stat-value" style="color: var(--accent-green);" id="val-pnl">+₹0.00</div>
+      <div class="stat-sub">After Statutory Costs & STT</div>
     </div>
-    <div class="card-stat">
-      <div class="stat-label">Total Brokerage Paid</div>
-      <div class="stat-val" style="color: var(--accent-purple);" id="val-brokerage">₹0.00</div>
+    <div class="stat-card">
+      <div class="stat-title">Brokerage Cost Ledger</div>
+      <div class="stat-value" style="color: var(--accent-monarch);" id="val-brokerage">₹0.00</div>
       <div class="stat-sub">Flat ₹20 / Executed Order</div>
     </div>
   </div>
 
-  <div class="main-section">
-    <div class="section-head">
+  <!-- NAVIGATION TABS -->
+  <div class="tabs-nav">
+    <button class="tab-btn active" onclick="switchTab('tab-command')">⚔️ Shadow Command (Orders)</button>
+    <button class="tab-btn" onclick="switchTab('tab-patterns')">📊 12-Pattern Hunter</button>
+    <button class="tab-btn" onclick="switchTab('tab-committee')">🏛️ 3-Way Risk Committee</button>
+    <button class="tab-btn" onclick="switchTab('tab-memory')">🔮 Reflective Memory</button>
+    <button class="tab-btn" onclick="switchTab('tab-audit')">⚙️ Engine & Brokerage Audit</button>
+  </div>
+
+  <!-- PANEL 1: SHADOW COMMAND (ORDERS) -->
+  <div id="tab-command" class="panel active">
+    <div class="panel-header">
       <h2>Active F&O Positions (Call CE / Put PE Options & Futures)</h2>
-      <span style="font-size: 12px; color: var(--text-muted);">Strict 3:15 PM IST Auto Square-Off Active</span>
+      <span style="font-size: 12px; color: var(--accent-shadow-blue);">Strict 3:15 PM IST Auto Square-Off Active</span>
     </div>
     <table>
       <thead>
@@ -213,22 +325,110 @@
           <th>Strike</th>
           <th>Lots (Qty)</th>
           <th>Entry Premium</th>
-          <th>Current Spot</th>
+          <th>Spot CMP</th>
           <th>Brokerage</th>
           <th>Status</th>
         </tr>
       </thead>
       <tbody id="table-positions">
         <tr>
-          <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 24px;">No active F&O open positions. Scanner searching for 12-pattern setups...</td>
+          <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 32px;">
+            No active open F&O positions. Shadow Swarm searching for 12-pattern setups...
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="main-section">
-    <div class="section-head">
-      <h2>12-Pattern Scanner Engine & Audit Log</h2>
+  <!-- PANEL 2: 12-PATTERN HUNTER -->
+  <div id="tab-patterns" class="panel">
+    <div class="panel-header">
+      <h2>12-Pattern Recognition Engine</h2>
+      <span style="font-size: 12px; color: var(--accent-shadow-blue);">15m Real-Time Chart Pattern Hunter</span>
+    </div>
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <h3>Double Bottom (W-Pattern)</h3>
+        <p>Detects dual price support tests preceding explosive bullish breakouts (+0.5 Score).</p>
+      </div>
+      <div class="pattern-card">
+        <h3>Double Top (M-Pattern)</h3>
+        <p>Identifies dual price ceiling rejections preceding aggressive short breakdowns (-0.5 Score).</p>
+      </div>
+      <div class="pattern-card">
+        <h3>Bull & Bear Flag Breakouts</h3>
+        <p>Tracks tight channel consolidations following strong impulse poles (+0.5 / -0.5 Score).</p>
+      </div>
+      <div class="pattern-card">
+        <h3>Morning & Evening Stars</h3>
+        <p>3-candle reversal sequences spotting institutional turning points at key levels.</p>
+      </div>
+      <div class="pattern-card">
+        <h3>Shooting Star Rejections</h3>
+        <p>Identifies upper wick price rejections at resistance for high-conviction Put (PE) setups.</p>
+      </div>
+      <div class="pattern-card">
+        <h3>Opening Range Breakout (ORB-15m)</h3>
+        <p>Monitors 15m session high/low breakouts with volume expansion.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 3: 3-WAY RISK COMMITTEE -->
+  <div id="tab-committee" class="panel">
+    <div class="panel-header">
+      <h2>3-Way Risk Committee & Subagent Debate</h2>
+    </div>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">
+      Cross-references Bullish Conviction, Bearish Resistance, Fact-Checker Grounding, and Portfolio Beta caps (Max 1.3).
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Bull Conviction</th>
+          <th>Bear Risk</th>
+          <th>Fact-Checker Status</th>
+          <th>Risk Committee Override</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No active debate logs for current scan window.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PANEL 4: REFLECTIVE MEMORY -->
+  <div id="tab-memory" class="panel">
+    <div class="panel-header">
+      <h2>Reflective Memory & Trade Lessons</h2>
+    </div>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">
+      Tracks past trade outcomes (STOP_LOSS_HIT / TARGET_HIT) per ticker and automatically adjusts conviction modifiers.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Ticker Symbol</th>
+          <th>Prior Outcome</th>
+          <th>Memory Modifier</th>
+          <th>Learned Lesson</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PANEL 5: ENGINE & BROKERAGE AUDIT -->
+  <div id="tab-audit" class="panel">
+    <div class="panel-header">
+      <h2>Engine Waterfall & Statutory Cost Audit</h2>
     </div>
     <table>
       <thead>
@@ -237,12 +437,12 @@
           <th>Symbol</th>
           <th>Verdict</th>
           <th>Waterfall Score</th>
-          <th>Option Premium</th>
-          <th>Brokerage Paid</th>
-          <th>Execution Venue</th>
+          <th>Premium Value</th>
+          <th>Brokerage (₹20)</th>
+          <th>Status</th>
         </tr>
       </thead>
-      <tbody id="table-logs">
+      <tbody id="table-audit">
         <tr>
           <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 24px;">Waiting for first pipeline execution cycle...</td>
         </tr>
@@ -251,6 +451,14 @@
   </div>
 
   <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
+      
+      event.target.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
     async function updateDashboard() {
       try {
         const res = await fetch('../state/portfolio_state.json');
