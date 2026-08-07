@@ -118,6 +118,25 @@ class FOJudgeAgent:
             estimated_total_cost_inr=round(costs["total_cost"], 2)
         )
 
+        # Cost-Adjusted Viability Gate: Ensure target gain covers round-trip brokerage (₹40) + taxes
+        round_trip_friction = (self.brokerage_fee * 2.0) + costs["total_cost"]
+        min_required_profit = round_trip_friction * 2.5  # Expect at least 2.5x total cost friction
+        
+        expected_gain_inr = total_premium_val * 0.15  # Base expected 15% option premium move
+        if expected_gain_inr < min_required_profit:
+            logger.info(f"[Cost Gate] {symbol} {verdict} rejected: Expected gain ₹{expected_gain_inr:.2f} < Min cost-adjusted target ₹{min_required_profit:.2f}")
+            dummy_contract = FOContractData(
+                contract_type="NONE", symbol=symbol, strike_price=spot, expiry_dte=7,
+                lot_size=lot_size, lots_qty=0, total_shares=0, option_premium=0.0,
+                delta=0.5, gamma=0.0, theta_per_day=0.0, vega=0.0, premium_value_inr=0.0,
+                estimated_total_cost_inr=0.0
+            )
+            return FOJudgeOutput(
+                ticker=ticker, run_timestamp=datetime.utcnow(), verdict="AVOID",
+                waterfall_score=round(waterfall_score, 2), confidence=round(waterfall_score, 2),
+                contract=dummy_contract, position_sizing_inr=0.0, reasoning="Trade gain does not cover round-trip brokerage & tax friction."
+            )
+
         return FOJudgeOutput(
             ticker=ticker,
             run_timestamp=datetime.utcnow(),
@@ -126,5 +145,5 @@ class FOJudgeAgent:
             confidence=round(waterfall_score, 2),
             contract=contract,
             position_sizing_inr=round(total_premium_val + costs["total_cost"], 2),
-            reasoning=f"Approved {verdict} for {symbol} {strike} @ ₹{premium} ({lots} Lots, Brokerage ₹20)."
+            reasoning=f"Approved {verdict} for {symbol} {strike} @ ₹{premium} ({lots} Lots, Brokerage ₹20, Net Target covers ₹{round_trip_friction:.2f} friction)."
         )
