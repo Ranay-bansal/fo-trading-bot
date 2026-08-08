@@ -1,4 +1,4 @@
-const CACHE_NAME = 'shadow-traders-v6';
+const CACHE_NAME = 'shadow-traders-v5';
 const ASSETS = [
   '/',
   '/index.html',

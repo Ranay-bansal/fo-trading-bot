@@ -113,3 +113,49 @@ schedule:
   scan_start_ist: "09:15"
   scan_end_ist: "13:30"               # No new entries after 1:30 PM IST
   eod_squareoff_ist: "15:15"          # Strict 3:15 PM IST Auto Square-Off
+
+# ─────────────────────────────────────────────
+# BOT 1: EQUITY INTRADAY CASH STRATEGY CONFIGURATION
+# ─────────────────────────────────────────────
+bot1_equity:
+  enabled: true
+  cash_margin_multiplier: 1.0         # 1x Cash Margin (No leverage)
+  max_allocation_per_trade_pct: 15.0  # Max 15% of total pool per stock cash trade
+  max_open_positions: 5               # Max 5 concurrent cash positions
+  min_stop_loss_pct: 1.0              # Minimum 1.0% SL floor
+  atr_sl_multiplier: 2.0              # 2.0x ATR SL for cash positions
+  atr_target_multiplier: 3.0          # 3.0x ATR Target for cash positions
+  min_risk_reward_ratio: 1.2
+  execution_score_threshold: 7.0      # Score >= 7.0 triggers BUY/SELL signal
+  universe:
+    - symbol: "RELIANCE"
+      ticker: "RELIANCE.NS"
+      sector: "ENERGY"
+    - symbol: "HDFCBANK"
+      ticker: "HDFCBANK.NS"
+      sector: "BANK"
+    - symbol: "ICICIBANK"
+      ticker: "ICICIBANK.NS"
+      sector: "BANK"
+    - symbol: "INFY"
+      ticker: "INFY.NS"
+      sector: "IT"
+    - symbol: "TCS"
+      ticker: "TCS.NS"
+      sector: "IT"
+    - symbol: "BHARTIARTL"
+      ticker: "BHARTIARTL.NS"
+      sector: "TELECOM"
+    - symbol: "MARUTI"
+      ticker: "MARUTI.NS"
+      sector: "AUTO"
+    - symbol: "LT"
+      ticker: "LT.NS"
+      sector: "INFRA"
+    - symbol: "AXISBANK"
+      ticker: "AXISBANK.NS"
+      sector: "BANK"
+    - symbol: "SBIN"
+      ticker: "SBIN.NS"
+      sector: "BANK"
+

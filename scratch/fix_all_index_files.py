@@ -578,7 +578,7 @@ def fix_all():
           <th>Risk Committee Override</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="committee-table-body">
         <tr>
           <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No active debate logs for current scan window. Subagent swarm evaluating market signals.</td>
         </tr>
@@ -600,7 +600,7 @@ def fix_all():
           <th>Learned Lesson</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="memory-table-body">
         <tr>
           <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td>
         </tr>

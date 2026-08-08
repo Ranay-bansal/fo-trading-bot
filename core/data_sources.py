@@ -2,7 +2,9 @@ import yfinance as yf
 import pandas as pd
 import numpy as np
 import logging
+from datetime import datetime
 from typing import Dict, Any, Optional, Tuple
+
 
 logger = logging.getLogger(__name__)
 
@@ -101,3 +103,97 @@ def calculate_supertrend(df: pd.DataFrame, period: int = 7, multiplier: float = 
         direction.iloc[i] = dir_val
         
     return supertrend, direction
+
+
+from pydantic import BaseModel
+from typing import List, Generator
+
+class BarEvent(BaseModel):
+    ticker: str
+    symbol: str
+    timeframe: str
+    timestamp: datetime
+    open: float
+    high: float
+    low: float
+    close: float
+    volume: float
+    rolling_df: pd.DataFrame
+
+    class Config:
+        arbitrary_types_allowed = True
+
+class StreamingTickSimulator:
+    """
+    Zero-Latency Streaming Bar & Tick Simulator.
+    Preloads market data and streams OHLCV bar events sequentially
+    without lookahead bias.
+    """
+    def __init__(
+        self,
+        tickers: List[str],
+        timeframes: List[str] = ["5m", "1m"],
+        period: str = "1d",
+        simulate_live: bool = False,
+        delay_seconds: float = 0.0
+    ):
+        self.tickers = tickers
+        self.timeframes = timeframes
+        self.period = period
+        self.simulate_live = simulate_live
+        self.delay_seconds = delay_seconds
+        self.data_cache: Dict[str, Dict[str, pd.DataFrame]] = {}
+        self.latest_prices: Dict[str, float] = {}
+
+    def preload(self) -> Dict[str, Dict[str, pd.DataFrame]]:
+        """Preloads historical OHLCV data for all tickers and timeframes."""
+        for ticker in self.tickers:
+            self.data_cache[ticker] = {}
+            for tf in self.timeframes:
+                df = yfinanceWrapper.fetch_ohlcv(ticker, timeframe=tf, period=self.period)
+                if not df.empty:
+                    self.data_cache[ticker][tf] = df
+        return self.data_cache
+
+    def stream_bars(self, timeframe: str = "5m") -> Generator[BarEvent, None, None]:
+        """
+        Yields BarEvent objects in strict chronological order across tickers.
+        """
+        all_timestamps = set()
+        for ticker, tf_map in self.data_cache.items():
+            if timeframe in tf_map and not tf_map[timeframe].empty:
+                all_timestamps.update(tf_map[timeframe].index)
+
+        sorted_timestamps = sorted(list(all_timestamps))
+
+        for ts in sorted_timestamps:
+            for ticker in self.tickers:
+                tf_map = self.data_cache.get(ticker, {})
+                if timeframe in tf_map:
+                    df = tf_map[timeframe]
+                    if ts in df.index:
+                        idx = df.index.get_loc(ts)
+                        rolling_df = df.iloc[:idx + 1]
+                        row = df.loc[ts]
+                        close_price = float(row['Close'])
+                        self.latest_prices[ticker] = close_price
+
+                        symbol = ticker.replace(".NS", "").replace("^", "")
+
+                        bar_evt = BarEvent(
+                            ticker=ticker,
+                            symbol=symbol,
+                            timeframe=timeframe,
+                            timestamp=ts if isinstance(ts, datetime) else pd.to_datetime(ts),
+                            open=float(row['Open']),
+                            high=float(row['High']),
+                            low=float(row['Low']),
+                            close=close_price,
+                            volume=float(row['Volume']),
+                            rolling_df=rolling_df
+                        )
+                        yield bar_evt
+
+    def get_latest_price(self, ticker: str) -> Optional[float]:
+        return self.latest_prices.get(ticker)
+
