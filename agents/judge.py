@@ -79,24 +79,17 @@ class FOJudgeAgent:
         bear_stance = bear_out.stance
 
         # 2. Consensus Score Calculation (0.0 to 10.0)
-        scout_score = 5.0 + min(5.0, (scout_mod / 0.6) * 5.0) if scout_mod > 0 else 5.0
-        
         if tech_stance == "bearish":
-            directional_tech_score = 5.0 + (-tech_score_raw / 3.0) * 5.0
+            directional_tech_impact = (-tech_score_raw * 1.8)
         else:
-            directional_tech_score = 5.0 + (tech_score_raw / 3.0) * 5.0
-        directional_tech_score = max(0.0, min(10.0, directional_tech_score))
+            directional_tech_impact = (tech_score_raw * 1.8)
 
-        bull_part = bull_out.conviction_score if tech_stance != "bearish" else (10.0 - bear_out.bear_risk_score)
-        bear_part = (10.0 - bear_out.bear_risk_score) if tech_stance != "bearish" else bear_out.bear_risk_score
+        base_score = 5.0 + (scout_mod * 1.5) + directional_tech_impact
+        news_impact = (news_out.news_sentiment_score - 5.0) * 0.2
+        bull_impact = (bull_out.conviction_score - 5.0) * 0.3
+        bear_impact = (3.0 - bear_out.bear_risk_score) * 0.2
 
-        consensus_score = (
-            0.20 * scout_score +
-            0.40 * directional_tech_score +
-            0.10 * news_out.news_sentiment_score +
-            0.15 * bull_part +
-            0.15 * bear_part
-        )
+        consensus_score = base_score + news_impact + bull_impact + bear_impact
         consensus_score = max(0.0, min(10.0, round(consensus_score, 2)))
         waterfall_score = consensus_score
 
@@ -236,7 +229,7 @@ class FOJudgeAgent:
 
         if expected_gain_inr < min_required_profit:
             verdict = "AVOID"
-            reasoning = f"Cost Gate Friction: Expected gain ₹{expected_gain_inr:.2f} < Min required ₹{min_required_profit:.2f}."
+            reasoning = f"Cost Gate friction: Expected gain ₹{expected_gain_inr:.2f} < Min required ₹{min_required_profit:.2f}."
             dummy_contract = FOContractData(
                 contract_type="NONE", symbol=symbol, strike_price=spot, expiry_dte=7,
                 lot_size=lot_size, lots_qty=0, total_shares=0, option_premium=0.0,

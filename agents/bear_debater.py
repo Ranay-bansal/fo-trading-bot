@@ -67,12 +67,20 @@ class BearDebaterAgent:
         if not downside_args:
             downside_args.append("Standard intraday market slippage and volatility risk.")
 
-        tech_bear = max(0.0, (-tech_score / 3.0) * 10.0)
-        news_bear = 10.0 - news_sentiment
-        cat_bear = catalyst_risk
+        base_bear_risk = 3.0
+        if tech_score < 0:
+            base_bear_risk += (-tech_score * 1.5)
+        elif tech_score > 0:
+            base_bear_risk -= (tech_score * 0.8)
+        
+        if catalyst_risk > 3.0:
+            base_bear_risk += (catalyst_risk - 3.0) * 0.5
+        if news_sentiment < 5.0:
+            base_bear_risk += (5.0 - news_sentiment) * 0.5
+        if vix >= 22.0:
+            base_bear_risk += 1.5
 
-        bear_risk = round((tech_bear * 0.40) + (news_bear * 0.30) + (cat_bear * 0.30), 2)
-        bear_risk = max(0.0, min(10.0, bear_risk))
+        bear_risk = round(max(0.0, min(10.0, base_bear_risk)), 2)
 
         stop_loss_risks = (
             f"Stop-loss set at ₹{sl_spot:.2f}. "

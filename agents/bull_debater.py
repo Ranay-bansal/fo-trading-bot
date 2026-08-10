@@ -78,12 +78,8 @@ class BullDebaterAgent:
         if not args:
             args.append("Base upside continuation potential.")
 
-        scout_part = max(0.0, min(10.0, 5.0 + (scout_mod * 5.0)))
-        tech_part = max(0.0, min(10.0, 5.0 + (tech_score * 1.8)))
-        news_part = max(0.0, min(10.0, news_sentiment))
-
-        conviction = round((scout_part * 0.30) + (tech_part * 0.50) + (news_part * 0.20), 2)
-        conviction = max(0.0, min(10.0, conviction))
+        base_conviction = 5.0 + (tech_score * 1.5) + (scout_mod * 3.0) + ((news_sentiment - 5.0) * 0.5)
+        conviction = round(max(0.0, min(10.0, base_conviction)), 2)
 
         target_rationale = (
             f"Target projected at ₹{target_spot:.2f} based on technical pattern expansion "
