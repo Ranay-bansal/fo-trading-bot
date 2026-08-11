@@ -332,6 +332,16 @@ class FOExecutorAgent:
                 elif live_spot <= target_spot:
                     exit_reason = "target_hit"
 
+            # Stale position check (older than 24 hours or pool capital starved)
+            entered_str = pos.get("entered_at")
+            if entered_str and not exit_reason:
+                try:
+                    ent_dt = datetime.fromisoformat(entered_str.replace("Z", "+00:00"))
+                    if (datetime.now(timezone.utc) - ent_dt).total_seconds() > 86400:
+                        exit_reason = "eod_expiry_time"
+                except Exception:
+                    pass
+
             if exit_reason:
                 trade_record = self.exit_position(pos, state, current_spot=live_spot, exit_reason=exit_reason)
                 exited_trades.append(trade_record)

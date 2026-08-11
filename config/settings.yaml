@@ -101,10 +101,10 @@ risk:
 # ─────────────────────────────────────────────
 judge:
   waterfall_base_score: 5.0
-  execute_threshold: 8.0              # ≥ 8.0 → Full F&O Order Execution
-  cautious_threshold: 7.0             # 7.0–7.99 → Cautious Order (70% size)
-  watchlist_threshold: 5.5            # 5.5–6.99 → Watchlist
-  avoid_threshold: 5.5                # < 5.5 → Avoid
+  execute_threshold: 7.0              # ≥ 7.0 → Full F&O Order Execution
+  cautious_threshold: 6.0             # 6.0–6.99 → Cautious Order (70% size)
+  watchlist_threshold: 5.0            # 5.0–5.99 → Watchlist
+  avoid_threshold: 5.0                # < 5.0 → Avoid
 
 # ─────────────────────────────────────────────
 # TIMING & SCHEDULING

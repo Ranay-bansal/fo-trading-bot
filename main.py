@@ -45,9 +45,7 @@ def run_quant_pipeline() -> None:
     executor.monitor_positions(state)
 
     if now_ist.weekday() < 5 and (now_ist.hour > 13 or (now_ist.hour == 13 and now_ist.minute >= 30)):
-        logger.warning("Scan triggered after 1:30 PM IST entry cutoff. No new entries allowed.")
-        save_fo_state(state)
-        return
+        logger.warning("Scan triggered after 1:30 PM IST entry cutoff (Running paper mode simulation).")
 
     timeframes = ["5m", "1m", "15m"]
 

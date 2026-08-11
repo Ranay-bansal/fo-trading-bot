@@ -136,7 +136,7 @@ class FOJudgeAgent:
             override_reason = f"Extreme Volatility Panic (VIX {vix:.2f} >= 28.0)."
 
         # 5. Verdict Determination
-        execute_thresh = 7.0 if timeframe in ["1m", "5m"] else 8.0
+        execute_thresh = _safe_float(self.config.get("judge", {}).get("execute_threshold", 7.0), 7.0)
         
         if risk_override_status == "RISK_OVERRIDE_TRIGGERED":
             verdict = "AVOID"
