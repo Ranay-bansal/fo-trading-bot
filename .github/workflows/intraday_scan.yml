@@ -4,8 +4,10 @@ on:
   schedule:
     # 03:45 UTC (09:15 IST) opening scan
     - cron: '45 3 * * 1-5'
-    # Every 5 minutes from 04:00 to 08:00 UTC (09:30 to 13:30 IST)
-    - cron: '*/5 4-8 * * 1-5'
+    # Every 3 minutes from 04:00 to 06:30 UTC (09:30 to 12:00 IST) — PEAK hours: max volume/volatility
+    - cron: '*/3 4-6 * * 1-5'
+    # Every 5 minutes from 06:30 to 08:00 UTC (12:00 to 13:30 IST) — off-peak hours
+    - cron: '*/5 7-8 * * 1-5'
   workflow_dispatch: {}
 
 permissions:
