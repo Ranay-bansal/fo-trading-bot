@@ -34,11 +34,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Configure Git
-        run: |
-          git config --global user.email "bot@alphadesk.io"
-          git config --global user.name "AlphaDesk F&O Bot"
-
       - name: Run F&O High-Frequency Scan Pipeline
         run: python main.py
         env:
@@ -48,3 +43,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MEGABULL_MOCK: "${{ secrets.MEGABULL_MOCK || 'true' }}"
+
+      - name: Commit and push state changes
+        run: |
+          git config --global user.email "bot@alphadesk.io"
+          git config --global user.name "AlphaDesk F&O Bot"
+          git add state/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "state: f&o scan updates ($(date -u +'%Y-%m-%d %H:%M:%S UTC'))" && git pull --rebase origin main && git push origin main)
