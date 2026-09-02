@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-02T08:11:21.227329Z",
-  "pool_total": 373857.17000000045,
-  "pool_available": 776.4700000003359,
-  "pool_deployed": 373020.70000000007,
-  "daily_pnl_inr": -122171.61,
-  "daily_pnl_pct": -24.43,
-  "total_brokerage_paid_inr": 7760.810000000001,
-  "trades_today": 150,
+  "last_updated": "2026-09-02T08:33:34.592725Z",
+  "pool_total": 373107.5700000004,
+  "pool_available": 1468.7700000003315,
+  "pool_deployed": 371618.80000000005,
+  "daily_pnl_inr": -122861.21,
+  "daily_pnl_pct": -24.57,
+  "total_brokerage_paid_inr": 7800.810000000001,
+  "trades_today": 151,
   "open_positions": [
     {
       "ticker": "RELIANCE.NS",
@@ -21,23 +21,6 @@
       "target_spot": 1328.63,
       "entered_at": "2026-09-01T14:16:58.212458Z",
       "megabull_order_id": "RELIANCE_CASH_BUY_20260901_141658",
-      "brokerage_paid_inr": 20.0,
-      "side": "BUY",
-      "waterfall_score": 7.5
-    },
-    {
-      "ticker": "TCS.NS",
-      "contract_type": "EQUITY_CASH",
-      "symbol": "TCS",
-      "strike_price": 0.0,
-      "lots": 1,
-      "total_shares": 24,
-      "entry_premium": 2369.0,
-      "entry_spot": 2369.0,
-      "sl_spot": 2345.31,
-      "target_spot": 2404.53,
-      "entered_at": "2026-09-01T14:16:58.214199Z",
-      "megabull_order_id": "TCS_CASH_BUY_20260901_141658",
       "brokerage_paid_inr": 20.0,
       "side": "BUY",
       "waterfall_score": 7.5
@@ -263,6 +246,23 @@
       "brokerage_paid_inr": 20.0,
       "side": "BUY",
       "waterfall_score": 8.5
+    },
+    {
+      "ticker": "ICICIBANK.NS",
+      "contract_type": "EQUITY_CASH",
+      "symbol": "ICICIBANK",
+      "strike_price": 0.0,
+      "lots": 1,
+      "total_shares": 39,
+      "entry_premium": 1421.9,
+      "entry_spot": 1421.9,
+      "sl_spot": 1436.12,
+      "target_spot": 1400.57,
+      "entered_at": "2026-09-02T08:29:38.148991Z",
+      "megabull_order_id": "ICICIBANK_CASH_SELL_20260902_082938",
+      "brokerage_paid_inr": 20.0,
+      "side": "SELL",
+      "waterfall_score": 1.5
     }
   ]
 }
