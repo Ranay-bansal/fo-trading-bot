@@ -1,30 +1,13 @@
 {
-  "last_updated": "2026-09-03T13:54:40.436255Z",
-  "pool_total": 367413.1600000003,
-  "pool_available": 3072.8100000003305,
-  "pool_deployed": 363967.85,
-  "daily_pnl_inr": -127332.16999999997,
-  "daily_pnl_pct": -25.47,
-  "total_brokerage_paid_inr": 10809.47,
-  "trades_today": 210,
+  "last_updated": "2026-09-04T08:16:31.882002Z",
+  "pool_total": 365995.86000000034,
+  "pool_available": 2322.410000000331,
+  "pool_deployed": 363653.44999999995,
+  "daily_pnl_inr": -128376.96999999997,
+  "daily_pnl_pct": -25.68,
+  "total_brokerage_paid_inr": 10849.47,
+  "trades_today": 211,
   "open_positions": [
-    {
-      "ticker": "RELIANCE.NS",
-      "contract_type": "EQUITY_CASH",
-      "symbol": "RELIANCE",
-      "strike_price": 0.0,
-      "lots": 1,
-      "total_shares": 42,
-      "entry_premium": 1302.5,
-      "entry_spot": 1302.5,
-      "sl_spot": 1315.53,
-      "target_spot": 1282.96,
-      "entered_at": "2026-09-03T13:51:37.747133Z",
-      "megabull_order_id": "RELIANCE_CASH_SELL_20260903_135137",
-      "brokerage_paid_inr": 20.0,
-      "side": "SELL",
-      "waterfall_score": 1.5
-    },
     {
       "ticker": "ICICIBANK.NS",
       "contract_type": "EQUITY_CASH",
@@ -263,6 +246,23 @@
       "expiry_dte": 7,
       "verdict": "SCALP_PE",
       "waterfall_score": 9.24
+    },
+    {
+      "ticker": "RELIANCE.NS",
+      "contract_type": "EQUITY_CASH",
+      "symbol": "RELIANCE",
+      "strike_price": 0.0,
+      "lots": 1,
+      "total_shares": 41,
+      "entry_premium": 1326.6,
+      "entry_spot": 1326.6,
+      "sl_spot": 1313.33,
+      "target_spot": 1346.5,
+      "entered_at": "2026-09-04T08:13:29.656371Z",
+      "megabull_order_id": "RELIANCE_CASH_BUY_20260904_081329",
+      "brokerage_paid_inr": 20.0,
+      "side": "BUY",
+      "waterfall_score": 7.1
     }
   ]
 }
