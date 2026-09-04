@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-09-04T08:15:39.213769+00:00",
+    "timestamp": "2026-09-04T08:34:03.846494+00:00",
     "symbol": "INDIACEM",
     "ticker": "INDIACEM.NS",
     "scout_stance": "neutral",
@@ -15,24 +15,9 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:39.517899+00:00",
+    "timestamp": "2026-09-04T08:34:04.103827+00:00",
     "symbol": "NBCC",
     "ticker": "NBCC.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.05,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "SCALP_PE",
-    "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
-  },
-  {
-    "timestamp": "2026-09-04T08:15:39.754249+00:00",
-    "symbol": "RVNL",
-    "ticker": "RVNL.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
@@ -45,9 +30,9 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:15:40.016098+00:00",
-    "symbol": "IRCON",
-    "ticker": "IRCON.NS",
+    "timestamp": "2026-09-04T08:34:04.352769+00:00",
+    "symbol": "RVNL",
+    "ticker": "RVNL.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
@@ -60,7 +45,22 @@
     "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:40.240757+00:00",
+    "timestamp": "2026-09-04T08:34:04.642815+00:00",
+    "symbol": "IRCON",
+    "ticker": "IRCON.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 8.11,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "SCALP_PE",
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:04.871521+00:00",
     "symbol": "PVRINOX",
     "ticker": "PVRINOX.NS",
     "scout_stance": "neutral",
@@ -75,22 +75,22 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:40.447116+00:00",
+    "timestamp": "2026-09-04T08:34:05.090794+00:00",
     "symbol": "SUNTV",
     "ticker": "SUNTV.NS",
-    "scout_stance": "high_conviction",
+    "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.25,
+    "consensus_score": 7.58,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "SCALP_PE",
-    "reasoning": "Consensus Approved (7.25/10): Bull Conviction 5.0 vs Bear Risk 4.5."
+    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:40.703396+00:00",
+    "timestamp": "2026-09-04T08:34:05.368298+00:00",
     "symbol": "ZEEL",
     "ticker": "ZEEL.NS",
     "scout_stance": "neutral",
@@ -98,59 +98,59 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.05,
+    "consensus_score": 8.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "SCALP_PE",
-    "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:15:40.918837+00:00",
+    "timestamp": "2026-09-04T08:34:05.605319+00:00",
     "symbol": "EXIDEIND",
     "ticker": "EXIDEIND.NS",
     "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
+    "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 10.0,
+    "consensus_score": 7.89,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "SCALP_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.6 vs Bear Risk 1.4."
+    "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.1 vs Bear Risk 2.2."
   },
   {
-    "timestamp": "2026-09-04T08:15:41.315406+00:00",
+    "timestamp": "2026-09-04T08:34:05.832469+00:00",
     "symbol": "HAVELLS",
     "ticker": "HAVELLS.NS",
-    "scout_stance": "high_conviction",
-    "tech_stance": "bearish",
+    "scout_stance": "neutral",
+    "tech_stance": "neutral",
     "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 6.93,
+    "bull_stance": "bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 6.2,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "SCALP_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 6.2/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:41.550548+00:00",
+    "timestamp": "2026-09-04T08:34:06.066936+00:00",
     "symbol": "CROMPTON",
     "ticker": "CROMPTON.NS",
     "scout_stance": "neutral",
-    "tech_stance": "bullish",
+    "tech_stance": "neutral",
     "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
+    "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 8.61,
+    "consensus_score": 6.2,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "SCALP_CE",
-    "reasoning": "Consensus Approved (8.61/10): Bull Conviction 7.5 vs Bear Risk 2.0."
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 6.2/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:41.897810+00:00",
+    "timestamp": "2026-09-04T08:34:06.314890+00:00",
     "symbol": "VOLTAS",
     "ticker": "VOLTAS.NS",
     "scout_stance": "neutral",
@@ -165,54 +165,24 @@
     "reasoning": "Bearish Downside Consensus Approved (6.0/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:42.157340+00:00",
+    "timestamp": "2026-09-04T08:34:06.535266+00:00",
     "symbol": "BLUESTARCO",
     "ticker": "BLUESTARCO.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "neutral",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 4.97,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
-  },
-  {
-    "timestamp": "2026-09-04T08:15:42.441094+00:00",
-    "symbol": "ASTRAL",
-    "ticker": "ASTRAL.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
+    "consensus_score": 6.21,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "SCALP_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
+    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:42.637155+00:00",
-    "symbol": "SUPREMEIND",
-    "ticker": "SUPREMEIND.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "high_bear_risk",
-    "consensus_score": 8.63,
-    "fact_checker_approved": true,
-    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
-    "judge_verdict": "AVOID",
-    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
-  },
-  {
-    "timestamp": "2026-09-04T08:15:42.847726+00:00",
-    "symbol": "KEI",
-    "ticker": "KEI.NS",
+    "timestamp": "2026-09-04T08:34:06.737671+00:00",
+    "symbol": "ASTRAL",
+    "ticker": "ASTRAL.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
@@ -225,7 +195,37 @@
     "reasoning": "Bearish Downside Consensus Approved (6.53/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:43.100924+00:00",
+    "timestamp": "2026-09-04T08:34:06.954262+00:00",
+    "symbol": "SUPREMEIND",
+    "ticker": "SUPREMEIND.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 8.11,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "SCALP_PE",
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:07.189204+00:00",
+    "symbol": "KEI",
+    "ticker": "KEI.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 7.58,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "SCALP_PE",
+    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:07.464647+00:00",
     "symbol": "SUZLON",
     "ticker": "SUZLON.NS",
     "scout_stance": "neutral",
@@ -240,24 +240,9 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:43.367528+00:00",
+    "timestamp": "2026-09-04T08:34:07.654173+00:00",
     "symbol": "CESC",
     "ticker": "CESC.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.05,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "SCALP_PE",
-    "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
-  },
-  {
-    "timestamp": "2026-09-04T08:15:43.620386+00:00",
-    "symbol": "NHPC",
-    "ticker": "NHPC.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
@@ -270,97 +255,112 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:15:43.853753+00:00",
+    "timestamp": "2026-09-04T08:34:07.893224+00:00",
+    "symbol": "NHPC",
+    "ticker": "NHPC.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
+    "fact_checker_approved": true,
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:08.158695+00:00",
     "symbol": "SJVN",
     "ticker": "SJVN.NS",
     "scout_stance": "neutral",
-    "tech_stance": "bullish",
+    "tech_stance": "neutral",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
+    "bull_stance": "cautious_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 7.41,
+    "consensus_score": 4.97,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "SCALP_CE",
-    "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:49.462516+00:00",
+    "timestamp": "2026-09-04T08:34:13.107223+00:00",
     "symbol": "NIFTY",
     "ticker": "^NSEI",
     "scout_stance": "moderate",
-    "tech_stance": "bullish",
+    "tech_stance": "neutral",
     "news_stance": "neutral",
     "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 7.65,
+    "consensus_score": 5.46,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.65/10): Bull Conviction 7.1 vs Bear Risk 2.4."
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 5.46/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:49.723538+00:00",
+    "timestamp": "2026-09-04T08:34:13.296023+00:00",
     "symbol": "BANKNIFTY",
     "ticker": "^NSEBANK",
     "scout_stance": "moderate",
-    "tech_stance": "bullish",
+    "tech_stance": "neutral",
     "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
+    "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 8.85,
+    "consensus_score": 6.68,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (8.85/10): Bull Conviction 7.8 vs Bear Risk 2.0."
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 6.68/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:49.912227+00:00",
+    "timestamp": "2026-09-04T08:34:13.466485+00:00",
     "symbol": "FINNIFTY",
     "ticker": "NIFTY_FIN_SERVICE.NS",
     "scout_stance": "moderate",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 6.25,
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.67,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.25/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.67/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:50.096473+00:00",
+    "timestamp": "2026-09-04T08:34:13.659341+00:00",
     "symbol": "MIDCPNIFTY",
     "ticker": "NIFTY_MID_SELECT.NS",
     "scout_stance": "moderate",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.34,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.77,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.34/10): Bull Conviction 2.1 vs Bear Risk 6.8."
+    "reasoning": "Consensus Approved (8.77/10): Bull Conviction 1.6 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:15:50.286023+00:00",
+    "timestamp": "2026-09-04T08:34:13.826104+00:00",
     "symbol": "NIFTYNXT50",
     "ticker": "^NSMIDCP",
     "scout_stance": "moderate",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.82,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.77,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.82/10): Bull Conviction 2.9 vs Bear Risk 6.0."
+    "reasoning": "Consensus Approved (8.77/10): Bull Conviction 1.6 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:15:50.505045+00:00",
+    "timestamp": "2026-09-04T08:34:14.088693+00:00",
     "symbol": "RELIANCE",
     "ticker": "RELIANCE.NS",
     "scout_stance": "neutral",
@@ -368,14 +368,14 @@
     "news_stance": "neutral",
     "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 7.17,
+    "consensus_score": 8.13,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
+    "reasoning": "Consensus Approved (8.13/10): Bull Conviction 7.2 vs Bear Risk 2.1."
   },
   {
-    "timestamp": "2026-09-04T08:15:50.735850+00:00",
+    "timestamp": "2026-09-04T08:34:14.282736+00:00",
     "symbol": "TCS",
     "ticker": "TCS.NS",
     "scout_stance": "neutral",
@@ -390,7 +390,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:50.968399+00:00",
+    "timestamp": "2026-09-04T08:34:14.508218+00:00",
     "symbol": "INFY",
     "ticker": "INFY.NS",
     "scout_stance": "neutral",
@@ -398,14 +398,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "consensus_score": 7.58,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:51.188180+00:00",
+    "timestamp": "2026-09-04T08:34:14.765961+00:00",
     "symbol": "HDFCBANK",
     "ticker": "HDFCBANK.NS",
     "scout_stance": "neutral",
@@ -420,37 +420,37 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-04T08:15:51.399781+00:00",
+    "timestamp": "2026-09-04T08:34:14.993560+00:00",
     "symbol": "ICICIBANK",
     "ticker": "ICICIBANK.NS",
     "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
+    "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 10.0,
+    "consensus_score": 7.41,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:15:51.692133+00:00",
+    "timestamp": "2026-09-04T08:34:15.278941+00:00",
     "symbol": "SBIN",
     "ticker": "SBIN.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:51.911419+00:00",
+    "timestamp": "2026-09-04T08:34:15.506967+00:00",
     "symbol": "AXISBANK",
     "ticker": "AXISBANK.NS",
     "scout_stance": "neutral",
@@ -465,7 +465,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:52.142663+00:00",
+    "timestamp": "2026-09-04T08:34:15.708025+00:00",
     "symbol": "KOTAKBANK",
     "ticker": "KOTAKBANK.NS",
     "scout_stance": "neutral",
@@ -480,22 +480,22 @@
     "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:15:52.447520+00:00",
+    "timestamp": "2026-09-04T08:34:15.913107+00:00",
     "symbol": "LT",
     "ticker": "LT.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bullish",
     "news_stance": "neutral",
     "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 5.96,
+    "consensus_score": 8.13,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_CE",
+    "reasoning": "Consensus Approved (8.13/10): Bull Conviction 7.2 vs Bear Risk 2.1."
   },
   {
-    "timestamp": "2026-09-04T08:15:52.650454+00:00",
+    "timestamp": "2026-09-04T08:34:16.098161+00:00",
     "symbol": "ITC",
     "ticker": "ITC.NS",
     "scout_stance": "neutral",
@@ -510,7 +510,7 @@
     "reasoning": "Consensus Approved (8.61/10): Bull Conviction 7.5 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:52.840133+00:00",
+    "timestamp": "2026-09-04T08:34:16.325604+00:00",
     "symbol": "HINDUNILVR",
     "ticker": "HINDUNILVR.NS",
     "scout_stance": "high_conviction",
@@ -525,7 +525,7 @@
     "reasoning": "Consensus Approved (9.33/10): Bull Conviction 8.4 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:53.052153+00:00",
+    "timestamp": "2026-09-04T08:34:16.520136+00:00",
     "symbol": "BHARTIARTL",
     "ticker": "BHARTIARTL.NS",
     "scout_stance": "neutral",
@@ -533,29 +533,29 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
+    "consensus_score": 6.63,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:53.275498+00:00",
+    "timestamp": "2026-09-04T08:34:16.766289+00:00",
     "symbol": "BAJFINANCE",
     "ticker": "BAJFINANCE.NS",
     "scout_stance": "neutral",
-    "tech_stance": "bullish",
+    "tech_stance": "neutral",
     "news_stance": "neutral",
     "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 7.17,
+    "consensus_score": 5.96,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:53.501264+00:00",
+    "timestamp": "2026-09-04T08:34:17.001400+00:00",
     "symbol": "BAJAJFINSV",
     "ticker": "BAJAJFINSV.NS",
     "scout_stance": "neutral",
@@ -570,7 +570,7 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:15:53.685999+00:00",
+    "timestamp": "2026-09-04T08:34:17.231531+00:00",
     "symbol": "MARUTI",
     "ticker": "MARUTI.NS",
     "scout_stance": "neutral",
@@ -585,7 +585,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:53.902088+00:00",
+    "timestamp": "2026-09-04T08:34:17.469756+00:00",
     "symbol": "TATASTEEL",
     "ticker": "TATASTEEL.NS",
     "scout_stance": "high_conviction",
@@ -600,7 +600,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:54.084935+00:00",
+    "timestamp": "2026-09-04T08:34:17.660563+00:00",
     "symbol": "HINDALCO",
     "ticker": "HINDALCO.NS",
     "scout_stance": "high_conviction",
@@ -612,13 +612,13 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-04T08:15:54.293391+00:00",
+    "timestamp": "2026-09-04T08:34:17.890783+00:00",
     "symbol": "JSWSTEEL",
     "ticker": "JSWSTEEL.NS",
-    "scout_stance": "neutral",
+    "scout_stance": "high_conviction",
     "tech_stance": "bullish",
     "news_stance": "neutral",
     "bull_stance": "strong_bullish",
@@ -627,10 +627,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-04T08:15:54.531904+00:00",
+    "timestamp": "2026-09-04T08:34:18.084165+00:00",
     "symbol": "SUNPHARMA",
     "ticker": "SUNPHARMA.NS",
     "scout_stance": "neutral",
@@ -645,7 +645,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:54.752868+00:00",
+    "timestamp": "2026-09-04T08:34:18.461179+00:00",
     "symbol": "CIPLA",
     "ticker": "CIPLA.NS",
     "scout_stance": "neutral",
@@ -653,46 +653,31 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
+    "consensus_score": 6.74,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.74/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:54.962694+00:00",
+    "timestamp": "2026-09-04T08:34:18.682230+00:00",
     "symbol": "DRREDDY",
     "ticker": "DRREDDY.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "bear_stance": "moderate_risk",
+    "consensus_score": 7.05,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
   },
   {
-    "timestamp": "2026-09-04T08:15:55.186100+00:00",
+    "timestamp": "2026-09-04T08:34:18.909970+00:00",
     "symbol": "TITAN",
     "ticker": "TITAN.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "neutral",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 4.97,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
-  },
-  {
-    "timestamp": "2026-09-04T08:15:55.441510+00:00",
-    "symbol": "ASIANPAINT",
-    "ticker": "ASIANPAINT.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
@@ -705,7 +690,22 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:55.722869+00:00",
+    "timestamp": "2026-09-04T08:34:19.115512+00:00",
+    "symbol": "ASIANPAINT",
+    "ticker": "ASIANPAINT.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.63,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:19.317394+00:00",
     "symbol": "NESTLEIND",
     "ticker": "NESTLEIND.NS",
     "scout_stance": "neutral",
@@ -720,37 +720,37 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:55.959115+00:00",
+    "timestamp": "2026-09-04T08:34:19.550048+00:00",
     "symbol": "WIPRO",
     "ticker": "WIPRO.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:15:56.188930+00:00",
+    "timestamp": "2026-09-04T08:34:19.788662+00:00",
     "symbol": "HCLTECH",
     "ticker": "HCLTECH.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:56.410245+00:00",
+    "timestamp": "2026-09-04T08:34:20.065296+00:00",
     "symbol": "NTPC",
     "ticker": "NTPC.NS",
     "scout_stance": "neutral",
@@ -765,7 +765,7 @@
     "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:15:56.670550+00:00",
+    "timestamp": "2026-09-04T08:34:20.276506+00:00",
     "symbol": "POWERGRID",
     "ticker": "POWERGRID.NS",
     "scout_stance": "neutral",
@@ -773,29 +773,29 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
+    "consensus_score": 6.63,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:56.917499+00:00",
+    "timestamp": "2026-09-04T08:34:20.490990+00:00",
     "symbol": "ONGC",
     "ticker": "ONGC.NS",
     "scout_stance": "neutral",
     "tech_stance": "neutral",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
+    "bull_stance": "cautious_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 5.96,
+    "consensus_score": 4.97,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
+    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:57.232680+00:00",
+    "timestamp": "2026-09-04T08:34:20.709868+00:00",
     "symbol": "COALINDIA",
     "ticker": "COALINDIA.NS",
     "scout_stance": "neutral",
@@ -803,14 +803,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "consensus_score": 7.58,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:57.429826+00:00",
+    "timestamp": "2026-09-04T08:34:20.909080+00:00",
     "symbol": "ADANIENT",
     "ticker": "ADANIENT.NS",
     "scout_stance": "neutral",
@@ -825,22 +825,22 @@
     "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:15:57.653750+00:00",
+    "timestamp": "2026-09-04T08:34:21.195931+00:00",
     "symbol": "ADANIPORTS",
     "ticker": "ADANIPORTS.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 6.53,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.42,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.53/10)."
+    "reasoning": "Consensus Approved (8.42/10): Bull Conviction 1.4 vs Bear Risk 7.2."
   },
   {
-    "timestamp": "2026-09-04T08:15:57.867223+00:00",
+    "timestamp": "2026-09-04T08:34:21.483216+00:00",
     "symbol": "ULTRACEMCO",
     "ticker": "ULTRACEMCO.NS",
     "scout_stance": "neutral",
@@ -855,37 +855,37 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:58.056359+00:00",
+    "timestamp": "2026-09-04T08:34:21.707998+00:00",
     "symbol": "GRASIM",
     "ticker": "GRASIM.NS",
     "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
+    "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 10.0,
+    "consensus_score": 7.65,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
+    "reasoning": "Consensus Approved (7.65/10): Bull Conviction 7.0 vs Bear Risk 2.3."
   },
   {
-    "timestamp": "2026-09-04T08:15:58.265694+00:00",
+    "timestamp": "2026-09-04T08:34:21.895483+00:00",
     "symbol": "INDUSINDBK",
     "ticker": "INDUSINDBK.NS",
     "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
+    "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 10.0,
+    "consensus_score": 7.41,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:15:58.480572+00:00",
+    "timestamp": "2026-09-04T08:34:22.098887+00:00",
     "symbol": "HAL",
     "ticker": "HAL.NS",
     "scout_stance": "high_conviction",
@@ -900,7 +900,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:15:58.703055+00:00",
+    "timestamp": "2026-09-04T08:34:22.306288+00:00",
     "symbol": "BEL",
     "ticker": "BEL.NS",
     "scout_stance": "neutral",
@@ -908,44 +908,44 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
+    "consensus_score": 8.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:15:58.910606+00:00",
+    "timestamp": "2026-09-04T08:34:22.507037+00:00",
     "symbol": "BHEL",
     "ticker": "BHEL.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 6.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.11/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:59.119304+00:00",
+    "timestamp": "2026-09-04T08:34:22.678397+00:00",
     "symbol": "SIEMENS",
     "ticker": "SIEMENS.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bullish",
     "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
+    "bull_stance": "strong_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 10.0,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_CE",
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.4 vs Bear Risk 1.5."
   },
   {
-    "timestamp": "2026-09-04T08:15:59.346487+00:00",
+    "timestamp": "2026-09-04T08:34:22.878967+00:00",
     "symbol": "ABB",
     "ticker": "ABB.NS",
     "scout_stance": "neutral",
@@ -960,22 +960,22 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.6 vs Bear Risk 1.4."
   },
   {
-    "timestamp": "2026-09-04T08:15:59.545150+00:00",
+    "timestamp": "2026-09-04T08:34:23.063005+00:00",
     "symbol": "POLYCAB",
     "ticker": "POLYCAB.NS",
-    "scout_stance": "neutral",
+    "scout_stance": "high_conviction",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
+    "consensus_score": 6.93,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
   },
   {
-    "timestamp": "2026-09-04T08:15:59.745883+00:00",
+    "timestamp": "2026-09-04T08:34:23.269201+00:00",
     "symbol": "M&M",
     "ticker": "M&M.NS",
     "scout_stance": "neutral",
@@ -990,9 +990,24 @@
     "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:00.061097+00:00",
+    "timestamp": "2026-09-04T08:34:23.465514+00:00",
     "symbol": "EICHERMOT",
     "ticker": "EICHERMOT.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bullish",
+    "news_stance": "neutral",
+    "bull_stance": "strong_bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 10.0,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_CE",
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.6 vs Bear Risk 1.4."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:23.662519+00:00",
+    "symbol": "HEROMOTOCO",
+    "ticker": "HEROMOTOCO.NS",
     "scout_stance": "neutral",
     "tech_stance": "neutral",
     "news_stance": "neutral",
@@ -1005,22 +1020,7 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:00.292719+00:00",
-    "symbol": "HEROMOTOCO",
-    "ticker": "HEROMOTOCO.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "neutral",
-    "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 5.96,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:00.515207+00:00",
+    "timestamp": "2026-09-04T08:34:23.861588+00:00",
     "symbol": "VEDL",
     "ticker": "VEDL.NS",
     "scout_stance": "neutral",
@@ -1035,7 +1035,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:00.708928+00:00",
+    "timestamp": "2026-09-04T08:34:24.052252+00:00",
     "symbol": "RECLTD",
     "ticker": "RECLTD.NS",
     "scout_stance": "neutral",
@@ -1050,10 +1050,10 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:00.897853+00:00",
+    "timestamp": "2026-09-04T08:34:24.243821+00:00",
     "symbol": "PFC",
     "ticker": "PFC.NS",
-    "scout_stance": "high_conviction",
+    "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
     "bull_stance": "strong_bullish",
@@ -1062,27 +1062,57 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-04T08:16:01.124423+00:00",
+    "timestamp": "2026-09-04T08:34:24.452768+00:00",
     "symbol": "TRENT",
     "ticker": "TRENT.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bullish",
+    "news_stance": "neutral",
+    "bull_stance": "bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 7.17,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_CE",
+    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:24.752127+00:00",
+    "symbol": "SHREECEM",
+    "ticker": "SHREECEM.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
+    "consensus_score": 6.95,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
+    "reasoning": "Bearish Downside Consensus Approved (6.95/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:01.344634+00:00",
-    "symbol": "SHREECEM",
-    "ticker": "SHREECEM.NS",
+    "timestamp": "2026-09-04T08:34:24.971130+00:00",
+    "symbol": "BANDHANBNK",
+    "ticker": "BANDHANBNK.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.53,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:25.206819+00:00",
+    "symbol": "PNB",
+    "ticker": "PNB.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
@@ -1095,67 +1125,37 @@
     "reasoning": "Bearish Downside Consensus Approved (6.53/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:01.546865+00:00",
-    "symbol": "BANDHANBNK",
-    "ticker": "BANDHANBNK.NS",
+    "timestamp": "2026-09-04T08:34:25.499957+00:00",
+    "symbol": "CANBK",
+    "ticker": "CANBK.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "neutral",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 4.97,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:25.681902+00:00",
+    "symbol": "BANKBARODA",
+    "ticker": "BANKBARODA.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:01.805708+00:00",
-    "symbol": "PNB",
-    "ticker": "PNB.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
-    "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 7.17,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:02.049425+00:00",
-    "symbol": "CANBK",
-    "ticker": "CANBK.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
-    "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 7.17,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:02.301602+00:00",
-    "symbol": "BANKBARODA",
-    "ticker": "BANKBARODA.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "neutral",
-    "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 5.96,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
     "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:02.543779+00:00",
+    "timestamp": "2026-09-04T08:34:25.962148+00:00",
     "symbol": "TECHM",
     "ticker": "TECHM.NS",
     "scout_stance": "neutral",
@@ -1163,14 +1163,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
+    "consensus_score": 6.63,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:02.877633+00:00",
+    "timestamp": "2026-09-04T08:34:26.154324+00:00",
     "symbol": "MPHASIS",
     "ticker": "MPHASIS.NS",
     "scout_stance": "neutral",
@@ -1185,7 +1185,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:03.096587+00:00",
+    "timestamp": "2026-09-04T08:34:26.430749+00:00",
     "symbol": "PERSISTENT",
     "ticker": "PERSISTENT.NS",
     "scout_stance": "neutral",
@@ -1200,7 +1200,7 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:03.456124+00:00",
+    "timestamp": "2026-09-04T08:34:26.638295+00:00",
     "symbol": "MOTHERSON",
     "ticker": "MOTHERSON.NS",
     "scout_stance": "neutral",
@@ -1208,44 +1208,44 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "consensus_score": 8.21,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "reasoning": "Consensus Approved (8.21/10): Bull Conviction 1.7 vs Bear Risk 6.9."
   },
   {
-    "timestamp": "2026-09-04T08:16:03.659409+00:00",
+    "timestamp": "2026-09-04T08:34:26.827617+00:00",
     "symbol": "BOSCHLTD",
     "ticker": "BOSCHLTD.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bullish",
     "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
+    "bull_stance": "strong_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 8.61,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_CE",
+    "reasoning": "Consensus Approved (8.61/10): Bull Conviction 7.5 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:03.903279+00:00",
+    "timestamp": "2026-09-04T08:34:27.034653+00:00",
     "symbol": "TVSMOTOR",
     "ticker": "TVSMOTOR.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "high_bear_risk",
-    "consensus_score": 8.63,
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.74,
     "fact_checker_approved": true,
-    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
-    "judge_verdict": "AVOID",
-    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.74/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:04.117269+00:00",
+    "timestamp": "2026-09-04T08:34:27.241961+00:00",
     "symbol": "BAJAJ-AUTO",
     "ticker": "BAJAJ-AUTO.NS",
     "scout_stance": "neutral",
@@ -1260,7 +1260,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:04.372061+00:00",
+    "timestamp": "2026-09-04T08:34:27.480415+00:00",
     "symbol": "ESCORTS",
     "ticker": "ESCORTS.NS",
     "scout_stance": "neutral",
@@ -1275,7 +1275,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:04.635587+00:00",
+    "timestamp": "2026-09-04T08:34:27.688063+00:00",
     "symbol": "ASHOKLEY",
     "ticker": "ASHOKLEY.NS",
     "scout_stance": "neutral",
@@ -1290,37 +1290,37 @@
     "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:04.858007+00:00",
+    "timestamp": "2026-09-04T08:34:27.875831+00:00",
     "symbol": "APOLLOTYRE",
     "ticker": "APOLLOTYRE.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:05.080258+00:00",
+    "timestamp": "2026-09-04T08:34:28.055206+00:00",
     "symbol": "BHARATFORG",
     "ticker": "BHARATFORG.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.74,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.74/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:05.260543+00:00",
+    "timestamp": "2026-09-04T08:34:28.268064+00:00",
     "symbol": "MRF",
     "ticker": "MRF.NS",
     "scout_stance": "neutral",
@@ -1335,37 +1335,37 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:05.489672+00:00",
+    "timestamp": "2026-09-04T08:34:28.480815+00:00",
     "symbol": "PAYTM",
     "ticker": "PAYTM.NS",
+    "scout_stance": "high_conviction",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 6.72,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.72/10)."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:28.698845+00:00",
+    "symbol": "NYKAA",
+    "ticker": "NYKAA.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.85,
+    "consensus_score": 7.58,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.85/10)."
+    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:05.724998+00:00",
-    "symbol": "NYKAA",
-    "ticker": "NYKAA.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
-    "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 7.17,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:05.978929+00:00",
+    "timestamp": "2026-09-04T08:34:28.894488+00:00",
     "symbol": "DELHIVERY",
     "ticker": "DELHIVERY.NS",
     "scout_stance": "neutral",
@@ -1380,25 +1380,25 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:06.319133+00:00",
+    "timestamp": "2026-09-04T08:34:29.147550+00:00",
     "symbol": "SAIL",
     "ticker": "SAIL.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
+    "scout_stance": "high_conviction",
+    "tech_stance": "neutral",
     "news_stance": "neutral",
     "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 6.93,
+    "consensus_score": 6.92,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 6.93/10 below execution threshold 7.0."
+    "reasoning": "Consensus score 6.92/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:06.515997+00:00",
+    "timestamp": "2026-09-04T08:34:29.338990+00:00",
     "symbol": "NMDC",
     "ticker": "NMDC.NS",
-    "scout_stance": "high_conviction",
+    "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
     "bull_stance": "strong_bullish",
@@ -1407,10 +1407,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.5."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:06.760990+00:00",
+    "timestamp": "2026-09-04T08:34:29.637839+00:00",
     "symbol": "NATIONALUM",
     "ticker": "NATIONALUM.NS",
     "scout_stance": "neutral",
@@ -1418,14 +1418,14 @@
     "news_stance": "neutral",
     "bull_stance": "strong_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 10.0,
+    "consensus_score": 9.1,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.6 vs Bear Risk 1.4."
+    "reasoning": "Consensus Approved (9.1/10): Bull Conviction 7.8 vs Bear Risk 1.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:07.002735+00:00",
+    "timestamp": "2026-09-04T08:34:29.830154+00:00",
     "symbol": "JINDALSTEL",
     "ticker": "JINDALSTEL.NS",
     "scout_stance": "high_conviction",
@@ -1437,13 +1437,13 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:07.196388+00:00",
+    "timestamp": "2026-09-04T08:34:29.992091+00:00",
     "symbol": "APLAPOLLO",
     "ticker": "APLAPOLLO.NS",
-    "scout_stance": "neutral",
+    "scout_stance": "high_conviction",
     "tech_stance": "bullish",
     "news_stance": "neutral",
     "bull_stance": "strong_bullish",
@@ -1452,10 +1452,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.9 vs Bear Risk 0.7."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:07.497931+00:00",
+    "timestamp": "2026-09-04T08:34:30.199776+00:00",
     "symbol": "IRFC",
     "ticker": "IRFC.NS",
     "scout_stance": "neutral",
@@ -1470,7 +1470,7 @@
     "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:07.688537+00:00",
+    "timestamp": "2026-09-04T08:34:30.399355+00:00",
     "symbol": "IRCTC",
     "ticker": "IRCTC.NS",
     "scout_stance": "neutral",
@@ -1485,37 +1485,37 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:07.955703+00:00",
+    "timestamp": "2026-09-04T08:34:30.586353+00:00",
     "symbol": "CONCOR",
     "ticker": "CONCOR.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:08.191374+00:00",
+    "timestamp": "2026-09-04T08:34:30.801745+00:00",
     "symbol": "PIDILITIND",
     "ticker": "PIDILITIND.NS",
     "scout_stance": "neutral",
-    "tech_stance": "bullish",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 7.17,
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.21,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:08.418024+00:00",
+    "timestamp": "2026-09-04T08:34:31.095388+00:00",
     "symbol": "BERGEPAINT",
     "ticker": "BERGEPAINT.NS",
     "scout_stance": "neutral",
@@ -1527,10 +1527,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-04T08:16:08.627440+00:00",
+    "timestamp": "2026-09-04T08:34:31.272536+00:00",
     "symbol": "UPL",
     "ticker": "UPL.NS",
     "scout_stance": "neutral",
@@ -1545,22 +1545,22 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-04T08:16:08.827157+00:00",
+    "timestamp": "2026-09-04T08:34:31.485965+00:00",
     "symbol": "PIIND",
     "ticker": "PIIND.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 6.0,
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.53,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.0/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.53/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:09.056487+00:00",
+    "timestamp": "2026-09-04T08:34:31.667733+00:00",
     "symbol": "SRF",
     "ticker": "SRF.NS",
     "scout_stance": "neutral",
@@ -1568,29 +1568,29 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
+    "consensus_score": 8.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:09.316788+00:00",
+    "timestamp": "2026-09-04T08:34:31.857081+00:00",
     "symbol": "NAVINFLUOR",
     "ticker": "NAVINFLUOR.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 6.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.11/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:09.529004+00:00",
+    "timestamp": "2026-09-04T08:34:32.127575+00:00",
     "symbol": "AARTIIND",
     "ticker": "AARTIIND.NS",
     "scout_stance": "neutral",
@@ -1598,14 +1598,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
+    "consensus_score": 6.74,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.74/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:09.775329+00:00",
+    "timestamp": "2026-09-04T08:34:32.417637+00:00",
     "symbol": "DEEPAKNTR",
     "ticker": "DEEPAKNTR.NS",
     "scout_stance": "neutral",
@@ -1620,22 +1620,22 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:10.030548+00:00",
+    "timestamp": "2026-09-04T08:34:32.592822+00:00",
     "symbol": "TATACHEM",
     "ticker": "TATACHEM.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "scout_stance": "high_conviction",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 5.96,
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 7.46,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (7.46/10): Bull Conviction 4.7 vs Bear Risk 4.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:10.233821+00:00",
+    "timestamp": "2026-09-04T08:34:32.783109+00:00",
     "symbol": "COROMANDEL",
     "ticker": "COROMANDEL.NS",
     "scout_stance": "neutral",
@@ -1647,10 +1647,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-04T08:16:10.436478+00:00",
+    "timestamp": "2026-09-04T08:34:33.005246+00:00",
     "symbol": "GNFC",
     "ticker": "GNFC.NS",
     "scout_stance": "neutral",
@@ -1665,7 +1665,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.6 vs Bear Risk 1.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:10.651786+00:00",
+    "timestamp": "2026-09-04T08:34:33.219418+00:00",
     "symbol": "CHAMBLFERT",
     "ticker": "CHAMBLFERT.NS",
     "scout_stance": "neutral",
@@ -1680,7 +1680,7 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:10.832254+00:00",
+    "timestamp": "2026-09-04T08:34:33.418689+00:00",
     "symbol": "DMART",
     "ticker": "DMART.NS",
     "scout_stance": "neutral",
@@ -1688,14 +1688,14 @@
     "news_stance": "neutral",
     "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 6.2,
+    "consensus_score": 6.44,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 6.2/10 below execution threshold 7.0."
+    "reasoning": "Consensus score 6.44/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:11.086737+00:00",
+    "timestamp": "2026-09-04T08:34:33.631182+00:00",
     "symbol": "MUTHOOTFIN",
     "ticker": "MUTHOOTFIN.NS",
     "scout_stance": "neutral",
@@ -1703,14 +1703,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "high_bear_risk",
-    "consensus_score": 8.63,
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
-    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
-    "judge_verdict": "AVOID",
-    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:11.338755+00:00",
+    "timestamp": "2026-09-04T08:34:33.909540+00:00",
     "symbol": "CHOLAFIN",
     "ticker": "CHOLAFIN.NS",
     "scout_stance": "neutral",
@@ -1725,10 +1725,10 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:11.586652+00:00",
+    "timestamp": "2026-09-04T08:34:34.203604+00:00",
     "symbol": "SBILIFE",
     "ticker": "SBILIFE.NS",
-    "scout_stance": "neutral",
+    "scout_stance": "high_conviction",
     "tech_stance": "bullish",
     "news_stance": "neutral",
     "bull_stance": "strong_bullish",
@@ -1737,40 +1737,40 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:11.801755+00:00",
+    "timestamp": "2026-09-04T08:34:34.420596+00:00",
     "symbol": "HDFCLIFE",
     "ticker": "HDFCLIFE.NS",
-    "scout_stance": "neutral",
+    "scout_stance": "high_conviction",
     "tech_stance": "bullish",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
+    "bull_stance": "strong_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 8.37,
+    "consensus_score": 7.89,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (8.37/10): Bull Conviction 7.4 vs Bear Risk 2.0."
+    "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:12.019694+00:00",
+    "timestamp": "2026-09-04T08:34:34.616034+00:00",
     "symbol": "ICICIGI",
     "ticker": "ICICIGI.NS",
-    "scout_stance": "high_conviction",
+    "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.82,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.82/10): Bull Conviction 2.8 vs Bear Risk 6.8."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:12.248609+00:00",
+    "timestamp": "2026-09-04T08:34:34.811404+00:00",
     "symbol": "LICI",
     "ticker": "LICI.NS",
     "scout_stance": "neutral",
@@ -1778,44 +1778,44 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.47,
+    "consensus_score": 7.05,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.47/10): Bull Conviction 2.8 vs Bear Risk 5.8."
+    "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
   },
   {
-    "timestamp": "2026-09-04T08:16:12.507150+00:00",
+    "timestamp": "2026-09-04T08:34:35.013964+00:00",
     "symbol": "SHRIRAMFIN",
     "ticker": "SHRIRAMFIN.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:12.752946+00:00",
+    "timestamp": "2026-09-04T08:34:35.315040+00:00",
     "symbol": "M&MFIN",
     "ticker": "M&MFIN.NS",
     "scout_stance": "high_conviction",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.04,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 9.35,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.04/10): Bull Conviction 5.3 vs Bear Risk 4.2."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:12.988792+00:00",
+    "timestamp": "2026-09-04T08:34:35.537813+00:00",
     "symbol": "MANAPPURAM",
     "ticker": "MANAPPURAM.NS",
     "scout_stance": "neutral",
@@ -1830,7 +1830,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:13.221688+00:00",
+    "timestamp": "2026-09-04T08:34:35.731838+00:00",
     "symbol": "LICHSGFIN",
     "ticker": "LICHSGFIN.NS",
     "scout_stance": "neutral",
@@ -1842,10 +1842,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.8 vs Bear Risk 1.3."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.5 vs Bear Risk 0.9."
   },
   {
-    "timestamp": "2026-09-04T08:16:13.427728+00:00",
+    "timestamp": "2026-09-04T08:34:35.917457+00:00",
     "symbol": "CANFINHOME",
     "ticker": "CANFINHOME.NS",
     "scout_stance": "neutral",
@@ -1860,7 +1860,7 @@
     "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:13.659366+00:00",
+    "timestamp": "2026-09-04T08:34:36.136917+00:00",
     "symbol": "IDFCFIRSTB",
     "ticker": "IDFCFIRSTB.NS",
     "scout_stance": "neutral",
@@ -1868,44 +1868,44 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "high_bear_risk",
-    "consensus_score": 8.63,
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
-    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
-    "judge_verdict": "AVOID",
-    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:13.858174+00:00",
+    "timestamp": "2026-09-04T08:34:36.395756+00:00",
     "symbol": "FEDERALBNK",
     "ticker": "FEDERALBNK.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 5.96,
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 7.58,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:14.057115+00:00",
+    "timestamp": "2026-09-04T08:34:36.590230+00:00",
     "symbol": "AUBANK",
     "ticker": "AUBANK.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 5.96,
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.21,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:14.286167+00:00",
+    "timestamp": "2026-09-04T08:34:36.798995+00:00",
     "symbol": "RBLBANK",
     "ticker": "RBLBANK.NS",
     "scout_stance": "neutral",
@@ -1917,10 +1917,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.8 vs Bear Risk 1.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:14.501157+00:00",
+    "timestamp": "2026-09-04T08:34:36.996990+00:00",
     "symbol": "ABFRL",
     "ticker": "ABFRL.NS",
     "scout_stance": "high_conviction",
@@ -1935,22 +1935,22 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:14.724471+00:00",
+    "timestamp": "2026-09-04T08:34:37.185433+00:00",
     "symbol": "BATAINDIA",
     "ticker": "BATAINDIA.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
+    "scout_stance": "high_conviction",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 7.17,
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 9.35,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:14.990230+00:00",
+    "timestamp": "2026-09-04T08:34:37.427671+00:00",
     "symbol": "PAGEIND",
     "ticker": "PAGEIND.NS",
     "scout_stance": "neutral",
@@ -1965,7 +1965,7 @@
     "reasoning": "Consensus Approved (8.61/10): Bull Conviction 7.5 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:15.205044+00:00",
+    "timestamp": "2026-09-04T08:34:37.674277+00:00",
     "symbol": "DABUR",
     "ticker": "DABUR.NS",
     "scout_stance": "neutral",
@@ -1980,7 +1980,7 @@
     "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:15.445438+00:00",
+    "timestamp": "2026-09-04T08:34:37.854332+00:00",
     "symbol": "MARICO",
     "ticker": "MARICO.NS",
     "scout_stance": "neutral",
@@ -1995,7 +1995,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:15.665616+00:00",
+    "timestamp": "2026-09-04T08:34:38.064361+00:00",
     "symbol": "GODREJCP",
     "ticker": "GODREJCP.NS",
     "scout_stance": "neutral",
@@ -2003,14 +2003,14 @@
     "news_stance": "neutral",
     "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 7.17,
+    "consensus_score": 8.37,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
+    "reasoning": "Consensus Approved (8.37/10): Bull Conviction 7.4 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:15.840512+00:00",
+    "timestamp": "2026-09-04T08:34:38.264055+00:00",
     "symbol": "COLPAL",
     "ticker": "COLPAL.NS",
     "scout_stance": "neutral",
@@ -2025,7 +2025,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:16.056937+00:00",
+    "timestamp": "2026-09-04T08:34:38.482624+00:00",
     "symbol": "BRITANNIA",
     "ticker": "BRITANNIA.NS",
     "scout_stance": "neutral",
@@ -2033,44 +2033,44 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.05,
+    "consensus_score": 6.63,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
+    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:16.264100+00:00",
+    "timestamp": "2026-09-04T08:34:38.677010+00:00",
     "symbol": "TATACONSUM",
     "ticker": "TATACONSUM.NS",
-    "scout_stance": "neutral",
+    "scout_stance": "high_conviction",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.05,
+    "consensus_score": 7.77,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
+    "reasoning": "Consensus Approved (7.77/10): Bull Conviction 4.2 vs Bear Risk 5.2."
   },
   {
-    "timestamp": "2026-09-04T08:16:16.490393+00:00",
+    "timestamp": "2026-09-04T08:34:38.889039+00:00",
     "symbol": "VBL",
     "ticker": "VBL.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.47,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.42,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.47/10): Bull Conviction 2.8 vs Bear Risk 5.8."
+    "reasoning": "Consensus Approved (8.42/10): Bull Conviction 1.4 vs Bear Risk 7.2."
   },
   {
-    "timestamp": "2026-09-04T08:16:16.741834+00:00",
+    "timestamp": "2026-09-04T08:34:39.159199+00:00",
     "symbol": "JUBLFOOD",
     "ticker": "JUBLFOOD.NS",
     "scout_stance": "neutral",
@@ -2085,52 +2085,52 @@
     "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:17.139776+00:00",
+    "timestamp": "2026-09-04T08:34:39.448226+00:00",
     "symbol": "DEVYANI",
     "ticker": "DEVYANI.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.05,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:17.377854+00:00",
+    "timestamp": "2026-09-04T08:34:39.643963+00:00",
     "symbol": "DIVISLAB",
     "ticker": "DIVISLAB.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.0,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.0/10): Bull Conviction 2.0 vs Bear Risk 6.6."
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:17.598354+00:00",
+    "timestamp": "2026-09-04T08:34:39.849109+00:00",
     "symbol": "LUPIN",
     "ticker": "LUPIN.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:17.906963+00:00",
+    "timestamp": "2026-09-04T08:34:40.082393+00:00",
     "symbol": "AUROPHARMA",
     "ticker": "AUROPHARMA.NS",
     "scout_stance": "neutral",
@@ -2142,10 +2142,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-04T08:16:18.135288+00:00",
+    "timestamp": "2026-09-04T08:34:40.282604+00:00",
     "symbol": "TORNTPHARM",
     "ticker": "TORNTPHARM.NS",
     "scout_stance": "neutral",
@@ -2153,14 +2153,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
+    "consensus_score": 6.63,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:18.339284+00:00",
+    "timestamp": "2026-09-04T08:34:40.521245+00:00",
     "symbol": "ALKEM",
     "ticker": "ALKEM.NS",
     "scout_stance": "neutral",
@@ -2175,22 +2175,22 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:18.592382+00:00",
+    "timestamp": "2026-09-04T08:34:40.727576+00:00",
     "symbol": "BIOCON",
     "ticker": "BIOCON.NS",
-    "scout_stance": "high_conviction",
+    "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.93,
+    "consensus_score": 6.21,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:18.792198+00:00",
+    "timestamp": "2026-09-04T08:34:40.909081+00:00",
     "symbol": "IPCALAB",
     "ticker": "IPCALAB.NS",
     "scout_stance": "neutral",
@@ -2205,7 +2205,7 @@
     "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:19.070955+00:00",
+    "timestamp": "2026-09-04T08:34:41.153922+00:00",
     "symbol": "ZYDUSLIFE",
     "ticker": "ZYDUSLIFE.NS",
     "scout_stance": "neutral",
@@ -2220,7 +2220,7 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:19.317239+00:00",
+    "timestamp": "2026-09-04T08:34:41.351661+00:00",
     "symbol": "GLENMARK",
     "ticker": "GLENMARK.NS",
     "scout_stance": "neutral",
@@ -2235,7 +2235,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 2.1 vs Bear Risk 6.5."
   },
   {
-    "timestamp": "2026-09-04T08:16:19.529377+00:00",
+    "timestamp": "2026-09-04T08:34:41.551530+00:00",
     "symbol": "LAURUSLABS",
     "ticker": "LAURUSLABS.NS",
     "scout_stance": "neutral",
@@ -2243,44 +2243,44 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.68,
+    "consensus_score": 8.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.68/10): Bull Conviction 2.5 vs Bear Risk 6.2."
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:19.817110+00:00",
+    "timestamp": "2026-09-04T08:34:41.743013+00:00",
     "symbol": "SYNGENE",
     "ticker": "SYNGENE.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "neutral",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 4.71,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 4.71/10 below execution threshold 7.0."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:41.976703+00:00",
+    "symbol": "APOLLOHOSP",
+    "ticker": "APOLLOHOSP.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:20.028242+00:00",
-    "symbol": "APOLLOHOSP",
-    "ticker": "APOLLOHOSP.NS",
-    "scout_stance": "high_conviction",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
     "bear_stance": "high_bear_risk",
-    "consensus_score": 9.35,
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
     "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
     "judge_verdict": "AVOID",
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:20.265277+00:00",
+    "timestamp": "2026-09-04T08:34:42.203105+00:00",
     "symbol": "FORTIS",
     "ticker": "FORTIS.NS",
     "scout_stance": "neutral",
@@ -2295,24 +2295,39 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:20.500412+00:00",
+    "timestamp": "2026-09-04T08:34:42.407487+00:00",
     "symbol": "MAXHEALTH",
     "ticker": "MAXHEALTH.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "neutral",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 4.97,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:42.636121+00:00",
+    "symbol": "COFORGE",
+    "ticker": "COFORGE.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 6.63,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:20.730397+00:00",
-    "symbol": "COFORGE",
-    "ticker": "COFORGE.NS",
+    "timestamp": "2026-09-04T08:34:42.825294+00:00",
+    "symbol": "OFSS",
+    "ticker": "OFSS.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
@@ -2325,22 +2340,7 @@
     "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:20.931288+00:00",
-    "symbol": "OFSS",
-    "ticker": "OFSS.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:21.162840+00:00",
+    "timestamp": "2026-09-04T08:34:43.008133+00:00",
     "symbol": "KPITTECH",
     "ticker": "KPITTECH.NS",
     "scout_stance": "neutral",
@@ -2348,14 +2348,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
+    "consensus_score": 8.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:21.404247+00:00",
+    "timestamp": "2026-09-04T08:34:43.249005+00:00",
     "symbol": "LTTS",
     "ticker": "LTTS.NS",
     "scout_stance": "neutral",
@@ -2370,7 +2370,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.85/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:21.629485+00:00",
+    "timestamp": "2026-09-04T08:34:43.459515+00:00",
     "symbol": "TATAELXSI",
     "ticker": "TATAELXSI.NS",
     "scout_stance": "neutral",
@@ -2378,91 +2378,31 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.21,
+    "consensus_score": 6.63,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
+    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:21.850388+00:00",
+    "timestamp": "2026-09-04T08:34:43.659434+00:00",
     "symbol": "PERSISTENT",
     "ticker": "PERSISTENT.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 6.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.11/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:22.131885+00:00",
+    "timestamp": "2026-09-04T08:34:43.906918+00:00",
     "symbol": "TATAPOWER",
     "ticker": "TATAPOWER.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
-    "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 10.0,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.9 vs Bear Risk 0.7."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:22.320615+00:00",
-    "symbol": "ADANIGREEN",
-    "ticker": "ADANIGREEN.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
-    "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 10.0,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.9 vs Bear Risk 0.7."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:22.556997+00:00",
-    "symbol": "ADANIPOWER",
-    "ticker": "ADANIPOWER.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:22.796407+00:00",
-    "symbol": "ATGL",
-    "ticker": "ATGL.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.47,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.47/10): Bull Conviction 2.8 vs Bear Risk 5.8."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:23.027439+00:00",
-    "symbol": "IOC",
-    "ticker": "IOC.NS",
     "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
@@ -2475,9 +2415,24 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:23.229393+00:00",
-    "symbol": "BPCL",
-    "ticker": "BPCL.NS",
+    "timestamp": "2026-09-04T08:34:44.109726+00:00",
+    "symbol": "ADANIGREEN",
+    "ticker": "ADANIGREEN.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bullish",
+    "news_stance": "neutral",
+    "bull_stance": "strong_bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 10.0,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_CE",
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:44.341891+00:00",
+    "symbol": "ADANIPOWER",
+    "ticker": "ADANIPOWER.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
@@ -2490,7 +2445,52 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:23.455611+00:00",
+    "timestamp": "2026-09-04T08:34:44.543509+00:00",
+    "symbol": "ATGL",
+    "ticker": "ATGL.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 8.11,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:44.722282+00:00",
+    "symbol": "IOC",
+    "ticker": "IOC.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bullish",
+    "news_stance": "neutral",
+    "bull_stance": "strong_bullish",
+    "bear_stance": "low_risk",
+    "consensus_score": 10.0,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_CE",
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:44.947516+00:00",
+    "symbol": "BPCL",
+    "ticker": "BPCL.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
+    "fact_checker_approved": true,
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:45.166805+00:00",
     "symbol": "GAIL",
     "ticker": "GAIL.NS",
     "scout_stance": "neutral",
@@ -2505,22 +2505,22 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:23.659013+00:00",
+    "timestamp": "2026-09-04T08:34:45.392053+00:00",
     "symbol": "PETRONET",
     "ticker": "PETRONET.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:23.869723+00:00",
+    "timestamp": "2026-09-04T08:34:45.628968+00:00",
     "symbol": "IGL",
     "ticker": "IGL.NS",
     "scout_stance": "high_conviction",
@@ -2532,10 +2532,10 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.7 vs Bear Risk 1.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:24.114683+00:00",
+    "timestamp": "2026-09-04T08:34:45.800992+00:00",
     "symbol": "MGL",
     "ticker": "MGL.NS",
     "scout_stance": "high_conviction",
@@ -2547,25 +2547,25 @@
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
+    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-04T08:16:24.314898+00:00",
+    "timestamp": "2026-09-04T08:34:45.985411+00:00",
     "symbol": "DLF",
     "ticker": "DLF.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:24.559027+00:00",
+    "timestamp": "2026-09-04T08:34:46.382773+00:00",
     "symbol": "GODREJPROP",
     "ticker": "GODREJPROP.NS",
     "scout_stance": "neutral",
@@ -2580,7 +2580,7 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:24.797328+00:00",
+    "timestamp": "2026-09-04T08:34:46.578339+00:00",
     "symbol": "OBEROIRLTY",
     "ticker": "OBEROIRLTY.NS",
     "scout_stance": "neutral",
@@ -2595,7 +2595,7 @@
     "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:25.007479+00:00",
+    "timestamp": "2026-09-04T08:34:46.755503+00:00",
     "symbol": "PRESTIGE",
     "ticker": "PRESTIGE.NS",
     "scout_stance": "neutral",
@@ -2610,7 +2610,7 @@
     "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:25.243600+00:00",
+    "timestamp": "2026-09-04T08:34:46.952914+00:00",
     "symbol": "PHOENIXLTD",
     "ticker": "PHOENIXLTD.NS",
     "scout_stance": "neutral",
@@ -2625,7 +2625,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:25.556041+00:00",
+    "timestamp": "2026-09-04T08:34:47.156702+00:00",
     "symbol": "BRIGADE",
     "ticker": "BRIGADE.NS",
     "scout_stance": "neutral",
@@ -2633,14 +2633,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "high_bear_risk",
-    "consensus_score": 8.63,
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
-    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
-    "judge_verdict": "AVOID",
-    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:26.122415+00:00",
+    "timestamp": "2026-09-04T08:34:47.332928+00:00",
     "symbol": "SOBHA",
     "ticker": "SOBHA.NS",
     "scout_stance": "neutral",
@@ -2648,31 +2648,16 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "consensus_score": 7.58,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:26.342173+00:00",
+    "timestamp": "2026-09-04T08:34:47.644427+00:00",
     "symbol": "ACC",
     "ticker": "ACC.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
-    "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 8.13,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (8.13/10): Bull Conviction 7.2 vs Bear Risk 2.1."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:26.582812+00:00",
-    "symbol": "AMBUJACEM",
-    "ticker": "AMBUJACEM.NS",
     "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
@@ -2685,7 +2670,22 @@
     "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:27.160863+00:00",
+    "timestamp": "2026-09-04T08:34:47.871746+00:00",
+    "symbol": "AMBUJACEM",
+    "ticker": "AMBUJACEM.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 7.47,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Consensus Approved (7.47/10): Bull Conviction 2.8 vs Bear Risk 5.8."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:48.079570+00:00",
     "symbol": "DALBHARAT",
     "ticker": "DALBHARAT.NS",
     "scout_stance": "neutral",
@@ -2700,22 +2700,22 @@
     "reasoning": "Consensus score 6.93/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:27.437543+00:00",
+    "timestamp": "2026-09-04T08:34:48.253277+00:00",
     "symbol": "RAMCOCEM",
     "ticker": "RAMCOCEM.NS",
     "scout_stance": "neutral",
     "tech_stance": "neutral",
     "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
+    "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 6.2,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "reasoning": "Consensus score 6.2/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:27.679313+00:00",
+    "timestamp": "2026-09-04T08:34:48.467582+00:00",
     "symbol": "INDIACEM",
     "ticker": "INDIACEM.NS",
     "scout_stance": "neutral",
@@ -2730,7 +2730,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:27.886185+00:00",
+    "timestamp": "2026-09-04T08:34:48.681036+00:00",
     "symbol": "NBCC",
     "ticker": "NBCC.NS",
     "scout_stance": "neutral",
@@ -2745,22 +2745,22 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:28.092550+00:00",
+    "timestamp": "2026-09-04T08:34:48.914843+00:00",
     "symbol": "RVNL",
     "ticker": "RVNL.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 6.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.11/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:28.329415+00:00",
+    "timestamp": "2026-09-04T08:34:49.115406+00:00",
     "symbol": "IRCON",
     "ticker": "IRCON.NS",
     "scout_stance": "neutral",
@@ -2768,59 +2768,59 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 6.63,
+    "consensus_score": 8.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
+    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:28.534524+00:00",
+    "timestamp": "2026-09-04T08:34:49.294650+00:00",
     "symbol": "PVRINOX",
     "ticker": "PVRINOX.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 6.11,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.11/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:28.784264+00:00",
+    "timestamp": "2026-09-04T08:34:49.459652+00:00",
     "symbol": "SUNTV",
     "ticker": "SUNTV.NS",
     "scout_stance": "neutral",
-    "tech_stance": "neutral",
+    "tech_stance": "bearish",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 6.2,
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.21,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 6.2/10 below execution threshold 7.0."
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:29.124091+00:00",
+    "timestamp": "2026-09-04T08:34:49.862271+00:00",
     "symbol": "ZEEL",
     "ticker": "ZEEL.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.68,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.53,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (7.68/10): Bull Conviction 2.5 vs Bear Risk 6.2."
+    "reasoning": "Consensus Approved (8.53/10): Bull Conviction 1.2 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-04T08:16:29.368171+00:00",
+    "timestamp": "2026-09-04T08:34:50.078290+00:00",
     "symbol": "EXIDEIND",
     "ticker": "EXIDEIND.NS",
     "scout_stance": "neutral",
@@ -2828,14 +2828,14 @@
     "news_stance": "neutral",
     "bull_stance": "strong_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 10.0,
+    "consensus_score": 9.1,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.6 vs Bear Risk 1.4."
+    "reasoning": "Consensus Approved (9.1/10): Bull Conviction 7.8 vs Bear Risk 1.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:29.591118+00:00",
+    "timestamp": "2026-09-04T08:34:50.350583+00:00",
     "symbol": "HAVELLS",
     "ticker": "HAVELLS.NS",
     "scout_stance": "high_conviction",
@@ -2850,24 +2850,9 @@
     "reasoning": "Consensus Approved (8.82/10): Bull Conviction 2.8 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:29.836583+00:00",
+    "timestamp": "2026-09-04T08:34:50.530779+00:00",
     "symbol": "CROMPTON",
     "ticker": "CROMPTON.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bullish",
-    "news_stance": "neutral",
-    "bull_stance": "strong_bullish",
-    "bear_stance": "low_risk",
-    "consensus_score": 8.61,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (8.61/10): Bull Conviction 7.5 vs Bear Risk 2.0."
-  },
-  {
-    "timestamp": "2026-09-04T08:16:30.082561+00:00",
-    "symbol": "VOLTAS",
-    "ticker": "VOLTAS.NS",
     "scout_stance": "neutral",
     "tech_stance": "bullish",
     "news_stance": "neutral",
@@ -2880,22 +2865,37 @@
     "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-04T08:16:30.327102+00:00",
-    "symbol": "BLUESTARCO",
-    "ticker": "BLUESTARCO.NS",
+    "timestamp": "2026-09-04T08:34:50.718192+00:00",
+    "symbol": "VOLTAS",
+    "ticker": "VOLTAS.NS",
     "scout_stance": "neutral",
     "tech_stance": "neutral",
     "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
+    "bull_stance": "bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 4.97,
+    "consensus_score": 6.2,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "AVOID",
-    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
+    "reasoning": "Consensus score 6.2/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:30.573630+00:00",
+    "timestamp": "2026-09-04T08:34:50.902834+00:00",
+    "symbol": "BLUESTARCO",
+    "ticker": "BLUESTARCO.NS",
+    "scout_stance": "neutral",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 6.63,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "BUY_PE",
+    "reasoning": "Bearish Downside Consensus Approved (6.63/10)."
+  },
+  {
+    "timestamp": "2026-09-04T08:34:51.098248+00:00",
     "symbol": "ASTRAL",
     "ticker": "ASTRAL.NS",
     "scout_stance": "neutral",
@@ -2910,7 +2910,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.11/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:30.792763+00:00",
+    "timestamp": "2026-09-04T08:34:51.284962+00:00",
     "symbol": "SUPREMEIND",
     "ticker": "SUPREMEIND.NS",
     "scout_stance": "neutral",
@@ -2925,7 +2925,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:30.998126+00:00",
+    "timestamp": "2026-09-04T08:34:51.459939+00:00",
     "symbol": "KEI",
     "ticker": "KEI.NS",
     "scout_stance": "neutral",
@@ -2933,14 +2933,14 @@
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
     "bear_stance": "moderate_risk",
-    "consensus_score": 8.0,
+    "consensus_score": 7.58,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.0/10): Bull Conviction 2.0 vs Bear Risk 6.6."
+    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:31.217627+00:00",
+    "timestamp": "2026-09-04T08:34:51.674504+00:00",
     "symbol": "SUZLON",
     "ticker": "SUZLON.NS",
     "scout_stance": "neutral",
@@ -2955,37 +2955,37 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-04T08:16:31.403438+00:00",
+    "timestamp": "2026-09-04T08:34:51.845160+00:00",
     "symbol": "CESC",
     "ticker": "CESC.NS",
     "scout_stance": "neutral",
     "tech_stance": "bearish",
     "news_stance": "neutral",
     "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 8.11,
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.63,
     "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_PE",
-    "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-04T08:16:31.630940+00:00",
+    "timestamp": "2026-09-04T08:34:52.038333+00:00",
     "symbol": "NHPC",
     "ticker": "NHPC.NS",
     "scout_stance": "neutral",
-    "tech_stance": "bullish",
+    "tech_stance": "neutral",
     "news_stance": "neutral",
-    "bull_stance": "bullish",
+    "bull_stance": "cautious_bullish",
     "bear_stance": "low_risk",
-    "consensus_score": 7.41,
+    "consensus_score": 4.97,
     "fact_checker_approved": true,
     "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "BUY_CE",
-    "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
+    "judge_verdict": "AVOID",
+    "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-04T08:16:31.878492+00:00",
+    "timestamp": "2026-09-04T08:34:52.244796+00:00",
     "symbol": "SJVN",
     "ticker": "SJVN.NS",
     "scout_stance": "neutral",
