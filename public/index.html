@@ -347,6 +347,15 @@
     .badge-buy-pe { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }
     .badge-scalp { background: rgba(0, 242, 254, 0.2); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); }
     .badge-fut { background: rgba(168, 85, 247, 0.2); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
+    .badge-cash { background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid #eab308; }
+    .badge-open { background: rgba(0, 242, 254, 0.2); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); animation: pulse 2s infinite; }
+    .badge-closed { background: rgba(148, 163, 184, 0.2); color: #94a3b8; border: 1px solid #94a3b8; }
+    .badge-avoid { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }
+    .badge-approved { background: rgba(34, 197, 94, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+    .filter-btn-group { display: flex; gap: 8px; align-items: center; }
+    .filter-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); color: var(--text-muted); padding: 5px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+    .filter-btn.active { background: var(--accent-cyan); color: #000; border-color: var(--accent-cyan); }
 
     .engine-grid {
       display: grid;
@@ -461,8 +470,17 @@
   <!-- PANEL 1: EXECUTED TRADES LOG -->
   <div id="tab-trades" class="panel active">
     <div class="panel-header">
-      <h2>⚔️ Live F&O Trade Execution Log (Options & Futures)</h2>
-      <span class="badge badge-scalp">1m / 5m / 15m Multi-TF Active</span>
+      <div>
+        <h2>⚔️ Live F&O Trade Execution Log (Options & Futures)</h2>
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Real-time execution ledger synced from algorithmic broker order bus</span>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <div class="filter-btn-group">
+          <button id="filter-5d" class="filter-btn active" onclick="setTradeFilter(5)">Last 5 Days</button>
+          <button id="filter-all" class="filter-btn" onclick="setTradeFilter(0)">All History</button>
+        </div>
+        <span class="badge badge-scalp" id="trade-count-badge">0 Trades</span>
+      </div>
     </div>
     <div style="overflow-x: auto;">
       <table>
@@ -595,6 +613,15 @@
   </div>
 
   <script>
+    let currentFilterDays = 5;
+
+    function setTradeFilter(days) {
+      currentFilterDays = days;
+      document.getElementById('filter-5d').classList.toggle('active', days === 5);
+      document.getElementById('filter-all').classList.toggle('active', days === 0);
+      updateDashboard();
+    }
+
     function switchTab(tabId, evt) {
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
@@ -602,14 +629,103 @@
       if (evt && evt.target) {
         evt.target.classList.add('active');
       }
-      document.getElementById(tabId).classList.add('active');
+      const p = document.getElementById(tabId);
+      if (p) p.classList.add('active');
+    }
+
+    async function fetchFirstAvailable(paths) {
+      for (const p of paths) {
+        try {
+          const res = await fetch(p + '?t=' + Date.now());
+          if (res.ok) return await res.text();
+        } catch(e) {}
+      }
+      return null;
+    }
+
+    function parseCSV(text) {
+      if (!text || !text.trim()) return [];
+      const lines = text.trim().split(/\r?\n/);
+      if (lines.length < 2) return [];
+      const headers = lines[0].split(',').map(h => h.trim());
+      const rows = [];
+      for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        const vals = lines[i].split(',').map(v => v.trim());
+        const row = {};
+        headers.forEach((h, idx) => {
+          row[h] = vals[idx] !== undefined ? vals[idx] : '';
+        });
+        rows.push(row);
+      }
+      return rows;
+    }
+
+    function formatTime(isoStr) {
+      if (!isoStr) return '-';
+      try {
+        const d = new Date(isoStr);
+        if (isNaN(d.getTime())) return isoStr;
+        return d.toLocaleString('en-IN', {
+          timeZone: 'Asia/Kolkata',
+          day: '2-digit',
+          month: 'short',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        });
+      } catch(e) {
+        return isoStr;
+      }
+    }
+
+    function getStrategyBadge(verdict, contractType) {
+      const v = (verdict || contractType || '').toUpperCase();
+      if (v.includes('SCALP_CE') || v.includes('BUY_CE') || v.includes('OPTION_CE')) {
+        return '<span class="badge badge-buy-ce">CALL BUY</span>';
+      }
+      if (v.includes('SCALP_PE') || v.includes('BUY_PE') || v.includes('OPTION_PE')) {
+        return '<span class="badge badge-buy-pe">PUT BUY</span>';
+      }
+      if (v.includes('BUY_FUT') || v.includes('FUTURES_LONG')) {
+        return '<span class="badge badge-fut">FUT LONG</span>';
+      }
+      if (v.includes('SELL_FUT') || v.includes('FUTURES_SHORT')) {
+        return '<span class="badge badge-fut">FUT SHORT</span>';
+      }
+      if (v.includes('CASH_BUY') || v.includes('BUY')) {
+        return '<span class="badge badge-cash">CASH BUY</span>';
+      }
+      if (v.includes('CASH_SELL') || v.includes('SELL')) {
+        return '<span class="badge badge-cash">CASH SELL</span>';
+      }
+      return `<span class="badge badge-scalp">${v || 'F&O'}</span>`;
+    }
+
+    function getStatusBadge(exitPrice, exitReason) {
+      const p = parseFloat(exitPrice);
+      const r = (exitReason || '').toUpperCase();
+      if (isNaN(p) || p === 0 || !exitPrice) {
+        return '<span class="badge badge-open">ACTIVE OPEN</span>';
+      }
+      if (r.includes('TARGET')) {
+        return '<span class="badge badge-buy-ce">TARGET HIT</span>';
+      }
+      if (r.includes('SL') || r.includes('STOP')) {
+        return '<span class="badge badge-buy-pe">STOP LOSS</span>';
+      }
+      if (r.includes('EOD')) {
+        return '<span class="badge badge-scalp">EOD SQUARED</span>';
+      }
+      return `<span class="badge badge-closed">${r || 'CLOSED'}</span>`;
     }
 
     async function updateDashboard() {
+      // 1. Fetch State (JSON)
       try {
-        const res = await fetch('../state/portfolio_state.json');
-        if (res.ok) {
-          const state = await res.json();
+        const stateTxt = await fetchFirstAvailable(['state/portfolio_state.json', '../state/portfolio_state.json']);
+        if (stateTxt) {
+          const state = JSON.parse(stateTxt);
           document.getElementById('val-total').innerText = '₹' + Number(state.pool_total || 500000).toLocaleString('en-IN', {minimumFractionDigits: 2});
           document.getElementById('val-available').innerText = '₹' + Number(state.pool_available || 500000).toLocaleString('en-IN', {minimumFractionDigits: 2});
           
@@ -620,7 +736,122 @@
           
           document.getElementById('val-brokerage').innerText = '₹' + Number(state.total_brokerage_paid_inr || 0).toLocaleString('en-IN', {minimumFractionDigits: 2});
         }
-      } catch(e) {}
+      } catch(e) {
+        console.warn('Error updating portfolio state:', e);
+      }
+
+      // 2. Fetch Trade Log (CSV)
+      try {
+        const csvTxt = await fetchFirstAvailable(['state/trade_log.csv', '../state/trade_log.csv']);
+        if (csvTxt) {
+          const allRows = parseCSV(csvTxt);
+          
+          // Date cutoff calculation for rolling 5 days
+          let displayRows = allRows;
+          if (currentFilterDays > 0) {
+            const now = new Date();
+            const cutoffDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - (currentFilterDays - 1), 0, 0, 0);
+            displayRows = allRows.filter(r => {
+              if (!r.executed_at) return true;
+              const d = new Date(r.executed_at);
+              return isNaN(d.getTime()) || d >= cutoffDate;
+            });
+          }
+
+          // Sort newest first
+          displayRows.sort((a, b) => {
+            const ta = new Date(a.executed_at || 0).getTime();
+            const tb = new Date(b.executed_at || 0).getTime();
+            return tb - ta;
+          });
+
+          const countBadge = document.getElementById('trade-count-badge');
+          if (countBadge) {
+            countBadge.innerText = `${displayRows.length} Trades (${currentFilterDays > 0 ? 'Last 5D' : 'All'})`;
+          }
+
+          const tbody = document.getElementById('trade-log-body');
+          if (tbody) {
+            if (displayRows.length === 0) {
+              tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 30px;">
+                No trades executed in the selected ${currentFilterDays > 0 ? '5-day' : ''} window. Algorithm actively scanning 5m/1m setups.
+              </td></tr>`;
+            } else {
+              tbody.innerHTML = displayRows.map(row => {
+                const strikeStr = (parseFloat(row.strike_price) > 0) ? ` ${row.strike_price} ${row.contract_type || ''}` : '';
+                const instrument = `<strong>${row.symbol || row.ticker || 'INSTRUMENT'}</strong><span style="font-size: 11px; color: var(--text-muted); display: block;">${strikeStr || row.contract_type || 'CASH'}</span>`;
+                const stratBadge = getStrategyBadge(row.verdict, row.contract_type);
+                const qtyStr = `${row.lots ? row.lots + ' Lots' : ''} (${row.total_shares || '0'})`;
+                
+                const entryVal = parseFloat(row.option_premium || row.spot_entry || 0);
+                const entryStr = entryVal > 0 ? '₹' + entryVal.toLocaleString('en-IN', {minimumFractionDigits: 2}) : '-';
+                
+                const exitVal = parseFloat(row.exit_price || 0);
+                const exitStr = exitVal > 0 ? '₹' + exitVal.toLocaleString('en-IN', {minimumFractionDigits: 2}) : '<span style="color: var(--accent-cyan); font-weight:700;">OPEN</span>';
+                
+                const score = parseFloat(row.waterfall_score || 0);
+                const scoreStr = score > 0 ? `<span style="color: var(--accent-cyan); font-weight: 700;">${score.toFixed(1)}</span> / 10` : '-';
+                
+                const costVal = parseFloat(row.brokerage_fee_inr || row.total_cost_inr || 0);
+                const costStr = costVal > 0 ? '₹' + costVal.toLocaleString('en-IN', {minimumFractionDigits: 2}) : '₹0.00';
+                
+                const pnlVal = parseFloat(row.realized_pnl_inr || 0);
+                let pnlStr = '<span style="color: var(--text-muted);">-</span>';
+                if (!isNaN(pnlVal) && exitVal > 0) {
+                  const pnlColor = pnlVal >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+                  const sign = pnlVal >= 0 ? '+₹' : '-₹';
+                  pnlStr = `<span style="color: ${pnlColor}; font-weight: 800;">${sign}${Math.abs(pnlVal).toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>`;
+                }
+                
+                const statusBadge = getStatusBadge(row.exit_price, row.exit_reason);
+
+                return `<tr>
+                  <td style="font-size: 12px; white-space: nowrap; color: var(--text-muted);">${formatTime(row.executed_at)}</td>
+                  <td>${instrument}</td>
+                  <td>${stratBadge}</td>
+                  <td style="font-weight: 600;">${qtyStr}</td>
+                  <td>${entryStr}</td>
+                  <td>${exitStr}</td>
+                  <td>${scoreStr}</td>
+                  <td style="font-size: 12px; color: var(--text-muted);">${costStr}</td>
+                  <td>${pnlStr}</td>
+                  <td>${statusBadge}</td>
+                </tr>`;
+              }).join('');
+            }
+          }
+        }
+      } catch(e) {
+        console.warn('Error updating trade log:', e);
+      }
+
+      // 3. Fetch Committee Debate Logs (JSON)
+      try {
+        const debateTxt = await fetchFirstAvailable(['state/committee_debate_log.json', '../state/committee_debate_log.json']);
+        if (debateTxt) {
+          const debates = JSON.parse(debateTxt);
+          if (Array.isArray(debates) && debates.length > 0) {
+            const recents = debates.slice(-20).reverse();
+            const comBody = document.getElementById('committee-table-body');
+            if (comBody) {
+              comBody.innerHTML = recents.map(d => {
+                const overrideBadge = (d.risk_override_status === 'RISK_OVERRIDE_TRIGGERED') 
+                  ? '<span class="badge badge-avoid">OVERRIDE VETO</span>' 
+                  : '<span class="badge badge-approved">CLEARED</span>';
+                return `<tr>
+                  <td><strong>${d.symbol}</strong><span style="font-size: 11px; color: var(--text-muted); display: block;">${formatTime(d.timestamp)}</span></td>
+                  <td><span class="badge badge-buy-ce">${(d.bull_stance || d.scout_stance || 'NEUTRAL').toUpperCase()}</span></td>
+                  <td><span class="badge badge-buy-pe">${(d.bear_stance || d.tech_stance || 'MODERATE').toUpperCase()}</span></td>
+                  <td><strong style="color: var(--accent-cyan);">${d.judge_verdict || 'EVAL'}</strong> (${d.consensus_score || '-'})</td>
+                  <td>${overrideBadge}</td>
+                </tr>`;
+              }).join('');
+            }
+          }
+        }
+      } catch(e) {
+        console.warn('Error updating debate logs:', e);
+      }
     }
 
     let deferredPrompt;
@@ -644,7 +875,7 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js?v=3').then((reg) => {
+        navigator.serviceWorker.register('/sw.js?v=4').then((reg) => {
           console.log('Shadow Traders PWA Service Worker Registered:', reg);
         }).catch((err) => {
           console.log('Service Worker Registration Failed:', err);
