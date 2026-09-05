@@ -461,10 +461,10 @@
   <!-- TAB NAVIGATION -->
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('tab-trades', event)">⚔️ Executed Trades Log</button>
-    <button class="tab-btn" onclick="switchTab('tab-engines', event)">🎯 F&O Trade Engines</button>
-    <button class="tab-btn" onclick="switchTab('tab-patterns', event)">📊 12-Pattern & VWAP Hunter</button>
+    <button class="tab-btn" onclick="switchTab('tab-pnl', event)">📊 P&L & Monthly Analytics</button>
     <button class="tab-btn" onclick="switchTab('tab-committee', event)">🏛️ 3-Way Risk Committee</button>
     <button class="tab-btn" onclick="switchTab('tab-memory', event)">🔮 Reflective Memory</button>
+    <button class="tab-btn" onclick="switchTab('tab-settings', event)">⚙️ Settings & System Control</button>
   </div>
 
   <!-- PANEL 1: EXECUTED TRADES LOG -->
@@ -509,12 +509,180 @@
     </div>
   </div>
 
-  <!-- PANEL 2: F&O TRADE ENGINES -->
-  <div id="tab-engines" class="panel">
+    <!-- PANEL 2: P&L & MONTHLY PERFORMANCE ANALYTICS -->
+  <div id="tab-pnl" class="panel">
     <div class="panel-header">
-      <h2>🎯 6 Specialized High-Frequency F&O Trade Engines</h2>
+      <div>
+        <h2>📊 Realized Profit & Loss Analytics & Performance Metrics</h2>
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Audited trade returns, win rates, and Financial Year metrics</span>
+      </div>
+      <span class="badge badge-scalp" id="pnl-fy-badge">FY 2026-27 Active</span>
     </div>
-    <div class="engine-grid">
+
+    <!-- P&L SUMMARY CARDS -->
+    <div class="stats-grid" style="margin-bottom: 24px;">
+      <div class="stat-card">
+        <div class="stat-label">Monthly Realized P&L</div>
+        <div class="stat-value" id="pnl-monthly-val">₹0.00</div>
+        <div class="stat-subtext" id="pnl-monthly-sub">0 Trades (0% Win Rate)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Year-to-Date (YTD) P&L</div>
+        <div class="stat-value" id="pnl-ytd-val">₹0.00</div>
+        <div class="stat-subtext" id="pnl-ytd-sub">FY 2026-27 Total Realized</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">YTD Win Rate</div>
+        <div class="stat-value" id="pnl-winrate-val">0.0%</div>
+        <div class="stat-subtext" id="pnl-winrate-sub">0 Wins / 0 Losses</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Brokerage Paid</div>
+        <div class="stat-value" id="pnl-costs-val">₹0.00</div>
+        <div class="stat-subtext" id="pnl-costs-sub">Statutory Taxes & Brokerage</div>
+      </div>
+    </div>
+
+    <!-- MONTHLY BREAKDOWN TABLE -->
+    <h3 style="font-family: var(--font-heading); font-size: 16px; color: var(--accent-cyan); margin-bottom: 12px;">
+      📅 Monthly Performance Breakdown (Financial Year 2026-27)
+    </h3>
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Trades Count</th>
+            <th>Gross P&L (INR)</th>
+            <th>Brokerage Paid</th>
+            <th>Net Realized P&L</th>
+            <th>Win Rate</th>
+            <th>Return on Capital</th>
+          </tr>
+        </thead>
+        <tbody id="pnl-breakdown-body">
+          <tr>
+            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 24px;">Loading financial year analytics...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PANEL 3: 3-WAY RISK COMMITTEE -->
+  <div id="tab-committee" class="panel">
+    <div class="panel-header">
+      <div>
+        <h2>🏛️ 3-Way Risk Committee & Subagent Debate Logs</h2>
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Scout, Technician & Judge multi-agent consensus ledger</span>
+      </div>
+    </div>
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Bull Conviction (Scout)</th>
+            <th>Bear Risk (Technician)</th>
+            <th>Fact-Checker Status (Judge)</th>
+            <th>Risk Committee Override</th>
+          </tr>
+        </thead>
+        <tbody id="committee-table-body">
+          <tr>
+            <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No active debate logs for current scan window. Subagent swarm evaluating market signals.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PANEL 4: REFLECTIVE MEMORY -->
+  <div id="tab-memory" class="panel">
+    <div class="panel-header">
+      <div>
+        <h2>🔮 Reflective Memory & Algorithmic Trade Lessons</h2>
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Self-evaluating post-trade feedback loop & ticker-level memory modifiers</span>
+      </div>
+      <span class="badge badge-scalp" id="memory-count-badge">0 Lessons Active</span>
+    </div>
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker Symbol</th>
+            <th>Prior Outcome</th>
+            <th>Memory Modifier</th>
+            <th>Learned Algorithmic Lesson</th>
+          </tr>
+        </thead>
+        <tbody id="memory-table-body">
+          <tr>
+            <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PANEL 5: SETTINGS & SYSTEM CONTROL -->
+  <div id="tab-settings" class="panel">
+    <div class="panel-header">
+      <div>
+        <h2>⚙️ Quantitative Settings, Risk Controls & Trade Models</h2>
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Emergency kill switch controls, volatility regimes & algorithmic engines</span>
+      </div>
+      <span class="badge badge-open" id="settings-killswitch-status">TRADING ACTIVE</span>
+    </div>
+
+    <!-- KILL SWITCH CONTROL CARD -->
+    <div class="engine-card" style="margin-bottom: 24px; border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.05);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <h3 style="color: var(--accent-red); margin-bottom: 4px;">🚨 Algorithmic Kill Switch & Operational State</h3>
+          <p style="font-size: 12.5px; color: var(--text-muted);">
+            Instantly halt all automated order scanning, subagent execution, and new position entries. Open positions will continue to be monitored for SL/TP exit.
+          </p>
+          <div style="margin-top: 8px; font-size: 11.5px; color: var(--text-subtle);">
+            Current Status: <strong id="kill-switch-detail" style="color: var(--accent-green);">ONLINE (Normal Algorithmic Operations)</strong>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button id="btn-halt-trading" onclick="toggleKillSwitch(true)" style="background: rgba(239, 68, 68, 0.2); border: 1px solid var(--accent-red); color: var(--accent-red); padding: 10px 18px; border-radius: 12px; font-weight: 800; cursor: pointer; font-family: var(--font-heading); transition: all 0.2s;">
+            🛑 EMERGENCY HALT TRADING
+          </button>
+          <button id="btn-resume-trading" onclick="toggleKillSwitch(false)" style="background: rgba(34, 197, 94, 0.2); border: 1px solid var(--accent-green); color: var(--accent-green); padding: 10px 18px; border-radius: 12px; font-weight: 800; cursor: pointer; font-family: var(--font-heading); transition: all 0.2s;">
+            ▶️ RESUME TRADING
+          </button>
+        </div>
+      </div>
+
+      <!-- RISK THRESHOLDS GRID -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--glass-border);">
+        <div>
+          <span style="font-size: 11px; color: var(--text-muted); display: block;">Daily Drawdown Halt</span>
+          <strong style="color: var(--accent-red); font-family: var(--font-mono);">-2.0% of Capital</strong>
+        </div>
+        <div>
+          <span style="font-size: 11px; color: var(--text-muted); display: block;">Weekly Drawdown Halt</span>
+          <strong style="color: var(--accent-red); font-family: var(--font-mono);">-5.0% of Capital</strong>
+        </div>
+        <div>
+          <span style="font-size: 11px; color: var(--text-muted); display: block;">Consecutive Loss Halt</span>
+          <strong style="color: var(--accent-gold); font-family: var(--font-mono);">3 Trades Max</strong>
+        </div>
+        <div>
+          <span style="font-size: 11px; color: var(--text-muted); display: block;">India VIX Extreme Halt</span>
+          <strong style="color: var(--accent-gold); font-family: var(--font-mono);">&gt; 35.0 VIX Level</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRATEGY ENGINES ACCORDION -->
+    <h3 style="font-family: var(--font-heading); font-size: 16px; color: var(--accent-cyan); margin-bottom: 12px;">
+      🎯 6 Specialized High-Frequency F&O Trade Engines
+    </h3>
+    <div class="engine-grid" style="margin-bottom: 24px;">
       <div class="engine-card">
         <h3><span class="badge badge-buy-ce">BUY_CE</span> Call Option Momentum</h3>
         <p>Target: ATM/ITM Call Option Buy on 5m Supertrend Bullish Flip + VWAP Support Bounce. Profit Target: +25.0% Premium gain.</p>
@@ -533,20 +701,17 @@
       </div>
       <div class="engine-card">
         <h3><span class="badge badge-fut">BUY_FUT</span> Index & Equity Long Futures</h3>
-        <p>Long Futures position sizing on strong 15m structural breakouts with NIFTY outperformance (RS > 1.0).</p>
+        <p>Long Futures position sizing on strong 15m structural breakouts with NIFTY outperformance (RS &gt; 1.0).</p>
       </div>
       <div class="engine-card">
         <h3><span class="badge badge-fut">SELL_FUT</span> Index & Equity Short Futures</h3>
-        <p>Short Futures positioning on structural breakdowns with NIFTY underperformance (RS < 1.0).</p>
+        <p>Short Futures positioning on structural breakdowns with NIFTY underperformance (RS &lt; 1.0).</p>
       </div>
     </div>
-  </div>
 
-  <!-- PANEL 3: 12-PATTERN & VWAP HUNTER -->
-  <div id="tab-patterns" class="panel">
-    <div class="panel-header">
-      <h2>📊 12-Pattern & VWAP Quantitative Hunter</h2>
-    </div>
+    <h3 style="font-family: var(--font-heading); font-size: 16px; color: var(--accent-cyan); margin-bottom: 12px;">
+      📊 12-Pattern & VWAP Quantitative Hunter
+    </h3>
     <div class="engine-grid">
       <div class="engine-card">
         <h3>Double Bottom (W-Pattern)</h3>
@@ -567,53 +732,9 @@
     </div>
   </div>
 
-  <!-- PANEL 4: 3-WAY RISK COMMITTEE -->
-  <div id="tab-committee" class="panel">
-    <div class="panel-header">
-      <h2>🏛️ 3-Way Risk Committee & Subagent Debate Logs</h2>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Symbol</th>
-          <th>Bull Conviction (Scout)</th>
-          <th>Bear Risk (Technician)</th>
-          <th>Fact-Checker Status (Judge)</th>
-          <th>Risk Committee Override</th>
-        </tr>
-      </thead>
-      <tbody id="committee-table-body">
-        <tr>
-          <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No active debate logs for current scan window. Subagent swarm evaluating market signals.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- PANEL 5: REFLECTIVE MEMORY -->
-  <div id="tab-memory" class="panel">
-    <div class="panel-header">
-      <h2>🔮 Reflective Memory & Trade Lessons</h2>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Ticker Symbol</th>
-          <th>Prior Outcome</th>
-          <th>Memory Modifier</th>
-          <th>Learned Lesson</th>
-        </tr>
-      </thead>
-      <tbody id="memory-table-body">
-        <tr>
-          <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
   <script>
     let currentFilterDays = 5;
+    let localKillSwitchHalted = false;
 
     function setTradeFilter(days) {
       currentFilterDays = days;
@@ -631,6 +752,36 @@
       }
       const p = document.getElementById(tabId);
       if (p) p.classList.add('active');
+    }
+
+    function toggleKillSwitch(halt) {
+      localKillSwitchHalted = halt;
+      localStorage.setItem('shadow_kill_switch', halt ? 'true' : 'false');
+      
+      const badge = document.getElementById('settings-killswitch-status');
+      const detail = document.getElementById('kill-switch-detail');
+      
+      if (halt) {
+        if (badge) {
+          badge.innerText = 'TRADING HALTED';
+          badge.className = 'badge badge-avoid';
+        }
+        if (detail) {
+          detail.innerText = 'HALTED (Emergency Stop Triggered by Operator)';
+          detail.style.color = 'var(--accent-red)';
+        }
+        alert('🚨 EMERGENCY KILL SWITCH ENGAGED! Automated scan cycles halted.');
+      } else {
+        if (badge) {
+          badge.innerText = 'TRADING ACTIVE';
+          badge.className = 'badge badge-open';
+        }
+        if (detail) {
+          detail.innerText = 'ONLINE (Normal Algorithmic Operations)';
+          detail.style.color = 'var(--accent-green)';
+        }
+        alert('▶️ KILL SWITCH DISENGAGED! Algorithmic trading resumed.');
+      }
     }
 
     async function fetchFirstAvailable(paths) {
@@ -720,13 +871,212 @@
       return `<span class="badge badge-closed">${r || 'CLOSED'}</span>`;
     }
 
+    function renderPnLAnalytics(allRows, poolTotal) {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const currentMonth = now.getMonth(); // 0-indexed
+      
+      // Indian FY starts April 1 (Month index 3)
+      const fyStartYear = currentMonth >= 3 ? currentYear : currentYear - 1;
+      const fyStartDate = new Date(fyStartYear, 3, 1, 0, 0, 0);
+      const fyEndDate = new Date(fyStartYear + 1, 2, 31, 23, 59, 59);
+
+      const fyBadge = document.getElementById('pnl-fy-badge');
+      if (fyBadge) {
+        fyBadge.innerText = `FY ${fyStartYear}-${String(fyStartYear+1).slice(-2)} (01 Apr ${fyStartYear} – 31 Mar ${fyStartYear+1})`;
+      }
+
+      // Filter closed trades only
+      const closedTrades = allRows.filter(r => {
+        const exitP = parseFloat(r.exit_price);
+        return !isNaN(exitP) && exitP > 0;
+      });
+
+      // Monthly filter (Current calendar month)
+      const currentMonthTrades = closedTrades.filter(r => {
+        if (!r.executed_at) return false;
+        const d = new Date(r.executed_at);
+        return !isNaN(d.getTime()) && d.getFullYear() === currentYear && d.getMonth() === currentMonth;
+      });
+
+      const monthlyPnl = currentMonthTrades.reduce((sum, r) => sum + (parseFloat(r.realized_pnl_inr) || 0), 0);
+      const monthlyWins = currentMonthTrades.filter(r => (parseFloat(r.realized_pnl_inr) || 0) > 0).length;
+      const monthlyWinRate = currentMonthTrades.length > 0 ? ((monthlyWins / currentMonthTrades.length) * 100).toFixed(1) : '0.0';
+      const monthlyPnlPct = poolTotal > 0 ? ((monthlyPnl / poolTotal) * 100).toFixed(2) : '0.00';
+
+      const pnlMonthElem = document.getElementById('pnl-monthly-val');
+      if (pnlMonthElem) {
+        pnlMonthElem.innerText = (monthlyPnl >= 0 ? '+₹' : '-₹') + Math.abs(monthlyPnl).toLocaleString('en-IN', {minimumFractionDigits: 2});
+        pnlMonthElem.style.color = monthlyPnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+      }
+      const pnlMonthSub = document.getElementById('pnl-monthly-sub');
+      if (pnlMonthSub) {
+        pnlMonthSub.innerText = `${currentMonthTrades.length} Trades (${monthlyWinRate}% Win Rate | ${monthlyPnl >= 0 ? '+' : ''}${monthlyPnlPct}%)`;
+      }
+
+      // YTD FY Filter
+      const ytdTrades = closedTrades.filter(r => {
+        if (!r.executed_at) return false;
+        const d = new Date(r.executed_at);
+        return !isNaN(d.getTime()) && d >= fyStartDate && d <= fyEndDate;
+      });
+
+      const ytdPnl = ytdTrades.reduce((sum, r) => sum + (parseFloat(r.realized_pnl_inr) || 0), 0);
+      const ytdWins = ytdTrades.filter(r => (parseFloat(r.realized_pnl_inr) || 0) > 0).length;
+      const ytdLosses = ytdTrades.length - ytdWins;
+      const ytdWinRate = ytdTrades.length > 0 ? ((ytdWins / ytdTrades.length) * 100).toFixed(1) : '0.0';
+      const ytdPnlPct = poolTotal > 0 ? ((ytdPnl / poolTotal) * 100).toFixed(2) : '0.00';
+      const ytdCosts = ytdTrades.reduce((sum, r) => sum + (parseFloat(r.brokerage_fee_inr || r.total_cost_inr) || 0), 0);
+
+      const pnlYtdElem = document.getElementById('pnl-ytd-val');
+      if (pnlYtdElem) {
+        pnlYtdElem.innerText = (ytdPnl >= 0 ? '+₹' : '-₹') + Math.abs(ytdPnl).toLocaleString('en-IN', {minimumFractionDigits: 2});
+        pnlYtdElem.style.color = ytdPnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+      }
+      const pnlYtdSub = document.getElementById('pnl-ytd-sub');
+      if (pnlYtdSub) {
+        pnlYtdSub.innerText = `${ytdTrades.length} Total Trades (${ytdPnl >= 0 ? '+' : ''}${ytdPnlPct}% RoC)`;
+      }
+
+      const pnlWinElem = document.getElementById('pnl-winrate-val');
+      if (pnlWinElem) pnlWinElem.innerText = `${ytdWinRate}%`;
+      const pnlWinSub = document.getElementById('pnl-winrate-sub');
+      if (pnlWinSub) pnlWinSub.innerText = `${ytdWins} Wins / ${ytdLosses} Losses`;
+
+      const pnlCostElem = document.getElementById('pnl-costs-val');
+      if (pnlCostElem) pnlCostElem.innerText = '₹' + ytdCosts.toLocaleString('en-IN', {minimumFractionDigits: 2});
+      const pnlCostSub = document.getElementById('pnl-costs-sub');
+      if (pnlCostSub) pnlCostSub.innerText = `Avg ₹${ytdTrades.length > 0 ? (ytdCosts/ytdTrades.length).toFixed(1) : '0'}/Trade`;
+
+      // Group by Month for FY breakdown table
+      const monthsMap = {};
+      const monthNames = ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March'];
+      
+      monthNames.forEach((name, mIdx) => {
+        const calMonth = (mIdx + 3) % 12;
+        const calYear = mIdx < 9 ? fyStartYear : fyStartYear + 1;
+        const key = `${calYear}-${String(calMonth + 1).padStart(2, '0')}`;
+        monthsMap[key] = {
+          name: `${name} ${calYear}`,
+          trades: 0,
+          grossPnl: 0,
+          brokerage: 0,
+          wins: 0
+        };
+      });
+
+      ytdTrades.forEach(r => {
+        const d = new Date(r.executed_at);
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+        if (monthsMap[key]) {
+          const p = parseFloat(r.realized_pnl_inr) || 0;
+          const b = parseFloat(r.brokerage_fee_inr || r.total_cost_inr) || 0;
+          monthsMap[key].trades += 1;
+          monthsMap[key].grossPnl += (p + b);
+          monthsMap[key].brokerage += b;
+          if (p > 0) monthsMap[key].wins += 1;
+        }
+      });
+
+      const pnlTableBody = document.getElementById('pnl-breakdown-body');
+      if (pnlTableBody) {
+        const monthKeys = Object.keys(monthsMap);
+        pnlTableBody.innerHTML = monthKeys.map(k => {
+          const m = monthsMap[k];
+          const net = m.grossPnl - m.brokerage;
+          const netColor = net >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+          const sign = net >= 0 ? '+₹' : '-₹';
+          const winRate = m.trades > 0 ? ((m.wins / m.trades) * 100).toFixed(1) + '%' : '-';
+          const roc = poolTotal > 0 && m.trades > 0 ? ((net / poolTotal) * 100).toFixed(2) + '%' : '-';
+          
+          return `<tr>
+            <td style="font-weight: 700;">${m.name}</td>
+            <td style="font-family: var(--font-mono);">${m.trades}</td>
+            <td>₹${m.grossPnl.toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
+            <td style="color: var(--text-muted);">₹${m.brokerage.toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
+            <td style="color: ${netColor}; font-weight: 800;">${sign}${Math.abs(net).toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
+            <td>${winRate}</td>
+            <td style="color: ${netColor}; font-weight: 600;">${roc}</td>
+          </tr>`;
+        }).join('');
+      }
+    }
+
+    async function updateReflectiveMemory() {
+      try {
+        const memTxt = await fetchFirstAvailable(['state/reflective_memory.json', '../state/reflective_memory.json']);
+        if (memTxt) {
+          const memory = JSON.parse(memTxt);
+          const allLessons = [];
+          
+          Object.keys(memory).forEach(ticker => {
+            const data = memory[ticker];
+            if (data && Array.isArray(data.history)) {
+              data.history.forEach(item => {
+                allLessons.push({
+                  ticker: ticker,
+                  symbol: data.symbol || ticker.replace('.NS', '').replace('^', ''),
+                  outcome: item.outcome || 'EOD_SQUARED',
+                  modifier: item.memory_modifier !== undefined ? item.memory_modifier : 0.0,
+                  reflection: item.reflection || 'Standard intraday exit protocol followed.',
+                  timestamp: item.timestamp || ''
+                });
+              });
+            }
+          });
+
+          // Sort newest first
+          allLessons.sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0));
+
+          const countBadge = document.getElementById('memory-count-badge');
+          if (countBadge) countBadge.innerText = `${allLessons.length} Lessons Active`;
+
+          const memBody = document.getElementById('memory-table-body');
+          if (memBody) {
+            if (allLessons.length === 0) {
+              memBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">
+                Reflective memory ledger active. Lessons recorded automatically upon trade exits.
+              </td></tr>`;
+            } else {
+              memBody.innerHTML = allLessons.slice(0, 30).map(l => {
+                let outBadge = '<span class="badge badge-scalp">EOD SQUARED</span>';
+                if (l.outcome.includes('TARGET')) outBadge = '<span class="badge badge-buy-ce">TARGET HIT</span>';
+                else if (l.outcome.includes('SL') || l.outcome.includes('STOP')) outBadge = '<span class="badge badge-buy-pe">STOP LOSS</span>';
+
+                let modColor = 'var(--accent-cyan)';
+                let modSign = '';
+                if (l.modifier > 0) { modColor = 'var(--accent-green)'; modSign = '+'; }
+                else if (l.modifier < 0) { modColor = 'var(--accent-red)'; modSign = ''; }
+                const modBadge = `<span class="badge" style="background: rgba(255,255,255,0.05); color: ${modColor}; border: 1px solid ${modColor};">${modSign}${l.modifier.toFixed(1)} Score</span>`;
+
+                return `<tr>
+                  <td>
+                    <strong>${l.symbol}</strong>
+                    <span style="font-size: 11px; color: var(--text-muted); display: block;">${formatTime(l.timestamp)}</span>
+                  </td>
+                  <td>${outBadge}</td>
+                  <td>${modBadge}</td>
+                  <td style="font-size: 12.5px; line-height: 1.5; color: var(--text-main);">${l.reflection}</td>
+                </tr>`;
+              }).join('');
+            }
+          }
+        }
+      } catch(e) {
+        console.warn('Error updating reflective memory:', e);
+      }
+    }
+
     async function updateDashboard() {
+      let poolTotal = 500000;
+
       // 1. Fetch State (JSON)
       try {
         const stateTxt = await fetchFirstAvailable(['state/portfolio_state.json', '../state/portfolio_state.json']);
         if (stateTxt) {
           const state = JSON.parse(stateTxt);
-          document.getElementById('val-total').innerText = '₹' + Number(state.pool_total || 500000).toLocaleString('en-IN', {minimumFractionDigits: 2});
+          poolTotal = Number(state.pool_total || 500000);
+          document.getElementById('val-total').innerText = '₹' + poolTotal.toLocaleString('en-IN', {minimumFractionDigits: 2});
           document.getElementById('val-available').innerText = '₹' + Number(state.pool_available || 500000).toLocaleString('en-IN', {minimumFractionDigits: 2});
           
           const pnl = Number(state.daily_pnl_inr || 0);
@@ -735,6 +1085,19 @@
           pnlElem.style.color = pnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
           
           document.getElementById('val-brokerage').innerText = '₹' + Number(state.total_brokerage_paid_inr || 0).toLocaleString('en-IN', {minimumFractionDigits: 2});
+
+          // Kill switch status sync
+          const isHalted = state.kill_switch_active || localKillSwitchHalted;
+          const badge = document.getElementById('settings-killswitch-status');
+          const detail = document.getElementById('kill-switch-detail');
+          if (badge) {
+            badge.innerText = isHalted ? 'TRADING HALTED' : 'TRADING ACTIVE';
+            badge.className = isHalted ? 'badge badge-avoid' : 'badge badge-open';
+          }
+          if (detail) {
+            detail.innerText = isHalted ? `HALTED (${state.kill_switch_reason || 'Operator Stop'})` : 'ONLINE (Normal Algorithmic Operations)';
+            detail.style.color = isHalted ? 'var(--accent-red)' : 'var(--accent-green)';
+          }
         }
       } catch(e) {
         console.warn('Error updating portfolio state:', e);
@@ -746,6 +1109,9 @@
         if (csvTxt) {
           const allRows = parseCSV(csvTxt);
           
+          // Render P&L analytics
+          renderPnLAnalytics(allRows, poolTotal);
+
           // Date cutoff calculation for rolling 5 days
           let displayRows = allRows;
           if (currentFilterDays > 0) {
@@ -831,7 +1197,7 @@
         if (debateTxt) {
           const debates = JSON.parse(debateTxt);
           if (Array.isArray(debates) && debates.length > 0) {
-            const recents = debates.slice(-20).reverse();
+            const recents = debates.slice(-25).reverse();
             const comBody = document.getElementById('committee-table-body');
             if (comBody) {
               comBody.innerHTML = recents.map(d => {
@@ -852,6 +1218,9 @@
       } catch(e) {
         console.warn('Error updating debate logs:', e);
       }
+
+      // 4. Update Reflective Memory
+      await updateReflectiveMemory();
     }
 
     let deferredPrompt;
@@ -875,7 +1244,7 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js?v=4').then((reg) => {
+        navigator.serviceWorker.register('/sw.js?v=5').then((reg) => {
           console.log('Shadow Traders PWA Service Worker Registered:', reg);
         }).catch((err) => {
           console.log('Service Worker Registration Failed:', err);

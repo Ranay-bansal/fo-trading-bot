@@ -1,0 +1,1427 @@
+{
+  "RELIANCE.NS": {
+    "ticker": "RELIANCE.NS",
+    "symbol": "RELIANCE",
+    "total_evaluations": 64,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:57.823427Z",
+        "verdict": "SCALP_CE",
+        "outcome": "EOD_SQUAREOFF",
+        "memory_modifier": 0.0,
+        "reflection": "Market consolidated in narrow sideways range; position squared off under strict EOD protocol to eliminate overnight gamma risk."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.882395Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.117403Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.157380Z",
+        "verdict": "SCALP_CE",
+        "outcome": "EOD_SQUAREOFF",
+        "memory_modifier": 0.0,
+        "reflection": "Market consolidated in narrow sideways range; position squared off under strict EOD protocol to eliminate overnight gamma risk."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.223344Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.367669Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.398659Z",
+        "verdict": "SCALP_CE",
+        "outcome": "EOD_SQUAREOFF",
+        "memory_modifier": 0.0,
+        "reflection": "Market consolidated in narrow sideways range; position squared off under strict EOD protocol to eliminate overnight gamma risk."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.430635Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.554949Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.583950Z",
+        "verdict": "SCALP_CE",
+        "outcome": "EOD_SQUAREOFF",
+        "memory_modifier": 0.0,
+        "reflection": "Market consolidated in narrow sideways range; position squared off under strict EOD protocol to eliminate overnight gamma risk."
+      }
+    ],
+    "last_verdict": "SCALP_CE",
+    "last_outcome": "EOD_SQUAREOFF",
+    "last_reflection": "Market consolidated in narrow sideways range; position squared off under strict EOD protocol to eliminate overnight gamma risk.",
+    "memory_modifier": 0.0
+  },
+  "^NSEI": {
+    "ticker": "^NSEI",
+    "symbol": "NSEI",
+    "total_evaluations": 15,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.441999Z",
+        "verdict": "BUY_PE",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "15m Supertrend trend flip aligned with VWAP bounce generated clean target expansion. Retain standard profit trailing."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.473972Z",
+        "verdict": "BUY_CE",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "High Bull Conviction (Score > 8.0) corroborated by 1m high-velocity volume spike produced immediate impulse run to target."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.885214Z",
+        "verdict": "BUY_CE",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "Breakout confirmation above opening 15m range with low impact cost. Target reached within expected ATR threshold."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.913211Z",
+        "verdict": "BUY_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.940778Z",
+        "verdict": "BUY_PE",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "15m Supertrend trend flip aligned with VWAP bounce generated clean target expansion. Retain standard profit trailing."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.967781Z",
+        "verdict": "BUY_PE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.522919Z",
+        "verdict": "BUY_CE",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "ATM Call option premium expanded >25% on delta acceleration following institutional spot breakout."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.582469Z",
+        "verdict": "BUY_CE",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "High Bull Conviction (Score > 8.0) corroborated by 1m high-velocity volume spike produced immediate impulse run to target."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.610466Z",
+        "verdict": "BUY_CE",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "Breakout confirmation above opening 15m range with low impact cost. Target reached within expected ATR threshold."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.339631Z",
+        "verdict": "BUY_CE",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "15m Supertrend trend flip aligned with VWAP bounce generated clean target expansion. Retain standard profit trailing."
+      }
+    ],
+    "last_verdict": "BUY_CE",
+    "last_outcome": "TARGET_HIT",
+    "last_reflection": "15m Supertrend trend flip aligned with VWAP bounce generated clean target expansion. Retain standard profit trailing.",
+    "memory_modifier": 0.5
+  },
+  "NIFTY": {
+    "ticker": "NIFTY",
+    "symbol": "NIFTY",
+    "total_evaluations": 14,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.514551Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.172230Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.491936Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.762366Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.964843Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.142362Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.555486Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.934085Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.270565Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.463631Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "SCALP_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "RELIANCE": {
+    "ticker": "RELIANCE",
+    "symbol": "RELIANCE",
+    "total_evaluations": 14,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.691450Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.200231Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.554084Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.806342Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.998443Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.170938Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.628955Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.016726Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.309108Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.493599Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "SCALP_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "HDFCBANK": {
+    "ticker": "HDFCBANK",
+    "symbol": "HDFCBANK",
+    "total_evaluations": 14,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.910283Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.282169Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.639457Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.842301Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.026428Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.198914Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:57.699915Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.062518Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.339091Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:58.522959Z",
+        "verdict": "SCALP_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "SCALP_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_0.NS": {
+    "ticker": "POS_0.NS",
+    "symbol": "POS_0",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.126176Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.500982Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_1.NS": {
+    "ticker": "POS_1.NS",
+    "symbol": "POS_1",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.143143Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.529961Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_2.NS": {
+    "ticker": "POS_2.NS",
+    "symbol": "POS_2",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.159143Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.559926Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_3.NS": {
+    "ticker": "POS_3.NS",
+    "symbol": "POS_3",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.177123Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.594912Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_4.NS": {
+    "ticker": "POS_4.NS",
+    "symbol": "POS_4",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.193114Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.640668Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_5.NS": {
+    "ticker": "POS_5.NS",
+    "symbol": "POS_5",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.210104Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.678263Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_6.NS": {
+    "ticker": "POS_6.NS",
+    "symbol": "POS_6",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.230115Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.713356Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_7.NS": {
+    "ticker": "POS_7.NS",
+    "symbol": "POS_7",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.248082Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.743362Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_8.NS": {
+    "ticker": "POS_8.NS",
+    "symbol": "POS_8",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.265737Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.772326Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_9.NS": {
+    "ticker": "POS_9.NS",
+    "symbol": "POS_9",
+    "total_evaluations": 2,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.283703Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:55.799275Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_10.NS": {
+    "ticker": "POS_10.NS",
+    "symbol": "POS_10",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.301716Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_11.NS": {
+    "ticker": "POS_11.NS",
+    "symbol": "POS_11",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.324022Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_12.NS": {
+    "ticker": "POS_12.NS",
+    "symbol": "POS_12",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.344646Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_13.NS": {
+    "ticker": "POS_13.NS",
+    "symbol": "POS_13",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.362659Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_14.NS": {
+    "ticker": "POS_14.NS",
+    "symbol": "POS_14",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.380626Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_15.NS": {
+    "ticker": "POS_15.NS",
+    "symbol": "POS_15",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.404616Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_16.NS": {
+    "ticker": "POS_16.NS",
+    "symbol": "POS_16",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.424619Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_17.NS": {
+    "ticker": "POS_17.NS",
+    "symbol": "POS_17",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.446590Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_18.NS": {
+    "ticker": "POS_18.NS",
+    "symbol": "POS_18",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.469576Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_19.NS": {
+    "ticker": "POS_19.NS",
+    "symbol": "POS_19",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.491562Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_20.NS": {
+    "ticker": "POS_20.NS",
+    "symbol": "POS_20",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.534541Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_21.NS": {
+    "ticker": "POS_21.NS",
+    "symbol": "POS_21",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.556528Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_22.NS": {
+    "ticker": "POS_22.NS",
+    "symbol": "POS_22",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.577514Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_23.NS": {
+    "ticker": "POS_23.NS",
+    "symbol": "POS_23",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.598504Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_24.NS": {
+    "ticker": "POS_24.NS",
+    "symbol": "POS_24",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.619490Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_25.NS": {
+    "ticker": "POS_25.NS",
+    "symbol": "POS_25",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.641476Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_26.NS": {
+    "ticker": "POS_26.NS",
+    "symbol": "POS_26",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.664463Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_27.NS": {
+    "ticker": "POS_27.NS",
+    "symbol": "POS_27",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.711439Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_28.NS": {
+    "ticker": "POS_28.NS",
+    "symbol": "POS_28",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.734688Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_29.NS": {
+    "ticker": "POS_29.NS",
+    "symbol": "POS_29",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.758654Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_30.NS": {
+    "ticker": "POS_30.NS",
+    "symbol": "POS_30",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.779663Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_31.NS": {
+    "ticker": "POS_31.NS",
+    "symbol": "POS_31",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.805256Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_32.NS": {
+    "ticker": "POS_32.NS",
+    "symbol": "POS_32",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.831076Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_33.NS": {
+    "ticker": "POS_33.NS",
+    "symbol": "POS_33",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.856666Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_34.NS": {
+    "ticker": "POS_34.NS",
+    "symbol": "POS_34",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.881697Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_35.NS": {
+    "ticker": "POS_35.NS",
+    "symbol": "POS_35",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:54.933772Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_36.NS": {
+    "ticker": "POS_36.NS",
+    "symbol": "POS_36",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.001649Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_37.NS": {
+    "ticker": "POS_37.NS",
+    "symbol": "POS_37",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.025657Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_38.NS": {
+    "ticker": "POS_38.NS",
+    "symbol": "POS_38",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.073610Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_39.NS": {
+    "ticker": "POS_39.NS",
+    "symbol": "POS_39",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.096202Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_40.NS": {
+    "ticker": "POS_40.NS",
+    "symbol": "POS_40",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.121187Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_41.NS": {
+    "ticker": "POS_41.NS",
+    "symbol": "POS_41",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.145174Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_42.NS": {
+    "ticker": "POS_42.NS",
+    "symbol": "POS_42",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.169160Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_43.NS": {
+    "ticker": "POS_43.NS",
+    "symbol": "POS_43",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.194167Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_44.NS": {
+    "ticker": "POS_44.NS",
+    "symbol": "POS_44",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.224925Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_45.NS": {
+    "ticker": "POS_45.NS",
+    "symbol": "POS_45",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.251400Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "POS_46.NS": {
+    "ticker": "POS_46.NS",
+    "symbol": "POS_46",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.279558Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Opposing sector trend created persistent drag; technician bearish divergence warned of risk. Dampen position size on divergence.",
+    "memory_modifier": -0.5
+  },
+  "POS_47.NS": {
+    "ticker": "POS_47.NS",
+    "symbol": "POS_47",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.306056Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "Sudden bid-ask spread expansion in OTM strike led to premature trailing stop execution. Recommend sticky ATM strikes only.",
+    "memory_modifier": -0.5
+  },
+  "POS_48.NS": {
+    "ticker": "POS_48.NS",
+    "symbol": "POS_48",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.332042Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "POS_49.NS": {
+    "ticker": "POS_49.NS",
+    "symbol": "POS_49",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.359027Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "High market-wide intraday volatility reversed position before momentum continuation. Stop loss triggered as designed.",
+    "memory_modifier": -0.5
+  },
+  "NIFTY.NS": {
+    "ticker": "NIFTY.NS",
+    "symbol": "NIFTY",
+    "total_evaluations": 1,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.829235Z",
+        "verdict": "OPTION_CE",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "OPTION_CE",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  },
+  "^NSEBANK": {
+    "ticker": "^NSEBANK",
+    "symbol": "NSEBANK",
+    "total_evaluations": 3,
+    "history": [
+      {
+        "timestamp": "2026-09-05T09:12:55.998743Z",
+        "verdict": "BUY_FUTURES",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "Breakout confirmation above opening 15m range with low impact cost. Target reached within expected ATR threshold."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.029746Z",
+        "verdict": "SELL_FUTURES",
+        "outcome": "TARGET_HIT",
+        "memory_modifier": 0.5,
+        "reflection": "ATM Call option premium expanded >25% on delta acceleration following institutional spot breakout."
+      },
+      {
+        "timestamp": "2026-09-05T09:12:56.057855Z",
+        "verdict": "SELL_FUTURES",
+        "outcome": "SL_HIT",
+        "memory_modifier": -0.5,
+        "reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters."
+      }
+    ],
+    "last_verdict": "SELL_FUTURES",
+    "last_outcome": "SL_HIT",
+    "last_reflection": "False breakout at resistance; price failed to hold VWAP support on lower timeframe. Tighten pre-entry volume filters.",
+    "memory_modifier": -0.5
+  }
+}

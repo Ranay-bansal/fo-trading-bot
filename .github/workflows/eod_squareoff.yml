@@ -2,9 +2,8 @@ name: F&O EOD Square-off
 
 on:
   schedule:
-    # 09:40 UTC (15:10 IST), 09:45 UTC (15:15 IST)
+    # Single authoritative run at 09:40 UTC (15:10 IST) to execute pre-CAS square-off
     - cron: '40 9 * * 1-5'
-    - cron: '45 9 * * 1-5'
   workflow_dispatch: {}
 
 permissions:
@@ -45,5 +44,5 @@ jobs:
         run: |
           git config --global user.email "bot@alphadesk.io"
           git config --global user.name "AlphaDesk F&O Bot"
-          git add state/ dashboard/state/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "state: f&o eod squareoff ($(date -u +'%Y-%m-%d %H:%M:%S UTC'))" && git pull --rebase origin main && git push origin main)
+          git add state/ dashboard/state/ public/state/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "state: f&o eod squareoff ($(date -u +'%Y-%m-%d %H:%M:%S UTC'))" && git pull -s recursive -X ours --no-edit origin main && git push origin main)

@@ -17,6 +17,11 @@ DASH_STATE_FILE = os.path.join(DASH_STATE_DIR, "portfolio_state.json")
 DASH_TRADE_LOG_FILE = os.path.join(DASH_STATE_DIR, "trade_log.csv")
 DASH_DEBATE_LOG_FILE = os.path.join(DASH_STATE_DIR, "committee_debate_log.json")
 
+REFLECTIVE_MEMORY_FILE = os.path.join(ROOT_DIR, "state", "reflective_memory.json")
+DASH_MEMORY_FILE = os.path.join(DASH_STATE_DIR, "reflective_memory.json")
+PUB_STATE_DIR = os.path.join(ROOT_DIR, "public", "state")
+PUB_MEMORY_FILE = os.path.join(PUB_STATE_DIR, "reflective_memory.json")
+
 DEFAULT_STATE = {
     "last_updated": None,
     "pool_total": 500000.0,
@@ -26,7 +31,9 @@ DEFAULT_STATE = {
     "daily_pnl_pct": 0.0,
     "total_brokerage_paid_inr": 0.0,
     "trades_today": 0,
-    "open_positions": []
+    "open_positions": [],
+    "kill_switch_active": False,
+    "kill_switch_reason": None
 }
 
 def load_fo_state() -> Dict[str, Any]:
@@ -142,3 +149,72 @@ def append_to_committee_debate_log(record: Any) -> None:
                     pass
     except Exception as e:
         logger.error(f"Error appending to committee debate log {COMMITTEE_DEBATE_LOG_FILE}: {e}")
+
+
+def load_reflective_memory() -> Dict[str, Any]:
+    """Loads ticker-level reflective memory log."""
+    try:
+        if os.path.exists(REFLECTIVE_MEMORY_FILE):
+            with open(REFLECTIVE_MEMORY_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+    except Exception as e:
+        logger.warning(f"Failed to load reflective memory: {e}")
+    return {}
+
+def save_reflective_memory(memory: Dict[str, Any]) -> None:
+    """Saves ticker-level reflective memory log and mirrors to web folders."""
+    try:
+        os.makedirs(os.path.dirname(REFLECTIVE_MEMORY_FILE), exist_ok=True)
+        with open(REFLECTIVE_MEMORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(memory, f, indent=2, default=str)
+        
+        # Mirror to dashboard/state
+        try:
+            os.makedirs(DASH_STATE_DIR, exist_ok=True)
+            with open(DASH_MEMORY_FILE, "w", encoding="utf-8") as df:
+                json.dump(memory, df, indent=2, default=str)
+        except Exception:
+            pass
+
+        # Mirror to public/state
+        try:
+            os.makedirs(PUB_STATE_DIR, exist_ok=True)
+            with open(PUB_MEMORY_FILE, "w", encoding="utf-8") as pf:
+                json.dump(memory, pf, indent=2, default=str)
+        except Exception:
+            pass
+
+    except Exception as e:
+        logger.error(f"Failed to save reflective memory: {e}")
+
+def record_trade_reflection(ticker: str, verdict: str, outcome: str, reflection_text: str, memory_modifier: float = 0.0) -> None:
+    """Records a post-trade decision or outcome reflection for a specific ticker."""
+    memory = load_reflective_memory()
+    ticker_history = memory.get(ticker, {
+        "ticker": ticker,
+        "symbol": ticker.replace(".NS", "").replace("^", ""),
+        "total_evaluations": 0,
+        "history": [],
+        "last_verdict": None,
+        "last_outcome": None,
+        "last_reflection": None,
+        "memory_modifier": 0.0
+    })
+
+    ticker_history["total_evaluations"] += 1
+    ticker_history["last_verdict"] = verdict
+    ticker_history["last_outcome"] = outcome
+    ticker_history["last_reflection"] = reflection_text
+    ticker_history["memory_modifier"] = memory_modifier
+
+    ticker_history["history"].append({
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "verdict": verdict,
+        "outcome": outcome,
+        "memory_modifier": memory_modifier,
+        "reflection": reflection_text
+    })
+
+    ticker_history["history"] = ticker_history["history"][-10:]
+    memory[ticker] = ticker_history
+    save_reflective_memory(memory)

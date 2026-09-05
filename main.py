@@ -2,6 +2,7 @@ import os
 import yaml
 import logging
 import threading
+import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from typing import Dict, Any, List
@@ -38,12 +39,46 @@ def run_quant_pipeline() -> None:
     config = load_config()
     state = load_fo_state()
 
+    parser = argparse.ArgumentParser(description="AlphaDesk F&O Quant Swarm Orchestrator")
+    parser.add_argument("--force-weekend", action="store_true", help="Force run simulation even on weekend")
+    parser.add_argument("--kill-switch", choices=["halt", "resume"], help="Manually engage or disengage Kill Switch")
+    args, _ = parser.parse_known_args()
+
+    # 1. Kill Switch Manual Override
+    if args.kill_switch == "halt":
+        state["kill_switch_active"] = True
+        state["kill_switch_reason"] = f"Manual operator halt at {datetime.utcnow().isoformat()}Z"
+        save_fo_state(state)
+        logger.warning("🚨 KILL SWITCH ENGAGED MANUALLY: Algorithmic trading halted.")
+        return
+    elif args.kill_switch == "resume":
+        state["kill_switch_active"] = False
+        state["kill_switch_reason"] = None
+        save_fo_state(state)
+        logger.info("▶️ KILL SWITCH DISENGAGED: Algorithmic trading resumed.")
+        return
+
+    # 2. Check if Kill Switch is already engaged
+    if state.get("kill_switch_active", False):
+        logger.warning(f"🚨 TRADING HALTED: Kill switch is active ({state.get('kill_switch_reason')}). Monitoring open positions only.")
+        executor = FOExecutorAgent(config)
+        executor.monitor_positions(state)
+        save_fo_state(state)
+        return
+
     ist_tz = timezone(timedelta(hours=5, minutes=30))
     now_ist = datetime.now(ist_tz)
     
     executor = FOExecutorAgent(config)
     executor.monitor_positions(state)
 
+    # 3. Weekend Market Closed Check
+    if now_ist.weekday() >= 5 and not args.force_weekend:
+        logger.info(f"Market Closed: Today is {now_ist.strftime('%A')} (Weekend). Indian stock exchanges (NSE/BSE) are closed. Halting live scan cycles.")
+        save_fo_state(state)
+        return
+
+    # 4. CAS & Intraday Entry Cutoff Check
     if now_ist.weekday() < 5 and (now_ist.hour > 13 or (now_ist.hour == 13 and now_ist.minute >= 30)):
         logger.warning("Scan triggered after 1:30 PM IST entry cutoff (Running paper mode simulation).")
 
