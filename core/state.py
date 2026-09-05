@@ -12,6 +12,11 @@ STATE_FILE = os.path.join(ROOT_DIR, "state", "portfolio_state.json")
 TRADE_LOG_FILE = os.path.join(ROOT_DIR, "state", "trade_log.csv")
 COMMITTEE_DEBATE_LOG_FILE = os.path.join(ROOT_DIR, "state", "committee_debate_log.json")
 
+DASH_STATE_DIR = os.path.join(ROOT_DIR, "dashboard", "state")
+DASH_STATE_FILE = os.path.join(DASH_STATE_DIR, "portfolio_state.json")
+DASH_TRADE_LOG_FILE = os.path.join(DASH_STATE_DIR, "trade_log.csv")
+DASH_DEBATE_LOG_FILE = os.path.join(DASH_STATE_DIR, "committee_debate_log.json")
+
 DEFAULT_STATE = {
     "last_updated": None,
     "pool_total": 500000.0,
@@ -51,6 +56,15 @@ def save_fo_state(state: Dict[str, Any]) -> None:
                     os.remove(temp_file)
                 except Exception:
                     pass
+
+        # Mirror state to dashboard/state for zero-friction Vercel hosting
+        try:
+            os.makedirs(DASH_STATE_DIR, exist_ok=True)
+            with open(DASH_STATE_FILE, "w", encoding="utf-8") as df:
+                json.dump(state, df, indent=2, default=str)
+        except Exception as dash_err:
+            logger.warning(f"Error mirroring state to dashboard: {dash_err}")
+
     except Exception as e:
         logger.error(f"Error saving F&O state to {STATE_FILE}: {e}")
 
@@ -69,6 +83,18 @@ def append_to_fo_trade_log(row: Dict[str, Any]) -> None:
             if not file_has_content:
                 writer.writeheader()
             writer.writerow({k: row.get(k, "") for k in fieldnames})
+
+        # Mirror trade log to dashboard/state
+        try:
+            os.makedirs(DASH_STATE_DIR, exist_ok=True)
+            dash_has_content = os.path.exists(DASH_TRADE_LOG_FILE) and os.path.getsize(DASH_TRADE_LOG_FILE) > 0
+            with open(DASH_TRADE_LOG_FILE, "a", newline="", encoding="utf-8") as df:
+                dash_writer = csv.DictWriter(df, fieldnames=fieldnames)
+                if not dash_has_content:
+                    dash_writer.writeheader()
+                dash_writer.writerow({k: row.get(k, "") for k in fieldnames})
+        except Exception as dash_csv_err:
+            logger.warning(f"Error mirroring trade log to dashboard: {dash_csv_err}")
     except Exception as e:
         logger.error(f"Error appending trade log to {TRADE_LOG_FILE}: {e}")
 

@@ -111,8 +111,21 @@ judge:
 # ─────────────────────────────────────────────
 schedule:
   scan_start_ist: "09:15"
-  scan_end_ist: "13:30"               # No new entries after 1:30 PM IST
-  eod_squareoff_ist: "15:15"          # Strict 3:15 PM IST Auto Square-Off
+  scan_end_ist: "13:30"               # No new entries after 1:30 PM IST (Peak options window)
+  eod_squareoff_cash_ist: "15:10"     # Strict 3:10 PM IST for Cash Equity (Pre-CAS)
+  eod_squareoff_fo_ist: "15:35"       # 3:35 PM IST for Derivatives (Extended CAS Window)
+  eod_squareoff_ist: "15:10"          # General pre-auction square-off trigger
+
+# SEBI Closing Auction Session (CAS) Framework
+cas_session:
+  enabled: true
+  spot_continuous_close_ist: "15:15"
+  cas_order_entry_window: "15:15-15:25"
+  cas_order_matching_window: "15:25-15:30"
+  cas_buffer_window: "15:30-15:35"
+  derivatives_extended_close_ist: "15:40"
+  intraday_entry_cutoff_ist: "15:00"
+  enforce_pre_cas_squareoff: true
 
 # ─────────────────────────────────────────────
 # BOT 1: EQUITY INTRADAY CASH STRATEGY CONFIGURATION
