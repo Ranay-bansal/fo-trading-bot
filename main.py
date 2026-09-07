@@ -42,7 +42,16 @@ def run_quant_pipeline() -> None:
     parser = argparse.ArgumentParser(description="AlphaDesk F&O Quant Swarm Orchestrator")
     parser.add_argument("--force-weekend", action="store_true", help="Force run simulation even on weekend")
     parser.add_argument("--kill-switch", choices=["halt", "resume"], help="Manually engage or disengage Kill Switch")
+    parser.add_argument("--squareoff", action="store_true", help="Force settle and square off all open positions")
     args, _ = parser.parse_known_args()
+
+    # Settle / square-off manual trigger
+    if args.squareoff:
+        logger.info("🚨 Settle all positions requested via --squareoff.")
+        executor = FOExecutorAgent(config)
+        exited = executor.squareoff_all(state)
+        logger.info(f"✅ Squared off {len(exited)} positions. Available capital restored to ₹{state.get('pool_available', 0):,.2f}.")
+        return
 
     # 1. Kill Switch Manual Override
     if args.kill_switch == "halt":

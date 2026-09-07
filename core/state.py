@@ -20,6 +20,8 @@ DASH_DEBATE_LOG_FILE = os.path.join(DASH_STATE_DIR, "committee_debate_log.json")
 REFLECTIVE_MEMORY_FILE = os.path.join(ROOT_DIR, "state", "reflective_memory.json")
 DASH_MEMORY_FILE = os.path.join(DASH_STATE_DIR, "reflective_memory.json")
 PUB_STATE_DIR = os.path.join(ROOT_DIR, "public", "state")
+PUB_STATE_FILE = os.path.join(PUB_STATE_DIR, "portfolio_state.json")
+PUB_TRADE_LOG_FILE = os.path.join(PUB_STATE_DIR, "trade_log.csv")
 PUB_MEMORY_FILE = os.path.join(PUB_STATE_DIR, "reflective_memory.json")
 
 DEFAULT_STATE = {
@@ -64,13 +66,20 @@ def save_fo_state(state: Dict[str, Any]) -> None:
                 except Exception:
                     pass
 
-        # Mirror state to dashboard/state for zero-friction Vercel hosting
+        # Mirror state to dashboard/state and public/state for zero-friction Vercel hosting
         try:
             os.makedirs(DASH_STATE_DIR, exist_ok=True)
             with open(DASH_STATE_FILE, "w", encoding="utf-8") as df:
                 json.dump(state, df, indent=2, default=str)
         except Exception as dash_err:
             logger.warning(f"Error mirroring state to dashboard: {dash_err}")
+
+        try:
+            os.makedirs(PUB_STATE_DIR, exist_ok=True)
+            with open(PUB_STATE_FILE, "w", encoding="utf-8") as pf:
+                json.dump(state, pf, indent=2, default=str)
+        except Exception as pub_err:
+            logger.warning(f"Error mirroring state to public: {pub_err}")
 
     except Exception as e:
         logger.error(f"Error saving F&O state to {STATE_FILE}: {e}")
@@ -91,7 +100,7 @@ def append_to_fo_trade_log(row: Dict[str, Any]) -> None:
                 writer.writeheader()
             writer.writerow({k: row.get(k, "") for k in fieldnames})
 
-        # Mirror trade log to dashboard/state
+        # Mirror trade log to dashboard/state and public/state
         try:
             os.makedirs(DASH_STATE_DIR, exist_ok=True)
             dash_has_content = os.path.exists(DASH_TRADE_LOG_FILE) and os.path.getsize(DASH_TRADE_LOG_FILE) > 0
@@ -102,6 +111,17 @@ def append_to_fo_trade_log(row: Dict[str, Any]) -> None:
                 dash_writer.writerow({k: row.get(k, "") for k in fieldnames})
         except Exception as dash_csv_err:
             logger.warning(f"Error mirroring trade log to dashboard: {dash_csv_err}")
+
+        try:
+            os.makedirs(PUB_STATE_DIR, exist_ok=True)
+            pub_has_content = os.path.exists(PUB_TRADE_LOG_FILE) and os.path.getsize(PUB_TRADE_LOG_FILE) > 0
+            with open(PUB_TRADE_LOG_FILE, "a", newline="", encoding="utf-8") as pf:
+                pub_writer = csv.DictWriter(pf, fieldnames=fieldnames)
+                if not pub_has_content:
+                    pub_writer.writeheader()
+                pub_writer.writerow({k: row.get(k, "") for k in fieldnames})
+        except Exception as pub_csv_err:
+            logger.warning(f"Error mirroring trade log to public: {pub_csv_err}")
     except Exception as e:
         logger.error(f"Error appending trade log to {TRADE_LOG_FILE}: {e}")
 

@@ -347,15 +347,6 @@
     .badge-buy-pe { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }
     .badge-scalp { background: rgba(0, 242, 254, 0.2); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); }
     .badge-fut { background: rgba(168, 85, 247, 0.2); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
-    .badge-cash { background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid #eab308; }
-    .badge-open { background: rgba(0, 242, 254, 0.2); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); animation: pulse 2s infinite; }
-    .badge-closed { background: rgba(148, 163, 184, 0.2); color: #94a3b8; border: 1px solid #94a3b8; }
-    .badge-avoid { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }
-    .badge-approved { background: rgba(34, 197, 94, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }
-    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
-    .filter-btn-group { display: flex; gap: 8px; align-items: center; }
-    .filter-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); color: var(--text-muted); padding: 5px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
-    .filter-btn.active { background: var(--accent-cyan); color: #000; border-color: var(--accent-cyan); }
 
     .engine-grid {
       display: grid;
@@ -461,26 +452,17 @@
   <!-- TAB NAVIGATION -->
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('tab-trades', event)">⚔️ Executed Trades Log</button>
-    <button class="tab-btn" onclick="switchTab('tab-pnl', event)">📊 P&L & Monthly Analytics</button>
+    <button class="tab-btn" onclick="switchTab('tab-engines', event)">🎯 F&O Trade Engines</button>
+    <button class="tab-btn" onclick="switchTab('tab-patterns', event)">📊 12-Pattern & VWAP Hunter</button>
     <button class="tab-btn" onclick="switchTab('tab-committee', event)">🏛️ 3-Way Risk Committee</button>
     <button class="tab-btn" onclick="switchTab('tab-memory', event)">🔮 Reflective Memory</button>
-    <button class="tab-btn" onclick="switchTab('tab-settings', event)">⚙️ Settings & System Control</button>
   </div>
 
   <!-- PANEL 1: EXECUTED TRADES LOG -->
   <div id="tab-trades" class="panel active">
     <div class="panel-header">
-      <div>
-        <h2>⚔️ Live F&O Trade Execution Log (Options & Futures)</h2>
-        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Real-time execution ledger synced from algorithmic broker order bus</span>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-        <div class="filter-btn-group">
-          <button id="filter-5d" class="filter-btn active" onclick="setTradeFilter(5)">Last 5 Days</button>
-          <button id="filter-all" class="filter-btn" onclick="setTradeFilter(0)">All History</button>
-        </div>
-        <span class="badge badge-scalp" id="trade-count-badge">0 Trades</span>
-      </div>
+      <h2>⚔️ Live F&O Trade Execution Log (Options & Futures)</h2>
+      <span class="badge badge-scalp">1m / 5m / 15m Multi-TF Active</span>
     </div>
     <div style="overflow-x: auto;">
       <table>
@@ -509,180 +491,12 @@
     </div>
   </div>
 
-    <!-- PANEL 2: P&L & MONTHLY PERFORMANCE ANALYTICS -->
-  <div id="tab-pnl" class="panel">
+  <!-- PANEL 2: F&O TRADE ENGINES -->
+  <div id="tab-engines" class="panel">
     <div class="panel-header">
-      <div>
-        <h2>📊 Realized Profit & Loss Analytics & Performance Metrics</h2>
-        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Audited trade returns, win rates, and Financial Year metrics</span>
-      </div>
-      <span class="badge badge-scalp" id="pnl-fy-badge">FY 2026-27 Active</span>
+      <h2>🎯 6 Specialized High-Frequency F&O Trade Engines</h2>
     </div>
-
-    <!-- P&L SUMMARY CARDS -->
-    <div class="stats-grid" style="margin-bottom: 24px;">
-      <div class="stat-card">
-        <div class="stat-label">Monthly Realized P&L</div>
-        <div class="stat-value" id="pnl-monthly-val">₹0.00</div>
-        <div class="stat-subtext" id="pnl-monthly-sub">0 Trades (0% Win Rate)</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Year-to-Date (YTD) P&L</div>
-        <div class="stat-value" id="pnl-ytd-val">₹0.00</div>
-        <div class="stat-subtext" id="pnl-ytd-sub">FY 2026-27 Total Realized</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">YTD Win Rate</div>
-        <div class="stat-value" id="pnl-winrate-val">0.0%</div>
-        <div class="stat-subtext" id="pnl-winrate-sub">0 Wins / 0 Losses</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Total Brokerage Paid</div>
-        <div class="stat-value" id="pnl-costs-val">₹0.00</div>
-        <div class="stat-subtext" id="pnl-costs-sub">Statutory Taxes & Brokerage</div>
-      </div>
-    </div>
-
-    <!-- MONTHLY BREAKDOWN TABLE -->
-    <h3 style="font-family: var(--font-heading); font-size: 16px; color: var(--accent-cyan); margin-bottom: 12px;">
-      📅 Monthly Performance Breakdown (Financial Year 2026-27)
-    </h3>
-    <div style="overflow-x: auto;">
-      <table>
-        <thead>
-          <tr>
-            <th>Month</th>
-            <th>Trades Count</th>
-            <th>Gross P&L (INR)</th>
-            <th>Brokerage Paid</th>
-            <th>Net Realized P&L</th>
-            <th>Win Rate</th>
-            <th>Return on Capital</th>
-          </tr>
-        </thead>
-        <tbody id="pnl-breakdown-body">
-          <tr>
-            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 24px;">Loading financial year analytics...</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- PANEL 3: 3-WAY RISK COMMITTEE -->
-  <div id="tab-committee" class="panel">
-    <div class="panel-header">
-      <div>
-        <h2>🏛️ 3-Way Risk Committee & Subagent Debate Logs</h2>
-        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Scout, Technician & Judge multi-agent consensus ledger</span>
-      </div>
-    </div>
-    <div style="overflow-x: auto;">
-      <table>
-        <thead>
-          <tr>
-            <th>Symbol</th>
-            <th>Bull Conviction (Scout)</th>
-            <th>Bear Risk (Technician)</th>
-            <th>Fact-Checker Status (Judge)</th>
-            <th>Risk Committee Override</th>
-          </tr>
-        </thead>
-        <tbody id="committee-table-body">
-          <tr>
-            <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No active debate logs for current scan window. Subagent swarm evaluating market signals.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- PANEL 4: REFLECTIVE MEMORY -->
-  <div id="tab-memory" class="panel">
-    <div class="panel-header">
-      <div>
-        <h2>🔮 Reflective Memory & Algorithmic Trade Lessons</h2>
-        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Self-evaluating post-trade feedback loop & ticker-level memory modifiers</span>
-      </div>
-      <span class="badge badge-scalp" id="memory-count-badge">0 Lessons Active</span>
-    </div>
-    <div style="overflow-x: auto;">
-      <table>
-        <thead>
-          <tr>
-            <th>Ticker Symbol</th>
-            <th>Prior Outcome</th>
-            <th>Memory Modifier</th>
-            <th>Learned Algorithmic Lesson</th>
-          </tr>
-        </thead>
-        <tbody id="memory-table-body">
-          <tr>
-            <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- PANEL 5: SETTINGS & SYSTEM CONTROL -->
-  <div id="tab-settings" class="panel">
-    <div class="panel-header">
-      <div>
-        <h2>⚙️ Quantitative Settings, Risk Controls & Trade Models</h2>
-        <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Emergency kill switch controls, volatility regimes & algorithmic engines</span>
-      </div>
-      <span class="badge badge-open" id="settings-killswitch-status">TRADING ACTIVE</span>
-    </div>
-
-    <!-- KILL SWITCH CONTROL CARD -->
-    <div class="engine-card" style="margin-bottom: 24px; border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.05);">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-        <div>
-          <h3 style="color: var(--accent-red); margin-bottom: 4px;">🚨 Algorithmic Kill Switch & Operational State</h3>
-          <p style="font-size: 12.5px; color: var(--text-muted);">
-            Instantly halt all automated order scanning, subagent execution, and new position entries. Open positions will continue to be monitored for SL/TP exit.
-          </p>
-          <div style="margin-top: 8px; font-size: 11.5px; color: var(--text-subtle);">
-            Current Status: <strong id="kill-switch-detail" style="color: var(--accent-green);">ONLINE (Normal Algorithmic Operations)</strong>
-          </div>
-        </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <button id="btn-halt-trading" onclick="toggleKillSwitch(true)" style="background: rgba(239, 68, 68, 0.2); border: 1px solid var(--accent-red); color: var(--accent-red); padding: 10px 18px; border-radius: 12px; font-weight: 800; cursor: pointer; font-family: var(--font-heading); transition: all 0.2s;">
-            🛑 EMERGENCY HALT TRADING
-          </button>
-          <button id="btn-resume-trading" onclick="toggleKillSwitch(false)" style="background: rgba(34, 197, 94, 0.2); border: 1px solid var(--accent-green); color: var(--accent-green); padding: 10px 18px; border-radius: 12px; font-weight: 800; cursor: pointer; font-family: var(--font-heading); transition: all 0.2s;">
-            ▶️ RESUME TRADING
-          </button>
-        </div>
-      </div>
-
-      <!-- RISK THRESHOLDS GRID -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--glass-border);">
-        <div>
-          <span style="font-size: 11px; color: var(--text-muted); display: block;">Daily Drawdown Halt</span>
-          <strong style="color: var(--accent-red); font-family: var(--font-mono);">-2.0% of Capital</strong>
-        </div>
-        <div>
-          <span style="font-size: 11px; color: var(--text-muted); display: block;">Weekly Drawdown Halt</span>
-          <strong style="color: var(--accent-red); font-family: var(--font-mono);">-5.0% of Capital</strong>
-        </div>
-        <div>
-          <span style="font-size: 11px; color: var(--text-muted); display: block;">Consecutive Loss Halt</span>
-          <strong style="color: var(--accent-gold); font-family: var(--font-mono);">3 Trades Max</strong>
-        </div>
-        <div>
-          <span style="font-size: 11px; color: var(--text-muted); display: block;">India VIX Extreme Halt</span>
-          <strong style="color: var(--accent-gold); font-family: var(--font-mono);">&gt; 35.0 VIX Level</strong>
-        </div>
-      </div>
-    </div>
-
-    <!-- STRATEGY ENGINES ACCORDION -->
-    <h3 style="font-family: var(--font-heading); font-size: 16px; color: var(--accent-cyan); margin-bottom: 12px;">
-      🎯 6 Specialized High-Frequency F&O Trade Engines
-    </h3>
-    <div class="engine-grid" style="margin-bottom: 24px;">
+    <div class="engine-grid">
       <div class="engine-card">
         <h3><span class="badge badge-buy-ce">BUY_CE</span> Call Option Momentum</h3>
         <p>Target: ATM/ITM Call Option Buy on 5m Supertrend Bullish Flip + VWAP Support Bounce. Profit Target: +25.0% Premium gain.</p>
@@ -701,17 +515,20 @@
       </div>
       <div class="engine-card">
         <h3><span class="badge badge-fut">BUY_FUT</span> Index & Equity Long Futures</h3>
-        <p>Long Futures position sizing on strong 15m structural breakouts with NIFTY outperformance (RS &gt; 1.0).</p>
+        <p>Long Futures position sizing on strong 15m structural breakouts with NIFTY outperformance (RS > 1.0).</p>
       </div>
       <div class="engine-card">
         <h3><span class="badge badge-fut">SELL_FUT</span> Index & Equity Short Futures</h3>
-        <p>Short Futures positioning on structural breakdowns with NIFTY underperformance (RS &lt; 1.0).</p>
+        <p>Short Futures positioning on structural breakdowns with NIFTY underperformance (RS < 1.0).</p>
       </div>
     </div>
+  </div>
 
-    <h3 style="font-family: var(--font-heading); font-size: 16px; color: var(--accent-cyan); margin-bottom: 12px;">
-      📊 12-Pattern & VWAP Quantitative Hunter
-    </h3>
+  <!-- PANEL 3: 12-PATTERN & VWAP HUNTER -->
+  <div id="tab-patterns" class="panel">
+    <div class="panel-header">
+      <h2>📊 12-Pattern & VWAP Quantitative Hunter</h2>
+    </div>
     <div class="engine-grid">
       <div class="engine-card">
         <h3>Double Bottom (W-Pattern)</h3>
@@ -732,17 +549,52 @@
     </div>
   </div>
 
+  <!-- PANEL 4: 3-WAY RISK COMMITTEE -->
+  <div id="tab-committee" class="panel">
+    <div class="panel-header">
+      <h2>🏛️ 3-Way Risk Committee & Subagent Debate Logs</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Bull Conviction (Scout)</th>
+          <th>Bear Risk (Technician)</th>
+          <th>Fact-Checker Status (Judge)</th>
+          <th>Risk Committee Override</th>
+        </tr>
+      </thead>
+      <tbody id="committee-table-body">
+        <tr>
+          <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No active debate logs for current scan window. Subagent swarm evaluating market signals.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PANEL 5: REFLECTIVE MEMORY -->
+  <div id="tab-memory" class="panel">
+    <div class="panel-header">
+      <h2>🔮 Reflective Memory & Trade Lessons</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Ticker Symbol</th>
+          <th>Prior Outcome</th>
+          <th>Memory Modifier</th>
+          <th>Learned Lesson</th>
+        </tr>
+      </thead>
+      <tbody id="memory-table-body">
+        <tr>
+          <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <script>
-    let currentFilterDays = 5;
-    let localKillSwitchHalted = false;
-
-    function setTradeFilter(days) {
-      currentFilterDays = days;
-      document.getElementById('filter-5d').classList.toggle('active', days === 5);
-      document.getElementById('filter-all').classList.toggle('active', days === 0);
-      updateDashboard();
-    }
-
     function switchTab(tabId, evt) {
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
@@ -750,333 +602,15 @@
       if (evt && evt.target) {
         evt.target.classList.add('active');
       }
-      const p = document.getElementById(tabId);
-      if (p) p.classList.add('active');
-    }
-
-    function toggleKillSwitch(halt) {
-      localKillSwitchHalted = halt;
-      localStorage.setItem('shadow_kill_switch', halt ? 'true' : 'false');
-      
-      const badge = document.getElementById('settings-killswitch-status');
-      const detail = document.getElementById('kill-switch-detail');
-      
-      if (halt) {
-        if (badge) {
-          badge.innerText = 'TRADING HALTED';
-          badge.className = 'badge badge-avoid';
-        }
-        if (detail) {
-          detail.innerText = 'HALTED (Emergency Stop Triggered by Operator)';
-          detail.style.color = 'var(--accent-red)';
-        }
-        alert('🚨 EMERGENCY KILL SWITCH ENGAGED! Automated scan cycles halted.');
-      } else {
-        if (badge) {
-          badge.innerText = 'TRADING ACTIVE';
-          badge.className = 'badge badge-open';
-        }
-        if (detail) {
-          detail.innerText = 'ONLINE (Normal Algorithmic Operations)';
-          detail.style.color = 'var(--accent-green)';
-        }
-        alert('▶️ KILL SWITCH DISENGAGED! Algorithmic trading resumed.');
-      }
-    }
-
-    async function fetchFirstAvailable(paths) {
-      for (const p of paths) {
-        try {
-          const res = await fetch(p + '?t=' + Date.now());
-          if (res.ok) return await res.text();
-        } catch(e) {}
-      }
-      return null;
-    }
-
-    function parseCSV(text) {
-      if (!text || !text.trim()) return [];
-      const lines = text.trim().split(/\r?\n/);
-      if (lines.length < 2) return [];
-      const headers = lines[0].split(',').map(h => h.trim());
-      const rows = [];
-      for (let i = 1; i < lines.length; i++) {
-        if (!lines[i].trim()) continue;
-        const vals = lines[i].split(',').map(v => v.trim());
-        const row = {};
-        headers.forEach((h, idx) => {
-          row[h] = vals[idx] !== undefined ? vals[idx] : '';
-        });
-        rows.push(row);
-      }
-      return rows;
-    }
-
-    function formatTime(isoStr) {
-      if (!isoStr) return '-';
-      try {
-        const d = new Date(isoStr);
-        if (isNaN(d.getTime())) return isoStr;
-        return d.toLocaleString('en-IN', {
-          timeZone: 'Asia/Kolkata',
-          day: '2-digit',
-          month: 'short',
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        });
-      } catch(e) {
-        return isoStr;
-      }
-    }
-
-    function getStrategyBadge(verdict, contractType) {
-      const v = (verdict || contractType || '').toUpperCase();
-      if (v.includes('SCALP_CE') || v.includes('BUY_CE') || v.includes('OPTION_CE')) {
-        return '<span class="badge badge-buy-ce">CALL BUY</span>';
-      }
-      if (v.includes('SCALP_PE') || v.includes('BUY_PE') || v.includes('OPTION_PE')) {
-        return '<span class="badge badge-buy-pe">PUT BUY</span>';
-      }
-      if (v.includes('BUY_FUT') || v.includes('FUTURES_LONG')) {
-        return '<span class="badge badge-fut">FUT LONG</span>';
-      }
-      if (v.includes('SELL_FUT') || v.includes('FUTURES_SHORT')) {
-        return '<span class="badge badge-fut">FUT SHORT</span>';
-      }
-      if (v.includes('CASH_BUY') || v.includes('BUY')) {
-        return '<span class="badge badge-cash">CASH BUY</span>';
-      }
-      if (v.includes('CASH_SELL') || v.includes('SELL')) {
-        return '<span class="badge badge-cash">CASH SELL</span>';
-      }
-      return `<span class="badge badge-scalp">${v || 'F&O'}</span>`;
-    }
-
-    function getStatusBadge(exitPrice, exitReason) {
-      const p = parseFloat(exitPrice);
-      const r = (exitReason || '').toUpperCase();
-      if (isNaN(p) || p === 0 || !exitPrice) {
-        return '<span class="badge badge-open">ACTIVE OPEN</span>';
-      }
-      if (r.includes('TARGET')) {
-        return '<span class="badge badge-buy-ce">TARGET HIT</span>';
-      }
-      if (r.includes('SL') || r.includes('STOP')) {
-        return '<span class="badge badge-buy-pe">STOP LOSS</span>';
-      }
-      if (r.includes('EOD')) {
-        return '<span class="badge badge-scalp">EOD SQUARED</span>';
-      }
-      return `<span class="badge badge-closed">${r || 'CLOSED'}</span>`;
-    }
-
-    function renderPnLAnalytics(allRows, poolTotal) {
-      const now = new Date();
-      const currentYear = now.getFullYear();
-      const currentMonth = now.getMonth(); // 0-indexed
-      
-      // Indian FY starts April 1 (Month index 3)
-      const fyStartYear = currentMonth >= 3 ? currentYear : currentYear - 1;
-      const fyStartDate = new Date(fyStartYear, 3, 1, 0, 0, 0);
-      const fyEndDate = new Date(fyStartYear + 1, 2, 31, 23, 59, 59);
-
-      const fyBadge = document.getElementById('pnl-fy-badge');
-      if (fyBadge) {
-        fyBadge.innerText = `FY ${fyStartYear}-${String(fyStartYear+1).slice(-2)} (01 Apr ${fyStartYear} – 31 Mar ${fyStartYear+1})`;
-      }
-
-      // Filter closed trades only
-      const closedTrades = allRows.filter(r => {
-        const exitP = parseFloat(r.exit_price);
-        return !isNaN(exitP) && exitP > 0;
-      });
-
-      // Monthly filter (Current calendar month)
-      const currentMonthTrades = closedTrades.filter(r => {
-        if (!r.executed_at) return false;
-        const d = new Date(r.executed_at);
-        return !isNaN(d.getTime()) && d.getFullYear() === currentYear && d.getMonth() === currentMonth;
-      });
-
-      const monthlyPnl = currentMonthTrades.reduce((sum, r) => sum + (parseFloat(r.realized_pnl_inr) || 0), 0);
-      const monthlyWins = currentMonthTrades.filter(r => (parseFloat(r.realized_pnl_inr) || 0) > 0).length;
-      const monthlyWinRate = currentMonthTrades.length > 0 ? ((monthlyWins / currentMonthTrades.length) * 100).toFixed(1) : '0.0';
-      const monthlyPnlPct = poolTotal > 0 ? ((monthlyPnl / poolTotal) * 100).toFixed(2) : '0.00';
-
-      const pnlMonthElem = document.getElementById('pnl-monthly-val');
-      if (pnlMonthElem) {
-        pnlMonthElem.innerText = (monthlyPnl >= 0 ? '+₹' : '-₹') + Math.abs(monthlyPnl).toLocaleString('en-IN', {minimumFractionDigits: 2});
-        pnlMonthElem.style.color = monthlyPnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
-      }
-      const pnlMonthSub = document.getElementById('pnl-monthly-sub');
-      if (pnlMonthSub) {
-        pnlMonthSub.innerText = `${currentMonthTrades.length} Trades (${monthlyWinRate}% Win Rate | ${monthlyPnl >= 0 ? '+' : ''}${monthlyPnlPct}%)`;
-      }
-
-      // YTD FY Filter
-      const ytdTrades = closedTrades.filter(r => {
-        if (!r.executed_at) return false;
-        const d = new Date(r.executed_at);
-        return !isNaN(d.getTime()) && d >= fyStartDate && d <= fyEndDate;
-      });
-
-      const ytdPnl = ytdTrades.reduce((sum, r) => sum + (parseFloat(r.realized_pnl_inr) || 0), 0);
-      const ytdWins = ytdTrades.filter(r => (parseFloat(r.realized_pnl_inr) || 0) > 0).length;
-      const ytdLosses = ytdTrades.length - ytdWins;
-      const ytdWinRate = ytdTrades.length > 0 ? ((ytdWins / ytdTrades.length) * 100).toFixed(1) : '0.0';
-      const ytdPnlPct = poolTotal > 0 ? ((ytdPnl / poolTotal) * 100).toFixed(2) : '0.00';
-      const ytdCosts = ytdTrades.reduce((sum, r) => sum + (parseFloat(r.brokerage_fee_inr || r.total_cost_inr) || 0), 0);
-
-      const pnlYtdElem = document.getElementById('pnl-ytd-val');
-      if (pnlYtdElem) {
-        pnlYtdElem.innerText = (ytdPnl >= 0 ? '+₹' : '-₹') + Math.abs(ytdPnl).toLocaleString('en-IN', {minimumFractionDigits: 2});
-        pnlYtdElem.style.color = ytdPnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
-      }
-      const pnlYtdSub = document.getElementById('pnl-ytd-sub');
-      if (pnlYtdSub) {
-        pnlYtdSub.innerText = `${ytdTrades.length} Total Trades (${ytdPnl >= 0 ? '+' : ''}${ytdPnlPct}% RoC)`;
-      }
-
-      const pnlWinElem = document.getElementById('pnl-winrate-val');
-      if (pnlWinElem) pnlWinElem.innerText = `${ytdWinRate}%`;
-      const pnlWinSub = document.getElementById('pnl-winrate-sub');
-      if (pnlWinSub) pnlWinSub.innerText = `${ytdWins} Wins / ${ytdLosses} Losses`;
-
-      const pnlCostElem = document.getElementById('pnl-costs-val');
-      if (pnlCostElem) pnlCostElem.innerText = '₹' + ytdCosts.toLocaleString('en-IN', {minimumFractionDigits: 2});
-      const pnlCostSub = document.getElementById('pnl-costs-sub');
-      if (pnlCostSub) pnlCostSub.innerText = `Avg ₹${ytdTrades.length > 0 ? (ytdCosts/ytdTrades.length).toFixed(1) : '0'}/Trade`;
-
-      // Group by Month for FY breakdown table
-      const monthsMap = {};
-      const monthNames = ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March'];
-      
-      monthNames.forEach((name, mIdx) => {
-        const calMonth = (mIdx + 3) % 12;
-        const calYear = mIdx < 9 ? fyStartYear : fyStartYear + 1;
-        const key = `${calYear}-${String(calMonth + 1).padStart(2, '0')}`;
-        monthsMap[key] = {
-          name: `${name} ${calYear}`,
-          trades: 0,
-          grossPnl: 0,
-          brokerage: 0,
-          wins: 0
-        };
-      });
-
-      ytdTrades.forEach(r => {
-        const d = new Date(r.executed_at);
-        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
-        if (monthsMap[key]) {
-          const p = parseFloat(r.realized_pnl_inr) || 0;
-          const b = parseFloat(r.brokerage_fee_inr || r.total_cost_inr) || 0;
-          monthsMap[key].trades += 1;
-          monthsMap[key].grossPnl += (p + b);
-          monthsMap[key].brokerage += b;
-          if (p > 0) monthsMap[key].wins += 1;
-        }
-      });
-
-      const pnlTableBody = document.getElementById('pnl-breakdown-body');
-      if (pnlTableBody) {
-        const monthKeys = Object.keys(monthsMap);
-        pnlTableBody.innerHTML = monthKeys.map(k => {
-          const m = monthsMap[k];
-          const net = m.grossPnl - m.brokerage;
-          const netColor = net >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
-          const sign = net >= 0 ? '+₹' : '-₹';
-          const winRate = m.trades > 0 ? ((m.wins / m.trades) * 100).toFixed(1) + '%' : '-';
-          const roc = poolTotal > 0 && m.trades > 0 ? ((net / poolTotal) * 100).toFixed(2) + '%' : '-';
-          
-          return `<tr>
-            <td style="font-weight: 700;">${m.name}</td>
-            <td style="font-family: var(--font-mono);">${m.trades}</td>
-            <td>₹${m.grossPnl.toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
-            <td style="color: var(--text-muted);">₹${m.brokerage.toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
-            <td style="color: ${netColor}; font-weight: 800;">${sign}${Math.abs(net).toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
-            <td>${winRate}</td>
-            <td style="color: ${netColor}; font-weight: 600;">${roc}</td>
-          </tr>`;
-        }).join('');
-      }
-    }
-
-    async function updateReflectiveMemory() {
-      try {
-        const memTxt = await fetchFirstAvailable(['state/reflective_memory.json', '../state/reflective_memory.json']);
-        if (memTxt) {
-          const memory = JSON.parse(memTxt);
-          const allLessons = [];
-          
-          Object.keys(memory).forEach(ticker => {
-            const data = memory[ticker];
-            if (data && Array.isArray(data.history)) {
-              data.history.forEach(item => {
-                allLessons.push({
-                  ticker: ticker,
-                  symbol: data.symbol || ticker.replace('.NS', '').replace('^', ''),
-                  outcome: item.outcome || 'EOD_SQUARED',
-                  modifier: item.memory_modifier !== undefined ? item.memory_modifier : 0.0,
-                  reflection: item.reflection || 'Standard intraday exit protocol followed.',
-                  timestamp: item.timestamp || ''
-                });
-              });
-            }
-          });
-
-          // Sort newest first
-          allLessons.sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0));
-
-          const countBadge = document.getElementById('memory-count-badge');
-          if (countBadge) countBadge.innerText = `${allLessons.length} Lessons Active`;
-
-          const memBody = document.getElementById('memory-table-body');
-          if (memBody) {
-            if (allLessons.length === 0) {
-              memBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">
-                Reflective memory ledger active. Lessons recorded automatically upon trade exits.
-              </td></tr>`;
-            } else {
-              memBody.innerHTML = allLessons.slice(0, 30).map(l => {
-                let outBadge = '<span class="badge badge-scalp">EOD SQUARED</span>';
-                if (l.outcome.includes('TARGET')) outBadge = '<span class="badge badge-buy-ce">TARGET HIT</span>';
-                else if (l.outcome.includes('SL') || l.outcome.includes('STOP')) outBadge = '<span class="badge badge-buy-pe">STOP LOSS</span>';
-
-                let modColor = 'var(--accent-cyan)';
-                let modSign = '';
-                if (l.modifier > 0) { modColor = 'var(--accent-green)'; modSign = '+'; }
-                else if (l.modifier < 0) { modColor = 'var(--accent-red)'; modSign = ''; }
-                const modBadge = `<span class="badge" style="background: rgba(255,255,255,0.05); color: ${modColor}; border: 1px solid ${modColor};">${modSign}${l.modifier.toFixed(1)} Score</span>`;
-
-                return `<tr>
-                  <td>
-                    <strong>${l.symbol}</strong>
-                    <span style="font-size: 11px; color: var(--text-muted); display: block;">${formatTime(l.timestamp)}</span>
-                  </td>
-                  <td>${outBadge}</td>
-                  <td>${modBadge}</td>
-                  <td style="font-size: 12.5px; line-height: 1.5; color: var(--text-main);">${l.reflection}</td>
-                </tr>`;
-              }).join('');
-            }
-          }
-        }
-      } catch(e) {
-        console.warn('Error updating reflective memory:', e);
-      }
+      document.getElementById(tabId).classList.add('active');
     }
 
     async function updateDashboard() {
-      let poolTotal = 500000;
-
-      // 1. Fetch State (JSON)
       try {
-        const stateTxt = await fetchFirstAvailable(['state/portfolio_state.json', '../state/portfolio_state.json']);
-        if (stateTxt) {
-          const state = JSON.parse(stateTxt);
-          poolTotal = Number(state.pool_total || 500000);
-          document.getElementById('val-total').innerText = '₹' + poolTotal.toLocaleString('en-IN', {minimumFractionDigits: 2});
+        const res = await fetch('../state/portfolio_state.json');
+        if (res.ok) {
+          const state = await res.json();
+          document.getElementById('val-total').innerText = '₹' + Number(state.pool_total || 500000).toLocaleString('en-IN', {minimumFractionDigits: 2});
           document.getElementById('val-available').innerText = '₹' + Number(state.pool_available || 500000).toLocaleString('en-IN', {minimumFractionDigits: 2});
           
           const pnl = Number(state.daily_pnl_inr || 0);
@@ -1085,142 +619,8 @@
           pnlElem.style.color = pnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
           
           document.getElementById('val-brokerage').innerText = '₹' + Number(state.total_brokerage_paid_inr || 0).toLocaleString('en-IN', {minimumFractionDigits: 2});
-
-          // Kill switch status sync
-          const isHalted = state.kill_switch_active || localKillSwitchHalted;
-          const badge = document.getElementById('settings-killswitch-status');
-          const detail = document.getElementById('kill-switch-detail');
-          if (badge) {
-            badge.innerText = isHalted ? 'TRADING HALTED' : 'TRADING ACTIVE';
-            badge.className = isHalted ? 'badge badge-avoid' : 'badge badge-open';
-          }
-          if (detail) {
-            detail.innerText = isHalted ? `HALTED (${state.kill_switch_reason || 'Operator Stop'})` : 'ONLINE (Normal Algorithmic Operations)';
-            detail.style.color = isHalted ? 'var(--accent-red)' : 'var(--accent-green)';
-          }
         }
-      } catch(e) {
-        console.warn('Error updating portfolio state:', e);
-      }
-
-      // 2. Fetch Trade Log (CSV)
-      try {
-        const csvTxt = await fetchFirstAvailable(['state/trade_log.csv', '../state/trade_log.csv']);
-        if (csvTxt) {
-          const allRows = parseCSV(csvTxt);
-          
-          // Render P&L analytics
-          renderPnLAnalytics(allRows, poolTotal);
-
-          // Date cutoff calculation for rolling 5 days
-          let displayRows = allRows;
-          if (currentFilterDays > 0) {
-            const now = new Date();
-            const cutoffDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - (currentFilterDays - 1), 0, 0, 0);
-            displayRows = allRows.filter(r => {
-              if (!r.executed_at) return true;
-              const d = new Date(r.executed_at);
-              return isNaN(d.getTime()) || d >= cutoffDate;
-            });
-          }
-
-          // Sort newest first
-          displayRows.sort((a, b) => {
-            const ta = new Date(a.executed_at || 0).getTime();
-            const tb = new Date(b.executed_at || 0).getTime();
-            return tb - ta;
-          });
-
-          const countBadge = document.getElementById('trade-count-badge');
-          if (countBadge) {
-            countBadge.innerText = `${displayRows.length} Trades (${currentFilterDays > 0 ? 'Last 5D' : 'All'})`;
-          }
-
-          const tbody = document.getElementById('trade-log-body');
-          if (tbody) {
-            if (displayRows.length === 0) {
-              tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 30px;">
-                No trades executed in the selected ${currentFilterDays > 0 ? '5-day' : ''} window. Algorithm actively scanning 5m/1m setups.
-              </td></tr>`;
-            } else {
-              tbody.innerHTML = displayRows.map(row => {
-                const strikeStr = (parseFloat(row.strike_price) > 0) ? ` ${row.strike_price} ${row.contract_type || ''}` : '';
-                const instrument = `<strong>${row.symbol || row.ticker || 'INSTRUMENT'}</strong><span style="font-size: 11px; color: var(--text-muted); display: block;">${strikeStr || row.contract_type || 'CASH'}</span>`;
-                const stratBadge = getStrategyBadge(row.verdict, row.contract_type);
-                const qtyStr = `${row.lots ? row.lots + ' Lots' : ''} (${row.total_shares || '0'})`;
-                
-                const entryVal = parseFloat(row.option_premium || row.spot_entry || 0);
-                const entryStr = entryVal > 0 ? '₹' + entryVal.toLocaleString('en-IN', {minimumFractionDigits: 2}) : '-';
-                
-                const exitVal = parseFloat(row.exit_price || 0);
-                const exitStr = exitVal > 0 ? '₹' + exitVal.toLocaleString('en-IN', {minimumFractionDigits: 2}) : '<span style="color: var(--accent-cyan); font-weight:700;">OPEN</span>';
-                
-                const score = parseFloat(row.waterfall_score || 0);
-                const scoreStr = score > 0 ? `<span style="color: var(--accent-cyan); font-weight: 700;">${score.toFixed(1)}</span> / 10` : '-';
-                
-                const costVal = parseFloat(row.brokerage_fee_inr || row.total_cost_inr || 0);
-                const costStr = costVal > 0 ? '₹' + costVal.toLocaleString('en-IN', {minimumFractionDigits: 2}) : '₹0.00';
-                
-                const pnlVal = parseFloat(row.realized_pnl_inr || 0);
-                let pnlStr = '<span style="color: var(--text-muted);">-</span>';
-                if (!isNaN(pnlVal) && exitVal > 0) {
-                  const pnlColor = pnlVal >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
-                  const sign = pnlVal >= 0 ? '+₹' : '-₹';
-                  pnlStr = `<span style="color: ${pnlColor}; font-weight: 800;">${sign}${Math.abs(pnlVal).toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>`;
-                }
-                
-                const statusBadge = getStatusBadge(row.exit_price, row.exit_reason);
-
-                return `<tr>
-                  <td style="font-size: 12px; white-space: nowrap; color: var(--text-muted);">${formatTime(row.executed_at)}</td>
-                  <td>${instrument}</td>
-                  <td>${stratBadge}</td>
-                  <td style="font-weight: 600;">${qtyStr}</td>
-                  <td>${entryStr}</td>
-                  <td>${exitStr}</td>
-                  <td>${scoreStr}</td>
-                  <td style="font-size: 12px; color: var(--text-muted);">${costStr}</td>
-                  <td>${pnlStr}</td>
-                  <td>${statusBadge}</td>
-                </tr>`;
-              }).join('');
-            }
-          }
-        }
-      } catch(e) {
-        console.warn('Error updating trade log:', e);
-      }
-
-      // 3. Fetch Committee Debate Logs (JSON)
-      try {
-        const debateTxt = await fetchFirstAvailable(['state/committee_debate_log.json', '../state/committee_debate_log.json']);
-        if (debateTxt) {
-          const debates = JSON.parse(debateTxt);
-          if (Array.isArray(debates) && debates.length > 0) {
-            const recents = debates.slice(-25).reverse();
-            const comBody = document.getElementById('committee-table-body');
-            if (comBody) {
-              comBody.innerHTML = recents.map(d => {
-                const overrideBadge = (d.risk_override_status === 'RISK_OVERRIDE_TRIGGERED') 
-                  ? '<span class="badge badge-avoid">OVERRIDE VETO</span>' 
-                  : '<span class="badge badge-approved">CLEARED</span>';
-                return `<tr>
-                  <td><strong>${d.symbol}</strong><span style="font-size: 11px; color: var(--text-muted); display: block;">${formatTime(d.timestamp)}</span></td>
-                  <td><span class="badge badge-buy-ce">${(d.bull_stance || d.scout_stance || 'NEUTRAL').toUpperCase()}</span></td>
-                  <td><span class="badge badge-buy-pe">${(d.bear_stance || d.tech_stance || 'MODERATE').toUpperCase()}</span></td>
-                  <td><strong style="color: var(--accent-cyan);">${d.judge_verdict || 'EVAL'}</strong> (${d.consensus_score || '-'})</td>
-                  <td>${overrideBadge}</td>
-                </tr>`;
-              }).join('');
-            }
-          }
-        }
-      } catch(e) {
-        console.warn('Error updating debate logs:', e);
-      }
-
-      // 4. Update Reflective Memory
-      await updateReflectiveMemory();
+      } catch(e) {}
     }
 
     let deferredPrompt;
@@ -1244,7 +644,7 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js?v=5').then((reg) => {
+        navigator.serviceWorker.register('/sw.js?v=3').then((reg) => {
           console.log('Shadow Traders PWA Service Worker Registered:', reg);
         }).catch((err) => {
           console.log('Service Worker Registration Failed:', err);
