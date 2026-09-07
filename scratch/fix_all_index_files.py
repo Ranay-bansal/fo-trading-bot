@@ -20,9 +20,9 @@ def fix_all():
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>SHADOW TRADERS — F&O Glassmorphism Quant Terminal</title>
-  <link rel="manifest" href="manifest.json?v=3">
-  <meta name="theme-color" content="#0284c7">
+  <title>SHADOW TRADERS — F&O Quant Terminal</title>
+  <link rel="manifest" href="manifest.json?v=4">
+  <meta name="theme-color" content="#090D16">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,33 +31,31 @@ def fix_all():
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&family=Outfit:wght@600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {{
-      --glass-bg: rgba(10, 16, 30, 0.48);
-      --glass-bg-hover: rgba(15, 23, 42, 0.65);
-      --glass-card-core: rgba(15, 23, 42, 0.55);
-      --glass-border: rgba(255, 255, 255, 0.28);
-      --glass-border-bright: rgba(0, 242, 254, 0.5);
-      --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+      --glass-bg: rgba(15, 23, 42, 0.75);
+      --glass-bg-hover: rgba(30, 41, 59, 0.85);
+      --glass-card-core: rgba(15, 23, 42, 0.85);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-border-bright: rgba(56, 189, 248, 0.35);
+      --glass-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
       
-      --accent-cyan: #00f2fe;
-      --accent-blue: #38bdf8;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #0284c7;
       --accent-purple: #a855f7;
-      --accent-green: #22c55e;
-      --accent-red: #ef4444;
-      --accent-gold: #fbbf24;
+      --accent-green: #10b981;
+      --accent-red: #f43f5e;
+      --accent-gold: #f59e0b;
       
-      --text-white: #ffffff;
-      --text-main: #f1f5f9;
-      --text-muted: #cbd5e1;
-      --text-subtle: #94a3b8;
+      --text-white: #f8fafc;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
       
-      --font-title: 'Cinzel', serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-      --font-heading: 'Outfit', sans-serif;
-      --font-grotesk: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }}
 
@@ -68,36 +66,24 @@ def fix_all():
       color: var(--text-main);
       min-height: 100vh;
       padding: 24px;
-      background-image: url('{bg_b64}'), url('background.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-color: #090D16;
+      background-image: 
+        radial-gradient(at 50% 0%, rgba(30, 41, 59, 0.4) 0px, transparent 60%),
+        radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.6) 0px, transparent 50%);
       background-attachment: fixed;
       position: relative;
     }}
 
-    body::before {{
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: rgba(5, 8, 16, 0.25);
-      z-index: -1;
-      pointer-events: none;
-    }}
-
     .disclaimer-banner {{
-      background: rgba(15, 23, 42, 0.55);
-      border: 1px solid rgba(251, 191, 36, 0.5);
-      color: var(--accent-gold);
-      padding: 10px 24px;
-      border-radius: 16px;
-      font-size: 13px;
-      font-weight: 700;
+      background: rgba(245, 158, 11, 0.06);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      color: #FCD34D;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
       text-align: center;
-      margin-bottom: 22px;
-      letter-spacing: 0.5px;
-      backdrop-filter: blur(14px) saturate(180%);
-      box-shadow: var(--glass-shadow);
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -108,192 +94,183 @@ def fix_all():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 28px;
-      padding: 18px 28px;
+      margin-bottom: 24px;
+      padding: 16px 24px;
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 16px;
+      backdrop-filter: blur(16px);
       box-shadow: var(--glass-shadow);
     }}
 
     .brand-container {{
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 14px;
     }}
 
     .logo-wrapper {{
-      width: 62px;
-      height: 62px;
-      border-radius: 18px;
-      padding: 2px;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      overflow: hidden;
     }}
 
     .shadow-logo {{
       width: 100%;
       height: 100%;
-      border-radius: 16px;
       object-fit: cover;
       display: block;
-      background: #000;
     }}
 
     .brand-text h1 {{
-      font-family: var(--font-title);
-      font-size: 29px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 75%, var(--accent-purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }}
 
     .brand-text p {{
-      font-size: 13px;
+      font-size: 11px;
       color: var(--text-muted);
-      letter-spacing: 0.6px;
-      font-family: var(--font-grotesk);
+      letter-spacing: 0.5px;
       font-weight: 600;
+      text-transform: uppercase;
     }}
 
     .arise-badge {{
-      background: rgba(0, 242, 254, 0.15);
-      border: 1px solid var(--accent-cyan);
-      color: var(--accent-cyan);
-      padding: 8px 18px;
-      border-radius: 24px;
-      font-family: var(--font-heading);
-      font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-green);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }}
 
     .install-pwa-btn {{
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-      color: #05070e;
-      font-weight: 800;
-      padding: 10px 22px;
-      border-radius: 24px;
-      border: none;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent-cyan);
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
       cursor: pointer;
-      font-family: var(--font-heading);
-      font-size: 13px;
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
-      transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+      font-size: 11.5px;
+      transition: all 0.2s ease;
     }}
 
     .install-pwa-btn:hover {{
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
+      background: rgba(56, 189, 248, 0.25);
     }}
 
     .stats-grid {{
       display: grid;
-      grid-template-cols: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-bottom: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
     }}
 
     .stat-card {{
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
-      border-radius: 22px;
-      padding: 22px;
-      backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 16px;
+      padding: 20px 22px;
+      backdrop-filter: blur(16px);
       box-shadow: var(--glass-shadow);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: border-color 0.2s ease;
     }}
 
     .stat-card:hover {{
-      transform: translateY(-3px);
-      border-color: var(--accent-cyan);
-      background: var(--glass-bg-hover);
+      border-color: rgba(255, 255, 255, 0.14);
     }}
 
     .stat-label {{
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-subtle);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 8px;
+      letter-spacing: 0.6px;
+      margin-bottom: 6px;
     }}
 
     .stat-value {{
       font-family: var(--font-mono);
-      font-size: 25px;
-      font-weight: 800;
+      font-size: 24px;
+      font-weight: 700;
       color: var(--text-white);
-      letter-spacing: -0.5px;
       font-variant-numeric: tabular-nums;
     }}
 
     .stat-subtext {{
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--text-subtle);
-      margin-top: 6px;
+      margin-top: 4px;
       font-weight: 500;
     }}
 
     .tab-nav {{
-      display: flex;
-      gap: 12px;
+      display: inline-flex;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--glass-border);
+      padding: 4px;
+      border-radius: 999px;
+      gap: 4px;
       margin-bottom: 24px;
       overflow-x: auto;
-      padding-bottom: 6px;
+      max-width: 100%;
     }}
 
     .tab-btn {{
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
+      background: transparent;
+      border: 1px solid transparent;
       color: var(--text-muted);
-      padding: 12px 24px;
-      border-radius: 16px;
-      font-family: var(--font-heading);
-      font-size: 13.5px;
-      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
-      backdrop-filter: blur(16px);
-      box-shadow: var(--glass-shadow);
-      transition: all 0.3s ease;
+      transition: all 0.15s ease;
     }}
 
     .tab-btn:hover {{
-      background: var(--glass-bg-hover);
       color: var(--text-white);
-      border-color: var(--glass-border-bright);
+      background: rgba(255, 255, 255, 0.05);
     }}
 
     .tab-btn.active {{
-      background: linear-gradient(135deg, rgba(0, 242, 254, 0.25), rgba(168, 85, 247, 0.3));
-      border: 1px solid var(--accent-cyan);
+      background: #1E293B;
+      border: 1px solid rgba(56, 189, 248, 0.35);
       color: var(--text-white);
-      box-shadow: 0 0 25px rgba(0, 242, 254, 0.35);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }}
 
     .panel {{
       display: none;
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 26px;
-      backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(16px);
       box-shadow: var(--glass-shadow);
     }}
 
     .panel.active {{
       display: block;
-      animation: fadeIn 0.4s ease-out;
+      animation: fadeIn 0.25s ease-out;
     }}
 
     @keyframes fadeIn {{
-      from {{ opacity: 0; transform: translateY(8px); }}
+      from {{ opacity: 0; transform: translateY(4px); }}
       to {{ opacity: 1; transform: translateY(0); }}
     }}
 
@@ -301,93 +278,90 @@ def fix_all():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }}
 
     .panel-header h2 {{
       font-family: var(--font-heading);
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 15px;
+      font-weight: 700;
       color: var(--text-white);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      letter-spacing: 0.3px;
     }}
 
     table {{
       width: 100%;
       border-collapse: collapse;
       font-size: 13px;
+      white-space: nowrap;
     }}
 
     th {{
       background: rgba(15, 23, 42, 0.6);
-      color: var(--text-subtle);
-      font-weight: 700;
+      color: var(--text-muted);
+      font-weight: 600;
       text-transform: uppercase;
       font-size: 11px;
-      letter-spacing: 1px;
-      padding: 14px 16px;
+      letter-spacing: 0.6px;
+      padding: 12px 14px;
       text-align: left;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }}
 
     td {{
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
       color: var(--text-main);
       font-family: var(--font-mono);
       font-variant-numeric: tabular-nums;
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 12.5px;
     }}
 
     tr:hover td {{
-      background: rgba(0, 242, 254, 0.05);
+      background: rgba(255, 255, 255, 0.02);
     }}
 
     .badge {{
       display: inline-block;
-      padding: 4px 12px;
-      border-radius: 10px;
-      font-size: 11px;
-      font-weight: 800;
-      font-family: var(--font-heading);
-      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 700;
+      font-family: var(--font-body);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
     }}
 
-    .badge-buy-ce {{ background: rgba(34, 197, 94, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }}
-    .badge-buy-pe {{ background: rgba(239, 68, 68, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }}
-    .badge-scalp {{ background: rgba(0, 242, 254, 0.2); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); }}
-    .badge-fut {{ background: rgba(168, 85, 247, 0.2); color: var(--accent-purple); border: 1px solid var(--accent-purple); }}
+    .badge-buy-ce {{ background: rgba(16, 185, 129, 0.15); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.3); }}
+    .badge-buy-pe {{ background: rgba(244, 63, 94, 0.15); color: var(--accent-red); border: 1px solid rgba(244, 63, 94, 0.3); }}
+    .badge-scalp {{ background: rgba(56, 189, 248, 0.15); color: var(--accent-cyan); border: 1px solid rgba(56, 189, 248, 0.3); }}
+    .badge-fut {{ background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); border: 1px solid rgba(168, 85, 247, 0.3); }}
 
     .engine-grid {{
       display: grid;
-      grid-template-cols: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
     }}
 
     .engine-card {{
       background: var(--glass-card-core);
       border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 22px;
-      backdrop-filter: blur(12px);
-      box-shadow: var(--glass-shadow);
-      transition: all 0.3s ease;
+      border-radius: 12px;
+      padding: 18px 20px;
+      transition: border-color 0.2s ease;
     }}
 
     .engine-card:hover {{
-      transform: translateY(-2px);
-      border-color: var(--accent-cyan);
-      box-shadow: 0 0 25px rgba(0, 242, 254, 0.2);
+      border-color: rgba(56, 189, 248, 0.3);
     }}
 
     .engine-card h3 {{
       font-family: var(--font-heading);
-      font-size: 16.5px;
-      font-weight: 800;
+      font-size: 14px;
+      font-weight: 700;
       color: var(--accent-cyan);
       margin-bottom: 8px;
       display: flex;
@@ -396,25 +370,29 @@ def fix_all():
     }}
 
     .engine-card p {{
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
-      line-height: 1.5;
-      font-weight: 500;
+      line-height: 1.55;
     }}
 
     @media (max-width: 768px) {{
       body {{ padding: 12px; }}
       header {{ flex-direction: column; gap: 14px; text-align: center; }}
       .brand-container {{ flex-direction: column; }}
-      .stats-grid {{ grid-template-cols: 1fr; }}
+      .stats-grid {{ grid-template-columns: 1fr; }}
     }}
   </style>
 </head>
 <body>
 
-  <!-- CLEAN DISCLAIMER BANNER (NO ZERODHA LINE) -->
+  <!-- CLEAN DISCLAIMER BANNER -->
   <div class="disclaimer-banner">
-    <span>⚠️ SIMULATION MODE — PAPER TRADING ONLY (INR 5,00,000 CAPITAL POOL)</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style="flex-shrink: 0;">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+    </svg>
+    <span>SIMULATION ENVIRONMENT — PAPER TRADING ONLY (INR 5,00,000 CAPITAL POOL)</span>
   </div>
 
   <!-- HEADER -->
@@ -424,15 +402,18 @@ def fix_all():
         <img src="{logo_b64}" alt="Shadow Monarch" class="shadow-logo" onerror="this.src='logo.jpg'">
       </div>
       <div class="brand-text">
-        <h1>SHADOW TRADERS</h1>
-        <p>⚡ F&O Quant Engine & Options Swarm</p>
+        <h1>SHADOW TRADERS <span class="badge" style="background: rgba(56, 189, 248, 0.12); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 10px;">F&O QUANT TERMINAL</span></h1>
+        <p>Autonomous Futures &amp; Options Execution Engine</p>
       </div>
     </div>
-    <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
       <button id="pwa-install-btn" class="install-pwa-btn" onclick="installPWA()">
-        ⚡ INSTALL SHADOW APP
+        Install App
       </button>
-      <div class="arise-badge">ARISE — ⚡ OPTIONS SWARM ACTIVE</div>
+      <div class="arise-badge">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green);"></span>
+        Options Swarm Active
+      </div>
     </div>
   </header>
 
@@ -447,7 +428,7 @@ def fix_all():
     <div class="stat-card">
       <div class="stat-label">Available Margin</div>
       <div class="stat-value" id="val-available">₹5,00,000.00</div>
-      <div class="stat-subtext">Ready for Options Swarm</div>
+      <div class="stat-subtext">Ready for Deployment</div>
     </div>
 
     <div class="stat-card">
@@ -465,18 +446,18 @@ def fix_all():
 
   <!-- TAB NAVIGATION -->
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('tab-trades', event)">⚔️ Executed Trades Log</button>
-    <button class="tab-btn" onclick="switchTab('tab-engines', event)">🎯 F&O Trade Engines</button>
-    <button class="tab-btn" onclick="switchTab('tab-patterns', event)">📊 12-Pattern & VWAP Hunter</button>
-    <button class="tab-btn" onclick="switchTab('tab-committee', event)">🏛️ 3-Way Risk Committee</button>
-    <button class="tab-btn" onclick="switchTab('tab-memory', event)">🔮 Reflective Memory</button>
+    <button class="tab-btn active" onclick="switchTab('tab-trades', event)">Executed Trades Log</button>
+    <button class="tab-btn" onclick="switchTab('tab-engines', event)">F&O Trade Engines</button>
+    <button class="tab-btn" onclick="switchTab('tab-patterns', event)">Pattern &amp; VWAP Hunter</button>
+    <button class="tab-btn" onclick="switchTab('tab-committee', event)">3-Way Risk Committee</button>
+    <button class="tab-btn" onclick="switchTab('tab-memory', event)">Reflective Memory</button>
   </div>
 
   <!-- PANEL 1: EXECUTED TRADES LOG -->
   <div id="tab-trades" class="panel active">
     <div class="panel-header">
-      <h2>⚔️ Live F&O Trade Execution Log (Options & Futures)</h2>
-      <span class="badge badge-scalp">1m / 5m / 15m Multi-TF Active</span>
+      <h2>Live F&amp;O Trade Execution Log (Options &amp; Futures)</h2>
+      <span class="badge badge-scalp">1m / 5m / 15m Multi-TF</span>
     </div>
     <div style="overflow-x: auto;">
       <table>
@@ -497,7 +478,7 @@ def fix_all():
         <tbody id="trade-log-body">
           <tr>
             <td colspan="10" style="text-align: center; color: var(--text-muted); padding: 30px;">
-              ⚡ Options Swarm active. Monitoring 1m/5m VWAP bounces, Supertrend trend flips, and Black-Scholes strike selections...
+              Options Swarm active. Monitoring 1m/5m VWAP bounces, Supertrend trend flips, and strike selections...
             </td>
           </tr>
         </tbody>
@@ -508,7 +489,7 @@ def fix_all():
   <!-- PANEL 2: F&O TRADE ENGINES -->
   <div id="tab-engines" class="panel">
     <div class="panel-header">
-      <h2>🎯 6 Specialized High-Frequency F&O Trade Engines</h2>
+      <h2>6 Specialized F&amp;O Trade Engines</h2>
     </div>
     <div class="engine-grid">
       <div class="engine-card">
@@ -528,11 +509,11 @@ def fix_all():
         <p>1-Minute High-Frequency Put Scalper for fast intraday breakdowns with tight ATR trailing stop-loss protection.</p>
       </div>
       <div class="engine-card">
-        <h3><span class="badge badge-fut">BUY_FUT</span> Index & Equity Long Futures</h3>
+        <h3><span class="badge badge-fut">BUY_FUT</span> Index &amp; Equity Long Futures</h3>
         <p>Long Futures position sizing on strong 15m structural breakouts with NIFTY outperformance (RS > 1.0).</p>
       </div>
       <div class="engine-card">
-        <h3><span class="badge badge-fut">SELL_FUT</span> Index & Equity Short Futures</h3>
+        <h3><span class="badge badge-fut">SELL_FUT</span> Index &amp; Equity Short Futures</h3>
         <p>Short Futures positioning on structural breakdowns with NIFTY underperformance (RS < 1.0).</p>
       </div>
     </div>
@@ -541,16 +522,16 @@ def fix_all():
   <!-- PANEL 3: 12-PATTERN & VWAP HUNTER -->
   <div id="tab-patterns" class="panel">
     <div class="panel-header">
-      <h2>📊 12-Pattern & VWAP Quantitative Hunter</h2>
+      <h2>Pattern &amp; VWAP Quantitative Hunter</h2>
     </div>
     <div class="engine-grid">
       <div class="engine-card">
         <h3>Double Bottom (W-Pattern)</h3>
-        <p>Dual support test preceding explosive bullish option breakouts (+0.5 Score).</p>
+        <p>Dual support test preceding bullish option breakouts (+0.5 Score).</p>
       </div>
       <div class="engine-card">
         <h3>Double Top (M-Pattern)</h3>
-        <p>Dual ceiling rejection preceding aggressive Put option breakdowns (-0.5 Score).</p>
+        <p>Dual ceiling rejection preceding Put option breakdowns (-0.5 Score).</p>
       </div>
       <div class="engine-card">
         <h3>Opening Range Breakout (ORB-15m)</h3>
@@ -566,7 +547,7 @@ def fix_all():
   <!-- PANEL 4: 3-WAY RISK COMMITTEE -->
   <div id="tab-committee" class="panel">
     <div class="panel-header">
-      <h2>🏛️ 3-Way Risk Committee & Subagent Debate Logs</h2>
+      <h2>3-Way Risk Committee &amp; Subagent Debate Logs</h2>
     </div>
     <table>
       <thead>
@@ -589,7 +570,7 @@ def fix_all():
   <!-- PANEL 5: REFLECTIVE MEMORY -->
   <div id="tab-memory" class="panel">
     <div class="panel-header">
-      <h2>🔮 Reflective Memory & Trade Lessons</h2>
+      <h2>Reflective Memory &amp; Trade Lessons</h2>
     </div>
     <table>
       <thead>
@@ -658,7 +639,7 @@ def fix_all():
 
     if ('serviceWorker' in navigator) {{
       window.addEventListener('load', () => {{
-        navigator.serviceWorker.register('/sw.js?v=3').then((reg) => {{
+        navigator.serviceWorker.register('/sw.js?v=4').then((reg) => {{
           console.log('Shadow Traders PWA Service Worker Registered:', reg);
         }}).catch((err) => {{
           console.log('Service Worker Registration Failed:', err);
