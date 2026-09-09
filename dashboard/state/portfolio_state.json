@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-08T13:55:05.629366Z",
-  "pool_total": 562649.59,
-  "pool_available": 161.239999999847,
-  "pool_deployed": 562033.7000000001,
-  "daily_pnl_inr": 63967.49000000001,
-  "daily_pnl_pct": 12.79,
-  "total_brokerage_paid_inr": 3538.0600000000004,
-  "trades_today": 63,
+  "last_updated": "2026-09-09T08:26:38.209405Z",
+  "pool_total": 563817.7399999999,
+  "pool_available": 1426.039999999848,
+  "pool_deployed": 562371.7000000001,
+  "daily_pnl_inr": 65590.29000000001,
+  "daily_pnl_pct": 13.12,
+  "total_brokerage_paid_inr": 3578.0600000000004,
+  "trades_today": 64,
   "open_positions": [
     {
       "ticker": "RELIANCE.NS",
@@ -41,23 +41,6 @@
       "brokerage_paid_inr": 20.0,
       "side": "SELL",
       "waterfall_score": 1.5
-    },
-    {
-      "ticker": "TCS.NS",
-      "contract_type": "EQUITY_CASH",
-      "symbol": "TCS",
-      "strike_price": 0.0,
-      "lots": 1,
-      "total_shares": 37,
-      "entry_premium": 2255.5,
-      "entry_spot": 2255.5,
-      "sl_spot": 2278.05,
-      "target_spot": 2221.67,
-      "entered_at": "2026-09-08T13:50:30.930029Z",
-      "megabull_order_id": "TCS_CASH_SELL_20260908_135030",
-      "brokerage_paid_inr": 20.0,
-      "side": "SELL",
-      "waterfall_score": 2.5
     },
     {
       "ticker": "MARUTI.NS",
@@ -301,6 +284,23 @@
       "expiry_dte": 7,
       "verdict": "SCALP_PE",
       "waterfall_score": 9.24
+    },
+    {
+      "ticker": "RELIANCE.NS",
+      "contract_type": "EQUITY_CASH",
+      "symbol": "RELIANCE",
+      "strike_price": 0.0,
+      "lots": 1,
+      "total_shares": 65,
+      "entry_premium": 1289.1,
+      "entry_spot": 1289.1,
+      "sl_spot": 1276.21,
+      "target_spot": 1308.44,
+      "entered_at": "2026-09-09T08:22:54.867608Z",
+      "megabull_order_id": "RELIANCE_CASH_BUY_20260909_082254",
+      "brokerage_paid_inr": 20.0,
+      "side": "BUY",
+      "waterfall_score": 8.0
     }
   ]
 }
