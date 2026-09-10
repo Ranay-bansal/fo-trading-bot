@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-09T13:57:32.772639Z",
-  "pool_total": 635477.4400000001,
-  "pool_available": 434.68999999997413,
-  "pool_deployed": 634534.9000000003,
-  "daily_pnl_inr": 137778.70999999996,
-  "daily_pnl_pct": 27.56,
-  "total_brokerage_paid_inr": 5550.44,
-  "trades_today": 100,
+  "last_updated": "2026-09-10T08:28:12.980768Z",
+  "pool_total": 633451.9900000002,
+  "pool_available": 359.2899999999936,
+  "pool_deployed": 633072.7000000002,
+  "daily_pnl_inr": 136261.11,
+  "daily_pnl_pct": 27.25,
+  "total_brokerage_paid_inr": 5590.44,
+  "trades_today": 101,
   "open_positions": [
     {
       "ticker": "RELIANCE.NS",
@@ -58,23 +58,6 @@
       "brokerage_paid_inr": 20.0,
       "side": "SELL",
       "waterfall_score": 2.9
-    },
-    {
-      "ticker": "BHARTIARTL.NS",
-      "contract_type": "EQUITY_CASH",
-      "symbol": "BHARTIARTL",
-      "strike_price": 0.0,
-      "lots": 1,
-      "total_shares": 52,
-      "entry_premium": 1814.7,
-      "entry_spot": 1814.7,
-      "sl_spot": 1832.85,
-      "target_spot": 1787.48,
-      "entered_at": "2026-09-09T13:53:14.968215Z",
-      "megabull_order_id": "BHARTIARTL_CASH_SELL_20260909_135314",
-      "brokerage_paid_inr": 20.0,
-      "side": "SELL",
-      "waterfall_score": 2.5
     },
     {
       "ticker": "LT.NS",
@@ -339,6 +322,23 @@
       "expiry_dte": 7,
       "verdict": "SCALP_PE",
       "waterfall_score": 9.24
+    },
+    {
+      "ticker": "HDFCBANK.NS",
+      "contract_type": "EQUITY_CASH",
+      "symbol": "HDFCBANK",
+      "strike_price": 0.0,
+      "lots": 1,
+      "total_shares": 134,
+      "entry_premium": 693.3,
+      "entry_spot": 693.3,
+      "sl_spot": 686.37,
+      "target_spot": 703.7,
+      "entered_at": "2026-09-10T08:23:49.127677Z",
+      "megabull_order_id": "HDFCBANK_CASH_BUY_20260910_082349",
+      "brokerage_paid_inr": 20.0,
+      "side": "BUY",
+      "waterfall_score": 8.5
     }
   ]
 }
