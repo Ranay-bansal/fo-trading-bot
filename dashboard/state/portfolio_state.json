@@ -1,30 +1,13 @@
 {
-  "last_updated": "2026-09-10T13:52:03.779242Z",
-  "pool_total": 610873.3400000002,
-  "pool_available": 2006.6099999999915,
-  "pool_deployed": 608410.8500000002,
-  "daily_pnl_inr": 114158.91,
-  "daily_pnl_pct": 22.83,
-  "total_brokerage_paid_inr": 7367.7400000000025,
-  "trades_today": 133,
+  "last_updated": "2026-09-11T08:20:54.306392Z",
+  "pool_total": 609098.1600000001,
+  "pool_available": 259.7099999999773,
+  "pool_deployed": 608818.4500000002,
+  "daily_pnl_inr": 112839.61,
+  "daily_pnl_pct": 22.57,
+  "total_brokerage_paid_inr": 7407.7400000000025,
+  "trades_today": 134,
   "open_positions": [
-    {
-      "ticker": "RELIANCE.NS",
-      "contract_type": "EQUITY_CASH",
-      "symbol": "RELIANCE",
-      "strike_price": 0.0,
-      "lots": 1,
-      "total_shares": 71,
-      "entry_premium": 1274.0,
-      "entry_spot": 1274.0,
-      "sl_spot": 1261.26,
-      "target_spot": 1293.11,
-      "entered_at": "2026-09-10T13:47:38.677308Z",
-      "megabull_order_id": "RELIANCE_CASH_BUY_20260910_134738",
-      "brokerage_paid_inr": 20.0,
-      "side": "BUY",
-      "waterfall_score": 7.5
-    },
     {
       "ticker": "HDFCBANK.NS",
       "contract_type": "EQUITY_CASH",
@@ -301,6 +284,23 @@
       "expiry_dte": 7,
       "verdict": "SCALP_PE",
       "waterfall_score": 8.82
+    },
+    {
+      "ticker": "HDFCBANK.NS",
+      "contract_type": "EQUITY_CASH",
+      "symbol": "HDFCBANK",
+      "strike_price": 0.0,
+      "lots": 1,
+      "total_shares": 131,
+      "entry_premium": 693.6,
+      "entry_spot": 693.6,
+      "sl_spot": 686.66,
+      "target_spot": 704.0,
+      "entered_at": "2026-09-11T08:18:24.332384Z",
+      "megabull_order_id": "HDFCBANK_CASH_BUY_20260911_081824",
+      "brokerage_paid_inr": 20.0,
+      "side": "BUY",
+      "waterfall_score": 7.5
     }
   ]
 }
