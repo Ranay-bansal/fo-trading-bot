@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-14T16:05:01.749626Z",
-  "pool_total": 594518.180000001,
-  "pool_available": 3530.3600000006645,
-  "pool_deployed": 590557.0500000003,
-  "daily_pnl_inr": 100050.20000000003,
-  "daily_pnl_pct": 20.01,
-  "total_brokerage_paid_inr": 11632.000000000007,
-  "trades_today": 211,
+  "last_updated": "2026-09-15T09:01:07.504407Z",
+  "pool_total": 574805.150000001,
+  "pool_available": 1500.9900000006655,
+  "pool_deployed": 573277.8000000003,
+  "daily_pnl_inr": 80767.94000000003,
+  "daily_pnl_pct": 16.15,
+  "total_brokerage_paid_inr": 11702.260000000007,
+  "trades_today": 212,
   "open_positions": [
     {
       "ticker": "RELIANCE.NS",
@@ -151,44 +151,6 @@
       "waterfall_score": 8.3
     },
     {
-      "ticker": "TCS.NS",
-      "contract_type": "SCALP_PE",
-      "symbol": "TCS",
-      "strike_price": 2250.0,
-      "lots": 1,
-      "total_shares": 175,
-      "entry_premium": 48.38,
-      "entry_spot": 2200.8,
-      "sl_spot": 2233.81,
-      "target_spot": 2134.78,
-      "entered_at": "2026-09-14T15:59:53.064674Z",
-      "megabull_order_id": "TCS_SCALP_PE_20260914_155953",
-      "brokerage_paid_inr": 20.0,
-      "delta": -0.8892,
-      "expiry_dte": 7,
-      "verdict": "SCALP_PE",
-      "waterfall_score": 7.77
-    },
-    {
-      "ticker": "INFY.NS",
-      "contract_type": "SCALP_PE",
-      "symbol": "INFY",
-      "strike_price": 1060.0,
-      "lots": 2,
-      "total_shares": 600,
-      "entry_premium": 22.02,
-      "entry_spot": 1037.7,
-      "sl_spot": 1053.27,
-      "target_spot": 1006.57,
-      "entered_at": "2026-09-14T15:59:53.465936Z",
-      "megabull_order_id": "INFY_SCALP_PE_20260914_155953",
-      "brokerage_paid_inr": 20.0,
-      "delta": -0.8794,
-      "expiry_dte": 7,
-      "verdict": "SCALP_PE",
-      "waterfall_score": 6.93
-    },
-    {
       "ticker": "HDFCBANK.NS",
       "contract_type": "SCALP_CE",
       "symbol": "HDFCBANK",
@@ -282,6 +244,25 @@
       "expiry_dte": 7,
       "verdict": "SCALP_PE",
       "waterfall_score": 8.3
+    },
+    {
+      "ticker": "^NSEI",
+      "contract_type": "SCALP_PE",
+      "symbol": "NIFTY",
+      "strike_price": 23250.0,
+      "lots": 1,
+      "total_shares": 25,
+      "entry_premium": 175.97,
+      "entry_spot": 23208.6,
+      "sl_spot": 23556.73,
+      "target_spot": 22512.34,
+      "entered_at": "2026-09-15T08:58:06.944804Z",
+      "megabull_order_id": "NIFTY_SCALP_PE_20260915_085806",
+      "brokerage_paid_inr": 20.0,
+      "delta": -0.508,
+      "expiry_dte": 7,
+      "verdict": "SCALP_PE",
+      "waterfall_score": 8.77
     }
   ]
 }
