@@ -21,7 +21,7 @@ def fix_all():
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>SHADOW TRADERS — F&O Quant Terminal</title>
-  <link rel="manifest" href="manifest.json?v=4">
+  <link rel="manifest" href="manifest.json?v=5">
   <meta name="theme-color" content="#090D16">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -281,6 +281,8 @@ def fix_all():
       margin-bottom: 18px;
       padding-bottom: 12px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+      gap: 10px;
     }}
 
     .panel-header h2 {{
@@ -317,7 +319,7 @@ def fix_all():
       font-family: var(--font-mono);
       font-variant-numeric: tabular-nums;
       font-weight: 500;
-      font-size: 12.5px;
+      font-size: 12px;
     }}
 
     tr:hover td {{
@@ -339,6 +341,8 @@ def fix_all():
     .badge-buy-pe {{ background: rgba(244, 63, 94, 0.15); color: var(--accent-red); border: 1px solid rgba(244, 63, 94, 0.3); }}
     .badge-scalp {{ background: rgba(56, 189, 248, 0.15); color: var(--accent-cyan); border: 1px solid rgba(56, 189, 248, 0.3); }}
     .badge-fut {{ background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); border: 1px solid rgba(168, 85, 247, 0.3); }}
+    .badge-neutral {{ background: rgba(148, 163, 184, 0.15); color: var(--text-muted); border: 1px solid rgba(148, 163, 184, 0.3); }}
+    .badge-warn {{ background: rgba(245, 158, 11, 0.15); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.3); }}
 
     .engine-grid {{
       display: grid;
@@ -387,7 +391,7 @@ def fix_all():
 
   <!-- CLEAN DISCLAIMER BANNER -->
   <div class="disclaimer-banner">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style="flex-shrink: 0;">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
       <circle cx="12" cy="12" r="10"></circle>
       <line x1="12" y1="8" x2="12" y2="12"></line>
       <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -446,7 +450,7 @@ def fix_all():
 
   <!-- TAB NAVIGATION -->
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('tab-trades', event)">Executed Trades Log</button>
+    <button class="tab-btn active" onclick="switchTab('tab-trades', event)">Executed Trades Log (<span id="trade-count-badge">0</span>)</button>
     <button class="tab-btn" onclick="switchTab('tab-engines', event)">F&O Trade Engines</button>
     <button class="tab-btn" onclick="switchTab('tab-patterns', event)">Pattern &amp; VWAP Hunter</button>
     <button class="tab-btn" onclick="switchTab('tab-committee', event)">3-Way Risk Committee</button>
@@ -457,7 +461,7 @@ def fix_all():
   <div id="tab-trades" class="panel active">
     <div class="panel-header">
       <h2>Live F&amp;O Trade Execution Log (Options &amp; Futures)</h2>
-      <span class="badge badge-scalp">1m / 5m / 15m Multi-TF</span>
+      <span class="badge badge-scalp" id="trade-status-indicator">Auto-refresh: 5s</span>
     </div>
     <div style="overflow-x: auto;">
       <table>
@@ -472,13 +476,13 @@ def fix_all():
             <th>Quant Score</th>
             <th>Transaction Costs</th>
             <th>Net Realized P&L</th>
-            <th>Status</th>
+            <th>Status / Exit Reason</th>
           </tr>
         </thead>
         <tbody id="trade-log-body">
           <tr>
             <td colspan="10" style="text-align: center; color: var(--text-muted); padding: 30px;">
-              Options Swarm active. Monitoring 1m/5m VWAP bounces, Supertrend trend flips, and strike selections...
+              Loading executed trades from quantitative ledger...
             </td>
           </tr>
         </tbody>
@@ -549,22 +553,25 @@ def fix_all():
     <div class="panel-header">
       <h2>3-Way Risk Committee &amp; Subagent Debate Logs</h2>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Symbol</th>
-          <th>Bull Conviction (Scout)</th>
-          <th>Bear Risk (Technician)</th>
-          <th>Fact-Checker Status (Judge)</th>
-          <th>Risk Committee Override</th>
-        </tr>
-      </thead>
-      <tbody id="committee-table-body">
-        <tr>
-          <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No active debate logs for current scan window. Subagent swarm evaluating market signals.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Symbol</th>
+            <th>Scout / Bull Stance</th>
+            <th>Technician / Bear Stance</th>
+            <th>Fact-Checker Status</th>
+            <th>Risk Committee Verdict &amp; Rationale</th>
+          </tr>
+        </thead>
+        <tbody id="committee-table-body">
+          <tr>
+            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 24px;">Loading committee debate logs...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- PANEL 5: REFLECTIVE MEMORY -->
@@ -572,21 +579,24 @@ def fix_all():
     <div class="panel-header">
       <h2>Reflective Memory &amp; Trade Lessons</h2>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Ticker Symbol</th>
-          <th>Prior Outcome</th>
-          <th>Memory Modifier</th>
-          <th>Learned Lesson</th>
-        </tr>
-      </thead>
-      <tbody id="memory-table-body">
-        <tr>
-          <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker Symbol</th>
+            <th>Strategy Verdict</th>
+            <th>Prior Outcome</th>
+            <th>Memory Modifier</th>
+            <th>Learned Quantitative Reflection</th>
+          </tr>
+        </thead>
+        <tbody id="memory-table-body">
+          <tr>
+            <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">Loading reflective memory ledger...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <script>
@@ -600,22 +610,261 @@ def fix_all():
       document.getElementById(tabId).classList.add('active');
     }}
 
-    async function updateDashboard() {{
+    async function fetchMultiPath(filename) {{
+      const paths = [
+        'state/' + filename,
+        '/state/' + filename,
+        '../state/' + filename,
+        './state/' + filename,
+        './' + filename
+      ];
+      for (const path of paths) {{
+        try {{
+          const res = await fetch(path + '?t=' + Date.now());
+          if (res.ok) return res;
+        }} catch(e) {{}}
+      }}
+      return null;
+    }}
+
+    function parseCSV(text) {{
+      const lines = text.trim().split(/\\r?\\n/);
+      if (lines.length < 2) return [];
+      const headers = lines[0].split(',').map(h => h.trim());
+      const rows = [];
+      for (let i = 1; i < lines.length; i++) {{
+        const line = lines[i].trim();
+        if (!line) continue;
+        const values = [];
+        let insideQuotes = false;
+        let currentValue = '';
+        for (let char of line) {{
+          if (char === '"') {{
+            insideQuotes = !insideQuotes;
+          }} else if (char === ',' && !insideQuotes) {{
+            values.push(currentValue.trim());
+            currentValue = '';
+          }} else {{
+            currentValue += char;
+          }}
+        }}
+        values.push(currentValue.trim());
+        const obj = {{}};
+        headers.forEach((h, idx) => {{
+          obj[h] = values[idx] !== undefined ? values[idx] : '';
+        }});
+        rows.push(obj);
+      }}
+      return rows;
+    }}
+
+    function getBadgeClass(strategy) {{
+      const s = (strategy || '').toUpperCase();
+      if (s.includes('CE') || s.includes('CALL')) return 'badge-buy-ce';
+      if (s.includes('PE') || s.includes('PUT')) return 'badge-buy-pe';
+      if (s.includes('SCALP')) return 'badge-scalp';
+      if (s.includes('FUT')) return 'badge-fut';
+      return 'badge-neutral';
+    }}
+
+    function formatDate(dateStr) {{
+      if (!dateStr) return '-';
       try {{
-        const res = await fetch('../state/portfolio_state.json');
-        if (res.ok) {{
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return dateStr;
+        return d.toLocaleDateString('en-IN', {{ month: 'short', day: 'numeric' }}) + ' ' +
+               d.toLocaleTimeString('en-IN', {{ hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }});
+      }} catch(e) {{
+        return dateStr;
+      }}
+    }}
+
+    async function loadPortfolio() {{
+      try {{
+        const res = await fetchMultiPath('portfolio_state.json');
+        if (res) {{
           const state = await res.json();
-          document.getElementById('val-total').innerText = '₹' + Number(state.pool_total || 500000).toLocaleString('en-IN', {{minimumFractionDigits: 2}});
-          document.getElementById('val-available').innerText = '₹' + Number(state.pool_available || 500000).toLocaleString('en-IN', {{minimumFractionDigits: 2}});
+          document.getElementById('val-total').innerText = '₹' + Number(state.pool_total || 500000).toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}});
+          document.getElementById('val-available').innerText = '₹' + Number(state.pool_available || 500000).toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}});
           
           const pnl = Number(state.daily_pnl_inr || 0);
           const pnlElem = document.getElementById('val-pnl');
-          pnlElem.innerText = (pnl >= 0 ? '+₹' : '-₹') + Math.abs(pnl).toLocaleString('en-IN', {{minimumFractionDigits: 2}});
+          pnlElem.innerText = (pnl >= 0 ? '+₹' : '-₹') + Math.abs(pnl).toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}});
           pnlElem.style.color = pnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
           
-          document.getElementById('val-brokerage').innerText = '₹' + Number(state.total_brokerage_paid_inr || 0).toLocaleString('en-IN', {{minimumFractionDigits: 2}});
+          document.getElementById('val-brokerage').innerText = '₹' + Number(state.total_brokerage_paid_inr || 0).toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}});
         }}
-      }} catch(e) {{}}
+      }} catch(e) {{
+        console.error('Error loading portfolio state:', e);
+      }}
+    }}
+
+    async function loadTrades() {{
+      try {{
+        const res = await fetchMultiPath('trade_log.csv');
+        if (!res) return;
+        const text = await res.text();
+        const trades = parseCSV(text);
+        
+        const countBadge = document.getElementById('trade-count-badge');
+        if (countBadge) countBadge.innerText = trades.length;
+
+        const tbody = document.getElementById('trade-log-body');
+        if (!trades || trades.length === 0) {{
+          tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 30px;">No executed trades yet. Swarm active & monitoring signals.</td></tr>`;
+          return;
+        }}
+
+        // Newest trades first
+        const reversedTrades = [...trades].reverse();
+        
+        let html = '';
+        for (const t of reversedTrades) {{
+          const strategy = t.verdict || t.contract_type || 'F&O';
+          const badgeClass = getBadgeClass(strategy);
+          const strikeStr = t.strike_price && Number(t.strike_price) > 0 ? (Number(t.strike_price) + ' ') : '';
+          const instrumentDisplay = `<strong>${{t.symbol || t.ticker || 'NIFTY'}}</strong> <span style="color: var(--text-muted); font-size: 11px;">${{strikeStr}}${{t.contract_type || ''}}</span>`;
+          
+          const entryPrice = t.option_premium && Number(t.option_premium) > 0 ? ('₹' + Number(t.option_premium).toFixed(2)) : (t.spot_entry ? ('₹' + Number(t.spot_entry).toFixed(2)) : '-');
+          
+          let exitDisplay = '<span style="color: var(--accent-cyan); font-weight: 600;">ACTIVE</span>';
+          if (t.exit_price && Number(t.exit_price) > 0) {{
+            exitDisplay = '₹' + Number(t.exit_price).toFixed(2);
+          }}
+
+          const score = t.waterfall_score ? `${{Number(t.waterfall_score).toFixed(1)}}/10` : '-';
+          const cost = t.total_cost_inr || t.brokerage_fee_inr || '20.00';
+          
+          let pnlDisplay = '<span style="color: var(--text-muted);">-</span>';
+          if (t.realized_pnl_inr && t.realized_pnl_inr !== '') {{
+            const pnlVal = Number(t.realized_pnl_inr);
+            const pctVal = t.realized_pnl_pct ? ` (${{Number(t.realized_pnl_pct) >= 0 ? '+' : ''}}${{Number(t.realized_pnl_pct).toFixed(1)}}%)` : '';
+            if (pnlVal >= 0) {{
+              pnlDisplay = `<span style="color: var(--accent-green); font-weight: 700;">+₹${{pnlVal.toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}})}}${{pctVal}}</span>`;
+            }} else {{
+              pnlDisplay = `<span style="color: var(--accent-red); font-weight: 700;">-₹${{Math.abs(pnlVal).toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}})}}${{pctVal}}</span>`;
+            }}
+          }}
+
+          let statusDisplay = '<span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.3);">OPEN</span>';
+          if (t.exit_reason && t.exit_reason !== '') {{
+            const reason = t.exit_reason.toUpperCase().replace(/_/g, ' ');
+            const reasonColor = reason.includes('TARGET') ? 'var(--accent-green)' : (reason.includes('SL') ? 'var(--accent-red)' : 'var(--accent-gold)');
+            statusDisplay = `<span class="badge" style="background: rgba(255, 255, 255, 0.06); color: ${{reasonColor}}; border: 1px solid rgba(255, 255, 255, 0.15);">${{reason}}</span>`;
+          }}
+
+          html += `<tr>
+            <td style="color: var(--text-muted); font-size: 11.5px;">${{formatDate(t.executed_at)}}</td>
+            <td>${{instrumentDisplay}}</td>
+            <td><span class="badge ${{badgeClass}}">${{strategy}}</span></td>
+            <td>${{t.total_shares || t.lots || '1'}} qty</td>
+            <td>${{entryPrice}}</td>
+            <td>${{exitDisplay}}</td>
+            <td style="color: var(--accent-cyan);">${{score}}</td>
+            <td style="color: var(--text-muted);">₹${{Number(cost).toFixed(2)}}</td>
+            <td>${{pnlDisplay}}</td>
+            <td>${{statusDisplay}}</td>
+          </tr>`;
+        }}
+
+        tbody.innerHTML = html;
+      }} catch(e) {{
+        console.error('Error loading trades:', e);
+      }}
+    }}
+
+    async function loadCommittee() {{
+      try {{
+        const res = await fetchMultiPath('committee_debate_log.json');
+        if (!res) return;
+        const debates = await res.json();
+        const tbody = document.getElementById('committee-table-body');
+        if (!debates || debates.length === 0) {{
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 24px;">No committee debates recorded yet.</td></tr>`;
+          return;
+        }}
+
+        const reversed = [...debates].reverse();
+        let html = '';
+        for (const d of reversed) {{
+          const isApproved = d.fact_checker_approved;
+          const statusBadge = isApproved 
+            ? `<span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.3);">VERIFIED</span>`
+            : `<span class="badge" style="background: rgba(244, 63, 94, 0.15); color: var(--accent-red); border: 1px solid rgba(244, 63, 94, 0.3);">REJECTED</span>`;
+          
+          const isOverride = d.risk_override_status === 'RISK_OVERRIDE_TRIGGERED';
+          const verdictColor = d.judge_verdict && (d.judge_verdict.includes('BUY') || d.judge_verdict.includes('CALL')) ? 'var(--accent-green)' : (d.judge_verdict === 'AVOID' ? 'var(--accent-gold)' : 'var(--accent-red)');
+          
+          html += `<tr>
+            <td style="color: var(--text-muted); font-size: 11.5px;">${{formatDate(d.timestamp)}}</td>
+            <td><strong>${{d.symbol || d.ticker}}</strong></td>
+            <td><span style="color: var(--accent-cyan); font-weight: 600;">${{d.bull_stance || d.scout_stance || '-'}}</span></td>
+            <td><span style="color: var(--accent-red); font-weight: 600;">${{d.bear_stance || d.tech_stance || '-'}}</span></td>
+            <td>${{statusBadge}}</td>
+            <td>
+              <span class="badge" style="color: ${{verdictColor}}; border: 1px solid rgba(255,255,255,0.15);">${{d.judge_verdict || 'AVOID'}}</span>
+              ${{isOverride ? '<span class="badge badge-warn" style="margin-left: 6px;">RISK VETO</span>' : ''}}
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; max-width: 320px; white-space: normal; line-height: 1.4;">${{d.reasoning || ''}}</div>
+            </td>
+          </tr>`;
+        }}
+        tbody.innerHTML = html;
+      }} catch(e) {{
+        console.error('Error loading committee logs:', e);
+      }}
+    }}
+
+    async function loadMemory() {{
+      try {{
+        const res = await fetchMultiPath('reflective_memory.json');
+        if (!res) return;
+        const memoryData = await res.json();
+        const tbody = document.getElementById('memory-table-body');
+        
+        let allReflections = [];
+        for (const [ticker, item] of Object.entries(memoryData)) {{
+          if (item && item.history && Array.isArray(item.history)) {{
+            item.history.forEach(h => {{
+              allReflections.push({{
+                symbol: item.symbol || item.ticker || ticker,
+                ...h
+              }});
+            }});
+          }}
+        }}
+
+        if (allReflections.length === 0) {{
+          tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">Reflective memory ledger active. Lessons recorded automatically upon trade exits.</td></tr>`;
+          return;
+        }}
+
+        allReflections.sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0));
+
+        let html = '';
+        for (const r of allReflections) {{
+          const mod = Number(r.memory_modifier || 0);
+          const modColor = mod > 0 ? 'var(--accent-green)' : (mod < 0 ? 'var(--accent-red)' : 'var(--text-muted)');
+          const modDisplay = (mod >= 0 ? '+' : '') + mod.toFixed(2);
+          
+          html += `<tr>
+            <td><strong>${{r.symbol}}</strong></td>
+            <td><span class="badge ${{getBadgeClass(r.verdict)}}">${{r.verdict || 'F&O'}}</span></td>
+            <td><span class="badge badge-neutral">${{r.outcome || 'EXIT'}}</span></td>
+            <td style="color: ${{modColor}}; font-weight: 700;">${{modDisplay}} Score</td>
+            <td style="font-size: 11.5px; color: var(--text-muted); max-width: 380px; white-space: normal; line-height: 1.45;">${{r.reflection || '-'}}</td>
+          </tr>`;
+        }}
+        tbody.innerHTML = html;
+      }} catch(e) {{
+        console.error('Error loading reflective memory:', e);
+      }}
+    }}
+
+    async function updateDashboard() {{
+      await loadPortfolio();
+      await loadTrades();
+      await loadCommittee();
+      await loadMemory();
     }}
 
     let deferredPrompt;
@@ -639,7 +888,7 @@ def fix_all():
 
     if ('serviceWorker' in navigator) {{
       window.addEventListener('load', () => {{
-        navigator.serviceWorker.register('/sw.js?v=4').then((reg) => {{
+        navigator.serviceWorker.register('/sw.js?v=5').then((reg) => {{
           console.log('Shadow Traders PWA Service Worker Registered:', reg);
         }}).catch((err) => {{
           console.log('Service Worker Registration Failed:', err);
@@ -657,7 +906,7 @@ def fix_all():
     targets = [
         os.path.join(base_dir, "dashboard", "index.html"),
         os.path.join(base_dir, "public", "index.html"),
-        os.path.join(base_dir, "index.html")  # Root index.html fallback
+        os.path.join(base_dir, "index.html")
     ]
 
     for target in targets:
@@ -666,7 +915,7 @@ def fix_all():
         print(f"Updated {target}")
 
     # Service Worker update for cache bust
-    sw_code = """const CACHE_NAME = 'shadow-traders-v5';
+    sw_code = """const CACHE_NAME = 'shadow-traders-v6';
 const ASSETS = [
   '/',
   '/index.html',
@@ -711,7 +960,7 @@ self.addEventListener('fetch', (e) => {
     with open(os.path.join(base_dir, "public", "sw.js"), "w", encoding="utf-8") as f:
         f.write(sw_code)
 
-    print("All index.html and sw.js files updated with BROKERAGE PAID label and cache busting!")
+    print("All index.html and sw.js files updated with trade log, committee log, and memory parsers!")
 
 if __name__ == "__main__":
     fix_all()
