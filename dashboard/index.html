@@ -330,6 +330,32 @@
     .badge-neutral { background: rgba(148, 163, 184, 0.15); color: var(--text-muted); border: 1px solid rgba(148, 163, 184, 0.3); }
     .badge-warn { background: rgba(245, 158, 11, 0.15); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.3); }
 
+    .filter-btn {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+      background: #1E293B;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--accent-cyan);
+      box-shadow: 0 1px 6px rgba(56, 189, 248, 0.15);
+    }
+
     .engine-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -449,6 +475,45 @@
       <h2>Live F&amp;O Trade Execution Log (Options &amp; Futures)</h2>
       <span class="badge badge-scalp" id="trade-status-indicator">Auto-refresh: 5s</span>
     </div>
+
+    <!-- FILTER BAR (TIME RANGE + STRATEGY + CUSTOM DATE PICKERS) -->
+    <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 12px;">
+      <!-- Row 1: Time Range -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Time Range:</span>
+          <button class="filter-btn time-btn active" data-range="all" onclick="setTimeRange('all', event)">All Time (<span id="count-all">0</span>)</button>
+          <button class="filter-btn time-btn" data-range="5d" onclick="setTimeRange('5d', event)">Last 5 Days</button>
+          <button class="filter-btn time-btn" data-range="15d" onclick="setTimeRange('15d', event)">Last 15 Days</button>
+          <button class="filter-btn time-btn" data-range="30d" onclick="setTimeRange('30d', event)">Last 30 Days</button>
+          <button class="filter-btn time-btn" data-range="custom" onclick="setTimeRange('custom', event)">Custom Range</button>
+        </div>
+        <button onclick="downloadFilteredCSV()" class="install-pwa-btn" style="padding: 5px 14px; font-size: 11px; display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download CSV
+        </button>
+      </div>
+
+      <!-- Custom Date Row (Toggled if custom selected) -->
+      <div id="custom-date-container" style="display: none; align-items: center; gap: 12px; flex-wrap: wrap; padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+        <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">From:</span>
+        <input type="date" id="date-from" onchange="onCustomDateChange()" style="background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; color: #f8fafc; padding: 4px 8px; font-size: 12px; font-family: var(--font-mono);" />
+        <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">To:</span>
+        <input type="date" id="date-to" onchange="onCustomDateChange()" style="background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; color: #f8fafc; padding: 4px 8px; font-size: 12px; font-family: var(--font-mono);" />
+        <button onclick="clearCustomDates()" style="background: transparent; border: none; color: var(--accent-cyan); font-size: 11px; cursor: pointer; text-decoration: underline;">Clear Date Filter</button>
+      </div>
+
+      <!-- Row 2: Strategy / Signal Type -->
+      <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+        <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Strategy Filter:</span>
+        <button class="filter-btn strat-btn active" data-strat="all" onclick="setStrategyFilter('all', event)">All (<span id="strat-count-all">0</span>)</button>
+        <button class="filter-btn strat-btn" data-strat="ce" onclick="setStrategyFilter('ce', event)">Call Options (CE) (<span id="strat-count-ce">0</span>)</button>
+        <button class="filter-btn strat-btn" data-strat="pe" onclick="setStrategyFilter('pe', event)">Put Options (PE) (<span id="strat-count-pe">0</span>)</button>
+        <button class="filter-btn strat-btn" data-strat="scalp" onclick="setStrategyFilter('scalp', event)">1m Scalps (<span id="strat-count-scalp">0</span>)</button>
+        <button class="filter-btn strat-btn" data-strat="fut" onclick="setStrategyFilter('fut', event)">Futures (<span id="strat-count-fut">0</span>)</button>
+      </div>
+    </div>
+
     <div style="overflow-x: auto;">
       <table>
         <thead>
@@ -685,75 +750,223 @@
       }
     }
 
+    let allRawTrades = [];
+    let currentTimeRange = 'all';
+    let currentStrategyFilter = 'all';
+    let customStartDate = '';
+    let customEndDate = '';
+
+    function setTimeRange(range, evt) {
+      currentTimeRange = range;
+      document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
+      if (evt && evt.target) {
+        evt.target.classList.add('active');
+      } else {
+        const btn = document.querySelector(`.time-btn[data-range="${range}"]`);
+        if (btn) btn.classList.add('active');
+      }
+      
+      const customContainer = document.getElementById('custom-date-container');
+      if (range === 'custom') {
+        customContainer.style.display = 'flex';
+      } else {
+        customContainer.style.display = 'none';
+      }
+      renderTradesTable();
+    }
+
+    function setStrategyFilter(strat, evt) {
+      currentStrategyFilter = strat;
+      document.querySelectorAll('.strat-btn').forEach(btn => btn.classList.remove('active'));
+      if (evt && evt.target) {
+        evt.target.classList.add('active');
+      } else {
+        const btn = document.querySelector(`.strat-btn[data-strat="${strat}"]`);
+        if (btn) btn.classList.add('active');
+      }
+      renderTradesTable();
+    }
+
+    function onCustomDateChange() {
+      customStartDate = document.getElementById('date-from').value;
+      customEndDate = document.getElementById('date-to').value;
+      renderTradesTable();
+    }
+
+    function clearCustomDates() {
+      document.getElementById('date-from').value = '';
+      document.getElementById('date-to').value = '';
+      customStartDate = '';
+      customEndDate = '';
+      renderTradesTable();
+    }
+
+    function getTradeDate(t) {
+      if (t.executed_at) {
+        const d = new Date(t.executed_at);
+        if (!isNaN(d.getTime())) return d;
+      }
+      if (t.run_id) {
+        const parts = String(t.run_id).split('_');
+        for (let p of parts) {
+          if (/^\d{8}$/.test(p)) {
+            const dStr = `${p.slice(0, 4)}-${p.slice(4, 6)}-${p.slice(6, 8)}`;
+            const d = new Date(dStr);
+            if (!isNaN(d.getTime())) return d;
+          }
+        }
+      }
+      return null;
+    }
+
+    function filterTrades() {
+      if (!allRawTrades || allRawTrades.length === 0) return [];
+      const now = new Date();
+      let startWindow = null;
+      let endWindow = null;
+
+      if (currentTimeRange === '5d') {
+        startWindow = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 4, 0, 0, 0, 0);
+      } else if (currentTimeRange === '15d') {
+        startWindow = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 14, 0, 0, 0, 0);
+      } else if (currentTimeRange === '30d') {
+        startWindow = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 29, 0, 0, 0, 0);
+      } else if (currentTimeRange === 'custom') {
+        if (customStartDate) startWindow = new Date(`${customStartDate}T00:00:00`);
+        if (customEndDate) endWindow = new Date(`${customEndDate}T23:59:59.999`);
+      }
+
+      // Filter by Date
+      const dateFiltered = allRawTrades.filter(t => {
+        const d = getTradeDate(t);
+        if (!d) return true;
+        if (startWindow && d < startWindow) return false;
+        if (endWindow && d > endWindow) return false;
+        return true;
+      });
+
+      // Update Strategy Counts on the dateFiltered set
+      let ceCount = 0, peCount = 0, scalpCount = 0, futCount = 0;
+      dateFiltered.forEach(t => {
+        const s = (t.verdict || t.contract_type || '').toUpperCase();
+        if (s.includes('SCALP')) scalpCount++;
+        else if (s.includes('CE') || s.includes('CALL')) ceCount++;
+        else if (s.includes('PE') || s.includes('PUT')) peCount++;
+        else if (s.includes('FUT')) futCount++;
+      });
+
+      const elCe = document.getElementById('strat-count-ce');
+      if (elCe) elCe.innerText = ceCount;
+      const elPe = document.getElementById('strat-count-pe');
+      if (elPe) elPe.innerText = peCount;
+      const elScalp = document.getElementById('strat-count-scalp');
+      if (elScalp) elScalp.innerText = scalpCount;
+      const elFut = document.getElementById('strat-count-fut');
+      if (elFut) elFut.innerText = futCount;
+      const elAll = document.getElementById('strat-count-all');
+      if (elAll) elAll.innerText = dateFiltered.length;
+
+      // Filter by Strategy
+      if (currentStrategyFilter === 'all') return dateFiltered;
+      return dateFiltered.filter(t => {
+        const s = (t.verdict || t.contract_type || '').toUpperCase();
+        if (currentStrategyFilter === 'ce') return (s.includes('CE') || s.includes('CALL')) && !s.includes('SCALP');
+        if (currentStrategyFilter === 'pe') return (s.includes('PE') || s.includes('PUT')) && !s.includes('SCALP');
+        if (currentStrategyFilter === 'scalp') return s.includes('SCALP');
+        if (currentStrategyFilter === 'fut') return s.includes('FUT');
+        return true;
+      });
+    }
+
+    function renderTradesTable() {
+      const displayTrades = filterTrades();
+      const countBadge = document.getElementById('trade-count-badge');
+      if (countBadge) countBadge.innerText = displayTrades.length;
+
+      const totalAllBadge = document.getElementById('count-all');
+      if (totalAllBadge) totalAllBadge.innerText = allRawTrades.length;
+
+      const tbody = document.getElementById('trade-log-body');
+      if (!displayTrades || displayTrades.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 30px;">No executed trades found under selected filter criteria.</td></tr>`;
+        return;
+      }
+
+      // Newest trades first
+      const reversedTrades = [...displayTrades].reverse();
+      let html = '';
+      for (const t of reversedTrades) {
+        const strategy = t.verdict || t.contract_type || 'F&O';
+        const badgeClass = getBadgeClass(strategy);
+        const strikeStr = t.strike_price && Number(t.strike_price) > 0 ? (Number(t.strike_price) + ' ') : '';
+        const instrumentDisplay = `<strong>${t.symbol || t.ticker || 'NIFTY'}</strong> <span style="color: var(--text-muted); font-size: 11px;">${strikeStr}${t.contract_type || ''}</span>`;
+        
+        const entryPrice = t.option_premium && Number(t.option_premium) > 0 ? ('₹' + Number(t.option_premium).toFixed(2)) : (t.spot_entry ? ('₹' + Number(t.spot_entry).toFixed(2)) : '-');
+        
+        let exitDisplay = '<span style="color: var(--accent-cyan); font-weight: 600;">ACTIVE</span>';
+        if (t.exit_price && Number(t.exit_price) > 0) {
+          exitDisplay = '₹' + Number(t.exit_price).toFixed(2);
+        }
+
+        const score = t.waterfall_score ? `${Number(t.waterfall_score).toFixed(1)}/10` : '-';
+        const cost = t.total_cost_inr || t.brokerage_fee_inr || '20.00';
+        
+        let pnlDisplay = '<span style="color: var(--text-muted);">-</span>';
+        if (t.realized_pnl_inr && t.realized_pnl_inr !== '') {
+          const pnlVal = Number(t.realized_pnl_inr);
+          const pctVal = t.realized_pnl_pct ? ` (${Number(t.realized_pnl_pct) >= 0 ? '+' : ''}${Number(t.realized_pnl_pct).toFixed(1)}%)` : '';
+          if (pnlVal >= 0) {
+            pnlDisplay = `<span style="color: var(--accent-green); font-weight: 700;">+₹${pnlVal.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}${pctVal}</span>`;
+          } else {
+            pnlDisplay = `<span style="color: var(--accent-red); font-weight: 700;">-₹${Math.abs(pnlVal).toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}${pctVal}</span>`;
+          }
+        }
+
+        let statusDisplay = '<span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.3);">OPEN</span>';
+        if (t.exit_reason && t.exit_reason !== '') {
+          const reason = t.exit_reason.toUpperCase().replace(/_/g, ' ');
+          const reasonColor = reason.includes('TARGET') ? 'var(--accent-green)' : (reason.includes('SL') ? 'var(--accent-red)' : 'var(--accent-gold)');
+          statusDisplay = `<span class="badge" style="background: rgba(255, 255, 255, 0.06); color: ${reasonColor}; border: 1px solid rgba(255, 255, 255, 0.15);">${reason}</span>`;
+        }
+
+        html += `<tr>
+          <td style="color: var(--text-muted); font-size: 11.5px;">${formatDate(t.executed_at)}</td>
+          <td>${instrumentDisplay}</td>
+          <td><span class="badge ${badgeClass}">${strategy}</span></td>
+          <td>${t.total_shares || t.lots || '1'} qty</td>
+          <td>${entryPrice}</td>
+          <td>${exitDisplay}</td>
+          <td style="color: var(--accent-cyan);">${score}</td>
+          <td style="color: var(--text-muted);">₹${Number(cost).toFixed(2)}</td>
+          <td>${pnlDisplay}</td>
+          <td>${statusDisplay}</td>
+        </tr>`;
+      }
+
+      tbody.innerHTML = html;
+    }
+
+    function downloadFilteredCSV() {
+      const displayTrades = filterTrades();
+      if (!displayTrades || displayTrades.length === 0) return;
+      const headers = ['run_id', 'ticker', 'symbol', 'verdict', 'contract_type', 'strike_price', 'lots', 'total_shares', 'spot_entry', 'option_premium', 'spot_sl', 'spot_target', 'waterfall_score', 'position_value_inr', 'brokerage_fee_inr', 'total_cost_inr', 'executed_at', 'exit_price', 'exit_reason', 'realized_pnl_inr', 'realized_pnl_pct'];
+      const rows = displayTrades.map(t => headers.map(h => `"${(t[h] || '').toString().replace(/"/g, '""')}"`).join(','));
+      const csvContent = [headers.join(','), ...rows].join('\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.setAttribute('href', url);
+      a.setAttribute('download', `shadow_traders_${currentTimeRange}_${currentStrategyFilter}.csv`);
+      a.click();
+    }
+
     async function loadTrades() {
       try {
         const res = await fetchMultiPath('trade_log.csv');
         if (!res) return;
         const text = await res.text();
-        const trades = parseCSV(text);
-        
-        const countBadge = document.getElementById('trade-count-badge');
-        if (countBadge) countBadge.innerText = trades.length;
-
-        const tbody = document.getElementById('trade-log-body');
-        if (!trades || trades.length === 0) {
-          tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 30px;">No executed trades yet. Swarm active & monitoring signals.</td></tr>`;
-          return;
-        }
-
-        // Newest trades first
-        const reversedTrades = [...trades].reverse();
-        
-        let html = '';
-        for (const t of reversedTrades) {
-          const strategy = t.verdict || t.contract_type || 'F&O';
-          const badgeClass = getBadgeClass(strategy);
-          const strikeStr = t.strike_price && Number(t.strike_price) > 0 ? (Number(t.strike_price) + ' ') : '';
-          const instrumentDisplay = `<strong>${t.symbol || t.ticker || 'NIFTY'}</strong> <span style="color: var(--text-muted); font-size: 11px;">${strikeStr}${t.contract_type || ''}</span>`;
-          
-          const entryPrice = t.option_premium && Number(t.option_premium) > 0 ? ('₹' + Number(t.option_premium).toFixed(2)) : (t.spot_entry ? ('₹' + Number(t.spot_entry).toFixed(2)) : '-');
-          
-          let exitDisplay = '<span style="color: var(--accent-cyan); font-weight: 600;">ACTIVE</span>';
-          if (t.exit_price && Number(t.exit_price) > 0) {
-            exitDisplay = '₹' + Number(t.exit_price).toFixed(2);
-          }
-
-          const score = t.waterfall_score ? `${Number(t.waterfall_score).toFixed(1)}/10` : '-';
-          const cost = t.total_cost_inr || t.brokerage_fee_inr || '20.00';
-          
-          let pnlDisplay = '<span style="color: var(--text-muted);">-</span>';
-          if (t.realized_pnl_inr && t.realized_pnl_inr !== '') {
-            const pnlVal = Number(t.realized_pnl_inr);
-            const pctVal = t.realized_pnl_pct ? ` (${Number(t.realized_pnl_pct) >= 0 ? '+' : ''}${Number(t.realized_pnl_pct).toFixed(1)}%)` : '';
-            if (pnlVal >= 0) {
-              pnlDisplay = `<span style="color: var(--accent-green); font-weight: 700;">+₹${pnlVal.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}${pctVal}</span>`;
-            } else {
-              pnlDisplay = `<span style="color: var(--accent-red); font-weight: 700;">-₹${Math.abs(pnlVal).toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}${pctVal}</span>`;
-            }
-          }
-
-          let statusDisplay = '<span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.3);">OPEN</span>';
-          if (t.exit_reason && t.exit_reason !== '') {
-            const reason = t.exit_reason.toUpperCase().replace(/_/g, ' ');
-            const reasonColor = reason.includes('TARGET') ? 'var(--accent-green)' : (reason.includes('SL') ? 'var(--accent-red)' : 'var(--accent-gold)');
-            statusDisplay = `<span class="badge" style="background: rgba(255, 255, 255, 0.06); color: ${reasonColor}; border: 1px solid rgba(255, 255, 255, 0.15);">${reason}</span>`;
-          }
-
-          html += `<tr>
-            <td style="color: var(--text-muted); font-size: 11.5px;">${formatDate(t.executed_at)}</td>
-            <td>${instrumentDisplay}</td>
-            <td><span class="badge ${badgeClass}">${strategy}</span></td>
-            <td>${t.total_shares || t.lots || '1'} qty</td>
-            <td>${entryPrice}</td>
-            <td>${exitDisplay}</td>
-            <td style="color: var(--accent-cyan);">${score}</td>
-            <td style="color: var(--text-muted);">₹${Number(cost).toFixed(2)}</td>
-            <td>${pnlDisplay}</td>
-            <td>${statusDisplay}</td>
-          </tr>`;
-        }
-
-        tbody.innerHTML = html;
+        allRawTrades = parseCSV(text);
+        renderTradesTable();
       } catch(e) {
         console.error('Error loading trades:', e);
       }
