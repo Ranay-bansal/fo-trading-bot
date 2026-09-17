@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-16T14:24:03.570852Z",
-  "pool_total": 749152.5400000004,
-  "pool_available": 1323.3400000002748,
-  "pool_deployed": 747303.2500000001,
-  "daily_pnl_inr": 256948.16,
-  "daily_pnl_pct": 51.39,
-  "total_brokerage_paid_inr": 16206.390000000012,
-  "trades_today": 292,
+  "last_updated": "2026-09-17T08:58:36.149551Z",
+  "pool_total": 741539.2400000005,
+  "pool_available": 1714.2900000002555,
+  "pool_deployed": 739804.9500000002,
+  "daily_pnl_inr": 249860.81,
+  "daily_pnl_pct": 49.97,
+  "total_brokerage_paid_inr": 16273.040000000012,
+  "trades_today": 293,
   "open_positions": [
     {
       "ticker": "RELIANCE.NS",
@@ -41,23 +41,6 @@
       "brokerage_paid_inr": 20.0,
       "side": "BUY",
       "waterfall_score": 7.5
-    },
-    {
-      "ticker": "LT.NS",
-      "contract_type": "EQUITY_CASH",
-      "symbol": "LT",
-      "strike_price": 0.0,
-      "lots": 1,
-      "total_shares": 29,
-      "entry_premium": 3807.7,
-      "entry_spot": 3807.7,
-      "sl_spot": 3845.78,
-      "target_spot": 3750.58,
-      "entered_at": "2026-09-16T14:20:53.553613Z",
-      "megabull_order_id": "LT_CASH_SELL_20260916_142053",
-      "brokerage_paid_inr": 20.0,
-      "side": "SELL",
-      "waterfall_score": 1.5
     },
     {
       "ticker": "SBIN.NS",
@@ -246,25 +229,6 @@
       "waterfall_score": 10.0
     },
     {
-      "ticker": "MARUTI.NS",
-      "contract_type": "SCALP_PE",
-      "symbol": "MARUTI",
-      "strike_price": 12300.0,
-      "lots": 1,
-      "total_shares": 50,
-      "entry_premium": 160.42,
-      "entry_spot": 12166.0,
-      "sl_spot": 12348.49,
-      "target_spot": 11801.02,
-      "entered_at": "2026-09-16T14:21:12.408391Z",
-      "megabull_order_id": "MARUTI_SCALP_PE_20260916_142112",
-      "brokerage_paid_inr": 20.0,
-      "delta": -0.7,
-      "expiry_dte": 7,
-      "verdict": "SCALP_PE",
-      "waterfall_score": 6.93
-    },
-    {
       "ticker": "TATASTEEL.NS",
       "contract_type": "SCALP_PE",
       "symbol": "TATASTEEL",
@@ -339,6 +303,23 @@
       "expiry_dte": 7,
       "verdict": "SCALP_PE",
       "waterfall_score": 8.82
+    },
+    {
+      "ticker": "ICICIBANK.NS",
+      "contract_type": "EQUITY_CASH",
+      "symbol": "ICICIBANK",
+      "strike_price": 0.0,
+      "lots": 1,
+      "total_shares": 82,
+      "entry_premium": 1353.0,
+      "entry_spot": 1353.0,
+      "sl_spot": 1366.53,
+      "target_spot": 1332.7,
+      "entered_at": "2026-09-17T08:54:18.705688Z",
+      "megabull_order_id": "ICICIBANK_CASH_SELL_20260917_085418",
+      "brokerage_paid_inr": 20.0,
+      "side": "SELL",
+      "waterfall_score": 1.5
     }
   ]
 }
