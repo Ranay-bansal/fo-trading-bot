@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-09-17T08:58:36.149551Z",
-  "pool_total": 741539.2400000005,
-  "pool_available": 1714.2900000002555,
-  "pool_deployed": 739804.9500000002,
-  "daily_pnl_inr": 249860.81,
-  "daily_pnl_pct": 49.97,
-  "total_brokerage_paid_inr": 16273.040000000012,
-  "trades_today": 293,
+  "last_updated": "2026-09-17T09:19:54.886781Z",
+  "pool_total": 731042.2000000004,
+  "pool_available": 83.44000000025426,
+  "pool_deployed": 730932.4500000002,
+  "daily_pnl_inr": 239383.77,
+  "daily_pnl_pct": 47.88,
+  "total_brokerage_paid_inr": 16320.080000000013,
+  "trades_today": 294,
   "open_positions": [
     {
       "ticker": "RELIANCE.NS",
@@ -229,25 +229,6 @@
       "waterfall_score": 10.0
     },
     {
-      "ticker": "TATASTEEL.NS",
-      "contract_type": "SCALP_PE",
-      "symbol": "TATASTEEL",
-      "strike_price": 185.0,
-      "lots": 1,
-      "total_shares": 5500,
-      "entry_premium": 2.4,
-      "entry_spot": 183.0,
-      "sl_spot": 185.74,
-      "target_spot": 177.51,
-      "entered_at": "2026-09-16T14:21:12.738459Z",
-      "megabull_order_id": "TATASTEEL_SCALP_PE_20260916_142112",
-      "brokerage_paid_inr": 20.0,
-      "delta": -0.6984,
-      "expiry_dte": 7,
-      "verdict": "SCALP_PE",
-      "waterfall_score": 6.93
-    },
-    {
       "ticker": "HINDALCO.NS",
       "contract_type": "SCALP_CE",
       "symbol": "HINDALCO",
@@ -320,6 +301,25 @@
       "brokerage_paid_inr": 20.0,
       "side": "SELL",
       "waterfall_score": 1.5
+    },
+    {
+      "ticker": "^NSEI",
+      "contract_type": "SCALP_PE",
+      "symbol": "NIFTY",
+      "strike_price": 23350.0,
+      "lots": 1,
+      "total_shares": 25,
+      "entry_premium": 173.1,
+      "entry_spot": 23296.4,
+      "sl_spot": 23645.85,
+      "target_spot": 22597.51,
+      "entered_at": "2026-09-17T09:16:26.956586Z",
+      "megabull_order_id": "NIFTY_SCALP_PE_20260917_091626",
+      "brokerage_paid_inr": 20.0,
+      "delta": -0.5208,
+      "expiry_dte": 7,
+      "verdict": "SCALP_PE",
+      "waterfall_score": 7.29
     }
   ]
 }
