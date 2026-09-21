@@ -50,6 +50,11 @@ class FOExecutorAgent:
             sl_spot = round(spot_entry * 1.015, 2)    # +1.5% stop loss for PE / short
             target_spot = round(spot_entry * 0.97, 2)  # -3.0% target gain for PE / short
 
+        # Options Premium targets & stops (Aligning with backtest & preventing theta drain)
+        is_option = ("OPTION" in c_type) or ("SCALP" in c_type)
+        target_premium = round(premium * 1.25, 2) if is_option and premium > 0 else 0.0  # +25% premium target
+        sl_premium = round(premium * 0.90, 2) if is_option and premium > 0 else 0.0      # -10% premium SL
+
         logger.info(f"[F&O EXECUTOR] Executing {verdict.verdict} ({c_type}) for {symbol} {strike}: {lots} Lots ({total_shares} shares) @ Premium ₹{premium}. Spot: ₹{spot_entry}, SL: ₹{sl_spot}, TP: ₹{target_spot}")
 
         # Deduct capital & brokerage fee
@@ -68,6 +73,9 @@ class FOExecutorAgent:
             "lots": lots,
             "total_shares": total_shares,
             "entry_premium": premium,
+            "target_premium": target_premium,
+            "sl_premium": sl_premium,
+            "highest_premium": premium,
             "entry_spot": spot_entry,
             "sl_spot": sl_spot,
             "target_spot": target_spot,
@@ -313,6 +321,9 @@ class FOExecutorAgent:
             sl_spot = float(pos["sl_spot"])
             target_spot = float(pos["target_spot"])
             entry_spot = float(pos["entry_spot"])
+            entry_premium = float(pos.get("entry_premium", 0.0))
+            delta = float(pos.get("delta", 0.5))
+            is_option = ("OPTION" in c_type) or ("SCALP" in c_type)
 
             live_spot = self._get_live_spot(ticker, bar_data)
             if live_spot is None:
@@ -321,26 +332,64 @@ class FOExecutorAgent:
             is_bullish = ("CE" in c_type) or (c_type == "FUTURES_LONG") or (c_type == "EQUITY_CASH" and pos.get("side", "BUY") == "BUY")
             exit_reason = None
 
-            if is_bullish:
-                if live_spot <= sl_spot:
-                    exit_reason = "sl_hit"
-                elif live_spot >= target_spot:
-                    exit_reason = "target_hit"
-            else:
-                if live_spot >= sl_spot:
-                    exit_reason = "sl_hit"
-                elif live_spot <= target_spot:
-                    exit_reason = "target_hit"
+            if is_option and entry_premium > 0:
+                opt_type = "CE" if "CE" in c_type else "PE"
+                spot_change = (live_spot - entry_spot) if opt_type == "CE" else (entry_spot - live_spot)
+                approx_change = spot_change * abs(delta)
+                curr_premium = max(0.50, round(entry_premium + approx_change, 2))
+                prem_gain_pct = ((curr_premium - entry_premium) / entry_premium) * 100.0
 
-            # Stale position check (older than 24 hours or pool capital starved)
-            entered_str = pos.get("entered_at")
-            if entered_str and not exit_reason:
-                try:
-                    ent_dt = datetime.fromisoformat(entered_str.replace("Z", "+00:00"))
-                    if (datetime.now(timezone.utc) - ent_dt).total_seconds() > 86400:
-                        exit_reason = "eod_expiry_time"
-                except Exception:
-                    pass
+                highest_premium = max(pos.get("highest_premium", entry_premium), curr_premium)
+                pos["highest_premium"] = highest_premium
+
+                # 1. Target hit: +25% Option Premium Gain or Spot Target reached
+                if prem_gain_pct >= 25.0 or (is_bullish and live_spot >= target_spot) or (not is_bullish and live_spot <= target_spot):
+                    exit_reason = "target_hit"
+                # 2. Trailing Stop: If gained >= 15%, trail 8% below peak or exit at entry breakeven
+                elif highest_premium >= entry_premium * 1.15 and (curr_premium <= highest_premium * 0.92 or curr_premium <= entry_premium):
+                    exit_reason = "trailing_sl_hit"
+                # 3. Stop loss hit: -10% Option Premium Drop or Spot SL reached
+                elif prem_gain_pct <= -10.0 or (is_bullish and live_spot <= sl_spot) or (not is_bullish and live_spot >= sl_spot):
+                    exit_reason = "sl_hit"
+                # 4. Time-stop: Stalled scalp held > 45 mins without positive momentum (< 5% gain)
+                entered_str = pos.get("entered_at")
+                if entered_str and not exit_reason:
+                    try:
+                        clean_str = entered_str.rstrip("Z").split("+")[0]
+                        ent_dt = datetime.fromisoformat(clean_str).replace(tzinfo=timezone.utc)
+                        now_utc = datetime.now(timezone.utc)
+                        duration_sec = (now_utc - ent_dt).total_seconds()
+                        if duration_sec > 2700 and prem_gain_pct < 5.0:  # 45 minutes
+                            exit_reason = "time_stop"
+                        elif duration_sec > 86400:
+                            exit_reason = "eod_expiry_time"
+                    except Exception:
+                        pass
+            else:
+                # Standard Equity Cash / Futures SL & TP
+                if is_bullish:
+                    if live_spot <= sl_spot:
+                        exit_reason = "sl_hit"
+                    elif live_spot >= target_spot:
+                        exit_reason = "target_hit"
+                else:
+                    if live_spot >= sl_spot:
+                        exit_reason = "sl_hit"
+                    elif live_spot <= target_spot:
+                        exit_reason = "target_hit"
+
+                # Stale position check (older than 24 hours)
+                entered_str = pos.get("entered_at")
+                if entered_str and not exit_reason:
+                    try:
+                        clean_str = entered_str.rstrip("Z").split("+")[0]
+                        ent_dt = datetime.fromisoformat(clean_str).replace(tzinfo=timezone.utc)
+                        now_utc = datetime.now(timezone.utc)
+                        duration_sec = (now_utc - ent_dt).total_seconds()
+                        if duration_sec > 86400:
+                            exit_reason = "eod_expiry_time"
+                    except Exception:
+                        pass
 
             if exit_reason:
                 trade_record = self.exit_position(pos, state, current_spot=live_spot, exit_reason=exit_reason)

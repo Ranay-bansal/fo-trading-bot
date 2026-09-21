@@ -102,7 +102,11 @@ class TestUIHydration(unittest.TestCase):
         self.assertIn('id="val-total"', content)
         self.assertIn('id="val-available"', content)
         self.assertIn('id="val-pnl"', content)
+        self.assertIn('id="val-month-pnl"', content)
         self.assertIn('id="val-brokerage"', content)
+        self.assertIn('id="period-summary-banner"', content)
+        self.assertIn('data-range="today"', content)
+        self.assertIn('data-range="month"', content)
 
     def test_state_file_load_and_save(self):
         """Test 8: load_fo_state and save_fo_state persist state data correctly."""

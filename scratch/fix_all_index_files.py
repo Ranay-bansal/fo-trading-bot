@@ -462,15 +462,21 @@ def fix_all():
     </div>
 
     <div class="stat-card">
-      <div class="stat-label">Realized Intraday P&L</div>
+      <div class="stat-label">Day Realized P&amp;L</div>
       <div class="stat-value" id="val-pnl" style="color: var(--accent-green);">+₹0.00</div>
-      <div class="stat-subtext">Net Realized Return</div>
+      <div class="stat-subtext" id="val-pnl-sub">Today's Session (0.00%)</div>
     </div>
 
     <div class="stat-card">
-      <div class="stat-label">Brokerage Paid</div>
+      <div class="stat-label" id="val-month-label">Monthly Realized P&amp;L</div>
+      <div class="stat-value" id="val-month-pnl" style="color: var(--accent-green);">+₹0.00</div>
+      <div class="stat-subtext" id="val-month-sub">0 Closed Trades (0.00%)</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Total Brokerage Paid</div>
       <div class="stat-value" id="val-brokerage">₹0.00</div>
-      <div class="stat-subtext">Standard Intraday Rate</div>
+      <div class="stat-subtext">Standard Rate + Taxes</div>
     </div>
   </div>
 
@@ -491,12 +497,14 @@ def fix_all():
     </div>
 
     <!-- FILTER BAR (TIME RANGE + STRATEGY + CUSTOM DATE PICKERS) -->
-    <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 12px;">
+    <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px; margin-bottom: 14px; display: flex; flex-direction: column; gap: 12px;">
       <!-- Row 1: Time Range -->
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
         <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
           <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Time Range:</span>
           <button class="filter-btn time-btn active" data-range="all" onclick="setTimeRange('all', event)">All Time (<span id="count-all">0</span>)</button>
+          <button class="filter-btn time-btn" data-range="today" onclick="setTimeRange('today', event)">Today (<span id="count-today">0</span>)</button>
+          <button class="filter-btn time-btn" data-range="month" onclick="setTimeRange('month', event)">This Month (<span id="count-month">0</span>)</button>
           <button class="filter-btn time-btn" data-range="5d" onclick="setTimeRange('5d', event)">Last 5 Days</button>
           <button class="filter-btn time-btn" data-range="15d" onclick="setTimeRange('15d', event)">Last 15 Days</button>
           <button class="filter-btn time-btn" data-range="30d" onclick="setTimeRange('30d', event)">Last 30 Days</button>
@@ -525,6 +533,30 @@ def fix_all():
         <button class="filter-btn strat-btn" data-strat="pe" onclick="setStrategyFilter('pe', event)">Put Options (PE) (<span id="strat-count-pe">0</span>)</button>
         <button class="filter-btn strat-btn" data-strat="scalp" onclick="setStrategyFilter('scalp', event)">1m Scalps (<span id="strat-count-scalp">0</span>)</button>
         <button class="filter-btn strat-btn" data-strat="fut" onclick="setStrategyFilter('fut', event)">Futures (<span id="strat-count-fut">0</span>)</button>
+      </div>
+    </div>
+
+    <!-- PERIOD PERFORMANCE SUMMARY BANNER -->
+    <div id="period-summary-banner" style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <div>
+          <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Selected Period P&amp;L</span>
+          <div id="banner-period-pnl" style="font-family: var(--font-mono); font-size: 20px; font-weight: 800; color: var(--accent-green); margin-top: 2px;">+₹0.00 (0.00%)</div>
+        </div>
+        <div style="height: 32px; width: 1px; background: rgba(255,255,255,0.08);"></div>
+        <div>
+          <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Closed Trades</span>
+          <div id="banner-period-trades" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--text-white); margin-top: 4px;">0 Trades (0W / 0L)</div>
+        </div>
+        <div style="height: 32px; width: 1px; background: rgba(255,255,255,0.08);"></div>
+        <div>
+          <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Period Win Rate</span>
+          <div id="banner-period-winrate" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--accent-cyan); margin-top: 4px;">0.0%</div>
+        </div>
+      </div>
+      <div>
+        <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Friction &amp; Brokerage</span>
+        <div id="banner-period-costs" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--text-muted); margin-top: 4px;">₹0.00</div>
       </div>
     </div>
 
@@ -839,7 +871,13 @@ def fix_all():
       let startWindow = null;
       let endWindow = null;
 
-      if (currentTimeRange === '5d') {{
+      if (currentTimeRange === 'today') {{
+        startWindow = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+        endWindow = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+      }} else if (currentTimeRange === 'month') {{
+        startWindow = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0, 0);
+        endWindow = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59, 999);
+      }} else if (currentTimeRange === '5d') {{
         startWindow = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 4, 0, 0, 0, 0);
       }} else if (currentTimeRange === '15d') {{
         startWindow = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 14, 0, 0, 0, 0);
@@ -858,6 +896,23 @@ def fix_all():
         if (endWindow && d > endWindow) return false;
         return true;
       }});
+
+      // Update Time Range Counts on total dataset
+      let todayCount = 0, monthCount = 0;
+      const todayYear = now.getFullYear();
+      const todayMonth = now.getMonth();
+      const todayDate = now.getDate();
+      allRawTrades.forEach(t => {{
+        const d = getTradeDate(t);
+        if (d) {{
+          if (d.getFullYear() === todayYear && d.getMonth() === todayMonth && d.getDate() === todayDate) todayCount++;
+          if (d.getFullYear() === todayYear && d.getMonth() === todayMonth) monthCount++;
+        }}
+      }});
+      const elToday = document.getElementById('count-today');
+      if (elToday) elToday.innerText = todayCount;
+      const elMonth = document.getElementById('count-month');
+      if (elMonth) elMonth.innerText = monthCount;
 
       // Update Strategy Counts on the dateFiltered set
       let ceCount = 0, peCount = 0, scalpCount = 0, futCount = 0;
@@ -892,6 +947,67 @@ def fix_all():
       }});
     }}
 
+    function updatePnlSummaries() {{
+      if (!allRawTrades || allRawTrades.length === 0) return;
+      const now = new Date();
+      const todayYear = now.getFullYear();
+      const todayMonth = now.getMonth();
+      const todayDate = now.getDate();
+
+      let todayPnl = 0;
+      let todayTradesCount = 0;
+      let monthPnl = 0;
+      let monthTradesCount = 0;
+
+      for (const t of allRawTrades) {{
+        if (t.realized_pnl_inr !== undefined && t.realized_pnl_inr !== null && t.realized_pnl_inr !== '') {{
+          const pnlVal = parseFloat(t.realized_pnl_inr) || 0;
+          const d = getTradeDate(t);
+          if (d) {{
+            if (d.getFullYear() === todayYear && d.getMonth() === todayMonth && d.getDate() === todayDate) {{
+              todayPnl += pnlVal;
+              todayTradesCount++;
+            }}
+            if (d.getFullYear() === todayYear && d.getMonth() === todayMonth) {{
+              monthPnl += pnlVal;
+              monthTradesCount++;
+            }}
+          }}
+        }}
+      }}
+
+      // Update Day Realized P&L card if trades recorded today
+      if (todayTradesCount > 0) {{
+        const pnlElem = document.getElementById('val-pnl');
+        if (pnlElem) {{
+          pnlElem.innerText = (todayPnl >= 0 ? '+₹' : '-₹') + Math.abs(todayPnl).toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}});
+          pnlElem.style.color = todayPnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+        }}
+        const pnlSub = document.getElementById('val-pnl-sub');
+        if (pnlSub) {{
+          const pct = (todayPnl / 500000.0) * 100.0;
+          pnlSub.innerText = `${{todayTradesCount}} Trades Today (${{pct >= 0 ? '+' : ''}}${{pct.toFixed(2)}}%)`;
+        }}
+      }}
+
+      // Update Monthly Realized P&L card
+      const monthElem = document.getElementById('val-month-pnl');
+      if (monthElem) {{
+        monthElem.innerText = (monthPnl >= 0 ? '+₹' : '-₹') + Math.abs(monthPnl).toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}});
+        monthElem.style.color = monthPnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+      }}
+      const monthSub = document.getElementById('val-month-sub');
+      if (monthSub) {{
+        const monthPct = (monthPnl / 500000.0) * 100.0;
+        monthSub.innerText = `${{monthTradesCount}} Closed Trades (${{monthPct >= 0 ? '+' : ''}}${{monthPct.toFixed(2)}}%)`;
+      }}
+      const monthLabel = document.getElementById('val-month-label');
+      if (monthLabel) {{
+        const monthName = now.toLocaleString('en-US', {{ month: 'short', year: 'numeric' }});
+        monthLabel.innerText = `Monthly Realized P&L (${{monthName}})`;
+      }}
+    }}
+
     function renderTradesTable() {{
       const displayTrades = filterTrades();
       const countBadge = document.getElementById('trade-count-badge');
@@ -899,6 +1015,48 @@ def fix_all():
 
       const totalAllBadge = document.getElementById('count-all');
       if (totalAllBadge) totalAllBadge.innerText = allRawTrades.length;
+
+      // Update Period Performance Summary Banner
+      let periodPnl = 0;
+      let periodWins = 0;
+      let periodLosses = 0;
+      let periodCosts = 0;
+      let periodClosed = 0;
+
+      displayTrades.forEach(t => {{
+        if (t.realized_pnl_inr !== undefined && t.realized_pnl_inr !== null && t.realized_pnl_inr !== '') {{
+          const val = parseFloat(t.realized_pnl_inr);
+          if (!isNaN(val)) {{
+            periodPnl += val;
+            periodClosed++;
+            if (val > 0) periodWins++;
+            else if (val < 0) periodLosses++;
+          }}
+        }}
+        const costVal = parseFloat(t.total_cost_inr || t.brokerage_fee_inr || 0);
+        if (!isNaN(costVal)) periodCosts += costVal;
+      }});
+
+      const winRate = periodClosed > 0 ? ((periodWins / periodClosed) * 100).toFixed(1) : '0.0';
+      const pnlPct = ((periodPnl / 500000.0) * 100).toFixed(2);
+      
+      const bannerPnl = document.getElementById('banner-period-pnl');
+      if (bannerPnl) {{
+        bannerPnl.innerText = (periodPnl >= 0 ? '+₹' : '-₹') + Math.abs(periodPnl).toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}}) + ` (${{periodPnl >= 0 ? '+' : ''}}${{pnlPct}}%)`;
+        bannerPnl.style.color = periodPnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+      }}
+      const bannerTrades = document.getElementById('banner-period-trades');
+      if (bannerTrades) {{
+        bannerTrades.innerText = `${{periodClosed}} Closed (${{periodWins}}W / ${{periodLosses}}L)`;
+      }}
+      const bannerWinRate = document.getElementById('banner-period-winrate');
+      if (bannerWinRate) {{
+        bannerWinRate.innerText = `${{winRate}}%`;
+      }}
+      const bannerCosts = document.getElementById('banner-period-costs');
+      if (bannerCosts) {{
+        bannerCosts.innerText = '₹' + periodCosts.toLocaleString('en-IN', {{minimumFractionDigits: 2, maximumFractionDigits: 2}});
+      }}
 
       const tbody = document.getElementById('trade-log-body');
       if (!displayTrades || displayTrades.length === 0) {{
@@ -980,6 +1138,7 @@ def fix_all():
         if (!res) return;
         const text = await res.text();
         allRawTrades = parseCSV(text);
+        updatePnlSummaries();
         renderTradesTable();
       }} catch(e) {{
         console.error('Error loading trades:', e);
