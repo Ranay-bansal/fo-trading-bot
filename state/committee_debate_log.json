@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-09-25T12:39:41.521807+00:00",
+    "timestamp": "2026-09-25T14:45:38.473522+00:00",
     "symbol": "INDIACEM",
     "ticker": "INDIACEM.NS",
     "scout_stance": "high_conviction",
@@ -15,7 +15,7 @@
     "reasoning": "Consensus Approved (8.61/10): Bull Conviction 8.0 vs Bear Risk 2.2."
   },
   {
-    "timestamp": "2026-09-25T12:39:41.846599+00:00",
+    "timestamp": "2026-09-25T14:45:38.710121+00:00",
     "symbol": "NBCC",
     "ticker": "NBCC.NS",
     "scout_stance": "high_conviction",
@@ -30,7 +30,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:42.174100+00:00",
+    "timestamp": "2026-09-25T14:45:38.964188+00:00",
     "symbol": "RVNL",
     "ticker": "RVNL.NS",
     "scout_stance": "high_conviction",
@@ -45,7 +45,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-25T12:39:42.493879+00:00",
+    "timestamp": "2026-09-25T14:45:39.226989+00:00",
     "symbol": "IRCON",
     "ticker": "IRCON.NS",
     "scout_stance": "high_conviction",
@@ -60,7 +60,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
   },
   {
-    "timestamp": "2026-09-25T12:39:42.836711+00:00",
+    "timestamp": "2026-09-25T14:45:39.488002+00:00",
     "symbol": "PVRINOX",
     "ticker": "PVRINOX.NS",
     "scout_stance": "high_conviction",
@@ -75,7 +75,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:39:43.224419+00:00",
+    "timestamp": "2026-09-25T14:45:39.714893+00:00",
     "symbol": "SUNTV",
     "ticker": "SUNTV.NS",
     "scout_stance": "neutral",
@@ -90,7 +90,7 @@
     "reasoning": "Consensus Approved (8.13/10): Bull Conviction 7.2 vs Bear Risk 2.1."
   },
   {
-    "timestamp": "2026-09-25T12:39:43.564636+00:00",
+    "timestamp": "2026-09-25T14:45:40.007836+00:00",
     "symbol": "ZEEL",
     "ticker": "ZEEL.NS",
     "scout_stance": "neutral",
@@ -105,7 +105,7 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-25T12:39:43.923485+00:00",
+    "timestamp": "2026-09-25T14:45:40.313976+00:00",
     "symbol": "EXIDEIND",
     "ticker": "EXIDEIND.NS",
     "scout_stance": "high_conviction",
@@ -120,7 +120,7 @@
     "reasoning": "Consensus Approved (8.3/10): Bull Conviction 3.5 vs Bear Risk 6.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:44.289329+00:00",
+    "timestamp": "2026-09-25T14:45:40.560423+00:00",
     "symbol": "HAVELLS",
     "ticker": "HAVELLS.NS",
     "scout_stance": "high_conviction",
@@ -135,7 +135,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:39:44.630731+00:00",
+    "timestamp": "2026-09-25T14:45:40.848801+00:00",
     "symbol": "CROMPTON",
     "ticker": "CROMPTON.NS",
     "scout_stance": "high_conviction",
@@ -150,7 +150,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:39:45.402812+00:00",
+    "timestamp": "2026-09-25T14:45:41.112423+00:00",
     "symbol": "VOLTAS",
     "ticker": "VOLTAS.NS",
     "scout_stance": "high_conviction",
@@ -165,7 +165,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:39:45.743395+00:00",
+    "timestamp": "2026-09-25T14:45:41.420613+00:00",
     "symbol": "BLUESTARCO",
     "ticker": "BLUESTARCO.NS",
     "scout_stance": "high_conviction",
@@ -180,7 +180,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.5 vs Bear Risk 1.4."
   },
   {
-    "timestamp": "2026-09-25T12:39:46.106721+00:00",
+    "timestamp": "2026-09-25T14:45:41.679193+00:00",
     "symbol": "ASTRAL",
     "ticker": "ASTRAL.NS",
     "scout_stance": "high_conviction",
@@ -195,7 +195,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:39:46.418302+00:00",
+    "timestamp": "2026-09-25T14:45:41.969521+00:00",
     "symbol": "SUPREMEIND",
     "ticker": "SUPREMEIND.NS",
     "scout_stance": "high_conviction",
@@ -210,7 +210,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.7 vs Bear Risk 1.3."
   },
   {
-    "timestamp": "2026-09-25T12:39:46.752763+00:00",
+    "timestamp": "2026-09-25T14:45:42.209888+00:00",
     "symbol": "KEI",
     "ticker": "KEI.NS",
     "scout_stance": "high_conviction",
@@ -225,7 +225,7 @@
     "reasoning": "Consensus score 6.68/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:47.114461+00:00",
+    "timestamp": "2026-09-25T14:45:42.473944+00:00",
     "symbol": "SUZLON",
     "ticker": "SUZLON.NS",
     "scout_stance": "high_conviction",
@@ -240,7 +240,7 @@
     "reasoning": "Consensus Approved (8.61/10): Bull Conviction 8.0 vs Bear Risk 2.2."
   },
   {
-    "timestamp": "2026-09-25T12:39:47.432210+00:00",
+    "timestamp": "2026-09-25T14:45:42.703526+00:00",
     "symbol": "CESC",
     "ticker": "CESC.NS",
     "scout_stance": "high_conviction",
@@ -255,7 +255,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:47.809962+00:00",
+    "timestamp": "2026-09-25T14:45:42.991465+00:00",
     "symbol": "NHPC",
     "ticker": "NHPC.NS",
     "scout_stance": "high_conviction",
@@ -270,7 +270,7 @@
     "reasoning": "Consensus Approved (7.04/10): Bull Conviction 5.3 vs Bear Risk 4.2."
   },
   {
-    "timestamp": "2026-09-25T12:39:48.130454+00:00",
+    "timestamp": "2026-09-25T14:45:43.393761+00:00",
     "symbol": "SJVN",
     "ticker": "SJVN.NS",
     "scout_stance": "high_conviction",
@@ -285,7 +285,7 @@
     "reasoning": "Consensus score 5.44/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:56.536727+00:00",
+    "timestamp": "2026-09-25T14:45:48.762281+00:00",
     "symbol": "NIFTY",
     "ticker": "^NSEI",
     "scout_stance": "moderate",
@@ -300,7 +300,7 @@
     "reasoning": "Consensus score 5.46/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:56.863036+00:00",
+    "timestamp": "2026-09-25T14:45:49.016013+00:00",
     "symbol": "BANKNIFTY",
     "ticker": "^NSEBANK",
     "scout_stance": "moderate",
@@ -315,7 +315,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.77/10)."
   },
   {
-    "timestamp": "2026-09-25T12:39:57.188398+00:00",
+    "timestamp": "2026-09-25T14:45:49.199937+00:00",
     "symbol": "FINNIFTY",
     "ticker": "NIFTY_FIN_SERVICE.NS",
     "scout_stance": "moderate",
@@ -330,7 +330,7 @@
     "reasoning": "Consensus Approved (8.85/10): Bull Conviction 7.8 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:57.549123+00:00",
+    "timestamp": "2026-09-25T14:45:49.395177+00:00",
     "symbol": "MIDCPNIFTY",
     "ticker": "NIFTY_MID_SELECT.NS",
     "scout_stance": "moderate",
@@ -345,7 +345,7 @@
     "reasoning": "Consensus Approved (8.85/10): Bull Conviction 7.8 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:57.844286+00:00",
+    "timestamp": "2026-09-25T14:45:49.769956+00:00",
     "symbol": "NIFTYNXT50",
     "ticker": "^NSMIDCP",
     "scout_stance": "moderate",
@@ -360,7 +360,7 @@
     "reasoning": "Consensus Approved (9.82/10): Bull Conviction 8.4 vs Bear Risk 1.6."
   },
   {
-    "timestamp": "2026-09-25T12:39:58.235657+00:00",
+    "timestamp": "2026-09-25T14:45:50.007210+00:00",
     "symbol": "RELIANCE",
     "ticker": "RELIANCE.NS",
     "scout_stance": "high_conviction",
@@ -375,7 +375,7 @@
     "reasoning": "Consensus Approved (9.09/10): Bull Conviction 8.3 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:58.600990+00:00",
+    "timestamp": "2026-09-25T14:45:50.295696+00:00",
     "symbol": "TCS",
     "ticker": "TCS.NS",
     "scout_stance": "high_conviction",
@@ -390,7 +390,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:39:58.979821+00:00",
+    "timestamp": "2026-09-25T14:45:50.600699+00:00",
     "symbol": "INFY",
     "ticker": "INFY.NS",
     "scout_stance": "high_conviction",
@@ -405,7 +405,7 @@
     "reasoning": "Consensus score 5.18/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:39:59.330115+00:00",
+    "timestamp": "2026-09-25T14:45:50.992626+00:00",
     "symbol": "HDFCBANK",
     "ticker": "HDFCBANK.NS",
     "scout_stance": "neutral",
@@ -420,7 +420,7 @@
     "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:39:59.679427+00:00",
+    "timestamp": "2026-09-25T14:45:51.269801+00:00",
     "symbol": "ICICIBANK",
     "ticker": "ICICIBANK.NS",
     "scout_stance": "high_conviction",
@@ -435,7 +435,7 @@
     "reasoning": "Consensus Approved (7.57/10): Bull Conviction 4.5 vs Bear Risk 5.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:00.065069+00:00",
+    "timestamp": "2026-09-25T14:45:51.589814+00:00",
     "symbol": "SBIN",
     "ticker": "SBIN.NS",
     "scout_stance": "neutral",
@@ -450,7 +450,7 @@
     "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:00.405840+00:00",
+    "timestamp": "2026-09-25T14:45:51.812391+00:00",
     "symbol": "AXISBANK",
     "ticker": "AXISBANK.NS",
     "scout_stance": "high_conviction",
@@ -465,7 +465,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:00.789716+00:00",
+    "timestamp": "2026-09-25T14:45:52.076847+00:00",
     "symbol": "KOTAKBANK",
     "ticker": "KOTAKBANK.NS",
     "scout_stance": "high_conviction",
@@ -480,7 +480,7 @@
     "reasoning": "Consensus Approved (7.41/10): Bull Conviction 7.2 vs Bear Risk 2.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:01.164191+00:00",
+    "timestamp": "2026-09-25T14:45:52.335886+00:00",
     "symbol": "LT",
     "ticker": "LT.NS",
     "scout_stance": "high_conviction",
@@ -495,7 +495,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:01.469759+00:00",
+    "timestamp": "2026-09-25T14:45:52.545654+00:00",
     "symbol": "ITC",
     "ticker": "ITC.NS",
     "scout_stance": "high_conviction",
@@ -510,7 +510,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:01.805608+00:00",
+    "timestamp": "2026-09-25T14:45:52.792893+00:00",
     "symbol": "HINDUNILVR",
     "ticker": "HINDUNILVR.NS",
     "scout_stance": "high_conviction",
@@ -525,7 +525,7 @@
     "reasoning": "Consensus Approved (9.09/10): Bull Conviction 8.3 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:02.206236+00:00",
+    "timestamp": "2026-09-25T14:45:53.037278+00:00",
     "symbol": "BHARTIARTL",
     "ticker": "BHARTIARTL.NS",
     "scout_stance": "high_conviction",
@@ -540,7 +540,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:02.551661+00:00",
+    "timestamp": "2026-09-25T14:45:53.334886+00:00",
     "symbol": "BAJFINANCE",
     "ticker": "BAJFINANCE.NS",
     "scout_stance": "high_conviction",
@@ -555,7 +555,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:02.952314+00:00",
+    "timestamp": "2026-09-25T14:45:53.591787+00:00",
     "symbol": "BAJAJFINSV",
     "ticker": "BAJAJFINSV.NS",
     "scout_stance": "high_conviction",
@@ -570,7 +570,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:03.318117+00:00",
+    "timestamp": "2026-09-25T14:45:53.816478+00:00",
     "symbol": "MARUTI",
     "ticker": "MARUTI.NS",
     "scout_stance": "neutral",
@@ -585,7 +585,7 @@
     "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:03.635281+00:00",
+    "timestamp": "2026-09-25T14:45:54.031763+00:00",
     "symbol": "TATASTEEL",
     "ticker": "TATASTEEL.NS",
     "scout_stance": "high_conviction",
@@ -600,7 +600,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:03.988970+00:00",
+    "timestamp": "2026-09-25T14:45:54.262103+00:00",
     "symbol": "HINDALCO",
     "ticker": "HINDALCO.NS",
     "scout_stance": "neutral",
@@ -615,7 +615,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:04.399586+00:00",
+    "timestamp": "2026-09-25T14:45:54.499157+00:00",
     "symbol": "JSWSTEEL",
     "ticker": "JSWSTEEL.NS",
     "scout_stance": "high_conviction",
@@ -630,7 +630,7 @@
     "reasoning": "Consensus Approved (7.04/10): Bull Conviction 5.3 vs Bear Risk 4.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:04.745066+00:00",
+    "timestamp": "2026-09-25T14:45:54.782358+00:00",
     "symbol": "SUNPHARMA",
     "ticker": "SUNPHARMA.NS",
     "scout_stance": "neutral",
@@ -645,7 +645,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.6 vs Bear Risk 1.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:05.115841+00:00",
+    "timestamp": "2026-09-25T14:45:55.001207+00:00",
     "symbol": "CIPLA",
     "ticker": "CIPLA.NS",
     "scout_stance": "high_conviction",
@@ -660,7 +660,7 @@
     "reasoning": "Consensus Approved (8.82/10): Bull Conviction 2.8 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-25T12:40:05.449956+00:00",
+    "timestamp": "2026-09-25T14:45:55.197462+00:00",
     "symbol": "DRREDDY",
     "ticker": "DRREDDY.NS",
     "scout_stance": "neutral",
@@ -675,7 +675,7 @@
     "reasoning": "Consensus Approved (7.41/10): Bull Conviction 6.8 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:05.779868+00:00",
+    "timestamp": "2026-09-25T14:45:55.417529+00:00",
     "symbol": "TITAN",
     "ticker": "TITAN.NS",
     "scout_stance": "high_conviction",
@@ -690,7 +690,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:06.164052+00:00",
+    "timestamp": "2026-09-25T14:45:55.676586+00:00",
     "symbol": "ASIANPAINT",
     "ticker": "ASIANPAINT.NS",
     "scout_stance": "high_conviction",
@@ -705,7 +705,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:06.636084+00:00",
+    "timestamp": "2026-09-25T14:45:55.876465+00:00",
     "symbol": "NESTLEIND",
     "ticker": "NESTLEIND.NS",
     "scout_stance": "high_conviction",
@@ -720,7 +720,7 @@
     "reasoning": "Cost Gate friction: Expected gain \u20b967.35 < Min required \u20b9159.70."
   },
   {
-    "timestamp": "2026-09-25T12:40:06.995187+00:00",
+    "timestamp": "2026-09-25T14:45:56.138749+00:00",
     "symbol": "WIPRO",
     "ticker": "WIPRO.NS",
     "scout_stance": "neutral",
@@ -735,7 +735,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:07.343771+00:00",
+    "timestamp": "2026-09-25T14:45:56.358907+00:00",
     "symbol": "HCLTECH",
     "ticker": "HCLTECH.NS",
     "scout_stance": "high_conviction",
@@ -750,7 +750,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:07.719074+00:00",
+    "timestamp": "2026-09-25T14:45:56.626431+00:00",
     "symbol": "NTPC",
     "ticker": "NTPC.NS",
     "scout_stance": "high_conviction",
@@ -765,7 +765,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:08.053665+00:00",
+    "timestamp": "2026-09-25T14:45:56.851080+00:00",
     "symbol": "POWERGRID",
     "ticker": "POWERGRID.NS",
     "scout_stance": "high_conviction",
@@ -780,7 +780,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:08.545591+00:00",
+    "timestamp": "2026-09-25T14:45:57.064795+00:00",
     "symbol": "ONGC",
     "ticker": "ONGC.NS",
     "scout_stance": "high_conviction",
@@ -795,7 +795,7 @@
     "reasoning": "Consensus score 5.44/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:08.887801+00:00",
+    "timestamp": "2026-09-25T14:45:57.302756+00:00",
     "symbol": "COALINDIA",
     "ticker": "COALINDIA.NS",
     "scout_stance": "high_conviction",
@@ -810,7 +810,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:09.271518+00:00",
+    "timestamp": "2026-09-25T14:45:57.545979+00:00",
     "symbol": "ADANIENT",
     "ticker": "ADANIENT.NS",
     "scout_stance": "neutral",
@@ -825,7 +825,7 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-25T12:40:09.637209+00:00",
+    "timestamp": "2026-09-25T14:45:57.777552+00:00",
     "symbol": "ADANIPORTS",
     "ticker": "ADANIPORTS.NS",
     "scout_stance": "neutral",
@@ -840,7 +840,7 @@
     "reasoning": "Consensus Approved (7.47/10): Bull Conviction 2.8 vs Bear Risk 5.8."
   },
   {
-    "timestamp": "2026-09-25T12:40:09.957228+00:00",
+    "timestamp": "2026-09-25T14:45:57.987124+00:00",
     "symbol": "ULTRACEMCO",
     "ticker": "ULTRACEMCO.NS",
     "scout_stance": "high_conviction",
@@ -855,7 +855,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:10.376987+00:00",
+    "timestamp": "2026-09-25T14:45:58.232453+00:00",
     "symbol": "GRASIM",
     "ticker": "GRASIM.NS",
     "scout_stance": "high_conviction",
@@ -870,7 +870,7 @@
     "reasoning": "Consensus Approved (8.85/10): Bull Conviction 8.2 vs Bear Risk 2.1."
   },
   {
-    "timestamp": "2026-09-25T12:40:10.776130+00:00",
+    "timestamp": "2026-09-25T14:45:58.471001+00:00",
     "symbol": "INDUSINDBK",
     "ticker": "INDUSINDBK.NS",
     "scout_stance": "neutral",
@@ -885,7 +885,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:11.119538+00:00",
+    "timestamp": "2026-09-25T14:45:58.782070+00:00",
     "symbol": "HAL",
     "ticker": "HAL.NS",
     "scout_stance": "high_conviction",
@@ -900,7 +900,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:11.461400+00:00",
+    "timestamp": "2026-09-25T14:45:59.051317+00:00",
     "symbol": "BEL",
     "ticker": "BEL.NS",
     "scout_stance": "high_conviction",
@@ -915,7 +915,7 @@
     "reasoning": "Consensus score 6.68/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:11.804534+00:00",
+    "timestamp": "2026-09-25T14:45:59.259462+00:00",
     "symbol": "BHEL",
     "ticker": "BHEL.NS",
     "scout_stance": "high_conviction",
@@ -930,7 +930,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.5 vs Bear Risk 1.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:12.154929+00:00",
+    "timestamp": "2026-09-25T14:45:59.589496+00:00",
     "symbol": "SIEMENS",
     "ticker": "SIEMENS.NS",
     "scout_stance": "high_conviction",
@@ -945,7 +945,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:12.452944+00:00",
+    "timestamp": "2026-09-25T14:45:59.841349+00:00",
     "symbol": "ABB",
     "ticker": "ABB.NS",
     "scout_stance": "high_conviction",
@@ -960,7 +960,7 @@
     "reasoning": "Consensus score 5.69/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:12.758293+00:00",
+    "timestamp": "2026-09-25T14:46:00.120907+00:00",
     "symbol": "POLYCAB",
     "ticker": "POLYCAB.NS",
     "scout_stance": "high_conviction",
@@ -975,7 +975,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:13.091211+00:00",
+    "timestamp": "2026-09-25T14:46:00.391329+00:00",
     "symbol": "M&M",
     "ticker": "M&M.NS",
     "scout_stance": "high_conviction",
@@ -990,7 +990,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.7 vs Bear Risk 1.3."
   },
   {
-    "timestamp": "2026-09-25T12:40:13.427406+00:00",
+    "timestamp": "2026-09-25T14:46:00.602631+00:00",
     "symbol": "EICHERMOT",
     "ticker": "EICHERMOT.NS",
     "scout_stance": "high_conviction",
@@ -1005,7 +1005,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:13.800627+00:00",
+    "timestamp": "2026-09-25T14:46:00.866504+00:00",
     "symbol": "HEROMOTOCO",
     "ticker": "HEROMOTOCO.NS",
     "scout_stance": "high_conviction",
@@ -1020,7 +1020,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:14.178464+00:00",
+    "timestamp": "2026-09-25T14:46:01.082586+00:00",
     "symbol": "VEDL",
     "ticker": "VEDL.NS",
     "scout_stance": "neutral",
@@ -1035,7 +1035,7 @@
     "reasoning": "Consensus score 4.71/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:14.529619+00:00",
+    "timestamp": "2026-09-25T14:46:01.282346+00:00",
     "symbol": "RECLTD",
     "ticker": "RECLTD.NS",
     "scout_stance": "high_conviction",
@@ -1050,7 +1050,7 @@
     "reasoning": "Consensus Approved (8.85/10): Bull Conviction 8.2 vs Bear Risk 2.1."
   },
   {
-    "timestamp": "2026-09-25T12:40:14.852279+00:00",
+    "timestamp": "2026-09-25T14:46:01.483364+00:00",
     "symbol": "PFC",
     "ticker": "PFC.NS",
     "scout_stance": "high_conviction",
@@ -1065,7 +1065,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:15.165789+00:00",
+    "timestamp": "2026-09-25T14:46:01.695871+00:00",
     "symbol": "TRENT",
     "ticker": "TRENT.NS",
     "scout_stance": "high_conviction",
@@ -1080,7 +1080,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:15.541809+00:00",
+    "timestamp": "2026-09-25T14:46:01.897343+00:00",
     "symbol": "SHREECEM",
     "ticker": "SHREECEM.NS",
     "scout_stance": "high_conviction",
@@ -1095,7 +1095,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:15.886692+00:00",
+    "timestamp": "2026-09-25T14:46:02.103405+00:00",
     "symbol": "BANDHANBNK",
     "ticker": "BANDHANBNK.NS",
     "scout_stance": "neutral",
@@ -1110,7 +1110,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:16.244337+00:00",
+    "timestamp": "2026-09-25T14:46:02.381797+00:00",
     "symbol": "PNB",
     "ticker": "PNB.NS",
     "scout_stance": "high_conviction",
@@ -1125,7 +1125,7 @@
     "reasoning": "Consensus score 5.69/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:16.589201+00:00",
+    "timestamp": "2026-09-25T14:46:02.721125+00:00",
     "symbol": "CANBK",
     "ticker": "CANBK.NS",
     "scout_stance": "high_conviction",
@@ -1140,7 +1140,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:16.955412+00:00",
+    "timestamp": "2026-09-25T14:46:02.956814+00:00",
     "symbol": "BANKBARODA",
     "ticker": "BANKBARODA.NS",
     "scout_stance": "high_conviction",
@@ -1155,7 +1155,7 @@
     "reasoning": "Consensus score 6.68/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:17.365055+00:00",
+    "timestamp": "2026-09-25T14:46:03.273522+00:00",
     "symbol": "TECHM",
     "ticker": "TECHM.NS",
     "scout_stance": "high_conviction",
@@ -1170,7 +1170,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:17.753908+00:00",
+    "timestamp": "2026-09-25T14:46:03.523143+00:00",
     "symbol": "MPHASIS",
     "ticker": "MPHASIS.NS",
     "scout_stance": "high_conviction",
@@ -1185,7 +1185,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:18.061864+00:00",
+    "timestamp": "2026-09-25T14:46:03.794050+00:00",
     "symbol": "PERSISTENT",
     "ticker": "PERSISTENT.NS",
     "scout_stance": "high_conviction",
@@ -1200,7 +1200,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:18.802215+00:00",
+    "timestamp": "2026-09-25T14:46:03.991196+00:00",
     "symbol": "MOTHERSON",
     "ticker": "MOTHERSON.NS",
     "scout_stance": "high_conviction",
@@ -1215,7 +1215,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:19.206272+00:00",
+    "timestamp": "2026-09-25T14:46:04.231085+00:00",
     "symbol": "BOSCHLTD",
     "ticker": "BOSCHLTD.NS",
     "scout_stance": "high_conviction",
@@ -1230,7 +1230,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:19.638888+00:00",
+    "timestamp": "2026-09-25T14:46:04.469002+00:00",
     "symbol": "TVSMOTOR",
     "ticker": "TVSMOTOR.NS",
     "scout_stance": "high_conviction",
@@ -1245,7 +1245,7 @@
     "reasoning": "Consensus Approved (9.09/10): Bull Conviction 8.3 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:20.001177+00:00",
+    "timestamp": "2026-09-25T14:46:04.701912+00:00",
     "symbol": "BAJAJ-AUTO",
     "ticker": "BAJAJ-AUTO.NS",
     "scout_stance": "high_conviction",
@@ -1260,7 +1260,7 @@
     "reasoning": "Consensus score 5.44/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:20.330260+00:00",
+    "timestamp": "2026-09-25T14:46:04.914037+00:00",
     "symbol": "ESCORTS",
     "ticker": "ESCORTS.NS",
     "scout_stance": "high_conviction",
@@ -1275,7 +1275,7 @@
     "reasoning": "Consensus Approved (8.13/10): Bull Conviction 7.7 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:20.712077+00:00",
+    "timestamp": "2026-09-25T14:46:05.145160+00:00",
     "symbol": "ASHOKLEY",
     "ticker": "ASHOKLEY.NS",
     "scout_stance": "neutral",
@@ -1290,7 +1290,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:21.054730+00:00",
+    "timestamp": "2026-09-25T14:46:05.353896+00:00",
     "symbol": "APOLLOTYRE",
     "ticker": "APOLLOTYRE.NS",
     "scout_stance": "high_conviction",
@@ -1305,7 +1305,7 @@
     "reasoning": "Consensus score 6.68/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:21.361726+00:00",
+    "timestamp": "2026-09-25T14:46:05.576665+00:00",
     "symbol": "BHARATFORG",
     "ticker": "BHARATFORG.NS",
     "scout_stance": "high_conviction",
@@ -1320,7 +1320,7 @@
     "reasoning": "Consensus Approved (9.09/10): Bull Conviction 8.3 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:21.663330+00:00",
+    "timestamp": "2026-09-25T14:46:05.848420+00:00",
     "symbol": "MRF",
     "ticker": "MRF.NS",
     "scout_stance": "high_conviction",
@@ -1335,7 +1335,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.7 vs Bear Risk 1.3."
   },
   {
-    "timestamp": "2026-09-25T12:40:22.047893+00:00",
+    "timestamp": "2026-09-25T14:46:06.049272+00:00",
     "symbol": "PAYTM",
     "ticker": "PAYTM.NS",
     "scout_stance": "high_conviction",
@@ -1350,7 +1350,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:22.469141+00:00",
+    "timestamp": "2026-09-25T14:46:06.310112+00:00",
     "symbol": "NYKAA",
     "ticker": "NYKAA.NS",
     "scout_stance": "high_conviction",
@@ -1365,7 +1365,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.5 vs Bear Risk 1.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:22.780862+00:00",
+    "timestamp": "2026-09-25T14:46:06.539213+00:00",
     "symbol": "DELHIVERY",
     "ticker": "DELHIVERY.NS",
     "scout_stance": "high_conviction",
@@ -1380,7 +1380,7 @@
     "reasoning": "Consensus Approved (8.61/10): Bull Conviction 8.0 vs Bear Risk 2.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:23.121260+00:00",
+    "timestamp": "2026-09-25T14:46:06.759557+00:00",
     "symbol": "SAIL",
     "ticker": "SAIL.NS",
     "scout_stance": "neutral",
@@ -1395,7 +1395,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:23.422358+00:00",
+    "timestamp": "2026-09-25T14:46:06.969221+00:00",
     "symbol": "NMDC",
     "ticker": "NMDC.NS",
     "scout_stance": "high_conviction",
@@ -1410,7 +1410,7 @@
     "reasoning": "Consensus Approved (8.82/10): Bull Conviction 2.8 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-25T12:40:23.783425+00:00",
+    "timestamp": "2026-09-25T14:46:07.205172+00:00",
     "symbol": "NATIONALUM",
     "ticker": "NATIONALUM.NS",
     "scout_stance": "neutral",
@@ -1425,7 +1425,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.11/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:24.115321+00:00",
+    "timestamp": "2026-09-25T14:46:07.415576+00:00",
     "symbol": "JINDALSTEL",
     "ticker": "JINDALSTEL.NS",
     "scout_stance": "high_conviction",
@@ -1440,7 +1440,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:24.458581+00:00",
+    "timestamp": "2026-09-25T14:46:07.636895+00:00",
     "symbol": "APLAPOLLO",
     "ticker": "APLAPOLLO.NS",
     "scout_stance": "neutral",
@@ -1455,7 +1455,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:24.875232+00:00",
+    "timestamp": "2026-09-25T14:46:07.862346+00:00",
     "symbol": "IRFC",
     "ticker": "IRFC.NS",
     "scout_stance": "high_conviction",
@@ -1470,7 +1470,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:25.204463+00:00",
+    "timestamp": "2026-09-25T14:46:08.076370+00:00",
     "symbol": "IRCTC",
     "ticker": "IRCTC.NS",
     "scout_stance": "high_conviction",
@@ -1485,7 +1485,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:25.559642+00:00",
+    "timestamp": "2026-09-25T14:46:08.291705+00:00",
     "symbol": "CONCOR",
     "ticker": "CONCOR.NS",
     "scout_stance": "neutral",
@@ -1500,7 +1500,7 @@
     "reasoning": "Consensus Approved (8.11/10): Bull Conviction 1.9 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-25T12:40:25.940239+00:00",
+    "timestamp": "2026-09-25T14:46:08.498936+00:00",
     "symbol": "PIDILITIND",
     "ticker": "PIDILITIND.NS",
     "scout_stance": "high_conviction",
@@ -1515,7 +1515,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:26.257347+00:00",
+    "timestamp": "2026-09-25T14:46:08.719431+00:00",
     "symbol": "BERGEPAINT",
     "ticker": "BERGEPAINT.NS",
     "scout_stance": "neutral",
@@ -1530,7 +1530,7 @@
     "reasoning": "Consensus score 6.2/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:26.588845+00:00",
+    "timestamp": "2026-09-25T14:46:09.034828+00:00",
     "symbol": "UPL",
     "ticker": "UPL.NS",
     "scout_stance": "high_conviction",
@@ -1545,7 +1545,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:26.993827+00:00",
+    "timestamp": "2026-09-25T14:46:09.242237+00:00",
     "symbol": "PIIND",
     "ticker": "PIIND.NS",
     "scout_stance": "high_conviction",
@@ -1560,7 +1560,7 @@
     "reasoning": "Consensus Approved (9.09/10): Bull Conviction 8.3 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:27.409597+00:00",
+    "timestamp": "2026-09-25T14:46:09.451048+00:00",
     "symbol": "SRF",
     "ticker": "SRF.NS",
     "scout_stance": "high_conviction",
@@ -1575,7 +1575,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:27.747933+00:00",
+    "timestamp": "2026-09-25T14:46:09.657598+00:00",
     "symbol": "NAVINFLUOR",
     "ticker": "NAVINFLUOR.NS",
     "scout_stance": "high_conviction",
@@ -1590,7 +1590,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:28.069617+00:00",
+    "timestamp": "2026-09-25T14:46:09.934038+00:00",
     "symbol": "AARTIIND",
     "ticker": "AARTIIND.NS",
     "scout_stance": "high_conviction",
@@ -1605,7 +1605,7 @@
     "reasoning": "Consensus Approved (7.77/10): Bull Conviction 4.2 vs Bear Risk 5.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:28.424971+00:00",
+    "timestamp": "2026-09-25T14:46:10.119224+00:00",
     "symbol": "DEEPAKNTR",
     "ticker": "DEEPAKNTR.NS",
     "scout_stance": "high_conviction",
@@ -1620,7 +1620,7 @@
     "reasoning": "Consensus Approved (8.72/10): Bull Conviction 2.9 vs Bear Risk 6.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:28.759599+00:00",
+    "timestamp": "2026-09-25T14:46:10.351617+00:00",
     "symbol": "TATACHEM",
     "ticker": "TATACHEM.NS",
     "scout_stance": "high_conviction",
@@ -1635,7 +1635,7 @@
     "reasoning": "Consensus Approved (7.36/10): Bull Conviction 4.8 vs Bear Risk 4.7."
   },
   {
-    "timestamp": "2026-09-25T12:40:29.079143+00:00",
+    "timestamp": "2026-09-25T14:46:10.554236+00:00",
     "symbol": "COROMANDEL",
     "ticker": "COROMANDEL.NS",
     "scout_stance": "high_conviction",
@@ -1650,7 +1650,7 @@
     "reasoning": "Consensus Approved (7.77/10): Bull Conviction 4.2 vs Bear Risk 5.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:29.400081+00:00",
+    "timestamp": "2026-09-25T14:46:10.757018+00:00",
     "symbol": "GNFC",
     "ticker": "GNFC.NS",
     "scout_stance": "high_conviction",
@@ -1665,7 +1665,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:29.716754+00:00",
+    "timestamp": "2026-09-25T14:46:11.020504+00:00",
     "symbol": "CHAMBLFERT",
     "ticker": "CHAMBLFERT.NS",
     "scout_stance": "high_conviction",
@@ -1680,7 +1680,7 @@
     "reasoning": "Consensus score 5.95/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:30.084878+00:00",
+    "timestamp": "2026-09-25T14:46:11.294052+00:00",
     "symbol": "DMART",
     "ticker": "DMART.NS",
     "scout_stance": "high_conviction",
@@ -1695,7 +1695,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:30.422979+00:00",
+    "timestamp": "2026-09-25T14:46:11.620643+00:00",
     "symbol": "MUTHOOTFIN",
     "ticker": "MUTHOOTFIN.NS",
     "scout_stance": "high_conviction",
@@ -1710,7 +1710,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-25T12:40:30.752201+00:00",
+    "timestamp": "2026-09-25T14:46:11.847482+00:00",
     "symbol": "CHOLAFIN",
     "ticker": "CHOLAFIN.NS",
     "scout_stance": "high_conviction",
@@ -1725,7 +1725,7 @@
     "reasoning": "Consensus Approved (7.04/10): Bull Conviction 5.3 vs Bear Risk 4.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:31.131004+00:00",
+    "timestamp": "2026-09-25T14:46:12.181421+00:00",
     "symbol": "SBILIFE",
     "ticker": "SBILIFE.NS",
     "scout_stance": "high_conviction",
@@ -1740,7 +1740,7 @@
     "reasoning": "Consensus Approved (8.82/10): Bull Conviction 2.8 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-25T12:40:31.612316+00:00",
+    "timestamp": "2026-09-25T14:46:12.427000+00:00",
     "symbol": "HDFCLIFE",
     "ticker": "HDFCLIFE.NS",
     "scout_stance": "neutral",
@@ -1755,7 +1755,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:31.914591+00:00",
+    "timestamp": "2026-09-25T14:46:12.690915+00:00",
     "symbol": "ICICIGI",
     "ticker": "ICICIGI.NS",
     "scout_stance": "high_conviction",
@@ -1770,7 +1770,7 @@
     "reasoning": "Consensus Approved (8.41/10): Bull Conviction 3.4 vs Bear Risk 6.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:32.727997+00:00",
+    "timestamp": "2026-09-25T14:46:12.896130+00:00",
     "symbol": "LICI",
     "ticker": "LICI.NS",
     "scout_stance": "high_conviction",
@@ -1785,7 +1785,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:33.045648+00:00",
+    "timestamp": "2026-09-25T14:46:13.129141+00:00",
     "symbol": "SHRIRAMFIN",
     "ticker": "SHRIRAMFIN.NS",
     "scout_stance": "high_conviction",
@@ -1800,7 +1800,7 @@
     "reasoning": "Consensus score 5.44/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:33.813017+00:00",
+    "timestamp": "2026-09-25T14:46:13.477876+00:00",
     "symbol": "M&MFIN",
     "ticker": "M&MFIN.NS",
     "scout_stance": "high_conviction",
@@ -1815,7 +1815,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:34.129953+00:00",
+    "timestamp": "2026-09-25T14:46:13.700591+00:00",
     "symbol": "MANAPPURAM",
     "ticker": "MANAPPURAM.NS",
     "scout_stance": "high_conviction",
@@ -1830,7 +1830,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-25T12:40:34.468226+00:00",
+    "timestamp": "2026-09-25T14:46:13.916953+00:00",
     "symbol": "LICHSGFIN",
     "ticker": "LICHSGFIN.NS",
     "scout_stance": "high_conviction",
@@ -1845,7 +1845,7 @@
     "reasoning": "Consensus score 6.92/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:34.817991+00:00",
+    "timestamp": "2026-09-25T14:46:14.134558+00:00",
     "symbol": "CANFINHOME",
     "ticker": "CANFINHOME.NS",
     "scout_stance": "high_conviction",
@@ -1860,7 +1860,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.7 vs Bear Risk 1.3."
   },
   {
-    "timestamp": "2026-09-25T12:40:35.128217+00:00",
+    "timestamp": "2026-09-25T14:46:14.373215+00:00",
     "symbol": "IDFCFIRSTB",
     "ticker": "IDFCFIRSTB.NS",
     "scout_stance": "neutral",
@@ -1875,7 +1875,7 @@
     "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:35.572868+00:00",
+    "timestamp": "2026-09-25T14:46:14.640189+00:00",
     "symbol": "FEDERALBNK",
     "ticker": "FEDERALBNK.NS",
     "scout_stance": "high_conviction",
@@ -1890,7 +1890,7 @@
     "reasoning": "Consensus Approved (9.24/10): Bull Conviction 2.1 vs Bear Risk 7.3."
   },
   {
-    "timestamp": "2026-09-25T12:40:35.916887+00:00",
+    "timestamp": "2026-09-25T14:46:14.843397+00:00",
     "symbol": "AUBANK",
     "ticker": "AUBANK.NS",
     "scout_stance": "high_conviction",
@@ -1905,7 +1905,7 @@
     "reasoning": "Consensus Approved (7.89/10): Bull Conviction 7.5 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:36.412073+00:00",
+    "timestamp": "2026-09-25T14:46:15.082872+00:00",
     "symbol": "RBLBANK",
     "ticker": "RBLBANK.NS",
     "scout_stance": "high_conviction",
@@ -1920,7 +1920,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 8.9 vs Bear Risk 1.7."
   },
   {
-    "timestamp": "2026-09-25T12:40:36.748080+00:00",
+    "timestamp": "2026-09-25T14:46:15.293807+00:00",
     "symbol": "ABFRL",
     "ticker": "ABFRL.NS",
     "scout_stance": "high_conviction",
@@ -1935,7 +1935,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-25T12:40:37.072865+00:00",
+    "timestamp": "2026-09-25T14:46:15.488918+00:00",
     "symbol": "BATAINDIA",
     "ticker": "BATAINDIA.NS",
     "scout_stance": "high_conviction",
@@ -1950,7 +1950,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:37.464830+00:00",
+    "timestamp": "2026-09-25T14:46:15.691331+00:00",
     "symbol": "PAGEIND",
     "ticker": "PAGEIND.NS",
     "scout_stance": "high_conviction",
@@ -1965,7 +1965,7 @@
     "reasoning": "Consensus score 5.69/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:37.792704+00:00",
+    "timestamp": "2026-09-25T14:46:15.925499+00:00",
     "symbol": "DABUR",
     "ticker": "DABUR.NS",
     "scout_stance": "neutral",
@@ -1980,7 +1980,7 @@
     "reasoning": "Consensus Approved (7.17/10): Bull Conviction 6.7 vs Bear Risk 2.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:38.183906+00:00",
+    "timestamp": "2026-09-25T14:46:16.798341+00:00",
     "symbol": "MARICO",
     "ticker": "MARICO.NS",
     "scout_stance": "neutral",
@@ -1995,7 +1995,7 @@
     "reasoning": "Consensus score 4.71/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:38.606463+00:00",
+    "timestamp": "2026-09-25T14:46:17.067269+00:00",
     "symbol": "GODREJCP",
     "ticker": "GODREJCP.NS",
     "scout_stance": "high_conviction",
@@ -2010,7 +2010,7 @@
     "reasoning": "Consensus Approved (9.09/10): Bull Conviction 8.3 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:38.896565+00:00",
+    "timestamp": "2026-09-25T14:46:17.258262+00:00",
     "symbol": "COLPAL",
     "ticker": "COLPAL.NS",
     "scout_stance": "neutral",
@@ -2025,7 +2025,7 @@
     "reasoning": "Consensus score 6.93/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:39.225988+00:00",
+    "timestamp": "2026-09-25T14:46:17.473899+00:00",
     "symbol": "BRITANNIA",
     "ticker": "BRITANNIA.NS",
     "scout_stance": "high_conviction",
@@ -2040,7 +2040,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:39.590881+00:00",
+    "timestamp": "2026-09-25T14:46:17.715461+00:00",
     "symbol": "TATACONSUM",
     "ticker": "TATACONSUM.NS",
     "scout_stance": "high_conviction",
@@ -2055,7 +2055,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:39.911314+00:00",
+    "timestamp": "2026-09-25T14:46:17.971303+00:00",
     "symbol": "VBL",
     "ticker": "VBL.NS",
     "scout_stance": "high_conviction",
@@ -2070,7 +2070,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.7 vs Bear Risk 1.3."
   },
   {
-    "timestamp": "2026-09-25T12:40:40.272111+00:00",
+    "timestamp": "2026-09-25T14:46:18.307483+00:00",
     "symbol": "JUBLFOOD",
     "ticker": "JUBLFOOD.NS",
     "scout_stance": "high_conviction",
@@ -2085,7 +2085,7 @@
     "reasoning": "Consensus Approved (7.15/10): Bull Conviction 5.2 vs Bear Risk 4.3."
   },
   {
-    "timestamp": "2026-09-25T12:40:40.632654+00:00",
+    "timestamp": "2026-09-25T14:46:18.582628+00:00",
     "symbol": "DEVYANI",
     "ticker": "DEVYANI.NS",
     "scout_stance": "neutral",
@@ -2100,7 +2100,7 @@
     "reasoning": "Consensus score 4.71/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:40.978698+00:00",
+    "timestamp": "2026-09-25T14:46:18.814111+00:00",
     "symbol": "DIVISLAB",
     "ticker": "DIVISLAB.NS",
     "scout_stance": "high_conviction",
@@ -2115,7 +2115,7 @@
     "reasoning": "Consensus Approved (8.61/10): Bull Conviction 8.0 vs Bear Risk 2.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:41.335522+00:00",
+    "timestamp": "2026-09-25T14:46:19.012124+00:00",
     "symbol": "LUPIN",
     "ticker": "LUPIN.NS",
     "scout_stance": "high_conviction",
@@ -2130,7 +2130,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:41.679954+00:00",
+    "timestamp": "2026-09-25T14:46:19.226848+00:00",
     "symbol": "AUROPHARMA",
     "ticker": "AUROPHARMA.NS",
     "scout_stance": "neutral",
@@ -2145,7 +2145,7 @@
     "reasoning": "Consensus Approved (8.13/10): Bull Conviction 7.2 vs Bear Risk 2.1."
   },
   {
-    "timestamp": "2026-09-25T12:40:42.120393+00:00",
+    "timestamp": "2026-09-25T14:46:19.422298+00:00",
     "symbol": "TORNTPHARM",
     "ticker": "TORNTPHARM.NS",
     "scout_stance": "high_conviction",
@@ -2160,7 +2160,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:42.434511+00:00",
+    "timestamp": "2026-09-25T14:46:19.730036+00:00",
     "symbol": "ALKEM",
     "ticker": "ALKEM.NS",
     "scout_stance": "neutral",
@@ -2175,7 +2175,7 @@
     "reasoning": "Consensus score 5.72/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:42.776912+00:00",
+    "timestamp": "2026-09-25T14:46:19.923371+00:00",
     "symbol": "BIOCON",
     "ticker": "BIOCON.NS",
     "scout_stance": "neutral",
@@ -2190,7 +2190,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.21/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:43.124765+00:00",
+    "timestamp": "2026-09-25T14:46:20.129250+00:00",
     "symbol": "IPCALAB",
     "ticker": "IPCALAB.NS",
     "scout_stance": "high_conviction",
@@ -2205,7 +2205,7 @@
     "reasoning": "Consensus Approved (7.36/10): Bull Conviction 4.8 vs Bear Risk 4.7."
   },
   {
-    "timestamp": "2026-09-25T12:40:43.462412+00:00",
+    "timestamp": "2026-09-25T14:46:20.333882+00:00",
     "symbol": "ZYDUSLIFE",
     "ticker": "ZYDUSLIFE.NS",
     "scout_stance": "high_conviction",
@@ -2220,7 +2220,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-25T12:40:43.869038+00:00",
+    "timestamp": "2026-09-25T14:46:20.663711+00:00",
     "symbol": "GLENMARK",
     "ticker": "GLENMARK.NS",
     "scout_stance": "high_conviction",
@@ -2235,7 +2235,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:44.183256+00:00",
+    "timestamp": "2026-09-25T14:46:20.905018+00:00",
     "symbol": "LAURUSLABS",
     "ticker": "LAURUSLABS.NS",
     "scout_stance": "high_conviction",
@@ -2250,7 +2250,7 @@
     "reasoning": "Consensus Approved (8.61/10): Bull Conviction 8.0 vs Bear Risk 2.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:44.518491+00:00",
+    "timestamp": "2026-09-25T14:46:21.137589+00:00",
     "symbol": "SYNGENE",
     "ticker": "SYNGENE.NS",
     "scout_stance": "high_conviction",
@@ -2265,7 +2265,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:44.892284+00:00",
+    "timestamp": "2026-09-25T14:46:21.359906+00:00",
     "symbol": "APOLLOHOSP",
     "ticker": "APOLLOHOSP.NS",
     "scout_stance": "high_conviction",
@@ -2280,7 +2280,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:45.190197+00:00",
+    "timestamp": "2026-09-25T14:46:21.654078+00:00",
     "symbol": "FORTIS",
     "ticker": "FORTIS.NS",
     "scout_stance": "high_conviction",
@@ -2295,7 +2295,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:45.663361+00:00",
+    "timestamp": "2026-09-25T14:46:21.862386+00:00",
     "symbol": "MAXHEALTH",
     "ticker": "MAXHEALTH.NS",
     "scout_stance": "high_conviction",
@@ -2310,7 +2310,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:45.998904+00:00",
+    "timestamp": "2026-09-25T14:46:22.098374+00:00",
     "symbol": "COFORGE",
     "ticker": "COFORGE.NS",
     "scout_stance": "neutral",
@@ -2325,7 +2325,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:46.307315+00:00",
+    "timestamp": "2026-09-25T14:46:22.310648+00:00",
     "symbol": "OFSS",
     "ticker": "OFSS.NS",
     "scout_stance": "high_conviction",
@@ -2340,7 +2340,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.5 vs Bear Risk 1.4."
   },
   {
-    "timestamp": "2026-09-25T12:40:46.673882+00:00",
+    "timestamp": "2026-09-25T14:46:22.933188+00:00",
     "symbol": "KPITTECH",
     "ticker": "KPITTECH.NS",
     "scout_stance": "high_conviction",
@@ -2355,7 +2355,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:46.981667+00:00",
+    "timestamp": "2026-09-25T14:46:23.151989+00:00",
     "symbol": "LTTS",
     "ticker": "LTTS.NS",
     "scout_stance": "high_conviction",
@@ -2370,7 +2370,7 @@
     "reasoning": "Consensus score 5.69/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:47.404692+00:00",
+    "timestamp": "2026-09-25T14:46:23.758337+00:00",
     "symbol": "TATAELXSI",
     "ticker": "TATAELXSI.NS",
     "scout_stance": "neutral",
@@ -2385,7 +2385,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:47.752410+00:00",
+    "timestamp": "2026-09-25T14:46:23.974644+00:00",
     "symbol": "PERSISTENT",
     "ticker": "PERSISTENT.NS",
     "scout_stance": "high_conviction",
@@ -2400,7 +2400,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:48.089709+00:00",
+    "timestamp": "2026-09-25T14:46:24.245052+00:00",
     "symbol": "TATAPOWER",
     "ticker": "TATAPOWER.NS",
     "scout_stance": "high_conviction",
@@ -2415,7 +2415,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:48.458743+00:00",
+    "timestamp": "2026-09-25T14:46:24.858070+00:00",
     "symbol": "ADANIGREEN",
     "ticker": "ADANIGREEN.NS",
     "scout_stance": "high_conviction",
@@ -2430,7 +2430,7 @@
     "reasoning": "Consensus Approved (9.09/10): Bull Conviction 8.3 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:48.850562+00:00",
+    "timestamp": "2026-09-25T14:46:25.069380+00:00",
     "symbol": "ADANIPOWER",
     "ticker": "ADANIPOWER.NS",
     "scout_stance": "neutral",
@@ -2445,7 +2445,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:49.197094+00:00",
+    "timestamp": "2026-09-25T14:46:25.277033+00:00",
     "symbol": "ATGL",
     "ticker": "ATGL.NS",
     "scout_stance": "neutral",
@@ -2460,7 +2460,7 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:49.568342+00:00",
+    "timestamp": "2026-09-25T14:46:25.499139+00:00",
     "symbol": "IOC",
     "ticker": "IOC.NS",
     "scout_stance": "high_conviction",
@@ -2475,7 +2475,7 @@
     "reasoning": "Consensus Approved (7.77/10): Bull Conviction 4.2 vs Bear Risk 5.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:49.907898+00:00",
+    "timestamp": "2026-09-25T14:46:25.736381+00:00",
     "symbol": "BPCL",
     "ticker": "BPCL.NS",
     "scout_stance": "high_conviction",
@@ -2490,7 +2490,7 @@
     "reasoning": "Consensus Approved (7.65/10): Bull Conviction 7.4 vs Bear Risk 2.5."
   },
   {
-    "timestamp": "2026-09-25T12:40:50.226335+00:00",
+    "timestamp": "2026-09-25T14:46:26.346908+00:00",
     "symbol": "GAIL",
     "ticker": "GAIL.NS",
     "scout_stance": "high_conviction",
@@ -2505,7 +2505,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:51.008997+00:00",
+    "timestamp": "2026-09-25T14:46:26.583600+00:00",
     "symbol": "PETRONET",
     "ticker": "PETRONET.NS",
     "scout_stance": "high_conviction",
@@ -2520,7 +2520,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:51.322940+00:00",
+    "timestamp": "2026-09-25T14:46:26.798694+00:00",
     "symbol": "IGL",
     "ticker": "IGL.NS",
     "scout_stance": "high_conviction",
@@ -2535,7 +2535,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:51.641443+00:00",
+    "timestamp": "2026-09-25T14:46:27.036016+00:00",
     "symbol": "MGL",
     "ticker": "MGL.NS",
     "scout_stance": "high_conviction",
@@ -2550,7 +2550,7 @@
     "reasoning": "Bearish Downside Consensus Approved (6.93/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:51.969286+00:00",
+    "timestamp": "2026-09-25T14:46:27.277074+00:00",
     "symbol": "DLF",
     "ticker": "DLF.NS",
     "scout_stance": "high_conviction",
@@ -2565,7 +2565,7 @@
     "reasoning": "Consensus Approved (8.85/10): Bull Conviction 8.2 vs Bear Risk 2.1."
   },
   {
-    "timestamp": "2026-09-25T12:40:52.387524+00:00",
+    "timestamp": "2026-09-25T14:46:27.474478+00:00",
     "symbol": "GODREJPROP",
     "ticker": "GODREJPROP.NS",
     "scout_stance": "high_conviction",
@@ -2580,7 +2580,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:52.706128+00:00",
+    "timestamp": "2026-09-25T14:46:27.742536+00:00",
     "symbol": "OBEROIRLTY",
     "ticker": "OBEROIRLTY.NS",
     "scout_stance": "neutral",
@@ -2595,7 +2595,7 @@
     "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:53.032408+00:00",
+    "timestamp": "2026-09-25T14:46:27.958547+00:00",
     "symbol": "PRESTIGE",
     "ticker": "PRESTIGE.NS",
     "scout_stance": "high_conviction",
@@ -2610,7 +2610,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:53.334476+00:00",
+    "timestamp": "2026-09-25T14:46:28.201402+00:00",
     "symbol": "PHOENIXLTD",
     "ticker": "PHOENIXLTD.NS",
     "scout_stance": "high_conviction",
@@ -2625,7 +2625,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:53.649975+00:00",
+    "timestamp": "2026-09-25T14:46:28.431321+00:00",
     "symbol": "BRIGADE",
     "ticker": "BRIGADE.NS",
     "scout_stance": "high_conviction",
@@ -2640,7 +2640,7 @@
     "reasoning": "Consensus Approved (7.46/10): Bull Conviction 4.7 vs Bear Risk 4.8."
   },
   {
-    "timestamp": "2026-09-25T12:40:53.996329+00:00",
+    "timestamp": "2026-09-25T14:46:28.659863+00:00",
     "symbol": "SOBHA",
     "ticker": "SOBHA.NS",
     "scout_stance": "neutral",
@@ -2655,7 +2655,7 @@
     "reasoning": "Consensus Approved (9.34/10): Bull Conviction 8.0 vs Bear Risk 1.7."
   },
   {
-    "timestamp": "2026-09-25T12:40:54.336643+00:00",
+    "timestamp": "2026-09-25T14:46:28.887057+00:00",
     "symbol": "ACC",
     "ticker": "ACC.NS",
     "scout_stance": "neutral",
@@ -2670,7 +2670,7 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:54.704040+00:00",
+    "timestamp": "2026-09-25T14:46:29.101705+00:00",
     "symbol": "AMBUJACEM",
     "ticker": "AMBUJACEM.NS",
     "scout_stance": "high_conviction",
@@ -2685,7 +2685,7 @@
     "reasoning": "Consensus Approved (7.25/10): Bull Conviction 5.0 vs Bear Risk 4.5."
   },
   {
-    "timestamp": "2026-09-25T12:40:55.203256+00:00",
+    "timestamp": "2026-09-25T14:46:29.319021+00:00",
     "symbol": "DALBHARAT",
     "ticker": "DALBHARAT.NS",
     "scout_stance": "high_conviction",
@@ -2700,7 +2700,7 @@
     "reasoning": "Consensus Approved (8.82/10): Bull Conviction 2.8 vs Bear Risk 6.8."
   },
   {
-    "timestamp": "2026-09-25T12:40:55.583633+00:00",
+    "timestamp": "2026-09-25T14:46:29.572142+00:00",
     "symbol": "RAMCOCEM",
     "ticker": "RAMCOCEM.NS",
     "scout_stance": "high_conviction",
@@ -2715,7 +2715,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:56.003891+00:00",
+    "timestamp": "2026-09-25T14:46:29.826828+00:00",
     "symbol": "INDIACEM",
     "ticker": "INDIACEM.NS",
     "scout_stance": "high_conviction",
@@ -2730,7 +2730,7 @@
     "reasoning": "Consensus score 5.44/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:56.317252+00:00",
+    "timestamp": "2026-09-25T14:46:30.091706+00:00",
     "symbol": "NBCC",
     "ticker": "NBCC.NS",
     "scout_stance": "high_conviction",
@@ -2745,7 +2745,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:56.648993+00:00",
+    "timestamp": "2026-09-25T14:46:30.303965+00:00",
     "symbol": "RVNL",
     "ticker": "RVNL.NS",
     "scout_stance": "high_conviction",
@@ -2760,7 +2760,7 @@
     "reasoning": "Consensus Approved (9.09/10): Bull Conviction 8.3 vs Bear Risk 2.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:56.965490+00:00",
+    "timestamp": "2026-09-25T14:46:30.520419+00:00",
     "symbol": "IRCON",
     "ticker": "IRCON.NS",
     "scout_stance": "neutral",
@@ -2775,7 +2775,7 @@
     "reasoning": "Consensus Approved (7.05/10): Bull Conviction 3.4 vs Bear Risk 5.2."
   },
   {
-    "timestamp": "2026-09-25T12:40:57.306768+00:00",
+    "timestamp": "2026-09-25T14:46:30.718584+00:00",
     "symbol": "PVRINOX",
     "ticker": "PVRINOX.NS",
     "scout_stance": "neutral",
@@ -2790,7 +2790,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:57.610489+00:00",
+    "timestamp": "2026-09-25T14:46:30.898163+00:00",
     "symbol": "SUNTV",
     "ticker": "SUNTV.NS",
     "scout_stance": "neutral",
@@ -2805,7 +2805,7 @@
     "reasoning": "Consensus score 4.97/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:58.011608+00:00",
+    "timestamp": "2026-09-25T14:46:31.157546+00:00",
     "symbol": "ZEEL",
     "ticker": "ZEEL.NS",
     "scout_stance": "high_conviction",
@@ -2820,7 +2820,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:58.343883+00:00",
+    "timestamp": "2026-09-25T14:46:31.378985+00:00",
     "symbol": "EXIDEIND",
     "ticker": "EXIDEIND.NS",
     "scout_stance": "neutral",
@@ -2835,7 +2835,7 @@
     "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
   },
   {
-    "timestamp": "2026-09-25T12:40:58.657435+00:00",
+    "timestamp": "2026-09-25T14:46:31.571393+00:00",
     "symbol": "HAVELLS",
     "ticker": "HAVELLS.NS",
     "scout_stance": "high_conviction",
@@ -2850,7 +2850,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:58.984309+00:00",
+    "timestamp": "2026-09-25T14:46:31.789055+00:00",
     "symbol": "CROMPTON",
     "ticker": "CROMPTON.NS",
     "scout_stance": "high_conviction",
@@ -2865,7 +2865,7 @@
     "reasoning": "Consensus score 5.69/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:40:59.317655+00:00",
+    "timestamp": "2026-09-25T14:46:32.023709+00:00",
     "symbol": "VOLTAS",
     "ticker": "VOLTAS.NS",
     "scout_stance": "neutral",
@@ -2880,7 +2880,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:40:59.628142+00:00",
+    "timestamp": "2026-09-25T14:46:32.296555+00:00",
     "symbol": "BLUESTARCO",
     "ticker": "BLUESTARCO.NS",
     "scout_stance": "high_conviction",
@@ -2895,7 +2895,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.7 vs Bear Risk 1.3."
   },
   {
-    "timestamp": "2026-09-25T12:41:00.022915+00:00",
+    "timestamp": "2026-09-25T14:46:32.509864+00:00",
     "symbol": "ASTRAL",
     "ticker": "ASTRAL.NS",
     "scout_stance": "high_conviction",
@@ -2910,7 +2910,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-25T12:41:00.353840+00:00",
+    "timestamp": "2026-09-25T14:46:32.720639+00:00",
     "symbol": "SUPREMEIND",
     "ticker": "SUPREMEIND.NS",
     "scout_stance": "high_conviction",
@@ -2925,7 +2925,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.7."
   },
   {
-    "timestamp": "2026-09-25T12:41:00.682966+00:00",
+    "timestamp": "2026-09-25T14:46:32.909304+00:00",
     "symbol": "KEI",
     "ticker": "KEI.NS",
     "scout_stance": "neutral",
@@ -2940,7 +2940,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.3 vs Bear Risk 1.0."
   },
   {
-    "timestamp": "2026-09-25T12:41:01.071314+00:00",
+    "timestamp": "2026-09-25T14:46:33.140569+00:00",
     "symbol": "SUZLON",
     "ticker": "SUZLON.NS",
     "scout_stance": "high_conviction",
@@ -2955,7 +2955,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 9.5 vs Bear Risk 1.4."
   },
   {
-    "timestamp": "2026-09-25T12:41:01.449908+00:00",
+    "timestamp": "2026-09-25T14:46:33.322644+00:00",
     "symbol": "CESC",
     "ticker": "CESC.NS",
     "scout_stance": "high_conviction",
@@ -2970,7 +2970,7 @@
     "reasoning": "Consensus Approved (10.0/10): Bull Conviction 10.0 vs Bear Risk 0.6."
   },
   {
-    "timestamp": "2026-09-25T12:41:01.805561+00:00",
+    "timestamp": "2026-09-25T14:46:33.597396+00:00",
     "symbol": "NHPC",
     "ticker": "NHPC.NS",
     "scout_stance": "neutral",
@@ -2985,7 +2985,7 @@
     "reasoning": "Consensus score 5.96/10 below execution threshold 7.0."
   },
   {
-    "timestamp": "2026-09-25T12:41:02.261227+00:00",
+    "timestamp": "2026-09-25T14:46:33.813225+00:00",
     "symbol": "SJVN",
     "ticker": "SJVN.NS",
     "scout_stance": "high_conviction",
