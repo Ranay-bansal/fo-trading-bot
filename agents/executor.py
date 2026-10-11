@@ -44,16 +44,16 @@ class FOExecutorAgent:
         # Directional Stop-Loss and Target calculation
         is_bullish = ("CE" in c_type) or (c_type == "FUTURES_LONG")
         if is_bullish:
-            sl_spot = round(spot_entry * 0.985, 2)    # -1.5% stop loss
-            target_spot = round(spot_entry * 1.03, 2)  # +3.0% target gain
+            sl_spot = round(spot_entry * 0.988, 2)    # -1.2% stop loss
+            target_spot = round(spot_entry * 1.015, 2)  # +1.5% target gain
         else:
-            sl_spot = round(spot_entry * 1.015, 2)    # +1.5% stop loss for PE / short
-            target_spot = round(spot_entry * 0.97, 2)  # -3.0% target gain for PE / short
+            sl_spot = round(spot_entry * 1.012, 2)    # +1.2% stop loss for PE / short
+            target_spot = round(spot_entry * 0.985, 2)  # -1.5% target gain for PE / short
 
         # Options Premium targets & stops (Aligning with backtest & preventing theta drain)
         is_option = ("OPTION" in c_type) or ("SCALP" in c_type)
-        target_premium = round(premium * 1.25, 2) if is_option and premium > 0 else 0.0  # +25% premium target
-        sl_premium = round(premium * 0.90, 2) if is_option and premium > 0 else 0.0      # -10% premium SL
+        target_premium = round(premium * 1.18, 2) if is_option and premium > 0 else 0.0  # +18% premium target
+        sl_premium = round(premium * 0.88, 2) if is_option and premium > 0 else 0.0      # -12% premium SL
 
         logger.info(f"[F&O EXECUTOR] Executing {verdict.verdict} ({c_type}) for {symbol} {strike}: {lots} Lots ({total_shares} shares) @ Premium ₹{premium}. Spot: ₹{spot_entry}, SL: ₹{sl_spot}, TP: ₹{target_spot}")
 
@@ -342,16 +342,16 @@ class FOExecutorAgent:
                 highest_premium = max(pos.get("highest_premium", entry_premium), curr_premium)
                 pos["highest_premium"] = highest_premium
 
-                # 1. Target hit: +25% Option Premium Gain or Spot Target reached
-                if prem_gain_pct >= 25.0 or (is_bullish and live_spot >= target_spot) or (not is_bullish and live_spot <= target_spot):
+                # 1. Target hit: +18% Option Premium Gain or Spot Target reached
+                if prem_gain_pct >= 18.0 or (is_bullish and live_spot >= target_spot) or (not is_bullish and live_spot <= target_spot):
                     exit_reason = "target_hit"
-                # 2. Trailing Stop: If gained >= 15%, trail 8% below peak or exit at entry breakeven
-                elif highest_premium >= entry_premium * 1.15 and (curr_premium <= highest_premium * 0.92 or curr_premium <= entry_premium):
+                # 2. Trailing Stop: If gained >= 12%, trail 7% below peak or exit at entry breakeven
+                elif highest_premium >= entry_premium * 1.12 and (curr_premium <= highest_premium * 0.93 or curr_premium <= entry_premium):
                     exit_reason = "trailing_sl_hit"
-                # 3. Stop loss hit: -10% Option Premium Drop or Spot SL reached
-                elif prem_gain_pct <= -10.0 or (is_bullish and live_spot <= sl_spot) or (not is_bullish and live_spot >= sl_spot):
+                # 3. Stop loss hit: -12% Option Premium Drop or Spot SL reached
+                elif prem_gain_pct <= -12.0 or (is_bullish and live_spot <= sl_spot) or (not is_bullish and live_spot >= sl_spot):
                     exit_reason = "sl_hit"
-                # 4. Time-stop: Stalled scalp held > 45 mins without positive momentum (< 5% gain)
+                # 4. Time-stop: Stalled scalp held > 75 mins without positive momentum (< 4% gain)
                 entered_str = pos.get("entered_at")
                 if entered_str and not exit_reason:
                     try:
@@ -359,7 +359,7 @@ class FOExecutorAgent:
                         ent_dt = datetime.fromisoformat(clean_str).replace(tzinfo=timezone.utc)
                         now_utc = datetime.now(timezone.utc)
                         duration_sec = (now_utc - ent_dt).total_seconds()
-                        if duration_sec > 2700 and prem_gain_pct < 5.0:  # 45 minutes
+                        if duration_sec > 4500 and prem_gain_pct < 4.0:  # 75 minutes
                             exit_reason = "time_stop"
                         elif duration_sec > 86400:
                             exit_reason = "eod_expiry_time"
@@ -401,12 +401,12 @@ class FOExecutorAgent:
         if exited_trades:
             save_fo_state(state)
 
-        # Check 3:15 PM IST Auto Square-Off
+        # Check 3:10 PM IST Auto Square-Off
         ist_tz = timezone(timedelta(hours=5, minutes=30))
         now_ist = datetime.now(ist_tz)
-        if now_ist.weekday() < 5 and (now_ist.hour > 15 or (now_ist.hour == 15 and now_ist.minute >= 15)):
+        if now_ist.weekday() < 5 and (now_ist.hour > 15 or (now_ist.hour == 15 and now_ist.minute >= 10)):
             if state.get("open_positions"):
-                logger.info("[F&O Executor] 3:15 PM IST Auto Square-Off triggered. Closing remaining open positions...")
+                logger.info("[F&O Executor] 3:10 PM IST Auto Square-Off triggered. Closing remaining open positions...")
                 eod_exits = self.squareoff_all(state, bar_data=bar_data)
                 exited_trades.extend(eod_exits)
 

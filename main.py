@@ -87,9 +87,19 @@ def run_quant_pipeline() -> None:
         save_fo_state(state)
         return
 
-    # 4. CAS & Intraday Entry Cutoff Check
-    if now_ist.weekday() < 5 and (now_ist.hour > 13 or (now_ist.hour == 13 and now_ist.minute >= 30)):
-        logger.warning("Scan triggered after 1:30 PM IST entry cutoff (Running paper mode simulation).")
+    # 3.5. Market Hours Check (Strict Indian Market Hours: 09:15 to 15:30 IST)
+    market_open = (now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 15))
+    market_close = (now_ist.hour < 15 or (now_ist.hour == 15 and now_ist.minute <= 30))
+    if not (market_open and market_close) and not args.force_weekend:
+        logger.info(f"Market Closed: Current time is {now_ist.strftime('%H:%M')} IST. Outside 09:15–15:30 IST window. Halting scan.")
+        save_fo_state(state)
+        return
+
+    # 4. CAS & Intraday Entry Cutoff Check (No new entries after 1:30 PM IST)
+    if now_ist.hour > 13 or (now_ist.hour == 13 and now_ist.minute >= 30):
+        logger.info(f"Entry Cutoff Reached: Current time is {now_ist.strftime('%H:%M')} IST (cutoff 13:30 IST). Open positions monitored; skipping new entries.")
+        save_fo_state(state)
+        return
 
     timeframes = ["5m", "1m", "15m"]
 
