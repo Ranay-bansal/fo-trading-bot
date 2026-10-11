@@ -397,6 +397,143 @@
       .brand-container { flex-direction: column; }
       .stats-grid { grid-template-columns: 1fr; }
     }
+  
+    /* --- TRADE DETAIL MODAL & PAGINATION STYLES --- */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: fadeIn 0.15s ease-out;
+    }
+    .modal-card {
+      background: #0B111E;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 660px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+      padding: 24px;
+      position: relative;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .modal-close-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+    .modal-close-btn:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 520px) {
+      .modal-grid { grid-template-columns: 1fr; }
+    }
+    .modal-stat-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+    .modal-stat-label {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .modal-stat-val {
+      font-family: var(--font-mono);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-top: 3px;
+    }
+    .pagination-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 4px 6px 4px;
+      margin-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .page-btn {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-white);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .page-btn:hover:not(:disabled) {
+      background: #1e293b;
+      border-color: var(--accent-cyan);
+    }
+    .page-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .search-input {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      color: #f8fafc;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-family: var(--font-body);
+      min-width: 220px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .search-input:focus {
+      border-color: var(--accent-cyan);
+    }
+    tr.clickable-row {
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    tr.clickable-row:hover td {
+      background: rgba(56, 189, 248, 0.06) !important;
+    }
+
   </style>
 </head>
 <body>
@@ -426,6 +563,10 @@
       <button id="pwa-install-btn" class="install-pwa-btn" onclick="installPWA()">
         Install App
       </button>
+            <a href="Senior_Trader_Quant_Analysis_Report_v3.pdf" target="_blank" download class="install-pwa-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.12); color: var(--accent-cyan); border: 1px solid rgba(56, 189, 248, 0.35);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Institutional PDF Report
+      </a>
       <div class="arise-badge">
         <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green);"></span>
         Options Swarm Active
@@ -482,9 +623,9 @@
       <span class="badge badge-scalp" id="trade-status-indicator">Auto-refresh: 5s</span>
     </div>
 
-    <!-- FILTER BAR (TIME RANGE + STRATEGY + CUSTOM DATE PICKERS) -->
+    <!-- FILTER BAR (TIME RANGE + SEARCH + STRATEGY + OUTCOME + CUSTOM DATES) -->
     <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px; margin-bottom: 14px; display: flex; flex-direction: column; gap: 12px;">
-      <!-- Row 1: Time Range -->
+      <!-- Row 1: Time Range + Search + Download -->
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
         <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
           <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Time Range:</span>
@@ -496,10 +637,13 @@
           <button class="filter-btn time-btn" data-range="30d" onclick="setTimeRange('30d', event)">Last 30 Days</button>
           <button class="filter-btn time-btn" data-range="custom" onclick="setTimeRange('custom', event)">Custom Range</button>
         </div>
-        <button onclick="downloadFilteredCSV()" class="install-pwa-btn" style="padding: 5px 14px; font-size: 11px; display: inline-flex; align-items: center; gap: 6px;">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          Download CSV
-        </button>
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <input type="text" id="ticker-search" class="search-input" placeholder="🔍 Search Ticker / Symbol..." oninput="onTickerSearchInput(event)" />
+          <button onclick="downloadFilteredCSV()" class="install-pwa-btn" style="padding: 5px 14px; font-size: 11px; display: inline-flex; align-items: center; gap: 6px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download CSV
+          </button>
+        </div>
       </div>
 
       <!-- Custom Date Row (Toggled if custom selected) -->
@@ -513,12 +657,26 @@
 
       <!-- Row 2: Strategy / Signal Type -->
       <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.06);">
-        <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Strategy Filter:</span>
+        <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Strategy:</span>
         <button class="filter-btn strat-btn active" data-strat="all" onclick="setStrategyFilter('all', event)">All (<span id="strat-count-all">0</span>)</button>
         <button class="filter-btn strat-btn" data-strat="ce" onclick="setStrategyFilter('ce', event)">Call Options (CE) (<span id="strat-count-ce">0</span>)</button>
         <button class="filter-btn strat-btn" data-strat="pe" onclick="setStrategyFilter('pe', event)">Put Options (PE) (<span id="strat-count-pe">0</span>)</button>
         <button class="filter-btn strat-btn" data-strat="scalp" onclick="setStrategyFilter('scalp', event)">1m Scalps (<span id="strat-count-scalp">0</span>)</button>
         <button class="filter-btn strat-btn" data-strat="fut" onclick="setStrategyFilter('fut', event)">Futures (<span id="strat-count-fut">0</span>)</button>
+        <button class="filter-btn strat-btn" data-strat="cash" onclick="setStrategyFilter('cash', event)">Equity Cash (<span id="strat-count-cash">0</span>)</button>
+      </div>
+
+      <!-- Row 3: Outcome / Exit Reason Filter -->
+      <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+        <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Outcome:</span>
+        <button class="filter-btn outcome-btn active" data-outcome="all" onclick="setOutcomeFilter('all', event)">All Outcomes (<span id="outcome-count-all">0</span>)</button>
+        <button class="filter-btn outcome-btn" data-outcome="wins" onclick="setOutcomeFilter('wins', event)" style="color: #4ade80;">Wins Only (<span id="outcome-count-wins">0</span>)</button>
+        <button class="filter-btn outcome-btn" data-outcome="losses" onclick="setOutcomeFilter('losses', event)" style="color: #f87171;">Losses Only (<span id="outcome-count-losses">0</span>)</button>
+        <button class="filter-btn outcome-btn" data-outcome="target_hit" onclick="setOutcomeFilter('target_hit', event)">Target Hit (<span id="outcome-count-target">0</span>)</button>
+        <button class="filter-btn outcome-btn" data-outcome="trailing_sl" onclick="setOutcomeFilter('trailing_sl', event)">Trailing SL (<span id="outcome-count-trailing">0</span>)</button>
+        <button class="filter-btn outcome-btn" data-outcome="sl_hit" onclick="setOutcomeFilter('sl_hit', event)">Stop Loss (<span id="outcome-count-sl">0</span>)</button>
+        <button class="filter-btn outcome-btn" data-outcome="eod_squareoff" onclick="setOutcomeFilter('eod_squareoff', event)">EOD Square-Off (<span id="outcome-count-eod">0</span>)</button>
+        <button class="filter-btn outcome-btn" data-outcome="open" onclick="setOutcomeFilter('open', event)">Open Positions (<span id="outcome-count-open">0</span>)</button>
       </div>
     </div>
 
@@ -570,6 +728,25 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- PAGINATION BAR -->
+    <div class="pagination-bar">
+      <div style="font-size: 12px; color: var(--text-muted); font-weight: 500;">
+        Showing <span id="page-start" style="color: var(--text-white); font-weight: 700;">0</span> to <span id="page-end" style="color: var(--text-white); font-weight: 700;">0</span> of <span id="page-total" style="color: var(--accent-cyan); font-weight: 700;">0</span> trades
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; color: var(--text-muted);">Rows per page:</span>
+        <select id="page-size-select" onchange="onPageSizeChange(event)" style="background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; color: #f8fafc; padding: 4px 8px; font-size: 11.5px; font-family: var(--font-mono);">
+          <option value="25" selected>25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="all">All</option>
+        </select>
+        <button id="btn-prev-page" class="page-btn" onclick="goToPrevPage()">Previous</button>
+        <span id="page-indicator" style="font-size: 12px; font-family: var(--font-mono); color: var(--text-white); padding: 0 4px;">Page 1 of 1</span>
+        <button id="btn-next-page" class="page-btn" onclick="goToNextPage()">Next</button>
+      </div>
     </div>
   </div>
 
@@ -655,6 +832,25 @@
         </tbody>
       </table>
     </div>
+
+    <!-- PAGINATION BAR -->
+    <div class="pagination-bar">
+      <div style="font-size: 12px; color: var(--text-muted); font-weight: 500;">
+        Showing <span id="page-start" style="color: var(--text-white); font-weight: 700;">0</span> to <span id="page-end" style="color: var(--text-white); font-weight: 700;">0</span> of <span id="page-total" style="color: var(--accent-cyan); font-weight: 700;">0</span> trades
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; color: var(--text-muted);">Rows per page:</span>
+        <select id="page-size-select" onchange="onPageSizeChange(event)" style="background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; color: #f8fafc; padding: 4px 8px; font-size: 11.5px; font-family: var(--font-mono);">
+          <option value="25" selected>25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="all">All</option>
+        </select>
+        <button id="btn-prev-page" class="page-btn" onclick="goToPrevPage()">Previous</button>
+        <span id="page-indicator" style="font-size: 12px; font-family: var(--font-mono); color: var(--text-white); padding: 0 4px;">Page 1 of 1</span>
+        <button id="btn-next-page" class="page-btn" onclick="goToNextPage()">Next</button>
+      </div>
+    </div>
   </div>
 
   <!-- PANEL 5: REFLECTIVE MEMORY -->
@@ -679,6 +875,25 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- PAGINATION BAR -->
+    <div class="pagination-bar">
+      <div style="font-size: 12px; color: var(--text-muted); font-weight: 500;">
+        Showing <span id="page-start" style="color: var(--text-white); font-weight: 700;">0</span> to <span id="page-end" style="color: var(--text-white); font-weight: 700;">0</span> of <span id="page-total" style="color: var(--accent-cyan); font-weight: 700;">0</span> trades
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 11px; color: var(--text-muted);">Rows per page:</span>
+        <select id="page-size-select" onchange="onPageSizeChange(event)" style="background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; color: #f8fafc; padding: 4px 8px; font-size: 11.5px; font-family: var(--font-mono);">
+          <option value="25" selected>25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="all">All</option>
+        </select>
+        <button id="btn-prev-page" class="page-btn" onclick="goToPrevPage()">Previous</button>
+        <span id="page-indicator" style="font-size: 12px; font-family: var(--font-mono); color: var(--text-white); padding: 0 4px;">Page 1 of 1</span>
+        <button id="btn-next-page" class="page-btn" onclick="goToNextPage()">Next</button>
+      </div>
     </div>
   </div>
 
@@ -785,8 +1000,131 @@
     let allRawTrades = [];
     let currentTimeRange = 'all';
     let currentStrategyFilter = 'all';
+    let currentOutcomeFilter = 'all';
+    let currentSearchQuery = '';
     let customStartDate = '';
     let customEndDate = '';
+    let currentPage = 1;
+    let pageSize = 25;
+    let currentlyDisplayedTrades = [];
+
+        function onTickerSearchInput(evt) {
+      currentSearchQuery = (evt.target.value || '').trim().toLowerCase();
+      currentPage = 1;
+      renderTradesTable();
+    }
+
+    function setOutcomeFilter(outcome, evt) {
+      currentOutcomeFilter = outcome;
+      document.querySelectorAll('.outcome-btn').forEach(btn => btn.classList.remove('active'));
+      if (evt && evt.target) {
+        evt.target.classList.add('active');
+      } else {
+        const btn = document.querySelector(`.outcome-btn[data-outcome="${outcome}"]`);
+        if (btn) btn.classList.add('active');
+      }
+      currentPage = 1;
+      renderTradesTable();
+    }
+
+    function onPageSizeChange(evt) {
+      const val = evt.target.value;
+      pageSize = val === 'all' ? 999999 : parseInt(val, 10);
+      currentPage = 1;
+      renderTradesTable();
+    }
+
+    function goToPrevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        renderTradesTable();
+      }
+    }
+
+    function goToNextPage() {
+      const totalFiltered = currentlyDisplayedTrades.length;
+      const maxPages = Math.ceil(totalFiltered / pageSize) || 1;
+      if (currentPage < maxPages) {
+        currentPage++;
+        renderTradesTable();
+      }
+    }
+
+    function openTradeDetailModal(index) {
+      const t = currentlyDisplayedTrades[index];
+      if (!t) return;
+
+      const sym = t.symbol || t.ticker || 'NIFTY';
+      const cType = t.contract_type || t.verdict || 'F&O';
+      const strikeStr = t.strike_price && Number(t.strike_price) > 0 ? ` ${Number(t.strike_price)}` : '';
+      
+      document.getElementById('modal-trade-symbol').innerText = `${sym}${strikeStr} ${cType}`;
+      document.getElementById('modal-trade-run-id').innerText = t.run_id || t.megabull_order_id || 'ORDER_ID_N/A';
+      
+      const badge = document.getElementById('modal-trade-strategy-badge');
+      badge.className = `badge ${getBadgeClass(cType)}`;
+      badge.innerText = cType;
+
+      const pnlVal = t.realized_pnl_inr !== undefined && t.realized_pnl_inr !== null && t.realized_pnl_inr !== '' ? Number(t.realized_pnl_inr) : null;
+      const netPnlElem = document.getElementById('modal-net-pnl');
+      const pnlPctElem = document.getElementById('modal-pnl-pct');
+      
+      if (pnlVal !== null) {
+        const pctVal = t.realized_pnl_pct ? Number(t.realized_pnl_pct).toFixed(2) : '0.00';
+        netPnlElem.innerText = (pnlVal >= 0 ? '+₹' : '-₹') + Math.abs(pnlVal).toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        netPnlElem.style.color = pnlVal >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+        pnlPctElem.innerText = (pnlVal >= 0 ? '+' : '') + pctVal + '%';
+        pnlPctElem.style.color = pnlVal >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+      } else {
+        netPnlElem.innerText = 'ACTIVE / OPEN';
+        netPnlElem.style.color = 'var(--accent-cyan)';
+        pnlPctElem.innerText = 'In Flight';
+        pnlPctElem.style.color = 'var(--text-muted)';
+      }
+
+      let reason = (t.exit_reason || 'OPEN').toUpperCase().replace(/_/g, ' ');
+      const exitBadgeElem = document.getElementById('modal-exit-badge');
+      const reasonColor = reason.includes('TARGET') ? 'var(--accent-green)' : (reason.includes('SL') ? 'var(--accent-red)' : (reason.includes('OPEN') ? 'var(--accent-cyan)' : 'var(--accent-gold)'));
+      exitBadgeElem.innerHTML = `<span class="badge" style="background: rgba(255, 255, 255, 0.08); color: ${reasonColor}; border: 1px solid rgba(255, 255, 255, 0.15);">${reason}</span>`;
+
+      const entryPrem = t.option_premium && Number(t.option_premium) > 0 ? ('₹' + Number(t.option_premium).toFixed(2)) : (t.spot_entry ? ('₹' + Number(t.spot_entry).toFixed(2)) : '-');
+      const exitPrem = t.exit_price && Number(t.exit_price) > 0 ? ('₹' + Number(t.exit_price).toFixed(2)) : (t.exit_premium ? ('₹' + Number(t.exit_premium).toFixed(2)) : 'In Flight');
+      document.getElementById('modal-entry-px').innerText = entryPrem;
+      document.getElementById('modal-exit-px').innerText = exitPrem;
+
+      document.getElementById('modal-spot-entry').innerText = t.spot_entry ? ('₹' + Number(t.spot_entry).toFixed(2)) : '-';
+      const tpSpot = t.spot_target ? ('TP: ₹' + Number(t.spot_target).toFixed(2)) : 'TP: -';
+      const slSpot = t.spot_sl ? ('SL: ₹' + Number(t.spot_sl).toFixed(2)) : 'SL: -';
+      document.getElementById('modal-spot-tp-sl').innerText = `${tpSpot} | ${slSpot}`;
+
+      const shares = t.total_shares || (t.lots ? t.lots * 25 : 1);
+      const lots = t.lots || 1;
+      document.getElementById('modal-qty').innerText = `${shares} Qty (${lots} Lots)`;
+
+      const posVal = t.position_value_inr ? Number(t.position_value_inr).toFixed(2) : '-';
+      document.getElementById('modal-pos-value').innerText = posVal !== '-' ? `₹${Number(posVal).toLocaleString('en-IN')}` : '-';
+
+      const brokerage = t.brokerage_fee_inr || t.total_cost_inr || '20.00';
+      document.getElementById('modal-brokerage').innerText = `₹${Number(brokerage).toFixed(2)}`;
+
+      const score = t.waterfall_score ? `${Number(t.waterfall_score).toFixed(1)} / 10` : '-';
+      document.getElementById('modal-quant-score').innerText = score;
+
+      document.getElementById('modal-executed-at').innerText = formatDate(t.executed_at);
+      document.getElementById('modal-exit-at').innerText = t.exit_at ? formatDate(t.exit_at) : (t.exit_price ? 'Closed at Session EOD' : 'Active');
+      document.getElementById('modal-exit-reason').innerText = t.exit_reason ? t.exit_reason.toUpperCase().replace(/_/g, ' ') : 'Position Active / Unsettled';
+
+      document.getElementById('trade-detail-modal').style.display = 'flex';
+    }
+
+    function closeTradeModal(evt) {
+      if (evt) evt.stopPropagation();
+      document.getElementById('trade-detail-modal').style.display = 'none';
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeTradeModal();
+    });
 
     function setTimeRange(range, evt) {
       currentTimeRange = range;
@@ -921,16 +1259,88 @@
       const elAll = document.getElementById('strat-count-all');
       if (elAll) elAll.innerText = dateFiltered.length;
 
-      // Filter by Strategy
-      if (currentStrategyFilter === 'all') return dateFiltered;
-      return dateFiltered.filter(t => {
-        const s = (t.verdict || t.contract_type || '').toUpperCase();
-        if (currentStrategyFilter === 'ce') return (s.includes('CE') || s.includes('CALL')) && !s.includes('SCALP');
-        if (currentStrategyFilter === 'pe') return (s.includes('PE') || s.includes('PUT')) && !s.includes('SCALP');
-        if (currentStrategyFilter === 'scalp') return s.includes('SCALP');
-        if (currentStrategyFilter === 'fut') return s.includes('FUT');
-        return true;
+      // Count Outcomes on dateFiltered
+      let winCount = 0, lossCount = 0, targetCount = 0, trailingCount = 0, slCount = 0, eodCount = 0, openCount = 0;
+      dateFiltered.forEach(t => {
+        const hasPnl = t.realized_pnl_inr !== undefined && t.realized_pnl_inr !== null && t.realized_pnl_inr !== '';
+        const pnl = hasPnl ? parseFloat(t.realized_pnl_inr) : 0;
+        const reason = (t.exit_reason || '').toLowerCase();
+        
+        if (hasPnl) {
+          if (pnl > 0) winCount++;
+          else if (pnl < 0) lossCount++;
+        } else {
+          openCount++;
+        }
+
+        if (reason.includes('target')) targetCount++;
+        else if (reason.includes('trailing')) trailingCount++;
+        else if (reason.includes('sl') || reason.includes('stop')) slCount++;
+        else if (reason.includes('eod') || reason.includes('square')) eodCount++;
       });
+
+      const elWins = document.getElementById('outcome-count-wins');
+      if (elWins) elWins.innerText = winCount;
+      const elLosses = document.getElementById('outcome-count-losses');
+      if (elLosses) elLosses.innerText = lossCount;
+      const elTarget = document.getElementById('outcome-count-target');
+      if (elTarget) elTarget.innerText = targetCount;
+      const elTrailing = document.getElementById('outcome-count-trailing');
+      if (elTrailing) elTrailing.innerText = trailingCount;
+      const elSl = document.getElementById('outcome-count-sl');
+      if (elSl) elSl.innerText = slCount;
+      const elEod = document.getElementById('outcome-count-eod');
+      if (elEod) elEod.innerText = eodCount;
+      const elOpen = document.getElementById('outcome-count-open');
+      if (elOpen) elOpen.innerText = openCount;
+      const elOutAll = document.getElementById('outcome-count-all');
+      if (elOutAll) elOutAll.innerText = dateFiltered.length;
+
+      // Filter by Strategy
+      let stratFiltered = dateFiltered;
+      if (currentStrategyFilter !== 'all') {
+        stratFiltered = dateFiltered.filter(t => {
+          const s = (t.verdict || t.contract_type || '').toUpperCase();
+          if (currentStrategyFilter === 'ce') return (s.includes('CE') || s.includes('CALL')) && !s.includes('SCALP');
+          if (currentStrategyFilter === 'pe') return (s.includes('PE') || s.includes('PUT')) && !s.includes('SCALP');
+          if (currentStrategyFilter === 'scalp') return s.includes('SCALP');
+          if (currentStrategyFilter === 'fut') return s.includes('FUT');
+          if (currentStrategyFilter === 'cash') return s.includes('CASH') || s.includes('EQUITY');
+          return true;
+        });
+      }
+
+      // Filter by Outcome
+      let outcomeFiltered = stratFiltered;
+      if (currentOutcomeFilter !== 'all') {
+        outcomeFiltered = stratFiltered.filter(t => {
+          const hasPnl = t.realized_pnl_inr !== undefined && t.realized_pnl_inr !== null && t.realized_pnl_inr !== '';
+          const pnl = hasPnl ? parseFloat(t.realized_pnl_inr) : 0;
+          const reason = (t.exit_reason || '').toLowerCase();
+
+          if (currentOutcomeFilter === 'wins') return hasPnl && pnl > 0;
+          if (currentOutcomeFilter === 'losses') return hasPnl && pnl < 0;
+          if (currentOutcomeFilter === 'target_hit') return reason.includes('target');
+          if (currentOutcomeFilter === 'trailing_sl') return reason.includes('trailing');
+          if (currentOutcomeFilter === 'sl_hit') return reason.includes('sl') || reason.includes('stop');
+          if (currentOutcomeFilter === 'eod_squareoff') return reason.includes('eod') || reason.includes('square');
+          if (currentOutcomeFilter === 'open') return !hasPnl || !t.exit_reason;
+          return true;
+        });
+      }
+
+      // Filter by Search Query
+      if (currentSearchQuery) {
+        return outcomeFiltered.filter(t => {
+          const sym = (t.symbol || t.ticker || '').toLowerCase();
+          const strat = (t.contract_type || t.verdict || '').toLowerCase();
+          const reason = (t.exit_reason || '').toLowerCase();
+          const runId = (t.run_id || '').toLowerCase();
+          return sym.includes(currentSearchQuery) || strat.includes(currentSearchQuery) || reason.includes(currentSearchQuery) || runId.includes(currentSearchQuery);
+        });
+      }
+
+      return outcomeFiltered;
     }
 
     function updatePnlSummaries() {
@@ -1052,8 +1462,38 @@
 
       // Newest trades first
       const reversedTrades = [...displayTrades].reverse();
+      currentlyDisplayedTrades = reversedTrades;
+
+      // Pagination calculation
+      const totalCount = reversedTrades.length;
+      const effPageSize = pageSize === 999999 ? totalCount : pageSize;
+      const maxPages = Math.ceil(totalCount / effPageSize) || 1;
+      if (currentPage > maxPages) currentPage = maxPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIndex = (currentPage - 1) * effPageSize;
+      const endIndex = Math.min(startIndex + effPageSize, totalCount);
+      const pageTrades = reversedTrades.slice(startIndex, endIndex);
+
+      // Update Pagination UI
+      const pageStartEl = document.getElementById('page-start');
+      if (pageStartEl) pageStartEl.innerText = totalCount > 0 ? (startIndex + 1) : 0;
+      const pageEndEl = document.getElementById('page-end');
+      if (pageEndEl) pageEndEl.innerText = endIndex;
+      const pageTotalEl = document.getElementById('page-total');
+      if (pageTotalEl) pageTotalEl.innerText = totalCount;
+      const pageIndicatorEl = document.getElementById('page-indicator');
+      if (pageIndicatorEl) pageIndicatorEl.innerText = `Page ${currentPage} of ${maxPages}`;
+      
+      const prevBtn = document.getElementById('btn-prev-page');
+      if (prevBtn) prevBtn.disabled = (currentPage <= 1);
+      const nextBtn = document.getElementById('btn-next-page');
+      if (nextBtn) nextBtn.disabled = (currentPage >= maxPages);
+
       let html = '';
-      for (const t of reversedTrades) {
+      for (let i = 0; i < pageTrades.length; i++) {
+        const t = pageTrades[i];
+        const actualIdx = startIndex + i;
         const strategy = t.verdict || t.contract_type || 'F&O';
         const badgeClass = getBadgeClass(strategy);
         const strikeStr = t.strike_price && Number(t.strike_price) > 0 ? (Number(t.strike_price) + ' ') : '';
@@ -1087,7 +1527,7 @@
           statusDisplay = `<span class="badge" style="background: rgba(255, 255, 255, 0.06); color: ${reasonColor}; border: 1px solid rgba(255, 255, 255, 0.15);">${reason}</span>`;
         }
 
-        html += `<tr>
+        html += `<tr class="clickable-row" onclick="openTradeDetailModal(${actualIdx})" title="Click to inspect complete trade analytics & committee breakdown">
           <td style="color: var(--text-muted); font-size: 11.5px;">${formatDate(t.executed_at)}</td>
           <td>${instrumentDisplay}</td>
           <td><span class="badge ${badgeClass}">${strategy}</span></td>
@@ -1097,7 +1537,7 @@
           <td style="color: var(--accent-cyan);">${score}</td>
           <td style="color: var(--text-muted);">₹${Number(cost).toFixed(2)}</td>
           <td>${pnlDisplay}</td>
-          <td>${statusDisplay}</td>
+          <td>${statusDisplay} <span style="font-size: 10px; color: var(--accent-cyan); margin-left: 6px; font-weight: 600;">Inspect &rarr;</span></td>
         </tr>`;
       }
 
@@ -1257,5 +1697,85 @@
     updateDashboard();
     setInterval(updateDashboard, 5000);
   </script>
+
+  <!-- TRADE DETAIL INSPECTOR MODAL -->
+  <div id="trade-detail-modal" class="modal-backdrop" style="display: none;" onclick="closeTradeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <h2 id="modal-trade-symbol" style="font-size: 20px; font-weight: 800; color: #fff; margin: 0;">SYMBOL</h2>
+            <span id="modal-trade-strategy-badge" class="badge">STRATEGY</span>
+          </div>
+          <p id="modal-trade-run-id" style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 4px;">ORDER_ID</p>
+        </div>
+        <button class="modal-close-btn" onclick="closeTradeModal(event)">✕</button>
+      </div>
+
+      <!-- Financials Highlight Bar -->
+      <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Net Realized P&L</span>
+          <div id="modal-net-pnl" style="font-family: var(--font-mono); font-size: 22px; font-weight: 800; color: var(--accent-green); margin-top: 2px;">+₹0.00</div>
+        </div>
+        <div>
+          <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Return %</span>
+          <div id="modal-pnl-pct" style="font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: var(--accent-cyan); margin-top: 4px;">0.00%</div>
+        </div>
+        <div>
+          <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Exit Status</span>
+          <div id="modal-exit-badge" style="margin-top: 4px;"><span class="badge">STATUS</span></div>
+        </div>
+      </div>
+
+      <!-- Execution Grid -->
+      <div class="modal-grid">
+        <div class="modal-stat-box">
+          <div class="modal-stat-label">Entry Premium / Price</div>
+          <div id="modal-entry-px" class="modal-stat-val">₹0.00</div>
+        </div>
+        <div class="modal-stat-box">
+          <div class="modal-stat-label">Exit Premium / Price</div>
+          <div id="modal-exit-px" class="modal-stat-val">₹0.00</div>
+        </div>
+        <div class="modal-stat-box">
+          <div class="modal-stat-label">Underlying Spot Entry</div>
+          <div id="modal-spot-entry" class="modal-stat-val">₹0.00</div>
+        </div>
+        <div class="modal-stat-box">
+          <div class="modal-stat-label">Spot Target / Stop Loss</div>
+          <div id="modal-spot-tp-sl" class="modal-stat-val">TP: ₹0 | SL: ₹0</div>
+        </div>
+        <div class="modal-stat-box">
+          <div class="modal-stat-label">Quantity / Contract Size</div>
+          <div id="modal-qty" class="modal-stat-val">0 Shares (0 Lots)</div>
+        </div>
+        <div class="modal-stat-box">
+          <div class="modal-stat-label">Total Capital Deployed</div>
+          <div id="modal-pos-value" class="modal-stat-val">₹0.00</div>
+        </div>
+        <div class="modal-stat-box">
+          <div class="modal-stat-label">Transaction Costs & STT</div>
+          <div id="modal-brokerage" class="modal-stat-val">₹20.00</div>
+        </div>
+        <div class="modal-stat-box">
+          <div class="modal-stat-label">Quant Consensus Score</div>
+          <div id="modal-quant-score" class="modal-stat-val" style="color: var(--accent-cyan);">0.0 / 10</div>
+        </div>
+      </div>
+
+      <!-- Timestamps & Metadata -->
+      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 12px 14px; font-size: 11.5px; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px;">
+        <div><strong>Entry Timestamp:</strong> <span id="modal-executed-at" style="color: var(--text-white); font-family: var(--font-mono);">-</span></div>
+        <div><strong>Exit Timestamp:</strong> <span id="modal-exit-at" style="color: var(--text-white); font-family: var(--font-mono);">-</span></div>
+        <div><strong>Exit Trigger Reason:</strong> <span id="modal-exit-reason" style="color: var(--accent-gold); font-weight: 600;">-</span></div>
+      </div>
+
+      <div style="margin-top: 18px; text-align: right;">
+        <button class="page-btn" onclick="closeTradeModal(event)">Close Inspector</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
