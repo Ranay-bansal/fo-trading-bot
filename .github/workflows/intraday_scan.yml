@@ -2,10 +2,12 @@ name: F&O High-Frequency Intraday Scan
 
 on:
   schedule:
-    # 03:45 UTC (09:15 IST) opening scan
-    - cron: '45 3 * * 1-5'
-    # Every 15 minutes from 04:00 to 09:30 UTC (09:30 to 15:00 IST)
-    - cron: '*/15 4-9 * * 1-5'
+    # 03:48 UTC (09:18 IST) opening scan
+    - cron: '48 3 * * 1-5'
+    # Regular scans every 15 minutes from 09:33 to 14:18 IST (04:03 to 08:48 UTC)
+    - cron: '3,18,33,48 4-8 * * 1-5'
+    # Afternoon session scans at 14:33 and 14:48 IST (09:03 and 09:18 UTC)
+    - cron: '3,18 9 * * 1-5'
   workflow_dispatch: {}
 
 permissions:
