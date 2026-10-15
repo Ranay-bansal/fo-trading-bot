@@ -182,7 +182,7 @@ def test_scenario_3_max_open_position_limits():
                 "sl_spot": 95.0,
                 "target_spot": 110.0,
                 "entered_at": datetime.utcnow().isoformat() + "Z",
-                "megabull_order_id": f"STOCK_{i}_CASH",
+                "order_id": f"STOCK_{i}_CASH",
                 "brokerage_paid_inr": 20.0,
                 "side": "BUY",
                 "waterfall_score": 8.0
@@ -225,7 +225,7 @@ def test_scenario_3_max_open_position_limits():
                 "sl_spot": 980.0, # Stop loss at 980
                 "target_spot": 1050.0,
                 "entered_at": datetime.utcnow().isoformat() + "Z",
-                "megabull_order_id": f"ORDER_{i}",
+                "order_id": f"ORDER_{i}",
                 "brokerage_paid_inr": 20.0,
                 "delta": 0.5,
                 "expiry_dte": 7
@@ -285,7 +285,7 @@ def test_scenario_4_sudden_market_price_jumps_and_volatility():
                 "sl_spot": 23640.0, # 1.5% SL
                 "target_spot": 24720.0,
                 "entered_at": datetime.utcnow().isoformat() + "Z",
-                "megabull_order_id": "NIFTY_CRASH",
+                "order_id": "NIFTY_CRASH",
                 "brokerage_paid_inr": 20.0,
                 "delta": 0.5,
                 "expiry_dte": 7
@@ -319,7 +319,7 @@ def test_scenario_4_sudden_market_price_jumps_and_volatility():
                 "sl_spot": 1470.0,
                 "target_spot": 1560.0,
                 "entered_at": datetime.utcnow().isoformat() + "Z",
-                "megabull_order_id": "RELIANCE_GAP",
+                "order_id": "RELIANCE_GAP",
                 "brokerage_paid_inr": 20.0,
                 "side": "BUY"
             }]

@@ -162,7 +162,7 @@ class FOOpenPosition(BaseModel):
     sl_spot: float
     target_spot: float
     entered_at: datetime
-    megabull_order_id: str
+    order_id: str = ""
     brokerage_paid_inr: float = 20.0
 
 class FOPortfolioState(BaseModel):

@@ -1059,7 +1059,7 @@
       const strikeStr = t.strike_price && Number(t.strike_price) > 0 ? ` ${Number(t.strike_price)}` : '';
       
       document.getElementById('modal-trade-symbol').innerText = `${sym}${strikeStr} ${cType}`;
-      document.getElementById('modal-trade-run-id').innerText = t.run_id || t.megabull_order_id || 'ORDER_ID_N/A';
+      document.getElementById('modal-trade-run-id').innerText = t.run_id || t.order_id || 'ORDER_ID_N/A';
       
       const badge = document.getElementById('modal-trade-strategy-badge');
       badge.className = `badge ${getBadgeClass(cType)}`;

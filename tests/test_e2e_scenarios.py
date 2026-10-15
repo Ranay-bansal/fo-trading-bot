@@ -187,7 +187,7 @@ class TestE2EScenarios(unittest.TestCase):
             "ticker": "RELIANCE.NS", "contract_type": "SCALP_CE", "symbol": "RELIANCE",
             "strike_price": 2500.0, "lots": 1, "total_shares": 250, "entry_premium": 40.0,
             "entry_spot": 10000.0, "sl_spot": 9800.0, "target_spot": 10500.0,
-            "entered_at": datetime.utcnow().isoformat() + "Z", "megabull_order_id": "RELIANCE_1",
+            "entered_at": datetime.utcnow().isoformat() + "Z", "order_id": "RELIANCE_1",
             "brokerage_paid_inr": 20.0
         })
 

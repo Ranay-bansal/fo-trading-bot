@@ -80,7 +80,7 @@ class FOExecutorAgent:
             "sl_spot": sl_spot,
             "target_spot": target_spot,
             "entered_at": datetime.utcnow().isoformat() + "Z",
-            "megabull_order_id": run_id,
+            "order_id": run_id,
             "brokerage_paid_inr": brokerage,
             "delta": getattr(contract, "delta", 0.5),
             "expiry_dte": getattr(contract, "expiry_dte", 7),
@@ -156,7 +156,7 @@ class FOExecutorAgent:
             "sl_spot": signal.suggested_sl,
             "target_spot": signal.suggested_target,
             "entered_at": datetime.utcnow().isoformat() + "Z",
-            "megabull_order_id": run_id,
+            "order_id": run_id,
             "brokerage_paid_inr": brokerage,
             "side": side,
             "waterfall_score": signal.signal_score
@@ -282,7 +282,7 @@ class FOExecutorAgent:
         logger.info(f"[Executor] Exited {symbol} {c_type} ({exit_reason}) @ Spot ₹{current_spot:.2f}, Price ₹{exit_premium:.2f}. Net P&L: ₹{net_pnl:.2f} ({pnl_pct:.2f}%)")
 
         trade_log_row = {
-            "run_id": pos.get("megabull_order_id", f"{symbol}_{c_type}_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"),
+            "run_id": pos.get("order_id", f"{symbol}_{c_type}_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"),
             "ticker": pos["ticker"],
             "symbol": symbol,
             "verdict": pos.get("verdict", c_type),

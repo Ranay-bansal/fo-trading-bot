@@ -33,12 +33,8 @@ jobs:
       - name: Run F&O EOD Square-off
         run: python main.py --squareoff
         env:
-          MEGABULL_API_KEY: ${{ secrets.MEGABULL_API_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          MEGABULL_MOCK: "${{ secrets.MEGABULL_MOCK || 'true' }}"
 
       - name: Commit and push state changes
         run: |

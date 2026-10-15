@@ -120,7 +120,7 @@ class TestFOExecutor(unittest.TestCase):
             "ticker": "RELIANCE.NS", "contract_type": "SCALP_CE", "symbol": "RELIANCE",
             "strike_price": 2500.0, "lots": 1, "total_shares": 250, "entry_premium": 50.0,
             "entry_spot": 12500.0, "sl_spot": 12000.0, "target_spot": 13000.0,
-            "entered_at": datetime.utcnow().isoformat() + "Z", "megabull_order_id": "RELIANCE_1",
+            "entered_at": datetime.utcnow().isoformat() + "Z", "order_id": "RELIANCE_1",
             "brokerage_paid_inr": 20.0
         })
 
@@ -144,7 +144,7 @@ class TestFOExecutor(unittest.TestCase):
             "ticker": "RELIANCE.NS", "contract_type": "SCALP_CE", "symbol": "RELIANCE",
             "strike_price": 2500.0, "lots": 1, "total_shares": 250, "entry_premium": 50.0,
             "entry_spot": 12500.0, "sl_spot": 12000.0, "target_spot": 13000.0,
-            "entered_at": datetime.utcnow().isoformat() + "Z", "megabull_order_id": "RELIANCE_1",
+            "entered_at": datetime.utcnow().isoformat() + "Z", "order_id": "RELIANCE_1",
             "brokerage_paid_inr": 20.0
         }]
 
@@ -220,7 +220,7 @@ class TestFOExecutor(unittest.TestCase):
             "ticker": "RELIANCE.NS", "contract_type": "SCALP_CE", "symbol": "RELIANCE",
             "strike_price": 2500.0, "lots": 1, "total_shares": 250, "entry_premium": 50.0,
             "entry_spot": 12500.0, "sl_spot": 12000.0, "target_spot": 13000.0,
-            "entered_at": datetime.utcnow().isoformat() + "Z", "megabull_order_id": "RELIANCE_1",
+            "entered_at": datetime.utcnow().isoformat() + "Z", "order_id": "RELIANCE_1",
             "brokerage_paid_inr": 20.0
         }]
 
