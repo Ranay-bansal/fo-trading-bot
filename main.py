@@ -39,6 +39,22 @@ def run_quant_pipeline() -> None:
     config = load_config()
     state = load_fo_state()
 
+    # Reset daily trade counters and P&L at the start of a NEW trading day
+    today_str = datetime.utcnow().strftime("%Y-%m-%d")
+    if state.get("last_run_date") != today_str:
+        logger.info(f"New trading day detected ({today_str}). Resetting daily trade counters and P&L.")
+        state["last_run_date"] = today_str
+        state["trades_today"] = 0
+        state["daily_pnl_inr"] = 0.0
+        state["daily_pnl_pct"] = 0.0
+        if state.get("kill_switch_active"):
+            reason = str(state.get("kill_switch_reason", ""))
+            if "drawdown" in reason or "consecutive" in reason:
+                logger.info(f"Clearing prior day kill switch ({reason}) for the new trading day.")
+                state["kill_switch_active"] = False
+                state["kill_switch_reason"] = None
+        save_fo_state(state)
+
     parser = argparse.ArgumentParser(description="AlphaDesk F&O Quant Swarm Orchestrator")
     parser.add_argument("--force-weekend", action="store_true", help="Force run simulation even on weekend")
     parser.add_argument("--kill-switch", choices=["halt", "resume"], help="Manually engage or disengage Kill Switch")
