@@ -1,11 +1,12 @@
 {
-  "last_updated": "2026-10-15T14:07:15.895670Z",
+  "last_updated": "2026-10-16T08:31:28.801697Z",
   "pool_total": 570216.0500000007,
   "pool_available": 500000.0,
   "pool_deployed": 0.0,
-  "daily_pnl_inr": 106232.08000000005,
-  "daily_pnl_pct": 21.25,
+  "daily_pnl_inr": 0.0,
+  "daily_pnl_pct": 0.0,
   "total_brokerage_paid_inr": 69996.12000000004,
   "trades_today": 0,
-  "open_positions": []
+  "open_positions": [],
+  "last_run_date": "2026-10-16"
 }
