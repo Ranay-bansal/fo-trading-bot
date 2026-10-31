@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-30T15:50:07.113974Z",
+  "last_updated": "2026-10-31T18:46:15.420757Z",
   "pool_total": 570216.0500000007,
   "pool_available": 500000.0,
   "pool_deployed": 0.0,
@@ -8,5 +8,5 @@
   "total_brokerage_paid_inr": 69996.12000000004,
   "trades_today": 0,
   "open_positions": [],
-  "last_run_date": "2026-10-30"
+  "last_run_date": "2026-10-31"
 }
