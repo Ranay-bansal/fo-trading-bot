@@ -20,13 +20,42 @@ class yfinanceWrapper:
                 return pd.DataFrame()
             if isinstance(data.columns, pd.MultiIndex):
                 data.columns = [col[0] for col in data.columns]
-            return data[['Open', 'High', 'Low', 'Close', 'Volume']].dropna()
+            df_out = data[['Open', 'High', 'Low', 'Close', 'Volume']].dropna()
+
+            # Progressive Enhancement: Sync latest tick with official real-time NSE MCP
+            if ticker != "^INDIAVIX" and not df_out.empty:
+                try:
+                    from core.nse_mcp import fetch_live_stock_quote
+                    mcp_quote = fetch_live_stock_quote(ticker)
+                    if mcp_quote:
+                        ltp = mcp_quote["last_price"]
+                        df_out.iloc[-1, df_out.columns.get_loc('Close')] = ltp
+                        if ltp > df_out.iloc[-1, df_out.columns.get_loc('High')]:
+                            df_out.iloc[-1, df_out.columns.get_loc('High')] = ltp
+                        if ltp < df_out.iloc[-1, df_out.columns.get_loc('Low')]:
+                            df_out.iloc[-1, df_out.columns.get_loc('Low')] = ltp
+                        logger.info(f"[NSE-MCP] Live tick synced for {ticker}: ₹{ltp}")
+                except Exception as mcp_err:
+                    logger.debug(f"NSE MCP sync note for {ticker}: {mcp_err}")
+
+            return df_out
         except Exception as e:
             logger.error(f"yfinance fetch error for {ticker} ({timeframe}): {e}")
             return pd.DataFrame()
 
     @staticmethod
     def fetch_vix() -> float:
+        # Priority 1: Official NSE MCP Live Stream
+        try:
+            from core.nse_mcp import fetch_live_vix
+            vix_val = fetch_live_vix()
+            if vix_val is not None and vix_val > 0:
+                logger.info(f"[NSE-MCP] Live India VIX fetched from official NSE: {vix_val}")
+                return vix_val
+        except Exception as e:
+            logger.debug(f"NSE MCP VIX fallback: {e}")
+
+        # Priority 2: yfinance fallback
         try:
             vix_df = yf.download("^INDIAVIX", period="5d", interval="5m", progress=False)
             if not vix_df.empty:
