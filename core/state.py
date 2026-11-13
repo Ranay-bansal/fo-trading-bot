@@ -2,6 +2,8 @@ import json
 import os
 import csv
 import logging
+import subprocess
+import time
 from datetime import datetime
 from typing import Dict, Any
 
@@ -238,3 +240,56 @@ def record_trade_reflection(ticker: str, verdict: str, outcome: str, reflection_
     ticker_history["history"] = ticker_history["history"][-10:]
     memory[ticker] = ticker_history
     save_reflective_memory(memory)
+
+
+def commit_state_to_git(mode: str = "f&o scan updates") -> None:
+    """Commits state and dashboard changes to git and pushes them using rebase retries."""
+    if not os.path.exists(os.path.join(ROOT_DIR, ".git")):
+        logger.info("Not a git repository, skipping auto-commit.")
+        return
+
+    try:
+        # Ensure git user identity is configured (essential for Render cloud containers)
+        subprocess.run("git config user.name 'AlphaDesk F&O Bot'", shell=True, capture_output=True, cwd=ROOT_DIR)
+        subprocess.run("git config user.email 'bot@alphadesk.io'", shell=True, capture_output=True, cwd=ROOT_DIR)
+
+        # Authenticate git remote URL if GITHUB_PAT is set in environment
+        pat = os.environ.get("GITHUB_PAT") or os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+        if pat:
+            username = os.environ.get("GITHUB_USERNAME", "Ranay-bansal")
+            auth_url = f"https://{username}:{pat}@github.com/{username}/fo-trading-bot.git"
+            subprocess.run(f"git remote set-url origin {auth_url}", shell=True, capture_output=True, cwd=ROOT_DIR)
+
+        status = subprocess.run(
+            "git status --porcelain state/ dashboard/ public/", shell=True,
+            capture_output=True, text=True, cwd=ROOT_DIR
+        )
+        if not status.stdout.strip():
+            logger.info("No state changes to commit.")
+            return
+
+        logger.info("Staging state and dashboard files...")
+        subprocess.run("git checkout main", shell=True, capture_output=True, cwd=ROOT_DIR)
+        subprocess.run("git add state/ dashboard/ public/", shell=True, check=True, cwd=ROOT_DIR)
+
+        timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+        commit_msg = f"state: {mode} ({timestamp})"
+        logger.info(f"Committing changes: {commit_msg}")
+        subprocess.run(f'git commit -m "{commit_msg}"', shell=True, check=True, cwd=ROOT_DIR)
+
+        for attempt in range(1, 4):
+            logger.info(f"Pushing to git (attempt {attempt}/3)...")
+            subprocess.run("git pull --rebase origin main", shell=True, capture_output=True, text=True, cwd=ROOT_DIR)
+            push = subprocess.run("git push origin main", shell=True, capture_output=True, text=True, cwd=ROOT_DIR)
+            if push.returncode == 0:
+                logger.info("State successfully pushed to GitHub.")
+                return
+            else:
+                logger.warning(f"Git push failed (attempt {attempt}): {push.stderr.strip()}")
+
+            time.sleep(3)
+
+        logger.error("Failed to push state to GitHub after 3 attempts.")
+    except Exception as e:
+        logger.error(f"Git auto-commit process failed: {e}")
+

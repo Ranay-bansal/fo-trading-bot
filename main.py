@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from typing import Dict, Any, List
 
-from core.state import load_fo_state, save_fo_state
+from core.state import load_fo_state, save_fo_state, commit_state_to_git
 from core.data_sources import yfinanceWrapper, StreamingTickSimulator, BarEvent
 from agents.bot1_cash import Bot1EquityAgent
 from agents.bot2_options import Bot2OptionSwarmAgent
@@ -66,6 +66,8 @@ def run_quant_pipeline() -> None:
         logger.info("🚨 Settle all positions requested via --squareoff.")
         executor = FOExecutorAgent(config)
         exited = executor.squareoff_all(state)
+        save_fo_state(state)
+        commit_state_to_git("eod_squareoff")
         logger.info(f"✅ Squared off {len(exited)} positions. Available capital restored to ₹{state.get('pool_available', 0):,.2f}.")
         return
 
@@ -229,6 +231,7 @@ def run_continuous_stream(simulate_live: bool = False, delay_seconds: float = 0.
                 save_fo_state(state)
 
     logger.info("=== ZERO-LATENCY PARALLEL STREAM EXECUTION COMPLETED ===")
+    commit_state_to_git("f&o scan updates")
 
 def run_fo_pipeline() -> None:
     """Backward compatibility alias for F&O pipeline runner."""

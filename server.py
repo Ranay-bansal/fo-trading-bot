@@ -17,6 +17,15 @@ PORT = int(os.environ.get("PORT", 8080))
 BOT_SECRET = os.environ.get("BOT_WEBHOOK_SECRET", "alphadesk_fo_secret_key_2026")
 IST = timezone(timedelta(hours=5, minutes=30))
 
+execution_lock = threading.Lock()
+last_execution_summary = {
+    "status": "idle",
+    "last_command": None,
+    "last_started_ist": None,
+    "last_completed_ist": None,
+    "last_result": None
+}
+
 def run_fo_bot(args: list = None) -> dict:
     """Executes main.py with the specified arguments and returns execution summary."""
     now_ist = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
@@ -44,6 +53,57 @@ def run_fo_bot(args: list = None) -> dict:
     }
     logger.info(f"Completed in {duration}s. Success: {success}")
     return summary
+
+def _async_fo_worker(args: list = None):
+    global last_execution_summary
+    now_ist = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
+    cmd_name = " ".join(args) if args else "scan"
+    last_execution_summary["status"] = f"running_{cmd_name}"
+    last_execution_summary["last_command"] = cmd_name
+    last_execution_summary["last_started_ist"] = now_ist
+    try:
+        res = run_fo_bot(args=args)
+        last_execution_summary["last_result"] = res
+        last_execution_summary["last_completed_ist"] = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
+    except Exception as e:
+        logger.error(f"Error in background FO bot execution: {e}")
+        last_execution_summary["last_result"] = {"error": str(e), "success": False}
+    finally:
+        last_execution_summary["status"] = "idle"
+        if execution_lock.locked():
+            try:
+                execution_lock.release()
+            except Exception:
+                pass
+
+def trigger_fo_bot(args: list = None, sync: bool = False):
+    now_ist = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S IST")
+    cmd_name = " ".join(args) if args else "scan"
+    if not execution_lock.acquire(blocking=False):
+        return {
+            "status": "busy",
+            "message": f"Another execution ({last_execution_summary.get('status')}) is currently in progress. Skipped trigger.",
+            "timestamp_ist": now_ist
+        }, 200
+
+    if sync:
+        try:
+            res = run_fo_bot(args=args)
+            return res, 200 if res["success"] else 500
+        finally:
+            if execution_lock.locked():
+                try:
+                    execution_lock.release()
+                except Exception:
+                    pass
+    else:
+        t = threading.Thread(target=_async_fo_worker, args=(args,), daemon=True)
+        t.start()
+        return {
+            "status": "accepted",
+            "message": f"F&O pipeline execution for '{cmd_name}' started in background.",
+            "timestamp_ist": now_ist
+        }, 200
 
 class FOBotRequestHandler(BaseHTTPRequestHandler):
     def _send_json(self, status_code: int, data: dict):
@@ -75,6 +135,7 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path
+        query = parse_qs(parsed.query)
         now_ist = datetime.now(IST)
 
         # Health check endpoint (Render uses this for 200 OK)
@@ -98,6 +159,7 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
                 "platform": "Render Cloud Runner",
                 "server_time_ist": now_ist.strftime("%Y-%m-%d %H:%M:%S IST"),
                 "is_market_open": is_market_hours,
+                "runner_state": last_execution_summary.get("status", "idle"),
                 "portfolio_summary": {
                     "pool_total": state_data.get("pool_total", 500000.0),
                     "pool_available": state_data.get("pool_available", 500000.0),
@@ -138,6 +200,29 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
             self._send_json(200, data)
             return
 
+        # GET /scan fallback (secured)
+        if path == "/scan":
+            if not self._is_authenticated():
+                self._send_json(401, {"error": "Unauthorized."})
+                return
+            sync = query.get("sync", ["0"])[0] in ["1", "true"]
+            args = []
+            if query.get("force_weekend", ["0"])[0] in ["1", "true"]:
+                args.append("--force-weekend")
+            resp, status = trigger_fo_bot(args=args, sync=sync)
+            self._send_json(status, resp)
+            return
+
+        # GET /squareoff fallback (secured)
+        if path == "/squareoff":
+            if not self._is_authenticated():
+                self._send_json(401, {"error": "Unauthorized."})
+                return
+            sync = query.get("sync", ["0"])[0] in ["1", "true"]
+            resp, status = trigger_fo_bot(args=["--squareoff"], sync=sync)
+            self._send_json(status, resp)
+            return
+
         self._send_json(404, {"error": "Not Found"})
 
     def do_POST(self):
@@ -149,29 +234,28 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
             self._send_json(401, {"error": "Unauthorized. Provide valid Bearer token, X-API-Key, or ?key="})
             return
 
+        sync = query.get("sync", ["0"])[0] in ["1", "true"]
+
         # 1. Trigger Standard F&O Quant Scan
         if path == "/scan":
             args = []
             if query.get("force_weekend", ["0"])[0] in ["1", "true"]:
                 args.append("--force-weekend")
-            result = run_fo_bot(args=args)
-            status = 200 if result["success"] else 500
-            self._send_json(status, result)
+            resp, status = trigger_fo_bot(args=args, sync=sync)
+            self._send_json(status, resp)
             return
 
         # 2. Trigger Square-off
         if path == "/squareoff":
-            result = run_fo_bot(args=["--squareoff"])
-            status = 200 if result["success"] else 500
-            self._send_json(status, result)
+            resp, status = trigger_fo_bot(args=["--squareoff"], sync=sync)
+            self._send_json(status, resp)
             return
 
         # 3. Trigger Kill-switch override
         if path == "/killswitch":
             action = query.get("action", ["halt"])[0]
-            result = run_fo_bot(args=["--kill-switch", action])
-            status = 200 if result["success"] else 500
-            self._send_json(status, result)
+            resp, status = trigger_fo_bot(args=["--kill-switch", action], sync=True)
+            self._send_json(status, resp)
             return
 
         self._send_json(404, {"error": "Endpoint Not Found. Supported: POST /scan, POST /squareoff, POST /killswitch"})
@@ -181,8 +265,8 @@ def start_server():
     logger.info(f"=== AlphaDesk F&O Render Cloud Web Server listening on port {PORT} ===")
     logger.info(f"Endpoints available:")
     logger.info(f"  GET  /health      -> Public health check")
-    logger.info(f"  POST /scan        -> Run F&O quant pipeline (Secured)")
-    logger.info(f"  POST /squareoff   -> Square-off all positions (Secured)")
+    logger.info(f"  POST /scan        -> Run F&O quant pipeline (Secured, Async)")
+    logger.info(f"  POST /squareoff   -> Square-off all positions (Secured, Async)")
     logger.info(f"  POST /killswitch  -> Halt/Resume killswitch (Secured)")
     logger.info(f"  GET  /trades      -> View recent trade log (Secured)")
     logger.info(f"  GET  /state       -> View portfolio state (Secured)")
