@@ -242,22 +242,119 @@ def record_trade_reflection(ticker: str, verdict: str, outcome: str, reflection_
     save_reflective_memory(memory)
 
 
+def _commit_file_via_github_api(repo_name: str, file_rel_path: str, local_abs_path: str, commit_msg: str, pat: str, username: str = "Ranay-bansal") -> bool:
+    """Commits or updates a single file in GitHub repository using the GitHub Contents REST API."""
+    import urllib.request
+    import urllib.error
+    import base64
+
+    if not os.path.exists(local_abs_path):
+        return False
+
+    try:
+        with open(local_abs_path, "rb") as f:
+            content_bytes = f.read()
+    except Exception as e:
+        logger.error(f"Failed to read local file {local_abs_path}: {e}")
+        return False
+
+    b64_content = base64.b64encode(content_bytes).decode("utf-8")
+    api_url = f"https://api.github.com/repos/{username}/{repo_name}/contents/{file_rel_path.replace(os.sep, '/')}"
+    headers = {
+        "Authorization": f"token {pat}",
+        "Accept": "application/vnd.github.v3+json",
+        "User-Agent": "AlphaDesk-Cloud-Persistence"
+    }
+
+    # Fetch existing SHA if file exists in repo
+    sha = None
+    try:
+        req_get = urllib.request.Request(api_url, headers=headers, method="GET")
+        with urllib.request.urlopen(req_get, timeout=10) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            sha = data.get("sha")
+            # Avoid no-op commit if content identical
+            existing_content = data.get("content", "").replace("\n", "")
+            if existing_content == b64_content:
+                logger.info(f"[GitHub API] No changes detected for {file_rel_path}, skipping commit.")
+                return True
+    except urllib.error.HTTPError as he:
+        if he.code != 404:
+            logger.warning(f"[GitHub API] Failed checking file {file_rel_path}: HTTP {he.code}")
+    except Exception as e:
+        logger.warning(f"[GitHub API] Error checking file {file_rel_path}: {e}")
+
+    payload = {
+        "message": commit_msg,
+        "content": b64_content,
+        "branch": "main"
+    }
+    if sha:
+        payload["sha"] = sha
+
+    try:
+        req_put = urllib.request.Request(
+            api_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json", **headers},
+            method="PUT"
+        )
+        with urllib.request.urlopen(req_put, timeout=15) as resp:
+            if resp.status in [200, 201]:
+                logger.info(f"âœ… [GitHub API] Successfully persisted {file_rel_path} to GitHub.")
+                return True
+            else:
+                logger.warning(f"[GitHub API] Unexpected status {resp.status} for {file_rel_path}")
+                return False
+    except Exception as e:
+        logger.error(f"[GitHub API] Failed to commit {file_rel_path} via API: {e}")
+        return False
+
+
 def commit_state_to_git(mode: str = "f&o scan updates") -> None:
-    """Commits state and dashboard changes to git and pushes them using rebase retries."""
+    """
+    Commits state and dashboard changes to git.
+    - If .git directory exists (local dev or CI): uses standard git CLI.
+    - If .git directory does NOT exist (Render cloud runner): uses GitHub Contents REST API.
+    """
+    pat = os.environ.get("GITHUB_PAT") or os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    username = os.environ.get("GITHUB_USERNAME", "Ranay-bansal")
+    repo_name = "fo-trading-bot"
+    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    commit_msg = f"state: {mode} ({timestamp})"
+
     if not os.path.exists(os.path.join(ROOT_DIR, ".git")):
-        logger.info("Not a git repository, skipping auto-commit.")
+        logger.info("Not a local git repo (.git absent). Using direct GitHub REST API persistence...")
+        if not pat:
+            logger.warning("No GITHUB_PAT available in environment. Skipping cloud git persistence.")
+            return
+
+        files_to_sync = [
+            ("state/portfolio_state.json", STATE_PATH),
+            ("state/trade_log.csv", TRADE_LOG_PATH),
+            ("state/reflective_memory.json", REFLECTIVE_MEMORY_PATH),
+            ("dashboard/state/portfolio_state.json", os.path.join(ROOT_DIR, "dashboard", "state", "portfolio_state.json")),
+            ("public/state/portfolio_state.json", os.path.join(ROOT_DIR, "public", "state", "portfolio_state.json"))
+        ]
+        for rel_path, abs_path in files_to_sync:
+            if os.path.exists(abs_path):
+                _commit_file_via_github_api(
+                    repo_name=repo_name,
+                    file_rel_path=rel_path,
+                    local_abs_path=abs_path,
+                    commit_msg=commit_msg,
+                    pat=pat,
+                    username=username
+                )
         return
 
     try:
-        # Ensure git user identity is configured (essential for Render cloud containers)
+        # Ensure git user identity is configured
         subprocess.run("git config user.name 'AlphaDesk F&O Bot'", shell=True, capture_output=True, cwd=ROOT_DIR)
         subprocess.run("git config user.email 'bot@alphadesk.io'", shell=True, capture_output=True, cwd=ROOT_DIR)
 
-        # Authenticate git remote URL if GITHUB_PAT is set in environment
-        pat = os.environ.get("GITHUB_PAT") or os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
         if pat:
-            username = os.environ.get("GITHUB_USERNAME", "Ranay-bansal")
-            auth_url = f"https://{username}:{pat}@github.com/{username}/fo-trading-bot.git"
+            auth_url = f"https://{username}:{pat}@github.com/{username}/{repo_name}.git"
             subprocess.run(f"git remote set-url origin {auth_url}", shell=True, capture_output=True, cwd=ROOT_DIR)
 
         status = subprocess.run(
@@ -272,8 +369,6 @@ def commit_state_to_git(mode: str = "f&o scan updates") -> None:
         subprocess.run("git checkout main", shell=True, capture_output=True, cwd=ROOT_DIR)
         subprocess.run("git add state/ dashboard/ public/", shell=True, check=True, cwd=ROOT_DIR)
 
-        timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-        commit_msg = f"state: {mode} ({timestamp})"
         logger.info(f"Committing changes: {commit_msg}")
         subprocess.run(f'git commit -m "{commit_msg}"', shell=True, check=True, cwd=ROOT_DIR)
 

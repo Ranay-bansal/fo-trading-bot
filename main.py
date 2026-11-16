@@ -154,6 +154,7 @@ def run_quant_pipeline() -> None:
                 executor.execute(judge_out, state)
 
     save_fo_state(state)
+    commit_state_to_git("f&o scan updates")
     logger.info("=== QUANT PIPELINE COMPLETED SUCCESSFULLY ===")
 
 def run_continuous_stream(simulate_live: bool = False, delay_seconds: float = 0.0) -> None:
