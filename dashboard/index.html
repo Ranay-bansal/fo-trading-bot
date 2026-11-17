@@ -567,6 +567,10 @@
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
         Institutional PDF Report
       </a>
+      <div id="live-connection-badge" class="arise-badge" style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.4); color: var(--accent-cyan);">
+        <span id="live-dot" style="width: 7px; height: 7px; border-radius: 50%; background: var(--accent-cyan); display: inline-block;"></span>
+        <span id="live-text">Live Render Stream</span>
+      </div>
       <div class="arise-badge">
         <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green);"></span>
         Options Swarm Active
@@ -908,7 +912,48 @@
       document.getElementById(tabId).classList.add('active');
     }
 
+    const RENDER_FO_API = "https://alphadesk-fo.onrender.com";
+    const RENDER_KEY = "AlphaDesk_QuantKey_2026_Secure";
+
+    function updateLiveBadge(isLive) {
+      const dot = document.getElementById('live-dot');
+      const txt = document.getElementById('live-text');
+      const badge = document.getElementById('live-connection-badge');
+      if (!dot || !txt) return;
+      if (isLive) {
+        dot.style.background = 'var(--accent-green)';
+        txt.innerText = 'Render 24/7 Live Stream';
+        if (badge) {
+          badge.style.background = 'rgba(16, 185, 129, 0.12)';
+          badge.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+          badge.style.color = 'var(--accent-green)';
+        }
+      } else {
+        dot.style.background = 'var(--accent-gold)';
+        txt.innerText = 'Static Fallback Mode';
+        if (badge) {
+          badge.style.background = 'rgba(245, 158, 11, 0.1)';
+          badge.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+          badge.style.color = 'var(--accent-gold)';
+        }
+      }
+    }
+
     async function fetchMultiPath(filename) {
+      // 1. Direct real-time cloud stream from Render
+      if (filename === 'portfolio_state.json') {
+        try {
+          const liveRes = await fetch(`${RENDER_FO_API}/state?key=${RENDER_KEY}&t=${Date.now()}`);
+          if (liveRes.ok) {
+            updateLiveBadge(true);
+            return liveRes;
+          }
+        } catch(e) {
+          console.warn("Render live state fetch failed, trying static paths:", e);
+        }
+      }
+
+      // 2. Fall back to relative / static paths deployed on Vercel
       const paths = [
         'state/' + filename,
         '/state/' + filename,
@@ -919,10 +964,60 @@
       for (const path of paths) {
         try {
           const res = await fetch(path + '?t=' + Date.now());
-          if (res.ok) return res;
+          if (res.ok) {
+            const ct = (res.headers.get('content-type') || '').toLowerCase();
+            // Guard against SPA fallback serving index.html for missing JSON/CSV
+            if (!ct.includes('text/html') || filename.endsWith('.html')) {
+              return res;
+            }
+          }
         } catch(e) {}
       }
       return null;
+    }
+
+    function syncOpenPositionsWithTrades(openPositions) {
+      if (!Array.isArray(openPositions) || openPositions.length === 0) return;
+      const existingRunIds = new Set(allRawTrades.map(t => t.run_id || t.order_id));
+      let modified = false;
+      for (const pos of openPositions) {
+        const orderId = pos.order_id || `${pos.symbol || pos.ticker}_${pos.entered_at || Date.now()}`;
+        if (!existingRunIds.has(orderId)) {
+          const shares = Number(pos.total_shares || (pos.lots ? pos.lots * 25 : 1));
+          const unitPx = Number(pos.entry_premium || pos.entry_spot || 0);
+          const posVal = Math.round(unitPx * shares * 100) / 100;
+          const brokerage = Number(pos.brokerage_paid_inr || 20);
+          allRawTrades.unshift({
+            run_id: orderId,
+            ticker: pos.ticker || '',
+            symbol: pos.symbol || pos.ticker || 'NIFTY',
+            verdict: pos.side || 'BUY',
+            contract_type: pos.contract_type || 'F&O',
+            strike_price: String(pos.strike_price || 0),
+            lots: String(pos.lots || 1),
+            total_shares: String(shares),
+            spot_entry: String(pos.entry_spot || ''),
+            option_premium: String(pos.entry_premium || ''),
+            spot_sl: String(pos.sl_spot || ''),
+            spot_target: String(pos.target_spot || ''),
+            waterfall_score: String(pos.waterfall_score || '7.5'),
+            position_value_inr: String(posVal),
+            brokerage_fee_inr: String(brokerage),
+            total_cost_inr: String(Math.round((posVal + brokerage) * 100) / 100),
+            executed_at: pos.entered_at || new Date().toISOString(),
+            exit_price: '',
+            exit_reason: '',
+            realized_pnl_inr: '',
+            realized_pnl_pct: ''
+          });
+          existingRunIds.add(orderId);
+          modified = true;
+        }
+      }
+      if (modified) {
+        updatePnlSummaries();
+        renderTradesTable();
+      }
     }
 
     function parseCSV(text) {
@@ -991,6 +1086,10 @@
           pnlElem.style.color = pnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
           
           document.getElementById('val-brokerage').innerText = '₹' + Number(state.total_brokerage_paid_inr || 0).toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+          if (Array.isArray(state.open_positions) && state.open_positions.length > 0) {
+            syncOpenPositionsWithTrades(state.open_positions);
+          }
         }
       } catch(e) {
         console.error('Error loading portfolio state:', e);
@@ -1560,10 +1659,28 @@
 
     async function loadTrades() {
       try {
-        const res = await fetchMultiPath('trade_log.csv');
-        if (!res) return;
-        const text = await res.text();
-        allRawTrades = parseCSV(text);
+        // Try live Render cloud trades first
+        let loaded = false;
+        try {
+          const liveRes = await fetch(`${RENDER_FO_API}/trades?key=${RENDER_KEY}&t=${Date.now()}`);
+          if (liveRes.ok) {
+            const data = await liveRes.json();
+            if (data && Array.isArray(data.recent_trades) && data.recent_trades.length > 0) {
+              allRawTrades = data.recent_trades;
+              loaded = true;
+            }
+          }
+        } catch(e) {}
+
+        if (!loaded) {
+          const res = await fetchMultiPath('trade_log.csv');
+          if (res) {
+            const text = await res.text();
+            if (!text.trim().startsWith('<') && !text.includes('<!DOCTYPE')) {
+              allRawTrades = parseCSV(text);
+            }
+          }
+        }
         updatePnlSummaries();
         renderTradesTable();
       } catch(e) {

@@ -334,7 +334,9 @@ def commit_state_to_git(mode: str = "f&o scan updates") -> None:
             ("state/trade_log.csv", TRADE_LOG_PATH),
             ("state/reflective_memory.json", REFLECTIVE_MEMORY_PATH),
             ("dashboard/state/portfolio_state.json", os.path.join(ROOT_DIR, "dashboard", "state", "portfolio_state.json")),
-            ("public/state/portfolio_state.json", os.path.join(ROOT_DIR, "public", "state", "portfolio_state.json"))
+            ("dashboard/state/trade_log.csv", os.path.join(ROOT_DIR, "dashboard", "state", "trade_log.csv")),
+            ("public/state/portfolio_state.json", os.path.join(ROOT_DIR, "public", "state", "portfolio_state.json")),
+            ("public/state/trade_log.csv", os.path.join(ROOT_DIR, "public", "state", "trade_log.csv"))
         ]
         for rel_path, abs_path in files_to_sync:
             if os.path.exists(abs_path):

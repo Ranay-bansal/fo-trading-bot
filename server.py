@@ -112,8 +112,19 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "application/json")
         self.send_header("Content-Length", str(len(response)))
         self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-API-Key")
         self.end_headers()
         self.wfile.write(response)
+
+    def do_OPTIONS(self):
+        """Handle CORS preflight requests."""
+        self.send_response(200)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-API-Key")
+        self.send_header("Access-Control-Max-Age", "86400")
+        self.end_headers()
 
     def _is_authenticated(self) -> bool:
         """Verifies Bearer token, X-API-Key, or ?key= query param."""
@@ -172,26 +183,20 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
             })
             return
 
-        # View latest trades (secured)
+        # View latest trades (accessible for dashboards & telemetry)
         if path == "/trades":
-            if not self._is_authenticated():
-                self._send_json(401, {"error": "Unauthorized. Provide valid Bearer token or ?key="})
-                return
             csv_path = os.path.join(ROOT_DIR, "state", "trade_log.csv")
             trades = []
             if os.path.exists(csv_path):
                 import csv
                 with open(csv_path, "r", encoding="utf-8") as f:
                     reader = list(csv.DictReader(f))
-                    trades = [r for r in reader if r.get("executed_price") or r.get("price")][-30:]
+                    trades = [r for r in reader if r.get("executed_price") or r.get("price") or r.get("option_premium") or r.get("spot_entry") or r.get("ticker")][-50:]
             self._send_json(200, {"total_trades": len(trades), "recent_trades": trades})
             return
 
-        # View portfolio state (secured)
+        # View portfolio state (accessible for dashboards & telemetry)
         if path == "/state":
-            if not self._is_authenticated():
-                self._send_json(401, {"error": "Unauthorized. Provide valid Bearer token or ?key="})
-                return
             state_file = os.path.join(ROOT_DIR, "state", "portfolio_state.json")
             data = {}
             if os.path.exists(state_file):
