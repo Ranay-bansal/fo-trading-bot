@@ -42,13 +42,42 @@ DEFAULT_STATE = {
 
 def load_fo_state() -> Dict[str, Any]:
     os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
+    state = DEFAULT_STATE.copy()
     if os.path.exists(STATE_FILE):
         try:
             with open(STATE_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+                loaded = json.load(f)
+                state.update(loaded)
         except Exception as e:
             logger.error(f"Error loading F&O state: {e}")
-    return DEFAULT_STATE.copy()
+            
+    # Auto-healing and sanitization
+    import math
+    try:
+        p_tot = float(state.get("pool_total", 500000.0))
+        if math.isnan(p_tot) or p_tot <= 0:
+            p_tot = 500000.0
+        state["pool_total"] = p_tot
+        
+        p_dep = float(state.get("pool_deployed", 0.0))
+        if math.isnan(p_dep) or p_dep < 0:
+            p_dep = 0.0
+        state["pool_deployed"] = p_dep
+        
+        open_positions = state.get("open_positions", [])
+        if not open_positions:
+            state["pool_deployed"] = 0.0
+            p_avail = float(state.get("pool_available", p_tot))
+            if math.isnan(p_avail) or p_avail <= 0:
+                state["pool_available"] = p_tot
+        else:
+            p_avail = float(state.get("pool_available", p_tot))
+            if math.isnan(p_avail) or p_avail <= 0:
+                state["pool_available"] = max(0.0, p_tot - p_dep)
+    except Exception as err:
+        logger.warning(f"Error sanitizing F&O state: {err}")
+        
+    return state
 
 def save_fo_state(state: Dict[str, Any]) -> None:
     try:
@@ -314,8 +343,8 @@ def _commit_file_via_github_api(repo_name: str, file_rel_path: str, local_abs_pa
 def commit_state_to_git(mode: str = "f&o scan updates") -> None:
     """
     Commits state and dashboard changes to git.
-    - If .git directory exists (local dev or CI): uses standard git CLI.
-    - If .git directory does NOT exist (Render cloud runner): uses GitHub Contents REST API.
+    - If .git directory exists: attempts git CLI commit & push.
+    - If git CLI fails or .git is absent (e.g. Render shallow clone): seamlessly falls back to GitHub Contents REST API.
     """
     pat = os.environ.get("GITHUB_PAT") or os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
     username = os.environ.get("GITHUB_USERNAME", "Ranay-bansal")
@@ -323,24 +352,29 @@ def commit_state_to_git(mode: str = "f&o scan updates") -> None:
     timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
     commit_msg = f"state: {mode} ({timestamp})"
 
-    if not os.path.exists(os.path.join(ROOT_DIR, ".git")):
-        logger.info("Not a local git repo (.git absent). Using direct GitHub REST API persistence...")
-        if not pat:
-            logger.warning("No GITHUB_PAT available in environment. Skipping cloud git persistence.")
-            return
+    files_to_sync = [
+        ("state/portfolio_state.json", STATE_FILE),
+        ("state/trade_log.csv", TRADE_LOG_FILE),
+        ("state/committee_debate_log.json", COMMITTEE_DEBATE_LOG_FILE),
+        ("state/reflective_memory.json", REFLECTIVE_MEMORY_FILE),
+        ("dashboard/state/portfolio_state.json", DASH_STATE_FILE),
+        ("dashboard/state/trade_log.csv", DASH_TRADE_LOG_FILE),
+        ("dashboard/state/committee_debate_log.json", DASH_DEBATE_LOG_FILE),
+        ("dashboard/state/reflective_memory.json", DASH_MEMORY_FILE),
+        ("public/state/portfolio_state.json", PUB_STATE_FILE),
+        ("public/state/trade_log.csv", PUB_TRADE_LOG_FILE),
+        ("public/state/reflective_memory.json", PUB_MEMORY_FILE)
+    ]
 
-        files_to_sync = [
-            ("state/portfolio_state.json", STATE_PATH),
-            ("state/trade_log.csv", TRADE_LOG_PATH),
-            ("state/reflective_memory.json", REFLECTIVE_MEMORY_PATH),
-            ("dashboard/state/portfolio_state.json", os.path.join(ROOT_DIR, "dashboard", "state", "portfolio_state.json")),
-            ("dashboard/state/trade_log.csv", os.path.join(ROOT_DIR, "dashboard", "state", "trade_log.csv")),
-            ("public/state/portfolio_state.json", os.path.join(ROOT_DIR, "public", "state", "portfolio_state.json")),
-            ("public/state/trade_log.csv", os.path.join(ROOT_DIR, "public", "state", "trade_log.csv"))
-        ]
+    def _sync_via_rest_api():
+        if not pat:
+            logger.warning("[GitHub API] No GITHUB_PAT available in environment. Skipping cloud git persistence.")
+            return False
+        logger.info("[GitHub API] Syncing state files directly via GitHub REST API...")
+        all_ok = True
         for rel_path, abs_path in files_to_sync:
             if os.path.exists(abs_path):
-                _commit_file_via_github_api(
+                ok = _commit_file_via_github_api(
                     repo_name=repo_name,
                     file_rel_path=rel_path,
                     local_abs_path=abs_path,
@@ -348,8 +382,16 @@ def commit_state_to_git(mode: str = "f&o scan updates") -> None:
                     pat=pat,
                     username=username
                 )
+                if not ok:
+                    all_ok = False
+        return all_ok
+
+    if not os.path.exists(os.path.join(ROOT_DIR, ".git")):
+        logger.info("Not a local git repo (.git absent). Using direct GitHub REST API persistence...")
+        _sync_via_rest_api()
         return
 
+    git_cli_success = False
     try:
         # Ensure git user identity is configured
         subprocess.run("git config user.name 'AlphaDesk F&O Bot'", shell=True, capture_output=True, cwd=ROOT_DIR)
@@ -357,7 +399,11 @@ def commit_state_to_git(mode: str = "f&o scan updates") -> None:
 
         if pat:
             auth_url = f"https://{username}:{pat}@github.com/{username}/{repo_name}.git"
-            subprocess.run(f"git remote set-url origin {auth_url}", shell=True, capture_output=True, cwd=ROOT_DIR)
+            remotes = subprocess.run("git remote", shell=True, capture_output=True, text=True, cwd=ROOT_DIR).stdout
+            if "origin" in remotes.split():
+                subprocess.run(f"git remote set-url origin {auth_url}", shell=True, capture_output=True, cwd=ROOT_DIR)
+            else:
+                subprocess.run(f"git remote add origin {auth_url}", shell=True, capture_output=True, cwd=ROOT_DIR)
 
         status = subprocess.run(
             "git status --porcelain state/ dashboard/ public/", shell=True,
@@ -379,14 +425,19 @@ def commit_state_to_git(mode: str = "f&o scan updates") -> None:
             subprocess.run("git pull --rebase origin main", shell=True, capture_output=True, text=True, cwd=ROOT_DIR)
             push = subprocess.run("git push origin main", shell=True, capture_output=True, text=True, cwd=ROOT_DIR)
             if push.returncode == 0:
-                logger.info("State successfully pushed to GitHub.")
+                logger.info("State successfully pushed to GitHub via Git CLI.")
+                git_cli_success = True
                 return
             else:
                 logger.warning(f"Git push failed (attempt {attempt}): {push.stderr.strip()}")
 
-            time.sleep(3)
+            time.sleep(2)
 
-        logger.error("Failed to push state to GitHub after 3 attempts.")
+        logger.warning("Git CLI push failed after 3 attempts.")
     except Exception as e:
-        logger.error(f"Git auto-commit process failed: {e}")
+        logger.warning(f"Git auto-commit process encountered exception: {e}")
+
+    if not git_cli_success:
+        logger.info("Falling back to direct GitHub REST API persistence...")
+        _sync_via_rest_api()
 

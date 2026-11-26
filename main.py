@@ -113,9 +113,9 @@ def run_quant_pipeline() -> None:
         save_fo_state(state)
         return
 
-    # 4. CAS & Intraday Entry Cutoff Check (No new entries after 1:30 PM IST)
-    if now_ist.hour > 13 or (now_ist.hour == 13 and now_ist.minute >= 30):
-        logger.info(f"Entry Cutoff Reached: Current time is {now_ist.strftime('%H:%M')} IST (cutoff 13:30 IST). Open positions monitored; skipping new entries.")
+    # 4. CAS & Intraday Entry Cutoff Check (No new entries after 3:00 PM IST; bypass if force_weekend)
+    if (now_ist.hour > 15 or (now_ist.hour == 15 and now_ist.minute >= 0)) and not args.force_weekend:
+        logger.info(f"Entry Cutoff Reached: Current time is {now_ist.strftime('%H:%M')} IST (cutoff 15:00 IST). Open positions monitored; skipping new entries.")
         save_fo_state(state)
         return
 

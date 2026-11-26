@@ -212,7 +212,7 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
                 return
             sync = query.get("sync", ["0"])[0] in ["1", "true"]
             args = []
-            if query.get("force_weekend", ["0"])[0] in ["1", "true"]:
+            if query.get("force_weekend", ["0"])[0] in ["1", "true"] or query.get("force", ["0"])[0] in ["1", "true"]:
                 args.append("--force-weekend")
             resp, status = trigger_fo_bot(args=args, sync=sync)
             self._send_json(status, resp)
@@ -244,7 +244,7 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
         # 1. Trigger Standard F&O Quant Scan
         if path == "/scan":
             args = []
-            if query.get("force_weekend", ["0"])[0] in ["1", "true"]:
+            if query.get("force_weekend", ["0"])[0] in ["1", "true"] or query.get("force", ["0"])[0] in ["1", "true"]:
                 args.append("--force-weekend")
             resp, status = trigger_fo_bot(args=args, sync=sync)
             self._send_json(status, resp)
