@@ -6,7 +6,7 @@ import subprocess
 import threading
 import time
 from datetime import datetime, timezone, timedelta
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - [FOServer] - %(levelname)s - %(message)s")
@@ -266,7 +266,7 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
         self._send_json(404, {"error": "Endpoint Not Found. Supported: POST /scan, POST /squareoff, POST /killswitch"})
 
 def start_server():
-    server = HTTPServer(("0.0.0.0", PORT), FOBotRequestHandler)
+    server = ThreadingHTTPServer(("0.0.0.0", PORT), FOBotRequestHandler)
     logger.info(f"=== AlphaDesk F&O Render Cloud Web Server listening on port {PORT} ===")
     logger.info(f"Endpoints available:")
     logger.info(f"  GET  /health      -> Public health check")
