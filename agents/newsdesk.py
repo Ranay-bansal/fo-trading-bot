@@ -1,4 +1,5 @@
 import logging
+import time
 from typing import Dict, Any, List, Optional
 import yfinance as yf
 from core.schemas import FOScoutOutput, NewsdeskOutput
@@ -9,6 +10,8 @@ class NewsdeskAgent:
     """
     Newsdesk Agent calculating news sentiment, catalyst risk, market regime, and macro risk scores (0.0 to 10.0) with fallback.
     """
+    _news_cache: Dict[str, Any] = {}
+
     def __init__(self, config: Dict[str, Any]):
         self.config = config or {}
 
@@ -16,6 +19,12 @@ class NewsdeskAgent:
         ticker = getattr(candidate, "ticker", "UNKNOWN")
         symbol = getattr(candidate, "symbol", "UNKNOWN")
         price_change = float(getattr(candidate, "price_change_pct", 0.0))
+
+        now_ts = time.time()
+        if ticker in NewsdeskAgent._news_cache:
+            cached_time, cached_out = NewsdeskAgent._news_cache[ticker]
+            if now_ts - cached_time < 900:  # 15 minutes TTL
+                return cached_out
         
         sentiment_score = 5.0
         catalyst_risk = 3.0
@@ -92,7 +101,7 @@ class NewsdeskAgent:
             "bearish" if sentiment_score <= 4.0 or catalyst_risk >= 7.0 else "neutral"
         )
 
-        return NewsdeskOutput(
+        out = NewsdeskOutput(
             ticker=ticker,
             symbol=symbol,
             news_sentiment_score=sentiment_score,
@@ -104,3 +113,5 @@ class NewsdeskAgent:
             headline_summaries=headlines[:3],
             catalyst_events=catalysts
         )
+        NewsdeskAgent._news_cache[ticker] = (now_ts, out)
+        return out

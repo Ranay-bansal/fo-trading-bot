@@ -205,6 +205,14 @@ class FOBotRequestHandler(BaseHTTPRequestHandler):
             self._send_json(200, data)
             return
 
+        # View execution summary and background worker status
+        if path == "/status":
+            self._send_json(200, {
+                "server_time_ist": now_ist.strftime("%Y-%m-%d %H:%M:%S IST"),
+                "execution_summary": last_execution_summary
+            })
+            return
+
         # GET /scan fallback (secured)
         if path == "/scan":
             if not self._is_authenticated():

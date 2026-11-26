@@ -119,13 +119,16 @@ def run_quant_pipeline() -> None:
         save_fo_state(state)
         return
 
-    timeframes = ["5m", "1m", "15m"]
+    timeframes = ["5m", "15m"]
 
     # --- BOT 1: EQUITY INTRADAY CASH STRATEGY EXECUTION ENGINE ---
     if config.get("bot1_equity", {}).get("enabled", True):
         logger.info("--- [BOT 1] Executing Equity Intraday Cash Strategy Engine ---")
         bot1_agent = Bot1EquityAgent(config)
         for tf in timeframes:
+            if float(state.get("pool_available", 0.0)) < 1000.0:
+                logger.info(f"[Bot 1 Cash] Capital fully deployed (Available: ₹{state.get('pool_available', 0):.2f}). Skipping further entries.")
+                break
             cash_signals = bot1_agent.run(state, timeframe=tf)
             if isinstance(cash_signals, list):
                 for sig in cash_signals:
@@ -143,9 +146,15 @@ def run_quant_pipeline() -> None:
     logger.info(f"India VIX: {vix_val:.2f}")
 
     for tf in timeframes:
+        if float(state.get("pool_available", 0.0)) < 1000.0:
+            logger.info(f"[Bot 2 F&O] Capital fully deployed (Available: ₹{state.get('pool_available', 0):.2f}). Skipping further entries.")
+            break
         logger.info(f"--- Running F&O Scan Cycle on {tf} timeframe ---")
         candidates = scout.run(timeframe=tf)
         for cand in candidates:
+            if float(state.get("pool_available", 0.0)) < 1000.0:
+                logger.info(f"[Bot 2 F&O] Capital fully deployed (Available: ₹{state.get('pool_available', 0):.2f}). Skipping candidate evaluations.")
+                break
             tech_out = technician.run(cand, timeframe=tf, vix_val=vix_val)
             judge_out = judge.run(cand, tech_out, state, timeframe=tf)
 
