@@ -1,35 +1,5 @@
 [
   {
-    "timestamp": "2026-11-27T05:33:52.979244+00:00",
-    "symbol": "ACC",
-    "ticker": "ACC.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "SCALP_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
-  },
-  {
-    "timestamp": "2026-11-27T05:33:53.985392+00:00",
-    "symbol": "AMBUJACEM",
-    "ticker": "AMBUJACEM.NS",
-    "scout_stance": "neutral",
-    "tech_stance": "bearish",
-    "news_stance": "neutral",
-    "bull_stance": "cautious_bullish",
-    "bear_stance": "moderate_risk",
-    "consensus_score": 7.58,
-    "fact_checker_approved": true,
-    "risk_override_status": "NO_OVERRIDE",
-    "judge_verdict": "SCALP_PE",
-    "reasoning": "Consensus Approved (7.58/10): Bull Conviction 2.6 vs Bear Risk 6.0."
-  },
-  {
     "timestamp": "2026-11-27T05:33:55.178639+00:00",
     "symbol": "DALBHARAT",
     "ticker": "DALBHARAT.NS",
@@ -2998,5 +2968,35 @@
     "risk_override_status": "NO_OVERRIDE",
     "judge_verdict": "BUY_CE",
     "reasoning": "Consensus Approved (9.1/10): Bull Conviction 7.8 vs Bear Risk 1.8."
+  },
+  {
+    "timestamp": "2026-11-27T05:47:08.947539+00:00",
+    "symbol": "NIFTY",
+    "ticker": "^NSEI",
+    "scout_stance": "moderate",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "high_bear_risk",
+    "consensus_score": 8.87,
+    "fact_checker_approved": true,
+    "risk_override_status": "RISK_OVERRIDE_TRIGGERED",
+    "judge_verdict": "AVOID",
+    "reasoning": "Risk Committee Override: Vetoed trade due to Extreme Bear Risk Score (7.50/10)."
+  },
+  {
+    "timestamp": "2026-11-27T05:47:10.182848+00:00",
+    "symbol": "BANKNIFTY",
+    "ticker": "^NSEBANK",
+    "scout_stance": "moderate",
+    "tech_stance": "bearish",
+    "news_stance": "neutral",
+    "bull_stance": "cautious_bullish",
+    "bear_stance": "moderate_risk",
+    "consensus_score": 8.34,
+    "fact_checker_approved": true,
+    "risk_override_status": "NO_OVERRIDE",
+    "judge_verdict": "SCALP_PE",
+    "reasoning": "Consensus Approved (8.34/10): Bull Conviction 2.1 vs Bear Risk 6.8."
   }
 ]
